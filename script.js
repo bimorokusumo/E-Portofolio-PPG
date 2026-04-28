@@ -77,5 +77,52 @@ document.addEventListener('DOMContentLoaded', () => {
     animateElements.forEach(el => {
         observer.observe(el);
     });
-  });
-  
+
+    // 4. Modal Popup Logic
+    const popupLinks = document.querySelectorAll('.popup-link');
+    const modalOverlay = document.getElementById('artefakModal');
+    const modalIframe = document.getElementById('modalIframe');
+    const modalTitle = document.getElementById('modalTitle');
+    const closeModal = document.getElementById('closeModal');
+
+    if (modalOverlay) {
+        popupLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetUrl = this.getAttribute('href');
+                const title = this.getAttribute('data-title');
+                
+                modalIframe.src = targetUrl;
+                modalTitle.textContent = title;
+                
+                modalOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            });
+        });
+
+        const closePopup = () => {
+            modalOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+            // Delay clearing iframe src to allow animation to finish
+            setTimeout(() => {
+                modalIframe.src = '';
+            }, 300);
+        };
+
+        closeModal.addEventListener('click', closePopup);
+
+        // Close when clicking outside content
+        modalOverlay.addEventListener('click', function(e) {
+            if (e.target === modalOverlay) {
+                closePopup();
+            }
+        });
+        
+        // Close on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
+                closePopup();
+            }
+        });
+    }
+});

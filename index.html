@@ -68,29 +68,35 @@
         <p style="text-align: center; color: var(--text-light); margin-bottom: 2rem;">Topik refleksi perangkat pembelajaran Dasar-Dasar Kejuruan (DDK).</p>
         
         <div class="category-grid">
-            <div class="card-category">
-                <span class="icon">🧩</span>
-                <h3>Kendala Penyusunan</h3>
-                <p>Menyesuaikan materi dengan kebutuhan industri dan kapasitas kognitif siswa Kelas X.</p>
-            </div>
+            <a href="rpp.html" class="card-category popup-link" data-title="RPP" style="text-decoration: none;">
+                <span class="icon">📄</span>
+                <h3>RPP</h3>
+                <p>Rencana Pelaksanaan Pembelajaran</p>
+            </a>
             
-            <div class="card-category">
-                <span class="icon">📚</span>
-                <h3>Teori Pedagogi</h3>
-                <p>Penerapan Problem Based Learning (PBL) dan Understanding by Design (UbD).</p>
-            </div>
+            <a href="media.html" class="card-category popup-link" data-title="Media" style="text-decoration: none;">
+                <span class="icon">🖥️</span>
+                <h3>Media</h3>
+                <p>Media Pembelajaran yang Digunakan</p>
+            </a>
             
-            <div class="card-category">
-                <span class="icon">✨</span>
-                <h3>Faktor Keberhasilan</h3>
-                <p>Antusiasme tinggi siswa pada studi kasus praktikal dan umpan balik konstruktif.</p>
-            </div>
+            <a href="hasil-kerja.html" class="card-category popup-link" data-title="Hasil Kerja Siswa" style="text-decoration: none;">
+                <span class="icon">📝</span>
+                <h3>Hasil Kerja Siswa</h3>
+                <p>Contoh Hasil Kerja Siswa</p>
+            </a>
             
-            <div class="card-category">
-                <span class="icon">🔄</span>
-                <h3>Adaptasi Kelas</h3>
-                <p>Modifikasi masalah dan optimalisasi Universal Design for Learning (UDL).</p>
-            </div>
+            <a href="penilaian-gp-dpl.html" class="card-category popup-link" data-title="Penilaian GP & DPL" style="text-decoration: none;">
+                <span class="icon">📋</span>
+                <h3>Penilaian GP & DPL</h3>
+                <p>Penilaian dari Guru Pamong dan Dosen Pembimbing Lapangan</p>
+            </a>
+            
+            <a href="video.html" class="card-category popup-link" data-title="Video" style="text-decoration: none;">
+                <span class="icon">🎥</span>
+                <h3>Video</h3>
+                <p>Video Praktik Pembelajaran</p>
+            </a>
         </div>
     </section>
 
@@ -154,6 +160,19 @@
     <footer>
         <p>&copy; 2026 Bimoro Kusumo. E-Portfolio PPG Universitas Sarjanawiyata Tamansiswa (UST). Didesain terinspirasi dari Pusat Informasi Kemendikbud.</p>
     </footer>
+
+    <!-- Modal Popup for Artefak -->
+    <div id="artefakModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle">Artefak</h3>
+                <button class="modal-close" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <iframe id="modalIframe" class="modal-iframe" src="" title="Artefak Content"></iframe>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
