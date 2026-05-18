@@ -1,0 +1,33 @@
+import re
+
+with open('index.html', 'r') as f:
+    content = f.read()
+
+reflection_html = """
+                    <details style="margin: 1rem 0; font-size: 0.9rem; text-align: left; background: var(--bg-white); border: 1px solid var(--border-color); padding: 0.8rem; border-radius: 8px;">
+                        <summary style="cursor: pointer; font-weight: 600; color: var(--kemendikbud-blue); outline: none;">📝 Analisis Artefak</summary>
+                        <div style="padding-top: 0.8rem; display: flex; flex-direction: column; gap: 0.5rem; color: var(--text-dark);">
+                            <div><strong>Kendala proses penyusunan perangkat:</strong> <br><span style="color: var(--text-light);">Tantangan utama yang dihadapi dalam proses penyusunan perangkat pembelajaran ini adalah menyelaraskan tingkat kesulitan materi vokasi yang diajarkan dengan heterogenitas kemampuan kognitif dan psikomotorik awal peserta didik. Selain itu, terdapat keterbatasan waktu yang signifikan dalam merancang instrumen asesmen dan lembar kerja yang benar-benar autentik, komprehensif, serta mampu secara presisi mengukur ketercapaian kompetensi riil yang sepenuhnya relevan dengan tuntutan dan standar operasional di dunia kerja industri (DUDI).</span></div>
+                            <div><strong>Teori konsep pedagogi:</strong> <br><span style="color: var(--text-light);">Pengembangan perangkat pembelajaran ini secara konsisten mengintegrasikan pendekatan Understanding by Design (UbD) yang berfokus pada hasil akhir pembelajaran. Pendekatan ini dikombinasikan dengan sintaks dari model Inquiry Learning yang membuat siswa lebih difasilitasi dengan guru menjadi pamong. Kolaborasi konsep pedagogi ini bertujuan untuk membangun scaffolding yang kuat, membimbing siswa secara sistematis dari tahap pemahaman konsep dasar menuju tahap eksperimen dan praktik bengkel yang terstruktur, bermakna, serta mampu mengasah kemampuan berpikir tingkat tinggi (HOTS).</span></div>
+                            <div><strong>Faktor keberhasilan:</strong> <br><span style="color: var(--text-light);">Faktor kunci yang berkontribusi terhadap keberhasilan proses pembelajaran ini adalah tingginya tingkat antusiasme dan partisipasi aktif peserta didik, khususnya ketika mereka dihadapkan pada media pembelajaran visual interaktif dan demonstrasi praktik secara langsung. Dukungan ketersediaan alat, bahan, dan fasilitas bengkel mekanik yang memadai juga sangat menentukan kelancaran simulasi, memungkinkan peserta didik mempraktikkan teori yang didapat secara langsung dalam kondisi yang aman, kondusif, dan merepresentasikan lingkungan kerja nyata.</span></div>
+                            <div><strong>Perubahan komponen penunjang kelas:</strong> <br><span style="color: var(--text-light);">Berdasarkan evaluasi formatif selama siklus pembelajaran, dilakukan beberapa penyesuaian esensial pada komponen penunjang. Perubahan utama mencakup penyempurnaan rancangan Lembar Kerja Peserta Didik (LKPD) agar instruksi langkah kerjanya menjadi lebih sistematis, rinci, dan sesuai dengan Standar Operasional Prosedur (SOP). Selain itu, dilakukan pengayaan variasi media pembelajaran, seperti penggunaan video demonstrasi praktik alat perkakas dan materi keselamatan kerja, yang secara khusus ditujukan untuk memperkuat fondasi pemahaman siswa pada mata pelajaran Dasar-Dasar Kejuruan (DDK) serta mengakomodasi gaya belajar yang beragam.</span></div>
+                        </div>
+                    </details>"""
+
+def replacer(match):
+    before = match.group(1)
+    a_tag = match.group(2)
+    # Ensure we don't accidentally match across multiple cards
+    if '<div class="doc-card-content">' in before[1:]:
+        return match.group(0) # something went wrong, skip
+    return before + reflection_html + "\n                    " + a_tag
+
+# Only match within a doc-card-content up to the first <a ... class="doc-btn"
+pattern = re.compile(r'(<div class="doc-card-content">.*?\s)(<a [^>]*class="doc-btn"[^>]*>)', re.DOTALL)
+
+new_content = pattern.sub(replacer, content)
+
+with open('index.html', 'w') as f:
+    f.write(new_content)
+
+print("Done")
