@@ -18,7 +18,7 @@
                 <img src="Logo Stembayo.webp" alt="Logo Stembayo">
             </div>
             <h2 class="chooser-title">Pilih E-Portfolio</h2>
-            <p class="chooser-subtitle">Silakan pilih e-portfolio yang ingin Anda lihat</p>
+            
             <div class="chooser-cards">
                 <div class="chooser-card" onclick="selectPortfolio(1)">
                     <div class="chooser-card-badge">UTS</div>
@@ -55,6 +55,7 @@
                 <li><a href="#pendidikan">Pendidikan</a></li>
                 <li><a href="#keahlian">Keahlian</a></li>
                 <li><a href="#artefak">Artefak</a></li>
+                <li><a href="#analisis-produk">Analisis Artefak</a></li>
                 <li><a href="#model-guru">Visi Guru</a></li>
                 <li><a href="#" onclick="showChooser()" class="btn-primary" style="background-color: #f39c12; border-color: #f39c12; color: white;">Ganti Portofolio</a></li>
             </ul>
@@ -87,7 +88,7 @@
     </section>
 
     <!-- 2. Profil Singkat -->
-    <section id="profil" style="max-width: 100%; padding: 4rem 2rem;">
+    <section id="profil" class="one-screen" style="max-width: 100%; padding: 4rem 2rem;">
         <div style="max-width: 900px; margin: 0 auto; text-align: justify;">
             <h2 style="margin-bottom: 2rem;">Profil Singkat</h2>
             
@@ -161,13 +162,14 @@
                 </div>
             </div>
         </div>
+
     </section>
 
     <!-- 2.5 Pengalaman Kerja -->
-    <section id="pengalaman" style="background-color: var(--bg-light-gray); max-width: 100%; padding: 4rem 2rem;">
+    <section id="pengalaman" class="one-screen" style="background-color: var(--bg-light-gray); max-width: 100%; padding: 4rem 2rem;">
         <div style="max-width: 1160px; margin: 0 auto;">
             <h2>Pengalaman Kerja & Profesional</h2>
-            <p style="text-align: justify; color: var(--text-light); margin-bottom: 2rem;">Perjalanan karir dan pengalaman di bidang industri serta pendidikan.</p>
+            
             
             <div class="article-grid">
                 <div class="card-article">
@@ -219,13 +221,14 @@
                 </div>
             </div>
         </div>
+
     </section>
 
     <!-- 2.6 Pendidikan -->
-    <section id="pendidikan" style="max-width: 100%; padding: 4rem 2rem;">
+    <section id="pendidikan" class="one-screen" style="max-width: 100%; padding: 4rem 2rem;">
         <div style="max-width: 1160px; margin: 0 auto;">
             <h2>Riwayat Pendidikan</h2>
-            <p style="text-align: justify; color: var(--text-light); margin-bottom: 2rem;">Latar belakang pendidikan formal.</p>
+            
             
             <div class="article-grid">
                 <div class="card-article" style="border-left: 4px solid var(--kemendikbud-cyan);">
@@ -256,13 +259,14 @@
                 </div>
             </div>
         </div>
+
     </section>
 
     <!-- Keahlian -->
-    <section id="keahlian" style="background-color: var(--bg-light-gray); max-width: 100%; padding: 4rem 2rem;">
+    <section id="keahlian" class="one-screen" style="background-color: var(--bg-light-gray); max-width: 100%; padding: 4rem 2rem;">
         <div style="max-width: 1160px; margin: 0 auto; text-align: justify;">
             <h2>Kompetensi & Keahlian</h2>
-            <p style="color: var(--text-light); margin-bottom: 2rem;">Berbagai keterampilan teknis dan pedagogik yang mendukung profesionalisme.</p>
+            
             <div class="skills-container">
                 <span class="skill-badge">CADD</span>
                 <span class="skill-badge">Machining</span>
@@ -275,13 +279,14 @@
                 <span class="skill-badge">Project Management</span>
             </div>
         </div>
+
     </section>
 
     <!-- Sertifikat -->
-    <section id="sertifikat" style="max-width: 100%; padding: 4rem 2rem;">
+    <section id="sertifikat" class="one-screen" style="max-width: 100%; padding: 4rem 2rem;">
         <div style="max-width: 1160px; margin: 0 auto;">
             <h2 style="text-align: center;">Sertifikat</h2>
-            <p style="text-align: justify; color: var(--text-light); margin-bottom: 2rem;">Inilah bukti pengembangan diri saya yang terus ingin belajar untuk membentuk pribadi yang maju sebagai penunjang menjadi seorang guru sebagai role model.</p>
+            
             
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.2rem; margin-bottom: 2rem;">
                 <div style="background: white; padding: 1.2rem 1.5rem; border-radius: 12px; border: 1px solid var(--border-color); display: flex; align-items: center; gap: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.03); transition: transform 0.2s ease;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
@@ -367,120 +372,75 @@
     </section>
 
     <!-- Galeri / Dokumentasi -->
-    <section id="galeri" style="background-color: var(--bg-light-gray); max-width: 100%; padding: 4rem 2rem;">
+    <section id="galeri" class="one-screen" style="background-color: var(--bg-light-gray); max-width: 100%; padding: 4rem 2rem;">
         <div style="max-width: 1160px; margin: 0 auto; text-align: justify;">
             <h2>Dokumentasi Kegiatan</h2>
-            <p style="color: var(--text-light); margin-bottom: 2rem;">Dokumentasi berikut merupakan kumpulan kegiatan selama proses pembelajaran berlangsung yang mencerminkan berbagai aktivitas peserta didik dan guru dalam mencapai tujuan pembelajaran. Setiap dokumentasi menampilkan tahapan pembelajaran mulai dari penyampaian materi, diskusi, praktik, hingga refleksi pembelajaran sebagai bentuk implementasi kegiatan belajar yang aktif, kolaboratif, dan bermakna.</p>
-            <div class="carousel-container" id="dokumentasi-carousel">
-                <div class="carousel-track">
-                    <div class="carousel-slide">
-                        <img src="assets/dokumentasi/1.jpg" alt="Dokumentasi 1" onerror="this.parentElement.remove();">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="assets/dokumentasi/2.jpg" alt="Dokumentasi 2" onerror="this.parentElement.remove();">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="assets/dokumentasi/3.jpg" alt="Dokumentasi 3" onerror="this.parentElement.remove();">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="assets/dokumentasi/4.jpg" alt="Dokumentasi 4" onerror="this.parentElement.remove();">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="assets/dokumentasi/5.jpg" alt="Dokumentasi 5" onerror="this.parentElement.remove();">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="assets/dokumentasi/6.jpg" alt="Dokumentasi 6" onerror="this.parentElement.remove();">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="assets/dokumentasi/7.jpg" alt="Dokumentasi 7" onerror="this.parentElement.remove();">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="assets/dokumentasi/8.jpg" alt="Dokumentasi 8" onerror="this.parentElement.remove();">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="assets/dokumentasi/9.jpg" alt="Dokumentasi 9" onerror="this.parentElement.remove();">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="assets/dokumentasi/10.jpg" alt="Dokumentasi 10" onerror="this.parentElement.remove();">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="assets/dokumentasi/11.jpg" alt="Dokumentasi 11" onerror="this.parentElement.remove();">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="assets/dokumentasi/12.jpg" alt="Dokumentasi 12" onerror="this.parentElement.remove();">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="assets/dokumentasi/13.jpg" alt="Dokumentasi 13" onerror="this.parentElement.remove();">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="assets/dokumentasi/14.jpg" alt="Dokumentasi 14" onerror="this.parentElement.remove();">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="assets/dokumentasi/15.jpg" alt="Dokumentasi 15" onerror="this.parentElement.remove();">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="assets/dokumentasi/16.jpg" alt="Dokumentasi 16" onerror="this.parentElement.remove();">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="assets/dokumentasi/17.jpg" alt="Dokumentasi 17" onerror="this.parentElement.remove();">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="assets/dokumentasi/18.jpg" alt="Dokumentasi 18" onerror="this.parentElement.remove();">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="assets/dokumentasi/19.jpg" alt="Dokumentasi 19" onerror="this.parentElement.remove();">
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="assets/dokumentasi/20.jpg" alt="Dokumentasi 20" onerror="this.parentElement.remove();">
-                    </div>
-                </div>
+            
+            <div class="accordion-gallery">
+                <div class="accordion-item"><img src="assets/dokumentasi/1.jpg" alt="Dokumentasi 1" onerror="this.parentElement.remove();"></div>
+                <div class="accordion-item"><img src="assets/dokumentasi/2.jpg" alt="Dokumentasi 2" onerror="this.parentElement.remove();"></div>
+                <div class="accordion-item"><img src="assets/dokumentasi/3.jpg" alt="Dokumentasi 3" onerror="this.parentElement.remove();"></div>
+                <div class="accordion-item"><img src="assets/dokumentasi/4.jpg" alt="Dokumentasi 4" onerror="this.parentElement.remove();"></div>
+                <div class="accordion-item"><img src="assets/dokumentasi/5.jpg" alt="Dokumentasi 5" onerror="this.parentElement.remove();"></div>
+                <div class="accordion-item"><img src="assets/dokumentasi/6.jpg" alt="Dokumentasi 6" onerror="this.parentElement.remove();"></div>
+                <div class="accordion-item"><img src="assets/dokumentasi/7.jpg" alt="Dokumentasi 7" onerror="this.parentElement.remove();"></div>
+                <div class="accordion-item"><img src="assets/dokumentasi/8.jpg" alt="Dokumentasi 8" onerror="this.parentElement.remove();"></div>
+                <div class="accordion-item"><img src="assets/dokumentasi/9.jpg" alt="Dokumentasi 9" onerror="this.parentElement.remove();"></div>
+                <div class="accordion-item"><img src="assets/dokumentasi/10.jpg" alt="Dokumentasi 10" onerror="this.parentElement.remove();"></div>
+                <div class="accordion-item"><img src="assets/dokumentasi/11.jpg" alt="Dokumentasi 11" onerror="this.parentElement.remove();"></div>
+                <div class="accordion-item"><img src="assets/dokumentasi/12.jpg" alt="Dokumentasi 12" onerror="this.parentElement.remove();"></div>
+                <div class="accordion-item"><img src="assets/dokumentasi/13.jpg" alt="Dokumentasi 13" onerror="this.parentElement.remove();"></div>
+                <div class="accordion-item"><img src="assets/dokumentasi/14.jpg" alt="Dokumentasi 14" onerror="this.parentElement.remove();"></div>
+                <div class="accordion-item"><img src="assets/dokumentasi/15.jpg" alt="Dokumentasi 15" onerror="this.parentElement.remove();"></div>
+                <div class="accordion-item"><img src="assets/dokumentasi/16.jpg" alt="Dokumentasi 16" onerror="this.parentElement.remove();"></div>
+                <div class="accordion-item"><img src="assets/dokumentasi/17.jpg" alt="Dokumentasi 17" onerror="this.parentElement.remove();"></div>
+                <div class="accordion-item"><img src="assets/dokumentasi/18.jpg" alt="Dokumentasi 18" onerror="this.parentElement.remove();"></div>
+                <div class="accordion-item"><img src="assets/dokumentasi/19.jpg" alt="Dokumentasi 19" onerror="this.parentElement.remove();"></div>
+                <div class="accordion-item"><img src="assets/dokumentasi/20.jpg" alt="Dokumentasi 20" onerror="this.parentElement.remove();"></div>
+            </div>
             </div>
             </div>
         </div>
+
     </section>
 
+    
+    
     <!-- 3. Analisis Artefak Produk Pembelajaran -->
     <section id="artefak">
-        <h2>Analisis Artefak Pembelajaran</h2>
-        <p style="text-align: justify; color: var(--text-light); margin-bottom: 1.5rem;">Topik refleksi perangkat pembelajaran Dasar-Dasar Kejuruan (DDK).</p>
+        <h2>Artefak dan Analisisnya</h2>
 
-        <!-- Keterangan Siklus -->
-        <div style="background: white; box-shadow: 0 4px 15px rgba(0,0,0,0.05); max-width: 600px; margin: 0 auto 3rem auto; padding: 1.5rem 2rem; border-radius: 12px; border-left: 5px solid var(--kemendikbud-blue); text-align: left;">
-            <h4 style="margin-top: 0; margin-bottom: 0.8rem; color: var(--kemendikbud-blue); font-size: 1.05rem; display: flex; align-items: center; gap: 8px;">
-                <span style="font-size: 1.2rem;">📌</span> Panduan Topik Siklus
-            </h4>
-            <ul style="margin: 0; padding-left: 1.2rem; color: var(--text-dark); font-size: 0.95rem; line-height: 1.8;">
-                <li><strong>Siklus 1:</strong> Dasar Proses Produksi</li>
-                <li><strong>Siklus 2:</strong> Dasar Proses Produksi</li>
-                <li><strong>Siklus 3:</strong> Dasar Sistem Mekanik</li>
-            </ul>
+
+        <!-- Tab Navigation -->
+        <div class="tab-nav">
+            <button class="tab-btn active" onclick="switchTab('siklus-1')">Siklus 1</button>
+            <button class="tab-btn" onclick="switchTab('siklus-2')">Siklus 2</button>
+            <button class="tab-btn" onclick="switchTab('siklus-3')">Siklus 3</button>
         </div>
+
+        <!-- Tab Contents -->
         
+        <div id="siklus-1" class="tab-content active">
+            <div class="gallery-section">
+                <h3 style="color: var(--kemendikbud-blue); text-align: center; margin-bottom: 2rem; font-size: 1.8rem;">📂 Dasar Proses Produksi</h3>
+                <div class="search-container" style="margin: 0 auto 2rem auto; max-width: 800px; position: relative;">
+                    <input type="text" class="search-input search-input-gallery" placeholder="Cari dokumen, RPP, Media, LKM..." style="width: 100%; padding: 1rem 1.5rem; border-radius: 50px; border: 2px solid var(--border-color); font-size: 1rem; outline: none; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: border-color 0.3s;">
+                    <div class="search-icon search-btn" style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); cursor: pointer; font-size: 1.2rem;">🔍</div>
+                </div>
 
-    </section>
+                <div class="filter-container">
+                    <button class="filter-btn active" data-filter="all">Semua</button>
+                    <button class="filter-btn" data-filter="rpp">RPP</button>
+                    <button class="filter-btn" data-filter="media">Media</button>
+                    <button class="filter-btn" data-filter="lks">LKM dan Asesmen</button>
+                    <button class="filter-btn" data-filter="bahan-ajar">Bahan Ajar</button>
+                    <button class="filter-btn" data-filter="hasil-kerja">Hasil Kerja Siswa</button>
+                    <button class="filter-btn" data-filter="video">Video Mengajar</button>
+                    <button class="filter-btn" data-filter="penilaian">Penilaian GP & DPL</button>
+                </div>
 
-            <!-- Galeri TP -->
-        <div class="gallery-section" id="gallery-tp" style="margin-top: 3rem; padding-top: 2rem; border-top: 2px dashed var(--border-color);">
-            <h3 style="color: var(--kemendikbud-blue); text-align: center; margin-bottom: 2rem; font-size: 1.8rem;">📂 Koleksi Artefak: Teknik Pemesinan (TP)</h3>
-            <div class="search-container"  style="margin: 0 auto 2rem auto; max-width: 800px; position: relative;">
-            <input type="text" class="search-input search-input-gallery" class="search-input" placeholder="Cari dokumen, RPP, Media, LKS..." style="width: 100%; padding: 1rem 1.5rem; border-radius: 50px; border: 2px solid var(--border-color); font-size: 1rem; outline: none; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: border-color 0.3s;">
-            <div class="search-icon search-btn" class="search-icon" style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); cursor: pointer; font-size: 1.2rem;">🔍</div>
-        </div>
-
-        <div class="filter-container">
-            <button class="filter-btn active" data-filter="all">Semua</button>
-            <button class="filter-btn" data-filter="rpp">RPP</button>
-            <button class="filter-btn" data-filter="media">Media</button>
-            <button class="filter-btn" data-filter="lks">LKS dan Asesmen</button>
-                        <button class="filter-btn" data-filter="bahan-ajar">Bahan Ajar</button>
-            <button class="filter-btn" data-filter="hasil-kerja">Hasil Kerja Siswa</button>
-            <button class="filter-btn" data-filter="video">Video Mengajar</button>
-            <button class="filter-btn" data-filter="penilaian">Penilaian GP & DPL</button>
-        </div>
-
-        <div class="doc-grid" class="doc-grid gallery-grid">
-            <!-- RPP Item 1 -->
-            <div class="doc-card gallery-card-item" data-category="rpp">
+                <div class="doc-grid gallery-grid">
+                    <div class="doc-card gallery-card-item" data-category="rpp">
                 <div class="doc-card-thumb">
                     <span class="doc-badge">RPP 1</span>
                     <img src="https://drive.google.com/thumbnail?id=1cCBhAXKnn19uZbIq6iH46VsjdVamK1bX&sz=w600" alt="RPP 1" class="doc-thumb-img">
@@ -502,33 +462,7 @@
                     <a href="https://drive.google.com/file/d/1cCBhAXKnn19uZbIq6iH46VsjdVamK1bX/view?usp=sharing" target="_blank" class="doc-btn">Lihat Dokumen</a>
                 </div>
             </div>
-
-            <!-- RPP Item 2 -->
-            <div class="doc-card gallery-card-item" data-category="rpp">
-                <div class="doc-card-thumb">
-                    <span class="doc-badge">RPP 2</span>
-                    <img src="https://drive.google.com/thumbnail?id=1ImXZYAjbNMbn9P-QhMJJNhvX7eAY_6MP&sz=w600" alt="RPP 2" class="doc-thumb-img">
-                    <a href="https://drive.google.com/file/d/1ImXZYAjbNMbn9P-QhMJJNhvX7eAY_6MP/view?usp=sharing" target="_blank" class="doc-overlay-btn">📄 Buka PDF di Drive</a>
-                </div>
-                <div class="doc-card-content">
-                    <h4>RPP Dasar Sistem Mekanik</h4>
-                    <p>Modul ajar lanjutan untuk mata pelajaran Dasar Sistem Mekanik.</p>
-                    
-                    <details style="margin: 1rem 0; font-size: 0.9rem; text-align: left; background: var(--bg-white); border: 1px solid var(--border-color); padding: 0.8rem; border-radius: 8px;">
-                        <summary style="cursor: pointer; font-weight: 600; color: var(--kemendikbud-blue); outline: none;">📝 Analisis Artefak</summary>
-                        <div style="padding-top: 0.8rem; display: flex; flex-direction: column; gap: 0.5rem; color: var(--text-dark);">
-                            <div><strong>Kendala proses penyusunan perangkat:</strong> <br><span style="color: var(--text-light);">Tantangan utama yang dihadapi dalam proses penyusunan perangkat pembelajaran ini adalah menyelaraskan tingkat kesulitan materi vokasi yang diajarkan dengan heterogenitas kemampuan kognitif dan psikomotorik awal peserta didik. Selain itu, terdapat keterbatasan waktu yang signifikan dalam merancang instrumen asesmen dan lembar kerja yang benar-benar autentik, komprehensif, serta mampu secara presisi mengukur ketercapaian kompetensi riil yang sepenuhnya relevan dengan tuntutan dan standar operasional di dunia kerja industri (DUDI).</span></div>
-                            <div><strong>Teori konsep pedagogi:</strong> <br><span style="color: var(--text-light);">Pengembangan perangkat pembelajaran ini secara konsisten mengintegrasikan pendekatan Understanding by Design (UbD) yang berfokus pada hasil akhir pembelajaran. Pendekatan ini dikombinasikan dengan sintaks dari model Inquiry Learning yang membuat siswa lebih difasilitasi dengan guru menjadi pamong. Kolaborasi konsep pedagogi ini bertujuan untuk membangun scaffolding yang kuat, membimbing siswa secara sistematis dari tahap pemahaman konsep dasar menuju tahap eksperimen dan praktik bengkel yang terstruktur, bermakna, serta mampu mengasah kemampuan berpikir tingkat tinggi (HOTS).</span></div>
-                            <div><strong>Faktor keberhasilan:</strong> <br><span style="color: var(--text-light);">Faktor kunci yang berkontribusi terhadap keberhasilan proses pembelajaran ini adalah tingginya tingkat antusiasme dan partisipasi aktif peserta didik, khususnya ketika mereka dihadapkan pada media pembelajaran visual interaktif dan demonstrasi praktik secara langsung. Dukungan ketersediaan alat, bahan, dan fasilitas bengkel mekanik yang memadai juga sangat menentukan kelancaran simulasi, memungkinkan peserta didik mempraktikkan teori yang didapat secara langsung dalam kondisi yang aman, kondusif, dan merepresentasikan lingkungan kerja nyata.</span></div>
-                            <div><strong>Perubahan komponen penunjang kelas:</strong> <br><span style="color: var(--text-light);">Berdasarkan evaluasi formatif selama siklus pembelajaran, dilakukan beberapa penyesuaian esensial pada komponen penunjang. Perubahan utama mencakup penyempurnaan rancangan Lembar Kerja Peserta Didik (LKPD) agar instruksi langkah kerjanya menjadi lebih sistematis, rinci, dan sesuai dengan Standar Operasional Prosedur (SOP). Selain itu, dilakukan pengayaan variasi media pembelajaran, seperti penggunaan video demonstrasi praktik alat perkakas dan materi keselamatan kerja, yang secara khusus ditujukan untuk memperkuat fondasi pemahaman siswa pada mata pelajaran Dasar-Dasar Kejuruan (DDK) serta mengakomodasi gaya belajar yang beragam.</span></div>
-                        </div>
-                    </details>
-                    <a href="https://drive.google.com/file/d/1ImXZYAjbNMbn9P-QhMJJNhvX7eAY_6MP/view?usp=sharing" target="_blank" class="doc-btn">Lihat Dokumen</a>
-                </div>
-            </div>
-
-            <!-- Media 1 Item -->
-            <div class="doc-card gallery-card-item" data-category="media">
+<div class="doc-card gallery-card-item" data-category="media">
                 <div class="doc-card-thumb">
                     <span class="doc-badge">Media 1</span>
                     <img src="https://drive.google.com/thumbnail?id=16ueTxAEYZQu87Nn5Rstz3-mME_5TP_oy&sz=w600" alt="Media 1" class="doc-thumb-img">
@@ -550,105 +484,7 @@
                     <a href="https://drive.google.com/file/d/16ueTxAEYZQu87Nn5Rstz3-mME_5TP_oy/view?usp=sharing" target="_blank" class="doc-btn">Lihat Dokumen</a>
                 </div>
             </div>
-
-            <!-- Media 2 Item -->
-            <div class="doc-card gallery-card-item" data-category="media">
-                <div class="doc-card-thumb">
-                    <span class="doc-badge">Media 2</span>
-                    <img src="https://drive.google.com/thumbnail?id=1YdnkU0VibiH140DejyvMhg-Vdb6W2k-k&sz=w600" alt="Media 2" class="doc-thumb-img">
-                    <a href="https://drive.google.com/file/d/1YdnkU0VibiH140DejyvMhg-Vdb6W2k-k/view?usp=sharing" target="_blank" class="doc-overlay-btn">📄 Buka PDF di Drive</a>
-                </div>
-                <div class="doc-card-content">
-                    <h4>Dasar Sistem Mekanik</h4>
-                    <p>Media dan instrumen pendukung pembelajaran Dasar Sistem Mekanik.</p>
-                    
-                    <details style="margin: 1rem 0; font-size: 0.9rem; text-align: left; background: var(--bg-white); border: 1px solid var(--border-color); padding: 0.8rem; border-radius: 8px;">
-                        <summary style="cursor: pointer; font-weight: 600; color: var(--kemendikbud-blue); outline: none;">📝 Analisis Artefak</summary>
-                        <div style="padding-top: 0.8rem; display: flex; flex-direction: column; gap: 0.5rem; color: var(--text-dark);">
-                            <div><strong>Kendala proses penyusunan perangkat:</strong> <br><span style="color: var(--text-light);">Tantangan utama yang dihadapi dalam proses penyusunan perangkat pembelajaran ini adalah menyelaraskan tingkat kesulitan materi vokasi yang diajarkan dengan heterogenitas kemampuan kognitif dan psikomotorik awal peserta didik. Selain itu, terdapat keterbatasan waktu yang signifikan dalam merancang instrumen asesmen dan lembar kerja yang benar-benar autentik, komprehensif, serta mampu secara presisi mengukur ketercapaian kompetensi riil yang sepenuhnya relevan dengan tuntutan dan standar operasional di dunia kerja industri (DUDI).</span></div>
-                            <div><strong>Teori konsep pedagogi:</strong> <br><span style="color: var(--text-light);">Pengembangan perangkat pembelajaran ini secara konsisten mengintegrasikan pendekatan Understanding by Design (UbD) yang berfokus pada hasil akhir pembelajaran. Pendekatan ini dikombinasikan dengan sintaks dari model Inquiry Learning yang membuat siswa lebih difasilitasi dengan guru menjadi pamong. Kolaborasi konsep pedagogi ini bertujuan untuk membangun scaffolding yang kuat, membimbing siswa secara sistematis dari tahap pemahaman konsep dasar menuju tahap eksperimen dan praktik bengkel yang terstruktur, bermakna, serta mampu mengasah kemampuan berpikir tingkat tinggi (HOTS).</span></div>
-                            <div><strong>Faktor keberhasilan:</strong> <br><span style="color: var(--text-light);">Faktor kunci yang berkontribusi terhadap keberhasilan proses pembelajaran ini adalah tingginya tingkat antusiasme dan partisipasi aktif peserta didik, khususnya ketika mereka dihadapkan pada media pembelajaran visual interaktif dan demonstrasi praktik secara langsung. Dukungan ketersediaan alat, bahan, dan fasilitas bengkel mekanik yang memadai juga sangat menentukan kelancaran simulasi, memungkinkan peserta didik mempraktikkan teori yang didapat secara langsung dalam kondisi yang aman, kondusif, dan merepresentasikan lingkungan kerja nyata.</span></div>
-                            <div><strong>Perubahan komponen penunjang kelas:</strong> <br><span style="color: var(--text-light);">Berdasarkan evaluasi formatif selama siklus pembelajaran, dilakukan beberapa penyesuaian esensial pada komponen penunjang. Perubahan utama mencakup penyempurnaan rancangan Lembar Kerja Peserta Didik (LKPD) agar instruksi langkah kerjanya menjadi lebih sistematis, rinci, dan sesuai dengan Standar Operasional Prosedur (SOP). Selain itu, dilakukan pengayaan variasi media pembelajaran, seperti penggunaan video demonstrasi praktik alat perkakas dan materi keselamatan kerja, yang secara khusus ditujukan untuk memperkuat fondasi pemahaman siswa pada mata pelajaran Dasar-Dasar Kejuruan (DDK) serta mengakomodasi gaya belajar yang beragam.</span></div>
-                        </div>
-                    </details>
-                    <a href="https://drive.google.com/file/d/1YdnkU0VibiH140DejyvMhg-Vdb6W2k-k/view?usp=sharing" target="_blank" class="doc-btn">Lihat Dokumen</a>
-                </div>
-            </div>
-
-            <!-- Media LKM Item 1 -->
-            <div class="doc-card gallery-card-item" data-category="lks">
-                <div class="doc-card-thumb">
-                    <span class="doc-badge">LKM</span>
-                    <img src="https://drive.google.com/thumbnail?id=1MYlooWJYg1XRj__1RhW0rCY6xiNFqLrJ&sz=w600" alt="LKM 1 Pertemuan 1 materi dasar sistem mekanik" class="doc-thumb-img">
-                    <a href="https://docs.google.com/document/d/1MYlooWJYg1XRj__1RhW0rCY6xiNFqLrJ/edit?usp=sharing" target="_blank" class="doc-overlay-btn">Buka di Drive</a>
-                </div>
-                <div class="doc-card-content">
-                    <h4>LKM 1 Pertemuan 1 materi dasar sistem mekanik</h4>
-                    <p>Dokumen LKM untuk kegiatan pembelajaran.</p>
-                    
-                    <details style="margin: 1rem 0; font-size: 0.9rem; text-align: left; background: var(--bg-white); border: 1px solid var(--border-color); padding: 0.8rem; border-radius: 8px;">
-                        <summary style="cursor: pointer; font-weight: 600; color: var(--kemendikbud-blue); outline: none;">📝 Analisis Artefak</summary>
-                        <div style="padding-top: 0.8rem; display: flex; flex-direction: column; gap: 0.5rem; color: var(--text-dark);">
-                            <div><strong>Kendala proses penyusunan perangkat:</strong> <br><span style="color: var(--text-light);">Tantangan utama yang dihadapi dalam proses penyusunan perangkat pembelajaran ini adalah menyelaraskan tingkat kesulitan materi vokasi yang diajarkan dengan heterogenitas kemampuan kognitif dan psikomotorik awal peserta didik. Selain itu, terdapat keterbatasan waktu yang signifikan dalam merancang instrumen asesmen dan lembar kerja yang benar-benar autentik, komprehensif, serta mampu secara presisi mengukur ketercapaian kompetensi riil yang sepenuhnya relevan dengan tuntutan dan standar operasional di dunia kerja industri (DUDI).</span></div>
-                            <div><strong>Teori konsep pedagogi:</strong> <br><span style="color: var(--text-light);">Pengembangan perangkat pembelajaran ini secara konsisten mengintegrasikan pendekatan Understanding by Design (UbD) yang berfokus pada hasil akhir pembelajaran. Pendekatan ini dikombinasikan dengan sintaks dari model Inquiry Learning yang membuat siswa lebih difasilitasi dengan guru menjadi pamong. Kolaborasi konsep pedagogi ini bertujuan untuk membangun scaffolding yang kuat, membimbing siswa secara sistematis dari tahap pemahaman konsep dasar menuju tahap eksperimen dan praktik bengkel yang terstruktur, bermakna, serta mampu mengasah kemampuan berpikir tingkat tinggi (HOTS).</span></div>
-                            <div><strong>Faktor keberhasilan:</strong> <br><span style="color: var(--text-light);">Faktor kunci yang berkontribusi terhadap keberhasilan proses pembelajaran ini adalah tingginya tingkat antusiasme dan partisipasi aktif peserta didik, khususnya ketika mereka dihadapkan pada media pembelajaran visual interaktif dan demonstrasi praktik secara langsung. Dukungan ketersediaan alat, bahan, dan fasilitas bengkel mekanik yang memadai juga sangat menentukan kelancaran simulasi, memungkinkan peserta didik mempraktikkan teori yang didapat secara langsung dalam kondisi yang aman, kondusif, dan merepresentasikan lingkungan kerja nyata.</span></div>
-                            <div><strong>Perubahan komponen penunjang kelas:</strong> <br><span style="color: var(--text-light);">Berdasarkan evaluasi formatif selama siklus pembelajaran, dilakukan beberapa penyesuaian esensial pada komponen penunjang. Perubahan utama mencakup penyempurnaan rancangan Lembar Kerja Peserta Didik (LKPD) agar instruksi langkah kerjanya menjadi lebih sistematis, rinci, dan sesuai dengan Standar Operasional Prosedur (SOP). Selain itu, dilakukan pengayaan variasi media pembelajaran, seperti penggunaan video demonstrasi praktik alat perkakas dan materi keselamatan kerja, yang secara khusus ditujukan untuk memperkuat fondasi pemahaman siswa pada mata pelajaran Dasar-Dasar Kejuruan (DDK) serta mengakomodasi gaya belajar yang beragam.</span></div>
-                        </div>
-                    </details>
-                    <a href="https://docs.google.com/document/d/1MYlooWJYg1XRj__1RhW0rCY6xiNFqLrJ/edit?usp=sharing" target="_blank" class="doc-btn">Lihat Dokumen</a>
-                </div>
-            </div>
-            
-            <!-- Media LKM Item 2 -->
-            <div class="doc-card gallery-card-item" data-category="lks">
-                <div class="doc-card-thumb">
-                    <span class="doc-badge">LKM</span>
-                    <img src="https://drive.google.com/thumbnail?id=1j7rWhjIrYqlqUCaSR71p6cdXEuiXs-b2&sz=w600" alt="LKM 2 Pertemuan 2 materi dasar sistem mekanik" class="doc-thumb-img">
-                    <a href="https://docs.google.com/document/d/1j7rWhjIrYqlqUCaSR71p6cdXEuiXs-b2/edit?usp=sharing" target="_blank" class="doc-overlay-btn">Buka di Drive</a>
-                </div>
-                <div class="doc-card-content">
-                    <h4>LKM 2 Pertemuan 2 materi dasar sistem mekanik</h4>
-                    <p>Dokumen LKM untuk kegiatan pembelajaran.</p>
-                    
-                    <details style="margin: 1rem 0; font-size: 0.9rem; text-align: left; background: var(--bg-white); border: 1px solid var(--border-color); padding: 0.8rem; border-radius: 8px;">
-                        <summary style="cursor: pointer; font-weight: 600; color: var(--kemendikbud-blue); outline: none;">📝 Analisis Artefak</summary>
-                        <div style="padding-top: 0.8rem; display: flex; flex-direction: column; gap: 0.5rem; color: var(--text-dark);">
-                            <div><strong>Kendala proses penyusunan perangkat:</strong> <br><span style="color: var(--text-light);">Tantangan utama yang dihadapi dalam proses penyusunan perangkat pembelajaran ini adalah menyelaraskan tingkat kesulitan materi vokasi yang diajarkan dengan heterogenitas kemampuan kognitif dan psikomotorik awal peserta didik. Selain itu, terdapat keterbatasan waktu yang signifikan dalam merancang instrumen asesmen dan lembar kerja yang benar-benar autentik, komprehensif, serta mampu secara presisi mengukur ketercapaian kompetensi riil yang sepenuhnya relevan dengan tuntutan dan standar operasional di dunia kerja industri (DUDI).</span></div>
-                            <div><strong>Teori konsep pedagogi:</strong> <br><span style="color: var(--text-light);">Pengembangan perangkat pembelajaran ini secara konsisten mengintegrasikan pendekatan Understanding by Design (UbD) yang berfokus pada hasil akhir pembelajaran. Pendekatan ini dikombinasikan dengan sintaks dari model Inquiry Learning yang membuat siswa lebih difasilitasi dengan guru menjadi pamong. Kolaborasi konsep pedagogi ini bertujuan untuk membangun scaffolding yang kuat, membimbing siswa secara sistematis dari tahap pemahaman konsep dasar menuju tahap eksperimen dan praktik bengkel yang terstruktur, bermakna, serta mampu mengasah kemampuan berpikir tingkat tinggi (HOTS).</span></div>
-                            <div><strong>Faktor keberhasilan:</strong> <br><span style="color: var(--text-light);">Faktor kunci yang berkontribusi terhadap keberhasilan proses pembelajaran ini adalah tingginya tingkat antusiasme dan partisipasi aktif peserta didik, khususnya ketika mereka dihadapkan pada media pembelajaran visual interaktif dan demonstrasi praktik secara langsung. Dukungan ketersediaan alat, bahan, dan fasilitas bengkel mekanik yang memadai juga sangat menentukan kelancaran simulasi, memungkinkan peserta didik mempraktikkan teori yang didapat secara langsung dalam kondisi yang aman, kondusif, dan merepresentasikan lingkungan kerja nyata.</span></div>
-                            <div><strong>Perubahan komponen penunjang kelas:</strong> <br><span style="color: var(--text-light);">Berdasarkan evaluasi formatif selama siklus pembelajaran, dilakukan beberapa penyesuaian esensial pada komponen penunjang. Perubahan utama mencakup penyempurnaan rancangan Lembar Kerja Peserta Didik (LKPD) agar instruksi langkah kerjanya menjadi lebih sistematis, rinci, dan sesuai dengan Standar Operasional Prosedur (SOP). Selain itu, dilakukan pengayaan variasi media pembelajaran, seperti penggunaan video demonstrasi praktik alat perkakas dan materi keselamatan kerja, yang secara khusus ditujukan untuk memperkuat fondasi pemahaman siswa pada mata pelajaran Dasar-Dasar Kejuruan (DDK) serta mengakomodasi gaya belajar yang beragam.</span></div>
-                        </div>
-                    </details>
-                    <a href="https://docs.google.com/document/d/1j7rWhjIrYqlqUCaSR71p6cdXEuiXs-b2/edit?usp=sharing" target="_blank" class="doc-btn">Lihat Dokumen</a>
-                </div>
-            </div>
-            
-            <!-- Media LKM Item 3 -->
-            <div class="doc-card gallery-card-item" data-category="lks">
-                <div class="doc-card-thumb">
-                    <span class="doc-badge">LKM</span>
-                    <img src="https://drive.google.com/thumbnail?id=1ZdGpzO3JA-Yy6gKbORJEd9bNcAqEQ5Yw&sz=w600" alt="LKM 3 Pertemuan 3 materi dasar sistem mekanik" class="doc-thumb-img">
-                    <a href="https://docs.google.com/document/d/1ZdGpzO3JA-Yy6gKbORJEd9bNcAqEQ5Yw/edit?usp=sharing" target="_blank" class="doc-overlay-btn">Buka di Drive</a>
-                </div>
-                <div class="doc-card-content">
-                    <h4>LKM 3 Pertemuan 3 materi dasar sistem mekanik</h4>
-                    <p>Dokumen LKM untuk kegiatan pembelajaran.</p>
-                    
-                    <details style="margin: 1rem 0; font-size: 0.9rem; text-align: left; background: var(--bg-white); border: 1px solid var(--border-color); padding: 0.8rem; border-radius: 8px;">
-                        <summary style="cursor: pointer; font-weight: 600; color: var(--kemendikbud-blue); outline: none;">📝 Analisis Artefak</summary>
-                        <div style="padding-top: 0.8rem; display: flex; flex-direction: column; gap: 0.5rem; color: var(--text-dark);">
-                            <div><strong>Kendala proses penyusunan perangkat:</strong> <br><span style="color: var(--text-light);">Tantangan utama yang dihadapi dalam proses penyusunan perangkat pembelajaran ini adalah menyelaraskan tingkat kesulitan materi vokasi yang diajarkan dengan heterogenitas kemampuan kognitif dan psikomotorik awal peserta didik. Selain itu, terdapat keterbatasan waktu yang signifikan dalam merancang instrumen asesmen dan lembar kerja yang benar-benar autentik, komprehensif, serta mampu secara presisi mengukur ketercapaian kompetensi riil yang sepenuhnya relevan dengan tuntutan dan standar operasional di dunia kerja industri (DUDI).</span></div>
-                            <div><strong>Teori konsep pedagogi:</strong> <br><span style="color: var(--text-light);">Pengembangan perangkat pembelajaran ini secara konsisten mengintegrasikan pendekatan Understanding by Design (UbD) yang berfokus pada hasil akhir pembelajaran. Pendekatan ini dikombinasikan dengan sintaks dari model Inquiry Learning yang membuat siswa lebih difasilitasi dengan guru menjadi pamong. Kolaborasi konsep pedagogi ini bertujuan untuk membangun scaffolding yang kuat, membimbing siswa secara sistematis dari tahap pemahaman konsep dasar menuju tahap eksperimen dan praktik bengkel yang terstruktur, bermakna, serta mampu mengasah kemampuan berpikir tingkat tinggi (HOTS).</span></div>
-                            <div><strong>Faktor keberhasilan:</strong> <br><span style="color: var(--text-light);">Faktor kunci yang berkontribusi terhadap keberhasilan proses pembelajaran ini adalah tingginya tingkat antusiasme dan partisipasi aktif peserta didik, khususnya ketika mereka dihadapkan pada media pembelajaran visual interaktif dan demonstrasi praktik secara langsung. Dukungan ketersediaan alat, bahan, dan fasilitas bengkel mekanik yang memadai juga sangat menentukan kelancaran simulasi, memungkinkan peserta didik mempraktikkan teori yang didapat secara langsung dalam kondisi yang aman, kondusif, dan merepresentasikan lingkungan kerja nyata.</span></div>
-                            <div><strong>Perubahan komponen penunjang kelas:</strong> <br><span style="color: var(--text-light);">Berdasarkan evaluasi formatif selama siklus pembelajaran, dilakukan beberapa penyesuaian esensial pada komponen penunjang. Perubahan utama mencakup penyempurnaan rancangan Lembar Kerja Peserta Didik (LKPD) agar instruksi langkah kerjanya menjadi lebih sistematis, rinci, dan sesuai dengan Standar Operasional Prosedur (SOP). Selain itu, dilakukan pengayaan variasi media pembelajaran, seperti penggunaan video demonstrasi praktik alat perkakas dan materi keselamatan kerja, yang secara khusus ditujukan untuk memperkuat fondasi pemahaman siswa pada mata pelajaran Dasar-Dasar Kejuruan (DDK) serta mengakomodasi gaya belajar yang beragam.</span></div>
-                        </div>
-                    </details>
-                    <a href="https://docs.google.com/document/d/1ZdGpzO3JA-Yy6gKbORJEd9bNcAqEQ5Yw/edit?usp=sharing" target="_blank" class="doc-btn">Lihat Dokumen</a>
-                </div>
-            </div>
-            
-            <!-- Media LKM Item 4 -->
-            <div class="doc-card gallery-card-item" data-category="lks">
+<div class="doc-card gallery-card-item" data-category="lks">
                 <div class="doc-card-thumb">
                     <span class="doc-badge">LKM</span>
                     <img src="https://drive.google.com/thumbnail?id=1MeRsisVVM8mUxkjYdEi9vMrv7vuEqKPn&sz=w600" alt="LKM 1 Pertemuan 1 materi proses produksi bidang manufaktur" class="doc-thumb-img">
@@ -670,12 +506,10 @@
                     <a href="https://docs.google.com/document/d/1MeRsisVVM8mUxkjYdEi9vMrv7vuEqKPn/edit?usp=sharing" target="_blank" class="doc-btn">Lihat Dokumen</a>
                 </div>
             </div>
-            
-            <!-- Media LKM Item 5 -->
-            <div class="doc-card gallery-card-item" data-category="lks">
+<div class="doc-card gallery-card-item" data-category="lks">
                 <div class="doc-card-thumb">
                     <span class="doc-badge">LKM</span>
-                    <div class="doc-icon" style="font-size: 3rem;">📁</div>
+                    <img src="https://drive.google.com/thumbnail?id=1MYlooWJYg1XRj__1RhW0rCY6xiNFqLrJ&sz=w600" alt="Document Thumbnail" class="doc-thumb-img" style="filter: hue-rotate(15deg) brightness(0.9);">
                     <a href="https://drive.google.com/drive/folders/1HC_-Z5UiTyaU8Exr6Q3C5Ywxw70dwGw_?usp=sharing" target="_blank" class="doc-overlay-btn">Buka di Drive</a>
                 </div>
                 <div class="doc-card-content">
@@ -694,12 +528,10 @@
                     <a href="https://drive.google.com/drive/folders/1HC_-Z5UiTyaU8Exr6Q3C5Ywxw70dwGw_?usp=sharing" target="_blank" class="doc-btn">Lihat Dokumen</a>
                 </div>
             </div>
-            
-            <!-- Media LKM Item 6 -->
-            <div class="doc-card gallery-card-item" data-category="lks">
+<div class="doc-card gallery-card-item" data-category="lks">
                 <div class="doc-card-thumb">
                     <span class="doc-badge">LKM</span>
-                    <div class="doc-icon" style="font-size: 3rem;">📁</div>
+                    <img src="https://drive.google.com/thumbnail?id=1MYlooWJYg1XRj__1RhW0rCY6xiNFqLrJ&sz=w600" alt="Document Thumbnail" class="doc-thumb-img" style="filter: hue-rotate(15deg) brightness(0.9);">
                     <a href="https://drive.google.com/drive/folders/1Y3HZcF90cQTSXYPCJeBqHB3hHq99B4CX?usp=sharing" target="_blank" class="doc-overlay-btn">Buka di Drive</a>
                 </div>
                 <div class="doc-card-content">
@@ -718,12 +550,10 @@
                     <a href="https://drive.google.com/drive/folders/1Y3HZcF90cQTSXYPCJeBqHB3hHq99B4CX?usp=sharing" target="_blank" class="doc-btn">Lihat Dokumen</a>
                 </div>
             </div>
-            
-            <!-- Media LKM Item 7 -->
-            <div class="doc-card gallery-card-item" data-category="lks">
+<div class="doc-card gallery-card-item" data-category="lks">
                 <div class="doc-card-thumb">
                     <span class="doc-badge">LKM</span>
-                    <div class="doc-icon" style="font-size: 3rem;">📁</div>
+                    <img src="https://drive.google.com/thumbnail?id=1MYlooWJYg1XRj__1RhW0rCY6xiNFqLrJ&sz=w600" alt="Document Thumbnail" class="doc-thumb-img" style="filter: hue-rotate(15deg) brightness(0.9);">
                     <a href="https://drive.google.com/drive/folders/1lPZPsTGR1OIx5EHkVohvhaM3N9E2-rFl?usp=sharing" target="_blank" class="doc-overlay-btn">Buka di Drive</a>
                 </div>
                 <div class="doc-card-content">
@@ -742,12 +572,10 @@
                     <a href="https://drive.google.com/drive/folders/1lPZPsTGR1OIx5EHkVohvhaM3N9E2-rFl?usp=sharing" target="_blank" class="doc-btn">Lihat Dokumen</a>
                 </div>
             </div>
-            
-            <!-- Media LKM Item 8 -->
-            <div class="doc-card gallery-card-item" data-category="lks">
+<div class="doc-card gallery-card-item" data-category="lks">
                 <div class="doc-card-thumb">
                     <span class="doc-badge">LKM</span>
-                    <div class="doc-icon" style="font-size: 3rem;">📁</div>
+                    <img src="https://drive.google.com/thumbnail?id=1MYlooWJYg1XRj__1RhW0rCY6xiNFqLrJ&sz=w600" alt="Document Thumbnail" class="doc-thumb-img" style="filter: hue-rotate(15deg) brightness(0.9);">
                     <a href="https://drive.google.com/drive/folders/11nz-BtYhRVLCZY-tJ6MDN5L-9tUH7J1d?usp=sharing" target="_blank" class="doc-overlay-btn">Buka di Drive</a>
                 </div>
                 <div class="doc-card-content">
@@ -766,12 +594,10 @@
                     <a href="https://drive.google.com/drive/folders/11nz-BtYhRVLCZY-tJ6MDN5L-9tUH7J1d?usp=sharing" target="_blank" class="doc-btn">Lihat Dokumen</a>
                 </div>
             </div>
-            
-            <!-- Media LKM Item 9 -->
-            <div class="doc-card gallery-card-item" data-category="lks">
+<div class="doc-card gallery-card-item" data-category="lks">
                 <div class="doc-card-thumb">
                     <span class="doc-badge">LKM</span>
-                    <div class="doc-icon" style="font-size: 3rem;">📁</div>
+                    <img src="https://drive.google.com/thumbnail?id=1MYlooWJYg1XRj__1RhW0rCY6xiNFqLrJ&sz=w600" alt="Document Thumbnail" class="doc-thumb-img" style="filter: hue-rotate(15deg) brightness(0.9);">
                     <a href="https://drive.google.com/drive/folders/1jWI_lVWBILIJA90Yk0oXb90UiJ7wsakg?usp=sharing" target="_blank" class="doc-overlay-btn">Buka di Drive</a>
                 </div>
                 <div class="doc-card-content">
@@ -790,12 +616,10 @@
                     <a href="https://drive.google.com/drive/folders/1jWI_lVWBILIJA90Yk0oXb90UiJ7wsakg?usp=sharing" target="_blank" class="doc-btn">Lihat Dokumen</a>
                 </div>
             </div>
-
-            <!-- Placeholder LKS -->
-            <div class="doc-card gallery-card-item" data-category="lks">
+<div class="doc-card gallery-card-item" data-category="lks">
                 <div class="doc-card-thumb">
                     <span class="doc-badge">LKS 1</span>
-                    <div class="doc-icon">📝</div>
+                    <img src="https://drive.google.com/thumbnail?id=1MYlooWJYg1XRj__1RhW0rCY6xiNFqLrJ&sz=w600" alt="Document Thumbnail" class="doc-thumb-img" style="filter: hue-rotate(15deg) brightness(0.9);">
                     <a href="#" target="_blank" class="doc-overlay-btn">📄 Buka PDF di Drive</a>
                 </div>
                 <div class="doc-card-content">
@@ -814,12 +638,10 @@
                     <a href="#" target="_blank" class="doc-btn">Lihat Dokumen</a>
                 </div>
             </div>
-            
-            <!-- Placeholder Asesmen -->
-            <div class="doc-card gallery-card-item" data-category="lks">
+<div class="doc-card gallery-card-item" data-category="lks">
                 <div class="doc-card-thumb">
                     <span class="doc-badge">Asesmen 1</span>
-                    <div class="doc-icon">📋</div>
+                    <img src="https://drive.google.com/thumbnail?id=1MYlooWJYg1XRj__1RhW0rCY6xiNFqLrJ&sz=w600" alt="Document Thumbnail" class="doc-thumb-img" style="filter: hue-rotate(15deg) brightness(0.9);">
                     <a href="#" target="_blank" class="doc-overlay-btn">📄 Buka PDF di Drive</a>
                 </div>
                 <div class="doc-card-content">
@@ -838,9 +660,7 @@
                     <a href="#" target="_blank" class="doc-btn">Lihat Dokumen</a>
                 </div>
             </div>
-
-            <!-- Bahan Ajar 1 -->
-            <div class="doc-card gallery-card-item" data-category="bahan-ajar">
+<div class="doc-card gallery-card-item" data-category="bahan-ajar">
                 <div class="doc-card-thumb">
                     <span class="doc-badge">Bahan Ajar</span>
                     <img src="https://drive.google.com/thumbnail?id=12iOEr5-8D2qSnWZCMnGl0-NcFK3-eEY2&sz=w600" alt="Bahan Ajar 1" class="doc-thumb-img">
@@ -862,9 +682,142 @@
                     <a href="https://drive.google.com/file/d/12iOEr5-8D2qSnWZCMnGl0-NcFK3-eEY2/view?usp=sharing" target="_blank" class="doc-btn">Lihat Dokumen</a>
                 </div>
             </div>
+                </div>
+            </div>
+        </div>
 
-            <!-- Bahan Ajar 2 -->
-            <div class="doc-card gallery-card-item" data-category="bahan-ajar">
+        
+        <div id="siklus-2" class="tab-content ">
+            <div class="gallery-section">
+                <h3 style="color: var(--kemendikbud-blue); text-align: center; margin-bottom: 2rem; font-size: 1.8rem;">📂 Dasar Sistem Mekanik</h3>
+                <div class="search-container" style="margin: 0 auto 2rem auto; max-width: 800px; position: relative;">
+                    <input type="text" class="search-input search-input-gallery" placeholder="Cari dokumen, RPP, Media, LKM..." style="width: 100%; padding: 1rem 1.5rem; border-radius: 50px; border: 2px solid var(--border-color); font-size: 1rem; outline: none; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: border-color 0.3s;">
+                    <div class="search-icon search-btn" style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); cursor: pointer; font-size: 1.2rem;">🔍</div>
+                </div>
+
+                <div class="filter-container">
+                    <button class="filter-btn active" data-filter="all">Semua</button>
+                    <button class="filter-btn" data-filter="rpp">RPP</button>
+                    <button class="filter-btn" data-filter="media">Media</button>
+                    <button class="filter-btn" data-filter="lks">LKM dan Asesmen</button>
+                    <button class="filter-btn" data-filter="bahan-ajar">Bahan Ajar</button>
+                    <button class="filter-btn" data-filter="hasil-kerja">Hasil Kerja Siswa</button>
+                    <button class="filter-btn" data-filter="video">Video Mengajar</button>
+                    <button class="filter-btn" data-filter="penilaian">Penilaian GP & DPL</button>
+                </div>
+
+                <div class="doc-grid gallery-grid">
+                    <div class="doc-card gallery-card-item" data-category="rpp">
+                <div class="doc-card-thumb">
+                    <span class="doc-badge">RPP 2</span>
+                    <img src="https://drive.google.com/thumbnail?id=1ImXZYAjbNMbn9P-QhMJJNhvX7eAY_6MP&sz=w600" alt="RPP 2" class="doc-thumb-img">
+                    <a href="https://drive.google.com/file/d/1ImXZYAjbNMbn9P-QhMJJNhvX7eAY_6MP/view?usp=sharing" target="_blank" class="doc-overlay-btn">📄 Buka PDF di Drive</a>
+                </div>
+                <div class="doc-card-content">
+                    <h4>RPP Dasar Sistem Mekanik</h4>
+                    <p>Modul ajar lanjutan untuk mata pelajaran Dasar Sistem Mekanik.</p>
+                    
+                    <details style="margin: 1rem 0; font-size: 0.9rem; text-align: left; background: var(--bg-white); border: 1px solid var(--border-color); padding: 0.8rem; border-radius: 8px;">
+                        <summary style="cursor: pointer; font-weight: 600; color: var(--kemendikbud-blue); outline: none;">📝 Analisis Artefak</summary>
+                        <div style="padding-top: 0.8rem; display: flex; flex-direction: column; gap: 0.5rem; color: var(--text-dark);">
+                            <div><strong>Kendala proses penyusunan perangkat:</strong> <br><span style="color: var(--text-light);">Tantangan utama yang dihadapi dalam proses penyusunan perangkat pembelajaran ini adalah menyelaraskan tingkat kesulitan materi vokasi yang diajarkan dengan heterogenitas kemampuan kognitif dan psikomotorik awal peserta didik. Selain itu, terdapat keterbatasan waktu yang signifikan dalam merancang instrumen asesmen dan lembar kerja yang benar-benar autentik, komprehensif, serta mampu secara presisi mengukur ketercapaian kompetensi riil yang sepenuhnya relevan dengan tuntutan dan standar operasional di dunia kerja industri (DUDI).</span></div>
+                            <div><strong>Teori konsep pedagogi:</strong> <br><span style="color: var(--text-light);">Pengembangan perangkat pembelajaran ini secara konsisten mengintegrasikan pendekatan Understanding by Design (UbD) yang berfokus pada hasil akhir pembelajaran. Pendekatan ini dikombinasikan dengan sintaks dari model Inquiry Learning yang membuat siswa lebih difasilitasi dengan guru menjadi pamong. Kolaborasi konsep pedagogi ini bertujuan untuk membangun scaffolding yang kuat, membimbing siswa secara sistematis dari tahap pemahaman konsep dasar menuju tahap eksperimen dan praktik bengkel yang terstruktur, bermakna, serta mampu mengasah kemampuan berpikir tingkat tinggi (HOTS).</span></div>
+                            <div><strong>Faktor keberhasilan:</strong> <br><span style="color: var(--text-light);">Faktor kunci yang berkontribusi terhadap keberhasilan proses pembelajaran ini adalah tingginya tingkat antusiasme dan partisipasi aktif peserta didik, khususnya ketika mereka dihadapkan pada media pembelajaran visual interaktif dan demonstrasi praktik secara langsung. Dukungan ketersediaan alat, bahan, dan fasilitas bengkel mekanik yang memadai juga sangat menentukan kelancaran simulasi, memungkinkan peserta didik mempraktikkan teori yang didapat secara langsung dalam kondisi yang aman, kondusif, dan merepresentasikan lingkungan kerja nyata.</span></div>
+                            <div><strong>Perubahan komponen penunjang kelas:</strong> <br><span style="color: var(--text-light);">Berdasarkan evaluasi formatif selama siklus pembelajaran, dilakukan beberapa penyesuaian esensial pada komponen penunjang. Perubahan utama mencakup penyempurnaan rancangan Lembar Kerja Peserta Didik (LKPD) agar instruksi langkah kerjanya menjadi lebih sistematis, rinci, dan sesuai dengan Standar Operasional Prosedur (SOP). Selain itu, dilakukan pengayaan variasi media pembelajaran, seperti penggunaan video demonstrasi praktik alat perkakas dan materi keselamatan kerja, yang secara khusus ditujukan untuk memperkuat fondasi pemahaman siswa pada mata pelajaran Dasar-Dasar Kejuruan (DDK) serta mengakomodasi gaya belajar yang beragam.</span></div>
+                        </div>
+                    </details>
+                    <a href="https://drive.google.com/file/d/1ImXZYAjbNMbn9P-QhMJJNhvX7eAY_6MP/view?usp=sharing" target="_blank" class="doc-btn">Lihat Dokumen</a>
+                </div>
+            </div>
+<div class="doc-card gallery-card-item" data-category="media">
+                <div class="doc-card-thumb">
+                    <span class="doc-badge">Media 2</span>
+                    <img src="https://drive.google.com/thumbnail?id=1YdnkU0VibiH140DejyvMhg-Vdb6W2k-k&sz=w600" alt="Media 2" class="doc-thumb-img">
+                    <a href="https://drive.google.com/file/d/1YdnkU0VibiH140DejyvMhg-Vdb6W2k-k/view?usp=sharing" target="_blank" class="doc-overlay-btn">📄 Buka PDF di Drive</a>
+                </div>
+                <div class="doc-card-content">
+                    <h4>Dasar Sistem Mekanik</h4>
+                    <p>Media dan instrumen pendukung pembelajaran Dasar Sistem Mekanik.</p>
+                    
+                    <details style="margin: 1rem 0; font-size: 0.9rem; text-align: left; background: var(--bg-white); border: 1px solid var(--border-color); padding: 0.8rem; border-radius: 8px;">
+                        <summary style="cursor: pointer; font-weight: 600; color: var(--kemendikbud-blue); outline: none;">📝 Analisis Artefak</summary>
+                        <div style="padding-top: 0.8rem; display: flex; flex-direction: column; gap: 0.5rem; color: var(--text-dark);">
+                            <div><strong>Kendala proses penyusunan perangkat:</strong> <br><span style="color: var(--text-light);">Tantangan utama yang dihadapi dalam proses penyusunan perangkat pembelajaran ini adalah menyelaraskan tingkat kesulitan materi vokasi yang diajarkan dengan heterogenitas kemampuan kognitif dan psikomotorik awal peserta didik. Selain itu, terdapat keterbatasan waktu yang signifikan dalam merancang instrumen asesmen dan lembar kerja yang benar-benar autentik, komprehensif, serta mampu secara presisi mengukur ketercapaian kompetensi riil yang sepenuhnya relevan dengan tuntutan dan standar operasional di dunia kerja industri (DUDI).</span></div>
+                            <div><strong>Teori konsep pedagogi:</strong> <br><span style="color: var(--text-light);">Pengembangan perangkat pembelajaran ini secara konsisten mengintegrasikan pendekatan Understanding by Design (UbD) yang berfokus pada hasil akhir pembelajaran. Pendekatan ini dikombinasikan dengan sintaks dari model Inquiry Learning yang membuat siswa lebih difasilitasi dengan guru menjadi pamong. Kolaborasi konsep pedagogi ini bertujuan untuk membangun scaffolding yang kuat, membimbing siswa secara sistematis dari tahap pemahaman konsep dasar menuju tahap eksperimen dan praktik bengkel yang terstruktur, bermakna, serta mampu mengasah kemampuan berpikir tingkat tinggi (HOTS).</span></div>
+                            <div><strong>Faktor keberhasilan:</strong> <br><span style="color: var(--text-light);">Faktor kunci yang berkontribusi terhadap keberhasilan proses pembelajaran ini adalah tingginya tingkat antusiasme dan partisipasi aktif peserta didik, khususnya ketika mereka dihadapkan pada media pembelajaran visual interaktif dan demonstrasi praktik secara langsung. Dukungan ketersediaan alat, bahan, dan fasilitas bengkel mekanik yang memadai juga sangat menentukan kelancaran simulasi, memungkinkan peserta didik mempraktikkan teori yang didapat secara langsung dalam kondisi yang aman, kondusif, dan merepresentasikan lingkungan kerja nyata.</span></div>
+                            <div><strong>Perubahan komponen penunjang kelas:</strong> <br><span style="color: var(--text-light);">Berdasarkan evaluasi formatif selama siklus pembelajaran, dilakukan beberapa penyesuaian esensial pada komponen penunjang. Perubahan utama mencakup penyempurnaan rancangan Lembar Kerja Peserta Didik (LKPD) agar instruksi langkah kerjanya menjadi lebih sistematis, rinci, dan sesuai dengan Standar Operasional Prosedur (SOP). Selain itu, dilakukan pengayaan variasi media pembelajaran, seperti penggunaan video demonstrasi praktik alat perkakas dan materi keselamatan kerja, yang secara khusus ditujukan untuk memperkuat fondasi pemahaman siswa pada mata pelajaran Dasar-Dasar Kejuruan (DDK) serta mengakomodasi gaya belajar yang beragam.</span></div>
+                        </div>
+                    </details>
+                    <a href="https://drive.google.com/file/d/1YdnkU0VibiH140DejyvMhg-Vdb6W2k-k/view?usp=sharing" target="_blank" class="doc-btn">Lihat Dokumen</a>
+                </div>
+            </div>
+<div class="doc-card gallery-card-item" data-category="lks">
+                <div class="doc-card-thumb">
+                    <span class="doc-badge">LKM</span>
+                    <img src="https://drive.google.com/thumbnail?id=1MYlooWJYg1XRj__1RhW0rCY6xiNFqLrJ&sz=w600" alt="LKM 1 Pertemuan 1 materi dasar sistem mekanik" class="doc-thumb-img">
+                    <a href="https://docs.google.com/document/d/1MYlooWJYg1XRj__1RhW0rCY6xiNFqLrJ/edit?usp=sharing" target="_blank" class="doc-overlay-btn">Buka di Drive</a>
+                </div>
+                <div class="doc-card-content">
+                    <h4>LKM 1 Pertemuan 1 materi dasar sistem mekanik</h4>
+                    <p>Dokumen LKM untuk kegiatan pembelajaran.</p>
+                    
+                    <details style="margin: 1rem 0; font-size: 0.9rem; text-align: left; background: var(--bg-white); border: 1px solid var(--border-color); padding: 0.8rem; border-radius: 8px;">
+                        <summary style="cursor: pointer; font-weight: 600; color: var(--kemendikbud-blue); outline: none;">📝 Analisis Artefak</summary>
+                        <div style="padding-top: 0.8rem; display: flex; flex-direction: column; gap: 0.5rem; color: var(--text-dark);">
+                            <div><strong>Kendala proses penyusunan perangkat:</strong> <br><span style="color: var(--text-light);">Tantangan utama yang dihadapi dalam proses penyusunan perangkat pembelajaran ini adalah menyelaraskan tingkat kesulitan materi vokasi yang diajarkan dengan heterogenitas kemampuan kognitif dan psikomotorik awal peserta didik. Selain itu, terdapat keterbatasan waktu yang signifikan dalam merancang instrumen asesmen dan lembar kerja yang benar-benar autentik, komprehensif, serta mampu secara presisi mengukur ketercapaian kompetensi riil yang sepenuhnya relevan dengan tuntutan dan standar operasional di dunia kerja industri (DUDI).</span></div>
+                            <div><strong>Teori konsep pedagogi:</strong> <br><span style="color: var(--text-light);">Pengembangan perangkat pembelajaran ini secara konsisten mengintegrasikan pendekatan Understanding by Design (UbD) yang berfokus pada hasil akhir pembelajaran. Pendekatan ini dikombinasikan dengan sintaks dari model Inquiry Learning yang membuat siswa lebih difasilitasi dengan guru menjadi pamong. Kolaborasi konsep pedagogi ini bertujuan untuk membangun scaffolding yang kuat, membimbing siswa secara sistematis dari tahap pemahaman konsep dasar menuju tahap eksperimen dan praktik bengkel yang terstruktur, bermakna, serta mampu mengasah kemampuan berpikir tingkat tinggi (HOTS).</span></div>
+                            <div><strong>Faktor keberhasilan:</strong> <br><span style="color: var(--text-light);">Faktor kunci yang berkontribusi terhadap keberhasilan proses pembelajaran ini adalah tingginya tingkat antusiasme dan partisipasi aktif peserta didik, khususnya ketika mereka dihadapkan pada media pembelajaran visual interaktif dan demonstrasi praktik secara langsung. Dukungan ketersediaan alat, bahan, dan fasilitas bengkel mekanik yang memadai juga sangat menentukan kelancaran simulasi, memungkinkan peserta didik mempraktikkan teori yang didapat secara langsung dalam kondisi yang aman, kondusif, dan merepresentasikan lingkungan kerja nyata.</span></div>
+                            <div><strong>Perubahan komponen penunjang kelas:</strong> <br><span style="color: var(--text-light);">Berdasarkan evaluasi formatif selama siklus pembelajaran, dilakukan beberapa penyesuaian esensial pada komponen penunjang. Perubahan utama mencakup penyempurnaan rancangan Lembar Kerja Peserta Didik (LKPD) agar instruksi langkah kerjanya menjadi lebih sistematis, rinci, dan sesuai dengan Standar Operasional Prosedur (SOP). Selain itu, dilakukan pengayaan variasi media pembelajaran, seperti penggunaan video demonstrasi praktik alat perkakas dan materi keselamatan kerja, yang secara khusus ditujukan untuk memperkuat fondasi pemahaman siswa pada mata pelajaran Dasar-Dasar Kejuruan (DDK) serta mengakomodasi gaya belajar yang beragam.</span></div>
+                        </div>
+                    </details>
+                    <a href="https://docs.google.com/document/d/1MYlooWJYg1XRj__1RhW0rCY6xiNFqLrJ/edit?usp=sharing" target="_blank" class="doc-btn">Lihat Dokumen</a>
+                </div>
+            </div>
+<div class="doc-card gallery-card-item" data-category="lks">
+                <div class="doc-card-thumb">
+                    <span class="doc-badge">LKM</span>
+                    <img src="https://drive.google.com/thumbnail?id=1j7rWhjIrYqlqUCaSR71p6cdXEuiXs-b2&sz=w600" alt="LKM 2 Pertemuan 2 materi dasar sistem mekanik" class="doc-thumb-img">
+                    <a href="https://docs.google.com/document/d/1j7rWhjIrYqlqUCaSR71p6cdXEuiXs-b2/edit?usp=sharing" target="_blank" class="doc-overlay-btn">Buka di Drive</a>
+                </div>
+                <div class="doc-card-content">
+                    <h4>LKM 2 Pertemuan 2 materi dasar sistem mekanik</h4>
+                    <p>Dokumen LKM untuk kegiatan pembelajaran.</p>
+                    
+                    <details style="margin: 1rem 0; font-size: 0.9rem; text-align: left; background: var(--bg-white); border: 1px solid var(--border-color); padding: 0.8rem; border-radius: 8px;">
+                        <summary style="cursor: pointer; font-weight: 600; color: var(--kemendikbud-blue); outline: none;">📝 Analisis Artefak</summary>
+                        <div style="padding-top: 0.8rem; display: flex; flex-direction: column; gap: 0.5rem; color: var(--text-dark);">
+                            <div><strong>Kendala proses penyusunan perangkat:</strong> <br><span style="color: var(--text-light);">Tantangan utama yang dihadapi dalam proses penyusunan perangkat pembelajaran ini adalah menyelaraskan tingkat kesulitan materi vokasi yang diajarkan dengan heterogenitas kemampuan kognitif dan psikomotorik awal peserta didik. Selain itu, terdapat keterbatasan waktu yang signifikan dalam merancang instrumen asesmen dan lembar kerja yang benar-benar autentik, komprehensif, serta mampu secara presisi mengukur ketercapaian kompetensi riil yang sepenuhnya relevan dengan tuntutan dan standar operasional di dunia kerja industri (DUDI).</span></div>
+                            <div><strong>Teori konsep pedagogi:</strong> <br><span style="color: var(--text-light);">Pengembangan perangkat pembelajaran ini secara konsisten mengintegrasikan pendekatan Understanding by Design (UbD) yang berfokus pada hasil akhir pembelajaran. Pendekatan ini dikombinasikan dengan sintaks dari model Inquiry Learning yang membuat siswa lebih difasilitasi dengan guru menjadi pamong. Kolaborasi konsep pedagogi ini bertujuan untuk membangun scaffolding yang kuat, membimbing siswa secara sistematis dari tahap pemahaman konsep dasar menuju tahap eksperimen dan praktik bengkel yang terstruktur, bermakna, serta mampu mengasah kemampuan berpikir tingkat tinggi (HOTS).</span></div>
+                            <div><strong>Faktor keberhasilan:</strong> <br><span style="color: var(--text-light);">Faktor kunci yang berkontribusi terhadap keberhasilan proses pembelajaran ini adalah tingginya tingkat antusiasme dan partisipasi aktif peserta didik, khususnya ketika mereka dihadapkan pada media pembelajaran visual interaktif dan demonstrasi praktik secara langsung. Dukungan ketersediaan alat, bahan, dan fasilitas bengkel mekanik yang memadai juga sangat menentukan kelancaran simulasi, memungkinkan peserta didik mempraktikkan teori yang didapat secara langsung dalam kondisi yang aman, kondusif, dan merepresentasikan lingkungan kerja nyata.</span></div>
+                            <div><strong>Perubahan komponen penunjang kelas:</strong> <br><span style="color: var(--text-light);">Berdasarkan evaluasi formatif selama siklus pembelajaran, dilakukan beberapa penyesuaian esensial pada komponen penunjang. Perubahan utama mencakup penyempurnaan rancangan Lembar Kerja Peserta Didik (LKPD) agar instruksi langkah kerjanya menjadi lebih sistematis, rinci, dan sesuai dengan Standar Operasional Prosedur (SOP). Selain itu, dilakukan pengayaan variasi media pembelajaran, seperti penggunaan video demonstrasi praktik alat perkakas dan materi keselamatan kerja, yang secara khusus ditujukan untuk memperkuat fondasi pemahaman siswa pada mata pelajaran Dasar-Dasar Kejuruan (DDK) serta mengakomodasi gaya belajar yang beragam.</span></div>
+                        </div>
+                    </details>
+                    <a href="https://docs.google.com/document/d/1j7rWhjIrYqlqUCaSR71p6cdXEuiXs-b2/edit?usp=sharing" target="_blank" class="doc-btn">Lihat Dokumen</a>
+                </div>
+            </div>
+<div class="doc-card gallery-card-item" data-category="lks">
+                <div class="doc-card-thumb">
+                    <span class="doc-badge">LKM</span>
+                    <img src="https://drive.google.com/thumbnail?id=1ZdGpzO3JA-Yy6gKbORJEd9bNcAqEQ5Yw&sz=w600" alt="LKM 3 Pertemuan 3 materi dasar sistem mekanik" class="doc-thumb-img">
+                    <a href="https://docs.google.com/document/d/1ZdGpzO3JA-Yy6gKbORJEd9bNcAqEQ5Yw/edit?usp=sharing" target="_blank" class="doc-overlay-btn">Buka di Drive</a>
+                </div>
+                <div class="doc-card-content">
+                    <h4>LKM 3 Pertemuan 3 materi dasar sistem mekanik</h4>
+                    <p>Dokumen LKM untuk kegiatan pembelajaran.</p>
+                    
+                    <details style="margin: 1rem 0; font-size: 0.9rem; text-align: left; background: var(--bg-white); border: 1px solid var(--border-color); padding: 0.8rem; border-radius: 8px;">
+                        <summary style="cursor: pointer; font-weight: 600; color: var(--kemendikbud-blue); outline: none;">📝 Analisis Artefak</summary>
+                        <div style="padding-top: 0.8rem; display: flex; flex-direction: column; gap: 0.5rem; color: var(--text-dark);">
+                            <div><strong>Kendala proses penyusunan perangkat:</strong> <br><span style="color: var(--text-light);">Tantangan utama yang dihadapi dalam proses penyusunan perangkat pembelajaran ini adalah menyelaraskan tingkat kesulitan materi vokasi yang diajarkan dengan heterogenitas kemampuan kognitif dan psikomotorik awal peserta didik. Selain itu, terdapat keterbatasan waktu yang signifikan dalam merancang instrumen asesmen dan lembar kerja yang benar-benar autentik, komprehensif, serta mampu secara presisi mengukur ketercapaian kompetensi riil yang sepenuhnya relevan dengan tuntutan dan standar operasional di dunia kerja industri (DUDI).</span></div>
+                            <div><strong>Teori konsep pedagogi:</strong> <br><span style="color: var(--text-light);">Pengembangan perangkat pembelajaran ini secara konsisten mengintegrasikan pendekatan Understanding by Design (UbD) yang berfokus pada hasil akhir pembelajaran. Pendekatan ini dikombinasikan dengan sintaks dari model Inquiry Learning yang membuat siswa lebih difasilitasi dengan guru menjadi pamong. Kolaborasi konsep pedagogi ini bertujuan untuk membangun scaffolding yang kuat, membimbing siswa secara sistematis dari tahap pemahaman konsep dasar menuju tahap eksperimen dan praktik bengkel yang terstruktur, bermakna, serta mampu mengasah kemampuan berpikir tingkat tinggi (HOTS).</span></div>
+                            <div><strong>Faktor keberhasilan:</strong> <br><span style="color: var(--text-light);">Faktor kunci yang berkontribusi terhadap keberhasilan proses pembelajaran ini adalah tingginya tingkat antusiasme dan partisipasi aktif peserta didik, khususnya ketika mereka dihadapkan pada media pembelajaran visual interaktif dan demonstrasi praktik secara langsung. Dukungan ketersediaan alat, bahan, dan fasilitas bengkel mekanik yang memadai juga sangat menentukan kelancaran simulasi, memungkinkan peserta didik mempraktikkan teori yang didapat secara langsung dalam kondisi yang aman, kondusif, dan merepresentasikan lingkungan kerja nyata.</span></div>
+                            <div><strong>Perubahan komponen penunjang kelas:</strong> <br><span style="color: var(--text-light);">Berdasarkan evaluasi formatif selama siklus pembelajaran, dilakukan beberapa penyesuaian esensial pada komponen penunjang. Perubahan utama mencakup penyempurnaan rancangan Lembar Kerja Peserta Didik (LKPD) agar instruksi langkah kerjanya menjadi lebih sistematis, rinci, dan sesuai dengan Standar Operasional Prosedur (SOP). Selain itu, dilakukan pengayaan variasi media pembelajaran, seperti penggunaan video demonstrasi praktik alat perkakas dan materi keselamatan kerja, yang secara khusus ditujukan untuk memperkuat fondasi pemahaman siswa pada mata pelajaran Dasar-Dasar Kejuruan (DDK) serta mengakomodasi gaya belajar yang beragam.</span></div>
+                        </div>
+                    </details>
+                    <a href="https://docs.google.com/document/d/1ZdGpzO3JA-Yy6gKbORJEd9bNcAqEQ5Yw/edit?usp=sharing" target="_blank" class="doc-btn">Lihat Dokumen</a>
+                </div>
+            </div>
+<div class="doc-card gallery-card-item" data-category="bahan-ajar">
                 <div class="doc-card-thumb">
                     <span class="doc-badge">Bahan Ajar</span>
                     <img src="https://drive.google.com/thumbnail?id=1KwFeKl1GWs5io3sbDhRuWx6tkRvz0Cgv&sz=w600" alt="Bahan Ajar 2" class="doc-thumb-img">
@@ -886,9 +839,32 @@
                     <a href="https://drive.google.com/file/d/1KwFeKl1GWs5io3sbDhRuWx6tkRvz0Cgv/view?usp=sharing" target="_blank" class="doc-btn">Lihat Dokumen</a>
                 </div>
             </div>
+                </div>
+            </div>
+        </div>
 
-            <!-- Video Mengajar 1 -->
-            <div class="doc-card gallery-card-item" data-category="video">
+        
+        <div id="siklus-3" class="tab-content ">
+            <div class="gallery-section">
+                <h3 style="color: var(--kemendikbud-blue); text-align: center; margin-bottom: 2rem; font-size: 1.8rem;">📂 Pengelasan Dasar SMAW</h3>
+                <div class="search-container" style="margin: 0 auto 2rem auto; max-width: 800px; position: relative;">
+                    <input type="text" class="search-input search-input-gallery" placeholder="Cari dokumen, RPP, Media, LKM..." style="width: 100%; padding: 1rem 1.5rem; border-radius: 50px; border: 2px solid var(--border-color); font-size: 1rem; outline: none; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: border-color 0.3s;">
+                    <div class="search-icon search-btn" style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); cursor: pointer; font-size: 1.2rem;">🔍</div>
+                </div>
+
+                <div class="filter-container">
+                    <button class="filter-btn active" data-filter="all">Semua</button>
+                    <button class="filter-btn" data-filter="rpp">RPP</button>
+                    <button class="filter-btn" data-filter="media">Media</button>
+                    <button class="filter-btn" data-filter="lks">LKM dan Asesmen</button>
+                    <button class="filter-btn" data-filter="bahan-ajar">Bahan Ajar</button>
+                    <button class="filter-btn" data-filter="hasil-kerja">Hasil Kerja Siswa</button>
+                    <button class="filter-btn" data-filter="video">Video Mengajar</button>
+                    <button class="filter-btn" data-filter="penilaian">Penilaian GP & DPL</button>
+                </div>
+
+                <div class="doc-grid gallery-grid">
+                    <div class="doc-card gallery-card-item" data-category="video">
                 <div class="doc-card-thumb">
                     <span class="doc-badge">Video</span>
                     <img src="https://img.youtube.com/vi/XWDF4GtjlVY/maxresdefault.jpg" alt="Video SMAW" class="doc-thumb-img" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/XWDF4GtjlVY/hqdefault.jpg';">
@@ -910,32 +886,7 @@
                     <a href="https://www.youtube.com/watch?v=XWDF4GtjlVY" target="_blank" class="doc-btn">Tonton di YouTube</a>
                 </div>
             </div>
-        </div> <!-- End of gallery-tp -->
-
-        <!-- Galeri TFLM -->
-        <div class="gallery-section" id="gallery-tflm" style="margin-top: 4rem; padding-top: 3rem; border-top: 2px dashed var(--border-color);">
-            <h3 style="color: var(--kemendikbud-blue); text-align: center; margin-bottom: 2rem; font-size: 1.8rem;">📂 Koleksi Artefak: Teknik Fabrikasi Logam dan Manufaktur (TFLM)</h3>
-            
-            <div class="search-container" style="margin: 0 auto 2rem auto; max-width: 800px; position: relative;">
-                <input type="text" class="search-input search-input-gallery" placeholder="Cari dokumen, RPP, Media, LKS..." style="width: 100%; padding: 1rem 1.5rem; border-radius: 50px; border: 2px solid var(--border-color); font-size: 1rem; outline: none; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: border-color 0.3s;">
-                <div class="search-icon search-btn" style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); cursor: pointer; font-size: 1.2rem;">🔍</div>
-            </div>
-
-            <div class="filter-container">
-                <button class="filter-btn active" data-filter="all">Semua</button>
-                <button class="filter-btn" data-filter="rpp">RPP</button>
-                <button class="filter-btn" data-filter="media">Media</button>
-                <button class="filter-btn" data-filter="lks">LKS dan Asesmen</button>
-                <button class="filter-btn" data-filter="bahan-ajar">Bahan Ajar</button>
-                <button class="filter-btn" data-filter="hasil-kerja">Hasil Kerja Siswa</button>
-                <button class="filter-btn" data-filter="video">Video Mengajar</button>
-                <button class="filter-btn" data-filter="penilaian">Penilaian GP & DPL</button>
-            </div>
-
-            <div class="doc-grid gallery-grid">
-                <!-- Kartu Artefak TFLM akan ditambahkan di sini nantinya -->
-                <!-- RPP TFLM 1 -->
-                <div class="doc-card gallery-card-item" data-category="rpp">
+<div class="doc-card gallery-card-item" data-category="rpp">
                     <div class="doc-card-thumb">
                         <span class="doc-badge">RPP</span>
                         <img src="https://drive.google.com/thumbnail?id=1xBHUuzC9I2kDbD7liKjG90Gk7j5e967G&sz=w600" alt="RPP TFLM" class="doc-thumb-img">
@@ -957,9 +908,7 @@
                         <a href="https://drive.google.com/file/d/1xBHUuzC9I2kDbD7liKjG90Gk7j5e967G/view?usp=sharing" target="_blank" class="doc-btn">Lihat Dokumen</a>
                     </div>
                 </div>
-
-                <!-- Media TFLM -->
-                <div class="doc-card gallery-card-item" data-category="media">
+<div class="doc-card gallery-card-item" data-category="media">
                     <div class="doc-card-thumb">
                         <span class="doc-badge">Media</span>
                         <img src="https://drive.google.com/thumbnail?id=1r731nhtZtBrNWqnU5yFxrolUtw7V1MFj&sz=w600" alt="Media SMAW" class="doc-thumb-img">
@@ -981,9 +930,7 @@
                         <a href="https://drive.google.com/file/d/1r731nhtZtBrNWqnU5yFxrolUtw7V1MFj/view?usp=sharing" target="_blank" class="doc-btn">Lihat Dokumen</a>
                     </div>
                 </div>
-
-                <!-- Bahan Ajar TFLM -->
-                <div class="doc-card gallery-card-item" data-category="bahan-ajar">
+<div class="doc-card gallery-card-item" data-category="bahan-ajar">
                     <div class="doc-card-thumb">
                         <span class="doc-badge">Bahan Ajar</span>
                         <img src="https://drive.google.com/thumbnail?id=1uAAiLfUJuPvRXwSSajwhgBctBgL5lhM_&sz=w600" alt="Bahan Ajar SMAW" class="doc-thumb-img">
@@ -1005,9 +952,7 @@
                         <a href="https://docs.google.com/document/d/1uAAiLfUJuPvRXwSSajwhgBctBgL5lhM_/edit?usp=sharing&ouid=114957738313413873346&rtpof=true&sd=true" target="_blank" class="doc-btn">Lihat Dokumen</a>
                     </div>
                 </div>
-
-                <!-- LKS 1 TFLM -->
-                <div class="doc-card gallery-card-item" data-category="lks">
+<div class="doc-card gallery-card-item" data-category="lks">
                     <div class="doc-card-thumb">
                         <span class="doc-badge">LKS & Asesmen</span>
                         <img src="https://drive.google.com/thumbnail?id=1gEA5b2XoDz2c5A4Uey9pucKQDNVs7TZH&sz=w600" alt="LKS 1" class="doc-thumb-img">
@@ -1029,9 +974,7 @@
                         <a href="https://docs.google.com/document/d/1gEA5b2XoDz2c5A4Uey9pucKQDNVs7TZH/edit?usp=sharing&ouid=114957738313413873346&rtpof=true&sd=true" target="_blank" class="doc-btn">Lihat Dokumen</a>
                     </div>
                 </div>
-
-                <!-- LKS 2 TFLM -->
-                <div class="doc-card gallery-card-item" data-category="lks">
+<div class="doc-card gallery-card-item" data-category="lks">
                     <div class="doc-card-thumb">
                         <span class="doc-badge">LKS & Asesmen</span>
                         <img src="https://drive.google.com/thumbnail?id=1G3xuiTzwjI3eXhgHU2V2avBdMjrOMWQY&sz=w600" alt="LKS 2" class="doc-thumb-img">
@@ -1053,9 +996,7 @@
                         <a href="https://docs.google.com/document/d/1G3xuiTzwjI3eXhgHU2V2avBdMjrOMWQY/edit?usp=sharing&ouid=114957738313413873346&rtpof=true&sd=true" target="_blank" class="doc-btn">Lihat Dokumen</a>
                     </div>
                 </div>
-
-                <!-- LKS 3 TFLM -->
-                <div class="doc-card gallery-card-item" data-category="lks">
+<div class="doc-card gallery-card-item" data-category="lks">
                     <div class="doc-card-thumb">
                         <span class="doc-badge">LKS & Asesmen</span>
                         <img src="https://drive.google.com/thumbnail?id=15zqoi3EkXyvWifbOys-01TyFhbKItFl-&sz=w600" alt="LKS 3" class="doc-thumb-img">
@@ -1077,9 +1018,7 @@
                         <a href="https://docs.google.com/document/d/15zqoi3EkXyvWifbOys-01TyFhbKItFl-/edit?usp=sharing&ouid=114957738313413873346&rtpof=true&sd=true" target="_blank" class="doc-btn">Lihat Dokumen</a>
                     </div>
                 </div>
-
-                <!-- LKS 4 TFLM -->
-                <div class="doc-card gallery-card-item" data-category="lks">
+<div class="doc-card gallery-card-item" data-category="lks">
                     <div class="doc-card-thumb">
                         <span class="doc-badge">LKS & Asesmen</span>
                         <img src="https://drive.google.com/thumbnail?id=1WgeMX1TaJ7yi2cVbqCiQWJLQVLP9uISU&sz=w600" alt="LKS 4" class="doc-thumb-img">
@@ -1101,9 +1040,7 @@
                         <a href="https://docs.google.com/document/d/1WgeMX1TaJ7yi2cVbqCiQWJLQVLP9uISU/edit?usp=sharing&ouid=114957738313413873346&rtpof=true&sd=true" target="_blank" class="doc-btn">Lihat Dokumen</a>
                     </div>
                 </div>
-
-                <!-- LKS 5 TFLM -->
-                <div class="doc-card gallery-card-item" data-category="lks">
+<div class="doc-card gallery-card-item" data-category="lks">
                     <div class="doc-card-thumb">
                         <span class="doc-badge">LKS & Asesmen</span>
                         <img src="https://drive.google.com/thumbnail?id=16FR7AYhJ0bw_Ngl5NctYlEHZReAA-PfL&sz=w600" alt="LKS 5" class="doc-thumb-img">
@@ -1125,52 +1062,133 @@
                         <a href="https://docs.google.com/document/d/16FR7AYhJ0bw_Ngl5NctYlEHZReAA-PfL/edit?usp=sharing&ouid=114957738313413873346&rtpof=true&sd=true" target="_blank" class="doc-btn">Lihat Dokumen</a>
                     </div>
                 </div>
+                </div>
             </div>
         </div>
-    <!-- 3.5 Analisis Artefak Pembelajaran -->
-    <section id="refleksi" style="background-color: var(--bg-light-gray); max-width: 100%; padding: 4rem 2rem; text-align: justify;">
-        <div style="max-width: 1160px; margin: 0 auto;">
-            <h2>Analisis Artefak Pembelajaran</h2>
-            <p style="color: var(--text-light); margin-bottom: 2rem;">Evaluasi diri dan refleksi dari proses pelaksanaan kegiatan belajar mengajar.</p>
+
+
+    </section>
+
+    <!-- Analisis Produk Pembelajaran -->
+    <section id="analisis-produk" class="analisis-section">
+        <div class="analisis-header">
+            <p class="analisis-subtitle">ANALISIS & EVALUASI</p>
+            <h2>Analisis Produk Pembelajaran</h2>
             
-            <div style="display: flex; flex-direction: column; gap: 1.5rem; text-align: left;">
-                <!-- Row 1 -->
-                <div style="background: white; border: 1px solid var(--border-color); border-radius: 8px; padding: 1.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
-                    <h4 style="color: var(--kemendikbud-blue); margin-top: 0; margin-bottom: 0.5rem; font-size: 1.1rem; display: flex; align-items: center; gap: 8px;">
-                        <span>🚧</span> Kendala Proses Penyusunan Perangkat
-                    </h4>
-                    <p style="color: var(--text-dark); margin: 0; line-height: 1.6;">Tantangan utama yang dihadapi dalam proses penyusunan perangkat pembelajaran ini adalah menyelaraskan tingkat kesulitan materi vokasi yang diajarkan dengan heterogenitas kemampuan kognitif dan psikomotorik awal peserta didik. Selain itu, terdapat keterbatasan waktu yang signifikan dalam merancang instrumen asesmen dan lembar kerja yang benar-benar autentik, komprehensif, serta mampu secara presisi mengukur ketercapaian kompetensi riil yang sepenuhnya relevan dengan tuntutan dan standar operasional di dunia kerja industri (DUDI).</p>
+        </div>
+        
+        <div class="analisis-grid">
+            <div class="analisis-card card-cyan">
+                <div class="card-header">
+                    <span class="card-number cyan-bg">01</span>
+                    <div class="card-title-group">
+                        <div class="card-line cyan-line"></div>
+                        <h3>Kendala Penyusunan Produk</h3>
+                    </div>
                 </div>
-                
-                <!-- Row 2 -->
-                <div style="background: white; border: 1px solid var(--border-color); border-radius: 8px; padding: 1.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
-                    <h4 style="color: var(--kemendikbud-blue); margin-top: 0; margin-bottom: 0.5rem; font-size: 1.1rem; display: flex; align-items: center; gap: 8px;">
-                        <span>📚</span> Teori Konsep Pedagogi
-                    </h4>
-                    <p style="color: var(--text-dark); margin: 0; line-height: 1.6;">Pengembangan perangkat pembelajaran ini secara konsisten mengintegrasikan pendekatan Understanding by Design (UbD) yang berfokus pada hasil akhir pembelajaran. Pendekatan ini dikombinasikan dengan sintaks dari model Inquiry Learning yang membuat siswa lebih difasilitasi dengan guru menjadi pamong. Kolaborasi konsep pedagogi ini bertujuan untuk membangun scaffolding yang kuat, membimbing siswa secara sistematis dari tahap pemahaman konsep dasar menuju tahap eksperimen dan praktik bengkel yang terstruktur, bermakna, serta mampu mengasah kemampuan berpikir tingkat tinggi (HOTS).</p>
-                </div>
+                <p class="card-text">Penyusunan produk pembelajaran tidak hanya berhenti pada pembuatan dokumen, tetapi...</p>
+                <button class="btn-buka-analisis" onclick="openAnalysisModal('01')">BUKA ANALISIS &gt;</button>
+            </div>
 
-                <!-- Row 3 -->
-                <div style="background: white; border: 1px solid var(--border-color); border-radius: 8px; padding: 1.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
-                    <h4 style="color: var(--kemendikbud-blue); margin-top: 0; margin-bottom: 0.5rem; font-size: 1.1rem; display: flex; align-items: center; gap: 8px;">
-                        <span>✨</span> Faktor Keberhasilan
-                    </h4>
-                    <p style="color: var(--text-dark); margin: 0; line-height: 1.6;">Faktor kunci yang berkontribusi terhadap keberhasilan proses pembelajaran ini adalah tingginya tingkat antusiasme dan partisipasi aktif peserta didik, khususnya ketika mereka dihadapkan pada media pembelajaran visual interaktif dan demonstrasi praktik secara langsung. Dukungan ketersediaan alat, bahan, dan fasilitas bengkel mekanik yang memadai juga sangat menentukan kelancaran simulasi, memungkinkan peserta didik mempraktikkan teori yang didapat secara langsung dalam kondisi yang aman, kondusif, dan merepresentasikan lingkungan kerja nyata.</p>
+            <div class="analisis-card card-purple">
+                <div class="card-header">
+                    <span class="card-number purple-bg">02</span>
+                    <div class="card-title-group">
+                        <div class="card-line purple-line"></div>
+                        <h3>Konsep Pedagogis yang Diadopsi</h3>
+                    </div>
                 </div>
+                <p class="card-text">Produk pembelajaran disusun dengan dasar pedagogis yang menempatkan siswa sebagai...</p>
+                <button class="btn-buka-analisis" onclick="openAnalysisModal('02')">BUKA ANALISIS &gt;</button>
+            </div>
 
-                <!-- Row 4 -->
-                <div style="background: white; border: 1px solid var(--border-color); border-radius: 8px; padding: 1.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
-                    <h4 style="color: var(--kemendikbud-blue); margin-top: 0; margin-bottom: 0.5rem; font-size: 1.1rem; display: flex; align-items: center; gap: 8px;">
-                        <span>🔄</span> Perubahan Komponen Penunjang Kelas
-                    </h4>
-                    <p style="color: var(--text-dark); margin: 0; line-height: 1.6;">Berdasarkan evaluasi formatif selama siklus pembelajaran, dilakukan beberapa penyesuaian esensial pada komponen penunjang. Perubahan utama mencakup penyempurnaan rancangan Lembar Kerja Peserta Didik (LKPD) agar instruksi langkah kerjanya menjadi lebih sistematis, rinci, dan sesuai dengan Standar Operasional Prosedur (SOP). Selain itu, dilakukan pengayaan variasi media pembelajaran, seperti penggunaan video demonstrasi praktik alat perkakas dan materi keselamatan kerja, yang secara khusus ditujukan untuk memperkuat fondasi pemahaman siswa pada mata pelajaran Dasar-Dasar Kejuruan (DDK) serta mengakomodasi gaya belajar yang beragam.</p>
+            <div class="analisis-card card-green">
+                <div class="card-header">
+                    <span class="card-number green-bg">03</span>
+                    <div class="card-title-group">
+                        <div class="card-line green-line"></div>
+                        <h3>Faktor Keberhasilan Penerapan</h3>
+                    </div>
+                </div>
+                <p class="card-text">Keberhasilan penerapan produk pembelajaran sangat dipengaruhi oleh sejauh mana...</p>
+                <button class="btn-buka-analisis" onclick="openAnalysisModal('03')">BUKA ANALISIS &gt;</button>
+            </div>
+
+            <div class="analisis-card card-orange">
+                <div class="card-header">
+                    <span class="card-number orange-bg">04</span>
+                    <div class="card-title-group">
+                        <div class="card-line orange-line"></div>
+                        <h3>Penyesuaian untuk Kelas Berbeda</h3>
+                    </div>
+                </div>
+                <p class="card-text">Produk pembelajaran perlu disiapkan agar dapat menyesuaikan kelas dengan latar...</p>
+                <button class="btn-buka-analisis" onclick="openAnalysisModal('04')">BUKA ANALISIS &gt;</button>
+            </div>
+        </div>
+
+        <div class="sintesis-container">
+            <div class="sintesis-left">
+                <span class="sintesis-tag">SINTESIS</span>
+                <h3>Arah Perbaikan Produk Pembelajaran</h3>
+                <p>Analisis ini menunjukkan bahwa produk pembelajaran perlu kuat secara rancangan, mudah dijalankan, dan cukup lentur untuk menyesuaikan kelas yang berbeda.</p>
+            </div>
+            <div class="sintesis-right">
+                <div class="sintesis-box">
+                    <h4>RPP</h4>
+                    <p>RPP perlu menjadi peta pembelajaran yang jelas, tetapi tetap menyediakan ruang adaptasi. Bagian tujuan, kegiatan inti, asesmen, dan refleksi harus saling terhubung agar guru tidak hanya menjalankan langkah, tetapi memahami alasan pedagogis di balik setiap langkah.</p>
+                </div>
+                <div class="sintesis-box">
+                    <h4>MEDIA</h4>
+                    <p>Media perlu memperjelas konsep inti, memancing perhatian, dan membantu siswa melihat contoh sebelum masuk ke praktik. Media yang baik tidak hanya menarik secara visual, tetapi juga mengurangi miskonsepsi dan mempercepat pemahaman awal.</p>
+                </div>
+                <div class="sintesis-box">
+                    <h4>LKM</h4>
+                    <p>LKM perlu memandu langkah kerja secara bertahap agar siswa dapat belajar mandiri sambil tetap memiliki arah yang jelas. Petunjuk, contoh, ruang jawaban, dan urutan tugas harus membantu siswa berpikir, bukan sekadar mengisi lembar kerja.</p>
+                </div>
+                <div class="sintesis-box">
+                    <h4>ASESMEN</h4>
+                    <p>Asesmen tidak hanya menilai hasil akhir, tetapi juga membaca proses, kesulitan, dan kebutuhan penguatan berikutnya. Hasil asesmen perlu menjadi dasar revisi media, perbaikan LKM, dan penguatan materi pada pertemuan berikutnya.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Modal Analysis HTML -->
+    <div class="analysis-modal-overlay" id="analysisModalOverlay">
+        <div class="analysis-modal-content">
+            <div class="analysis-modal-header">
+                <div class="header-left">
+                    <span class="modal-number cyan-bg" id="modalNumber">01</span>
+                    <div class="header-titles">
+                        <span class="modal-kategori">ANALISIS PRODUK</span>
+                        <h2 id="modalTitle">Kendala Penyusunan Produk</h2>
+                    </div>
+                </div>
+                <button class="btn-close-modal" onclick="closeAnalysisModal()">&times;</button>
+            </div>
+            <p class="modal-subtitle" id="modalSubtitle">Penyusunan produk pembelajaran tidak hanya berhenti pada pembuatan dokumen, tetapi menjadi proses menerjemahkan kebutuhan kelas ke dalam rancangan yang dapat dijalankan secara nyata.</p>
+            
+            <div class="modal-grid-2">
+                <div class="modal-box" id="boxDiagnosis">
+                    <h4 id="labelDiagnosis">DIAGNOSIS</h4>
+                    <p id="modalDiagnosis">Kendala paling besar muncul ketika rancangan ideal harus disesuaikan dengan kondisi kelas...</p>
+                </div>
+                <div class="modal-box" id="boxImplikasi">
+                    <h4 id="labelImplikasi">IMPLIKASI</h4>
+                    <p id="modalImplikasi">Implikasinya, produk pembelajaran harus dirancang sebagai perangkat yang hidup...</p>
+                </div>
+            </div>
+            
+            <div class="modal-box box-full">
+                <h4>ANALISIS MENDALAM</h4>
+                <p id="modalMendalam">Pada tahap awal penyusunan, tantangan utama terletak pada penyelarasan...</p>
+            </div>
+        </div>
+    </div>
+
     <!-- 4. Lampiran Penilaian -->
-    <section id="penilaian" style="background-color: var(--bg-light-gray); max-width: 100%; padding: 4rem 2rem;">
+    <section id="penilaian" class="one-screen" style="background-color: var(--bg-light-gray); max-width: 100%; padding: 4rem 2rem;">
         <div style="max-width: 1160px; margin: 0 auto;">
             <h2>Lampiran Penilaian</h2>
             
@@ -1210,12 +1228,13 @@
                 </div>
             </div>
         </div>
+
     </section>
 
     <!-- 5. Model Guru yang Dituju -->
-    <section id="model-guru">
+    <section id="model-guru" class="one-screen">
         <h2>Model Guru Profesional</h2>
-        <p style="text-align: justify; color: var(--text-light); margin-bottom: 2rem;">Karakter, kompetensi, dan visi pendidik masa depan.</p>
+        
         
         <div class="article-grid">
             <div class="card-article">
@@ -1238,6 +1257,7 @@
                 </ul>
             </div>
         </div>
+
     </section>
 
 
@@ -1261,10 +1281,10 @@
         </section>
 
         <!-- Refleksi Akhir PPL Terbimbing -->
-        <section id="ep2-analisis-artefak" style="max-width: 100%; padding: 4rem 2rem;">
+        <section id="ep2-analisis-artefak" class="one-screen" style="max-width: 100%; padding: 4rem 2rem;">
             <div style="max-width: 1160px; margin: 0 auto;">
                 <h2>Refleksi Akhir PPL Terbimbing</h2>
-                <p style="text-align: justify; color: var(--text-light); margin-bottom: 3rem;">3 pertanyaan refleksi mendalam tentang pembelajaran, tantangan & umpan balik selama PPL.</p>
+                
                 
                 <div class="article-grid">
                     <div class="card-article">
@@ -1284,10 +1304,10 @@
         </section>
 
         <!-- Filosofi Mengajar -->
-        <section id="ep2-filosofi" style="background-color: var(--bg-light-gray); max-width: 100%; padding: 4rem 2rem;">
+        <section id="ep2-filosofi" class="one-screen" style="background-color: var(--bg-light-gray); max-width: 100%; padding: 4rem 2rem;">
             <div style="max-width: 1160px; margin: 0 auto;">
                 <h2>Filosofi Mengajar</h2>
-                <p style="text-align: justify; color: var(--text-light); margin-bottom: 3rem;">Prinsip, keyakinan, dan nilai yang mendasari praktik pengajaran saya.</p>
+                
                 
                 <div style="background: white; padding: 2.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border-color); box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
                     <h3 style="color: var(--kemendikbud-blue); margin-bottom: 1rem;">1. Pembelajaran Bermakna (Experiential Learning)</h3>
