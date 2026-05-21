@@ -1798,7 +1798,7 @@ footer {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    animation: bgSlide 6s infinite;
+    animation: bgSlide 10s infinite;
 }
 
 .bg-slideshow-overlay {
@@ -1812,8 +1812,164 @@ footer {
 }
 
 @keyframes bgSlide {
-    0%, 30% { background-image: url('bg-pemesinan-1.png'); }
-    33%, 63% { background-image: url('bg-pemesinan-2.png'); }
-    66%, 96% { background-image: url('bg-pemesinan-3.png'); }
-    100% { background-image: url('bg-pemesinan-1.png'); }
+    0%, 18% { background-image: url('assets/slideshow/bg1.png'); }
+    20%, 38% { background-image: url('assets/slideshow/bg2.png'); }
+    40%, 58% { background-image: url('assets/slideshow/bg3.png'); }
+    60%, 78% { background-image: url('assets/slideshow/bg4.png'); }
+    80%, 98% { background-image: url('assets/slideshow/bg5.jpg'); }
+    100% { background-image: url('assets/slideshow/bg1.png'); }
+}
+
+
+/* Elegant Timeline Layout */
+.timeline-container {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50px;
+    height: 100%;
+    width: 4px;
+    background: linear-gradient(to bottom, #3b82f6 0%, #8b5cf6 20%, #10b981 40%, #f59e0b 60%, #ef4444 80%, #94a3b8 100%);
+    border-radius: 4px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 3.5rem;
+    padding-left: 100px;
+    transition: all 0.4s ease;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 41.5px;
+    top: 5px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: 0 0 0 3px rgba(0,0,0,0.05), 0 4px 10px rgba(0,0,0,0.1);
+    z-index: 2;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.timeline-item:hover .timeline-dot {
+    transform: scale(1.4);
+}
+
+.timeline-date {
+    display: inline-block;
+    padding: 0.4rem 1.2rem;
+    background: var(--kemendikbud-blue);
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 30px;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 15px rgba(0,89,178,0.25);
+    letter-spacing: 0.5px;
+}
+
+.timeline-content {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.04);
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 22px;
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    transform: rotate(45deg);
+    border-left: 1px solid rgba(0,0,0,0.04);
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+
+.timeline-item:hover .timeline-content {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+    border-color: rgba(34, 211, 238, 0.3);
+}
+
+.timeline-title {
+    font-size: 1.4rem;
+    color: var(--text-dark);
+    margin-top: 0;
+    margin-bottom: 0.4rem;
+    font-weight: 700;
+}
+
+.timeline-company {
+    color: var(--kemendikbud-cyan);
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.timeline-desc {
+    color: var(--text-light);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.timeline-tag {
+    display: inline-block;
+    padding: 0.35rem 0.9rem;
+    background: #f1f5f9;
+    color: #475569;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 6px;
+    margin-right: 0.6rem;
+    margin-bottom: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+}
+
+.timeline-tag:hover {
+    background: #e2e8f0;
+    color: #1e293b;
+}
+
+@media (max-width: 768px) {
+    .timeline-container::before {
+        left: 30px;
+    }
+    .timeline-item {
+        padding-left: 70px;
+    }
+    .timeline-dot {
+        left: 21px;
+    }
+    .timeline-content {
+        padding: 1.5rem;
+    }
+    .timeline-title {
+        font-size: 1.2rem;
+    }
+    .timeline-company {
+        font-size: 1rem;
+        display: block;
+        margin-top: 0.3rem;
+    }
 }
