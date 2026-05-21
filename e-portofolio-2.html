@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pusat Portofolio | Bimoro Kusumo</title>
+<!-- Modern Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+<!-- Portfolio Chooser Screen -->
+<div id="portfolioChooser">
+<div class="chooser-content">
+<div class="chooser-logo">
+<img alt="Logo UST" src="Logo UST.png"/>
+<img alt="Logo Stembayo" src="Logo Stembayo.webp"/>
+</div>
+<h2 class="chooser-title">Pilih E-Portfolio</h2>
+<div class="chooser-cards">
+<div class="chooser-card" onclick="selectPortfolio(1)">
+<div class="chooser-card-badge">UTS</div>
+<div class="chooser-card-icon">📚</div>
+<h3>E-Portfolio 1</h3>
+<p>Dokumentasi perjalanan profesional, karya, dan refleksi pembelajaran selama PPG Prajabatan 2026</p>
+<div class="chooser-card-cta">Lihat E-Portfolio 1 →</div>
+</div>
+<div class="chooser-card" onclick="selectPortfolio(2)">
+<div class="chooser-card-badge">UAS</div>
+<div class="chooser-card-icon">🎯</div>
+<h3>E-Portfolio 2</h3>
+<p>Refleksi akhir Praktik Pengalaman Lapangan Terbimbing dan Filosofi Mengajar</p>
+<div class="chooser-card-cta">Lihat E-Portfolio 2 →</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Navigation bertingkat ala Kemendikdasmen -->
+<nav class="hidden-section" id="mainNav">
+<!-- Bar Atas (Logo & Identitas) -->
+<div class="nav-top">
+<a class="logo" href="#home" style="text-decoration: none; display: flex; align-items: center; gap: 12px;">
+<img alt="Logo UST" src="Logo UST.png" style="height: 48px; width: auto; object-fit: contain;"/>
+<img alt="Logo Stembayo" src="Logo Stembayo.webp" style="height: 48px; width: auto; object-fit: contain;"/>
+<div style="border-left: 2px solid var(--border-color); padding-left: 12px; display: flex; flex-direction: column;">
+<span style="font-size: 1.15rem; font-weight: 700; color: var(--kemendikbud-blue-dark); text-transform: uppercase; letter-spacing: 0.5px;">E-Portfolio PPG</span>
+<span style="font-size: 0.8rem; color: var(--text-light); font-weight: 500;">Pendidikan Teknik Mesin - Fabrikasi Logam</span>
+</div>
+</a>
+<div style="display: flex; align-items: center; gap: 15px; font-size: 0.85rem; color: var(--text-light);">
+<span>Tahun Lulus: <strong>2026</strong></span>
+<span style="background: #e0f2fe; color: #0369a1; padding: 0.25rem 0.75rem; border-radius: 20px; font-weight: 600; font-size: 0.8rem;">UTS</span>
+</div>
+</div>
+<!-- Bar Bawah (Menu Tautan Navigasi) -->
+<div class="nav-bottom">
+<div class="nav-bottom-container">
+<!-- Nav Links for EP1 -->
+<ul class="nav-links" id="nav-ep1">
+<li><a class="active" href="#home">Beranda</a></li>
+<li><a href="#profil">Profil</a></li>
+<li><a href="#pengalaman">Pengalaman</a></li>
+<li><a href="#pendidikan">Pendidikan</a></li>
+<li><a href="#keahlian">Keahlian</a></li>
+</ul>
+<!-- Nav Links for EP2 -->
+<ul class="nav-links hidden-section" id="nav-ep2">
+<li><a class="active" href="#ep2-home">Beranda</a></li>
+<li><a href="#ep2-analisis-artefak">Analisis Artefak PPL</a></li>
+<li><a href="#ep2-filosofi">Filosofi Mengajar</a></li>
+</ul>
+<a class="btn-primary" href="#" onclick="showChooser()" style="background-color: #f39c12; border-color: #f39c12; color: white; padding: 0.5rem 1rem; border-radius: 4px; font-size: 0.85rem; text-transform: uppercase; font-weight: 600; display: inline-flex; align-items: center; gap: 5px; height: fit-content; text-decoration: none;">Ganti Portofolio →</a>
+</div>
+</div>
+</nav>
+<!-- PORTFOLIO 1 CONTAINER -->
+
+<!-- PORTFOLIO 2 CONTAINER -->
+<div id="portfolio2">
+
+    <!-- 1. HERO SECTION -->
+    <section id="ep2-hero-full">
+        <div class="ep2-hero-content reveal">
+            <span class="ep2-hero-badge">UAS PPG Prajabatan</span>
+            <h1 class="ep2-hero-title">Refleksi Akhir PPL Terbimbing</h1>
+            <p class="ep2-hero-subtitle">
+                Perjalanan pengembangan kompetensi calon guru profesional selama pelaksanaan Praktik Pengalaman Lapangan di lingkungan pendidikan vokasi Teknik Mesin.
+            </p>
+            <div class="ep2-btn-group">
+                <a href="#" onclick="revealEP2Content('ep2-pendahuluan', event)" class="ep2-btn-primary">Mulai Eksplorasi</a>
+                <a href="#" onclick="revealEP2Content('ep2-dok', event)" class="ep2-btn-outline">Lihat Dokumentasi</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- EP2 Main Content Wrapper -->
+    <div id="ep2-main-content" style="display: none; opacity: 0; transition: opacity 1s ease;">
+
+    <!-- 2. SECTION 1 - PENDAHULUAN -->
+    <section class="ep2-section" id="ep2-pendahuluan">
+        <h2 class="ep2-section-title reveal">Informasi Pelaksanaan</h2>
+        <div class="ep2-info-grid reveal">
+            <div class="ep2-info-card" onclick="openEP2Modal('info-1')" style="cursor: pointer;">
+                <div class="ep2-info-icon">🏫</div>
+                <div class="ep2-info-title">Lokasi</div>
+                <div class="ep2-info-val">SMK Negeri 2 Depok</div>
+                <div style="font-size: 0.85rem; color: var(--ep2-orange); margin-top: 1.2rem; font-weight: 700;">Klik di sini 👆</div>
+            </div>
+            <div class="ep2-info-card" onclick="openEP2Modal('info-2')" style="cursor: pointer;">
+                <div class="ep2-info-icon">⚙️</div>
+                <div class="ep2-info-title">Mata Pelajaran</div>
+                <div class="ep2-info-val">Dasar-dasar Kejuruan (DDK)</div>
+                <div style="font-size: 0.85rem; color: var(--ep2-orange); margin-top: 1.2rem; font-weight: 700;">Klik di sini 👆</div>
+            </div>
+            <div class="ep2-info-card" onclick="openEP2Modal('info-3')" style="cursor: pointer;">
+                <div class="ep2-info-icon">👥</div>
+                <div class="ep2-info-title">Kelas</div>
+                <div class="ep2-info-val">X Fase E (TP & TFLM)</div>
+                <div style="font-size: 0.85rem; color: var(--ep2-orange); margin-top: 1.2rem; font-weight: 700;">Klik di sini 👆</div>
+            </div>
+            <div class="ep2-info-card" onclick="openEP2Modal('info-4')" style="cursor: pointer;">
+                <div class="ep2-info-icon">⏱️</div>
+                <div class="ep2-info-title">Durasi</div>
+                <div class="ep2-info-val">2JP / Pertemuan</div>
+                <div style="font-size: 0.85rem; color: var(--ep2-orange); margin-top: 1.2rem; font-weight: 700;">Klik di sini 👆</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. SECTION 2 - PERKEMBANGAN KOMPETENSI -->
+    <section class="ep2-section" id="ep2-kompetensi">
+        <h2 class="ep2-section-title reveal">Perkembangan Kompetensi</h2>
+        <div class="ep2-kompetensi-grid">
+            <div class="ep2-comp-card reveal">
+                <span class="ep2-comp-icon">📚</span>
+                <h3>Kompetensi Pedagogik</h3>
+                <p>Peningkatan kemampuan menyusun RPP berdiferensiasi dan mendesain LKPD berbasis proyek nyata.</p>
+                <div class="ep2-progress-bg"><div class="ep2-progress-bar" style="width: 85%"></div></div>
+            </div>
+            <div class="ep2-comp-card reveal" style="transition-delay: 0.1s">
+                <span class="ep2-comp-icon">🛠️</span>
+                <h3>Kompetensi Profesional</h3>
+                <p>Penguasaan materi manufaktur presisi dan pendampingan pengelasan SMAW standar industri.</p>
+                <div class="ep2-progress-bg"><div class="ep2-progress-bar" style="width: 92%"></div></div>
+            </div>
+            <div class="ep2-comp-card reveal" style="transition-delay: 0.2s">
+                <span class="ep2-comp-icon">🤝</span>
+                <h3>Kompetensi Sosial</h3>
+                <p>Membangun kolaborasi dengan guru pamong, rekan sejawat, dan komunikasi efektif dengan wali murid.</p>
+                <div class="ep2-progress-bg"><div class="ep2-progress-bar" style="width: 88%"></div></div>
+            </div>
+            <div class="ep2-comp-card reveal" style="transition-delay: 0.3s">
+                <span class="ep2-comp-icon">⚖️</span>
+                <h3>Kompetensi Kepribadian</h3>
+                <p>Menjadi teladan etika kerja, disiplin waktu, dan penerapan budaya K3LH di lingkungan bengkel.</p>
+                <div class="ep2-progress-bg"><div class="ep2-progress-bar" style="width: 90%"></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. SECTION 3 - PENGALAMAN PALING BERMAKNA -->
+    <!-- SECTION 3 - REFLEKSI UTAMA -->
+    <section class="ep2-section" id="ep2-refleksi-utama">
+        <h2 class="ep2-section-title reveal">Refleksi Akhir Praktik Pengalaman Lapangan Terbimbing</h2>
+        <div style="text-align: center; margin-bottom: 3rem; color: var(--ep2-steel);" class="reveal">
+            Mahasiswa menganalisis produk pembelajaran untuk direfleksikan dalam beberapa aspek yaitu:
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 2rem;">
+            <!-- Aspek 1 -->
+            <div class="ep2-comp-card reveal" style="padding: 2rem; border-left: 5px solid var(--ep2-orange);">
+                <h3 style="color: var(--ep2-blue); margin-bottom: 1rem; border-bottom: 2px dashed #E2E8F0; padding-bottom: 1rem; line-height: 1.5; font-size: 1.15rem;">
+                    1. Apa yang telah mahasiswa pelajari sebagai peserta PPG calon guru selama tahapan PPL Terbimbing dari awal hingga akhir?
+                </h3>
+                <p style="color: var(--ep2-navy); font-size: 1.05rem; line-height: 1.8; margin-bottom: 0;">
+                    Sebagai peserta PPG calon guru yang berhadapan dengan siswa Kelas X Fase E (TP & TFLM), pelajaran terbesar yang saya dapatkan adalah pentingnya <b>adaptasi pedagogik yang fleksibel</b>. Saya belajar bagaimana merancang dan mengemas materi teori Dasar-dasar Kejuruan (DDK) yang berdurasi 2JP agar menjadi lebih interaktif dan bermakna. Saya menyadari bahwa menjadi guru vokasi bukan sekadar mentransfer keterampilan teknis, melainkan membangun kedisiplinan, etos kerja (K3LH), dan <i>mindset</i> industri sejak siswa baru masuk SMK.
+                </p>
+            </div>
+            <!-- Aspek 2 -->
+            <div class="ep2-comp-card reveal" style="padding: 2rem; transition-delay: 0.1s; border-left: 5px solid var(--ep2-orange);">
+                <h3 style="color: var(--ep2-blue); margin-bottom: 1rem; border-bottom: 2px dashed #E2E8F0; padding-bottom: 1rem; line-height: 1.5; font-size: 1.15rem;">
+                    2. Apakah terdapat pengalaman yang menantang dan bagaimana solusi dari permasalahan tersebut?
+                </h3>
+                <p style="color: var(--ep2-navy); font-size: 1.05rem; line-height: 1.8; margin-bottom: 0;">
+                    Pengalaman paling menantang adalah <b>menurunnya fokus dan tingginya sikap pasif siswa</b> saat menghadapi teori dasar kejuruan yang abstrak, terlebih durasi 2JP teori berurutan seringkali membuat kelas mengantuk. <br><br>
+                    <b>Solusi:</b> Saya merombak pendekatan ceramah konvensional menjadi metode integrasi studi kasus (<i>mini Problem Based Learning</i>). Saya menampilkan video animasi 3D dan membawa alat ukur mekanik asli ke kelas sebagai <i>scaffolding</i> visual. Selain itu, saya mengimplementasikan metode diskusi kelompok kecil (<i>Think-Pair-Share</i>) dan <i>Ice Breaking</i> untuk mengembalikan konsentrasi kelas. Terbukti antusiasme siswa secara perlahan berhasil bangkit.
+                </p>
+            </div>
+            <!-- Aspek 3 -->
+            <div class="ep2-comp-card reveal" style="padding: 2rem; transition-delay: 0.2s; border-left: 5px solid var(--ep2-orange);">
+                <h3 style="color: var(--ep2-blue); margin-bottom: 1rem; border-bottom: 2px dashed #E2E8F0; padding-bottom: 1rem; line-height: 1.5; font-size: 1.15rem;">
+                    3. Apakah umpan balik atau saran konstruktif yang diberikan kepada mahasiswa dalam diskusi refleksi akhir sebagai bentuk perbaikan untuk ke tahap PPL selanjutnya (PPL Mandiri)?
+                </h3>
+                <p style="color: var(--ep2-navy); font-size: 1.05rem; line-height: 1.8; margin-bottom: 0;">
+                    Dalam diskusi refleksi akhir bersama Dosen Pembimbing Lapangan (DPL) dan Guru Pamong, saya menerima saran konstruktif yang sangat berharga. Umpan balik utamanya adalah <b>memperbanyak ragam media pembelajaran interaktif (seperti modul interaktif digital atau simulasi AR sederhana)</b> agar penyampaian materi DDK tidak monoton. Selain itu, saya disarankan untuk mempertajam instruksi saat pembagian kelompok belajar, memastikan agar siswa dari program Teknik Pemesinan (TP) maupun Teknik Fabrikasi Logam (TFLM) dapat berkolaborasi secara silang dan optimal sebagai simulasi industri. Umpan balik ini menjadi landasan kuat saya untuk mengelola kelas secara mandiri pada tahap PPL Mandiri mendatang.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. SECTION 4 - TANTANGAN DAN SOLUSI -->
+    <section class="ep2-section" id="ep2-tantangan">
+        <h2 class="ep2-section-title reveal">Tantangan & Solusi</h2>
+        <div class="ep2-table-container reveal">
+            <table class="ep2-table">
+                <thead>
+                    <tr>
+                        <th>Tantangan</th>
+                        <th>Dampak</th>
+                        <th>Solusi (Action)</th>
+                        <th>Status / Hasil</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Kemampuan matematis dasar siswa rendah.</td>
+                        <td>Kesulitan membayangkan konsep teori dasar tanpa praktik langsung.</td>
+                        <td>Menampilkan video animasi 3D dan benda nyata (alat ukur) di kelas.</td>
+                        <td><span class="status-badge status-success">Teratasi 80%</span></td>
+                    </tr>
+                    <tr>
+                        <td>Fokus menurun karena durasi teori (2JP) yang monoton.</td>
+                        <td>Banyak siswa mengobrol atau mengantuk di kelas.</td>
+                        <td>Mengimplementasikan <i>Ice Breaking</i> dan diskusi kelompok kecil (<i>Think-Pair-Share</i>).</td>
+                        <td><span class="status-badge status-success">Percaya Diri Naik</span></td>
+                    </tr>
+                    <tr>
+                        <td>Minimnya literasi membaca modul DDK.</td>
+                        <td>Pemahaman konsep kejuruan dangkal.</td>
+                        <td>Mengubah modul teks panjang menjadi LKPD interaktif bergambar.</td>
+                        <td><span class="status-badge status-action">Perbaikan Proses</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- 6. SECTION 5 - INOVASI PEMBELAJARAN -->
+    <section class="ep2-section" id="ep2-inovasi">
+        <h2 class="ep2-section-title reveal">Inovasi Pembelajaran</h2>
+        <div class="ep2-inovasi-grid">
+            <div class="ep2-inovasi-card reveal">
+                <div class="ep2-inovasi-img">
+                    <img src="assets/inovasi-1.jpg" onerror="this.src='https://via.placeholder.com/400x250?text=Modul+Interaktif'" alt="Inovasi">
+                </div>
+                <div class="ep2-inovasi-content">
+                    <h3>LKPD Berbasis Proyek</h3>
+                    <p>LKPD disesuaikan dengan kasus nyata di industri manufaktur, memaksa siswa untuk melakukan troubleshooting.</p>
+                </div>
+            </div>
+            <div class="ep2-inovasi-card reveal" style="transition-delay: 0.1s">
+                <div class="ep2-inovasi-img">
+                    <img src="assets/inovasi-2.jpg" onerror="this.src='https://via.placeholder.com/400x250?text=Media+Video'" alt="Inovasi">
+                </div>
+                <div class="ep2-inovasi-content">
+                    <h3>Video Demonstrasi K3</h3>
+                    <p>Pembuatan video animasi singkat tentang bahaya di bengkel untuk apersepsi sebelum memulai kelas praktik.</p>
+                </div>
+            </div>
+            <div class="ep2-inovasi-card reveal" style="transition-delay: 0.2s">
+                <div class="ep2-inovasi-img">
+                    <img src="assets/inovasi-3.jpg" onerror="this.src='https://via.placeholder.com/400x250?text=Tutor+Sebaya'" alt="Inovasi">
+                </div>
+                <div class="ep2-inovasi-content">
+                    <h3>Peer-Assessment Checklist</h3>
+                    <p>Inovasi rubrik penilaian di mana siswa menilai kualitas pengelasan teman sebangkunya.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. SECTION 6 - DOKUMENTASI KEGIATAN -->
+    <section class="ep2-section" id="ep2-dok">
+        <h2 class="ep2-section-title reveal">Dokumentasi Kegiatan</h2>
+        <div class="ep2-gallery-scroll reveal">
+            <div class="ep2-gallery-item">
+                <img src="assets/dok-1.jpg" onerror="this.src='https://via.placeholder.com/300x400?text=Mengajar'" alt="Dok 1">
+                <div class="ep2-gallery-caption"><h4>Kegiatan Mengajar</h4></div>
+            </div>
+            <div class="ep2-gallery-item">
+                <img src="assets/dok-2.jpg" onerror="this.src='https://via.placeholder.com/300x400?text=Praktik'" alt="Dok 2">
+                <div class="ep2-gallery-caption"><h4>Praktik Bengkel</h4></div>
+            </div>
+            <div class="ep2-gallery-item">
+                <img src="assets/dok-3.jpg" onerror="this.src='https://via.placeholder.com/300x400?text=Diskusi'" alt="Dok 3">
+                <div class="ep2-gallery-caption"><h4>Diskusi Kelompok</h4></div>
+            </div>
+            <div class="ep2-gallery-item">
+                <img src="assets/dok-4.jpg" onerror="this.src='https://via.placeholder.com/300x400?text=Presentasi'" alt="Dok 4">
+                <div class="ep2-gallery-caption"><h4>Presentasi Murid</h4></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. SECTION 7 - UMPAN BALIK DAN EVALUASI -->
+    <section class="ep2-section" id="ep2-evaluasi">
+        <h2 class="ep2-section-title light reveal">Umpan Balik & Evaluasi</h2>
+        <div class="ep2-testi-grid">
+            <div class="ep2-testi-card reveal">
+                <span class="ep2-testi-quote">"</span>
+                <p class="ep2-testi-text">
+                    "Penguasaan kelas teori sudah baik, namun saran untuk PPL Mandiri selanjutnya: perbanyak ragam media interaktif agar penyampaian materi DDK yang berdurasi 2JP ini tidak membuat siswa kelas X jenuh."
+                </p>
+                <div class="ep2-testi-author">
+                    <div class="ep2-testi-author-info">
+                        <h4>Bpk. Budi Santoso</h4>
+                        <p>Guru Pamong Teknik Mesin</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ep2-testi-card reveal" style="transition-delay: 0.15s">
+                <span class="ep2-testi-quote">"</span>
+                <p class="ep2-testi-text">
+                    "Rancangan pembelajaran sudah bagus. Umpan balik reflektif: pertajam lagi instruksi saat pembagian kelompok, agar siswa TP maupun TFLM bisa saling berkolaborasi lintas kompetensi dasar."
+                </p>
+                <div class="ep2-testi-author">
+                    <div class="ep2-testi-author-info">
+                        <h4>Dr. Ir. Hendra</h4>
+                        <p>Dosen Pembimbing Lapangan</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. SECTION 8 - DAMPAK PEMBELAJARAN -->
+    <section class="ep2-section" id="ep2-dampak">
+        <h2 class="ep2-section-title reveal">Dampak Pembelajaran</h2>
+        <div class="ep2-impact-grid">
+            <div class="ep2-impact-stats reveal">
+                <div class="ep2-stat-item">
+                    <h4>Keaktifan Murid <span>85%</span></h4>
+                    <div class="ep2-progress-bg"><div class="ep2-progress-bar" style="width: 85%"></div></div>
+                    <p class="ep2-stat-desc">Siswa yang berpartisipasi aktif dalam diskusi awal dan troubleshooting masalah.</p>
+                </div>
+                <div class="ep2-stat-item">
+                    <h4>Keterampilan Praktik <span>92%</span></h4>
+                    <div class="ep2-progress-bg"><div class="ep2-progress-bar" style="width: 92%"></div></div>
+                    <p class="ep2-stat-desc">Siswa yang mampu menyelesaikan benda kerja sesuai batas toleransi di LKPD.</p>
+                </div>
+                <div class="ep2-stat-item">
+                    <h4>Penerapan K3LH <span>98%</span></h4>
+                    <div class="ep2-progress-bg"><div class="ep2-progress-bar" style="width: 98%"></div></div>
+                    <p class="ep2-stat-desc">Kedisiplinan siswa menggunakan APD lengkap sebelum menghidupkan mesin.</p>
+                </div>
+            </div>
+            <div class="ep2-impact-chart reveal" style="transition-delay: 0.2s">
+                <div style="font-size: 5rem; margin-bottom: 1rem;">📈</div>
+                <h3 style="color: var(--ep2-navy); margin-bottom: 1rem;">Hasil Belajar Positif</h3>
+                <p style="color: var(--ep2-steel); line-height: 1.6;">
+                    Penerapan model pembelajaran Project Based Learning (PjBL) berkontribusi signifikan pada kualitas hasil las dan benda kerja bubut kelas XI.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- SECTION - FILOSOFI MENGAJAR -->
+    <section class="ep2-section" id="ep2-filosofi">
+        <h2 class="ep2-section-title reveal">Filosofi Mengajar</h2>
+        
+        <div style="display: flex; flex-direction: column; gap: 4rem; margin-top: 2rem;">
+            
+            <!-- Lev Vygotsky -->
+            <div class="reveal" style="display: flex; gap: 3rem; align-items: center; flex-wrap: wrap;">
+                <div style="flex: 0 0 auto; margin: 0 auto; text-align: center;">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/7/7e/Lev_Vygotsky.jpg" alt="Lev Vygotsky" onerror="this.src='https://via.placeholder.com/250?text=Vygotsky'" style="border-radius: 50%; width: 220px; height: 220px; object-fit: cover; border: 5px solid var(--ep2-light); box-shadow: 0 15px 35px rgba(0,0,0,0.1);">
+                </div>
+                <div style="flex: 1 1 300px; background: white; padding: 2.5rem; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-left: 5px solid var(--ep2-blue);">
+                    <h3 style="color: var(--ep2-navy); margin-bottom: 0.5rem; font-size: 1.4rem;">Konstruktivisme Sosial & ZPD</h3>
+                    <div style="font-size: 1.1rem; font-style: italic; color: var(--ep2-blue); margin-bottom: 1.5rem; padding-left: 1rem; border-left: 3px solid var(--ep2-blue);">
+                        "Pembelajaran adalah proses sosial di mana siswa membangun makna bersama."
+                    </div>
+                    <p style="color: var(--ep2-steel); font-size: 1.05rem; line-height: 1.8;">
+                        Esensi pendidikan kejuruan di fase E (Dasar-dasar Kejuruan) bukanlah sekadar transfer pengetahuan teknis dasar, melainkan pembentukan pola pikir (<i>mindset</i>) dan etos kerja industri. Mengacu pada filosofi Konstruktivisme Vygotsky, saya meyakini bahwa siswa membangun pemahaman mereka melalui interaksi sosial. Dalam mengajarkan materi teori 2JP di SMK Negeri 2 Depok, peran saya adalah sebagai fasilitator yang menciptakan <b>Zona Perkembangan Proksimal (ZPD)</b> agar siswa mampu mengaitkan teori dasar pemesinan dengan realita bengkel industri.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Ki Hajar Dewantara -->
+            <div class="reveal" style="display: flex; gap: 3rem; align-items: center; flex-direction: row-reverse; flex-wrap: wrap;">
+                <div style="flex: 0 0 auto; margin: 0 auto; text-align: center;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Ki_Hadjar_Dewantara_1935.jpg" alt="Ki Hadjar Dewantara" onerror="this.src='https://via.placeholder.com/250?text=KHD'" style="border-radius: 50%; width: 220px; height: 220px; object-fit: cover; border: 5px solid var(--ep2-light); box-shadow: 0 15px 35px rgba(0,0,0,0.1);">
+                </div>
+                <div style="flex: 1 1 300px; background: white; padding: 2.5rem; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-right: 5px solid var(--ep2-orange); text-align: right;">
+                    <h3 style="color: var(--ep2-navy); margin-bottom: 0.5rem; font-size: 1.4rem;">Sistem Among (Kearifan Lokal)</h3>
+                    <div style="font-size: 1.1rem; font-style: italic; color: var(--ep2-orange); margin-bottom: 1.5rem; padding-right: 1rem; border-right: 3px solid var(--ep2-orange);">
+                        "Ing Ngarso Sung Tuladha, Ing Madya Mangun Karsa, Tut Wuri Handayani"
+                    </div>
+                    <p style="color: var(--ep2-steel); font-size: 1.05rem; line-height: 1.8;">
+                        Siswa kelas X Fase E yang baru bertransisi dari SMP seringkali mengalami <i>culture shock</i> terhadap kedisiplinan dan muatan materi vokasi. Melalui pendekatan Sistem Among, saya berusaha memberikan teladan kedisiplinan di depan kelas, memotivasi mereka di tengah-tengah kebosanan kelas teori, dan mendorong kemandirian belajar. Hal ini sangat krusial bagi siswa program keahlian Teknik Pemesinan maupun TFLM yang menuntut ketelitian dan daya juang (resiliensi) tinggi di bengkel.
+                    </p>
+                </div>
+            </div>
+
+            <!-- David Kolb -->
+            <div class="reveal" style="display: flex; gap: 3rem; align-items: center; flex-wrap: wrap;">
+                <div style="flex: 0 0 auto; margin: 0 auto; text-align: center;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/David_Kolb.jpg/440px-David_Kolb.jpg" alt="David Kolb" onerror="this.src='https://via.placeholder.com/250?text=Kolb'" style="border-radius: 50%; width: 220px; height: 220px; object-fit: cover; border: 5px solid var(--ep2-light); box-shadow: 0 15px 35px rgba(0,0,0,0.1);">
+                </div>
+                <div style="flex: 1 1 300px; background: white; padding: 2.5rem; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-left: 5px solid var(--ep2-yellow);">
+                    <h3 style="color: var(--ep2-navy); margin-bottom: 0.5rem; font-size: 1.4rem;">Experiential Learning</h3>
+                    <div style="font-size: 1.1rem; font-style: italic; color: #D69E2E; margin-bottom: 1.5rem; padding-left: 1rem; border-left: 3px solid var(--ep2-yellow);">
+                        "Belajar adalah proses di mana pengetahuan diciptakan melalui transformasi pengalaman."
+                    </div>
+                    <p style="color: var(--ep2-steel); font-size: 1.05rem; line-height: 1.8;">
+                        Walaupun pembelajaran Dasar-dasar Kejuruan didominasi oleh kelas teori murni, saya selalu berupaya menyisipkan tahapan <i>Active Experimentation</i> atau <i>Reflective Observation</i>. Misalnya, melalui diskusi pemecahan masalah sederhana terkait prosedur alat ukur atau K3LH. Perpaduan konstruktivisme sosial, kearifan lokal Sistem Among, dan pengalaman nyata (kontekstual) ini diyakini mampu mencetak lulusan SMK yang tidak hanya kompeten (<i>hard skill</i>) tapi juga berkarakter Profil Pelajar Pancasila.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+<!-- 10. SECTION 9 - RENCANA PENGEMBANGAN DIRI -->
+    <section class="ep2-section" id="ep2-rencana">
+        <h2 class="ep2-section-title reveal">Rencana Pengembangan Diri</h2>
+        <div class="ep2-timeline">
+            <div class="ep2-timeline-item reveal">
+                <div class="ep2-timeline-dot"></div>
+                <div class="ep2-timeline-content">
+                    <div class="ep2-timeline-date">Bulan 1 (PPL Mandiri)</div>
+                    <h3>Penguatan Manajemen Kelas</h3>
+                    <p>Meningkatkan strategi transisi bengkel yang efisien dan mengontrol 30 siswa praktik secara simultan.</p>
+                </div>
+            </div>
+            <div class="ep2-timeline-item reveal">
+                <div class="ep2-timeline-dot"></div>
+                <div class="ep2-timeline-content">
+                    <div class="ep2-timeline-date">Bulan 2</div>
+                    <h3>Pengembangan Media VR/AR</h3>
+                    <p>Eksplorasi penggunaan media simulasi virtual untuk materi CNC agar siswa tidak berebut mesin nyata.</p>
+                </div>
+            </div>
+            <div class="ep2-timeline-item reveal">
+                <div class="ep2-timeline-dot"></div>
+                <div class="ep2-timeline-content">
+                    <div class="ep2-timeline-date">Bulan 3</div>
+                    <h3>Sertifikasi Kompetensi</h3>
+                    <p>Mengikuti uji kompetensi (UKK) pengelasan lanjut (3G/4G) untuk meningkatkan kredibilitas sebagai guru produktif.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. SECTION 10 - PENUTUP REFLEKTIF -->
+    <section id="ep2-penutup">
+        <div class="ep2-penutup-content reveal">
+            <div class="ep2-final-quote">
+                "Menjadi guru vokasi bukan sekadar mengajarkan cara memutar tuas mesin, tetapi membentuk mental baja generasi pembangun bangsa."
+            </div>
+            <p style="margin-top: 3rem;">
+                PPL Terbimbing telah membongkar dan menyusun ulang paradigma saya. Saya menyadari bahwa tantangan di bengkel sekolah adalah miniatur dari kerasnya dunia industri. Saya berkomitmen untuk terus menjadi pembelajar sepanjang hayat, siap menyambut tantangan PPL Mandiri, dan mendedikasikan diri sebagai guru profesional yang membawa kemajuan bagi pendidikan kejuruan di Indonesia.
+            </p>
+            <a href="#" onclick="window.scrollTo(0,0); return false;" class="ep2-btn-outline" style="border-color: var(--ep2-orange); color: var(--ep2-orange);">Kembali ke Atas ↑</a>
+        </div>
+    </section>
+
+    </div> <!-- End of ep2-main-content -->
+
+</div>
+<!-- EP2 Glassmorphism Modal -->
+<div class="ep2-modal-overlay" id="ep2ModalOverlay">
+    <div class="ep2-modal-content">
+        <div class="ep2-modal-header">
+            <h3 class="ep2-modal-title">
+                <span id="ep2ModalIcon"></span>
+                <span id="ep2ModalTitleText">Title</span>
+            </h3>
+            <button class="ep2-modal-close" onclick="closeEP2Modal()">×</button>
+        </div>
+        <div class="ep2-modal-body" id="ep2ModalBody">
+            Content
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
