@@ -6,293 +6,66 @@
     <title>Hasil Kerja Siswa - Wawasan Bidang Teknik Mesin</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <style>
-        .page-hero {
-            background: linear-gradient(135deg, #1565C0 0%, #0D47A1 60%, #1a237e 100%);
-            color: white;
-            padding: 5rem 2rem 3rem;
-            text-align: center;
-        }
-        .page-hero .breadcrumb {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            font-size: 0.85rem;
-            opacity: 0.8;
-            margin-bottom: 1.5rem;
-            flex-wrap: wrap;
-        }
-        .page-hero .breadcrumb a { color: white; text-decoration: none; }
-        .page-hero .breadcrumb a:hover { text-decoration: underline; }
-        .page-hero h1 { font-size: 2.2rem; font-weight: 700; margin-bottom: 0.75rem; line-height: 1.3; }
-        .page-hero p { font-size: 1rem; opacity: 0.85; max-width: 600px; margin: 0 auto; }
-        .analysis-box {
-            max-width: 900px;
-            margin: 2.5rem auto;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            overflow: hidden;
-        }
-        .analysis-box-header {
-            background: linear-gradient(90deg, #1565C0, #0D47A1);
-            color: white;
-            padding: 1rem 1.5rem;
-            font-weight: 600;
-            font-size: 0.95rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .analysis-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0;
-        }
-        .analysis-item {
-            padding: 1.2rem 1.5rem;
-            border-bottom: 1px solid #f0f0f0;
-            border-right: 1px solid #f0f0f0;
-        }
-        .analysis-item:nth-child(2n) { border-right: none; }
-        .analysis-item:nth-last-child(-n+2) { border-bottom: none; }
-        .analysis-item strong { display: block; color: #1565C0; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem; }
-        .analysis-item p { font-size: 0.88rem; color: #555; line-height: 1.6; margin: 0; }
-        .gallery-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        .gallery-title {
-            text-align: center;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #1565C0;
-            margin-bottom: 0.5rem;
-        }
-        .gallery-subtitle {
-            text-align: center;
-            color: #888;
-            font-size: 0.88rem;
-            margin-bottom: 2rem;
-        }
-        .gallery-subtitle code { background: #f0f4ff; padding: 0.2rem 0.5rem; border-radius: 4px; color: #1565C0; }
-        .photo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 1.25rem;
-        }
-        .photo-card {
-            border-radius: 10px;
-            overflow: hidden;
-            background: white;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-            cursor: pointer;
-        }
-        .photo-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.14);
-        }
-        .photo-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            display: block;
-        }
-        .photo-card .photo-label {
-            padding: 0.75rem 1rem;
-            font-size: 0.85rem;
-            color: #444;
-            font-weight: 500;
-            border-top: 1px solid #f0f0f0;
-        }
-        .empty-state {
-            text-align: center;
-            padding: 4rem 2rem;
-            color: #aaa;
-            background: white;
-            border-radius: 12px;
-            border: 2px dashed #e0e0e0;
-        }
-        .empty-state .icon { font-size: 3.5rem; margin-bottom: 1rem; }
-        .empty-state h3 { font-size: 1.1rem; color: #999; margin-bottom: 0.5rem; }
-        .empty-state p { font-size: 0.88rem; line-height: 1.7; }
-        .empty-state code { background: #f0f4ff; padding: 0.2rem 0.5rem; border-radius: 4px; color: #1565C0; font-size: 0.82rem; }
-        .lightbox-overlay {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.88);
-            z-index: 9999;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-        }
-        .lightbox-overlay.active { display: flex; }
-        .lightbox-content { position: relative; max-width: 90vw; max-height: 90vh; }
-        .lightbox-content img {
-            max-width: 100%;
-            max-height: 85vh;
-            border-radius: 8px;
-            display: block;
-            box-shadow: 0 8px 40px rgba(0,0,0,0.5);
-        }
-        .lightbox-close {
-            position: absolute;
-            top: -2.5rem;
-            right: 0;
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
-            background: none;
-            border: none;
-            line-height: 1;
-        }
-        .lightbox-caption {
-            color: white;
-            text-align: center;
-            margin-top: 0.75rem;
-            font-size: 0.9rem;
-            opacity: 0.85;
-        }
-        .back-area {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 2rem 3rem;
-            text-align: center;
-        }
-        @media (max-width: 640px) {
-            .analysis-grid { grid-template-columns: 1fr; }
-            .analysis-item { border-right: none; }
-            .photo-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 0.75rem; }
-            .photo-card img { height: 150px; }
-            .page-hero h1 { font-size: 1.6rem; }
-        }
-    </style>
 </head>
-<body>
+<body style="background: var(--bg-light-gray);">
     <nav>
         <div class="nav-container">
-            <a href="hasil-kerja.html" class="logo">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--kemendikbud-blue)"><path d="m15 18-6-6 6-6"/></svg>
-                Kembali ke Menu Hasil Kerja
+            <a href="hasil-kerja.html" class="logo" style="text-decoration: none; display: flex; align-items: center; gap: 0.5rem; color: var(--text-dark);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--kemendikbud-blue)"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+                Kembali ke Menu Utama
             </a>
         </div>
     </nav>
 
-    <div class="page-hero">
-        <div class="breadcrumb">
-            <a href="hasil-kerja.html">Hasil Kerja Siswa</a>
-            <span>›</span>
-            <span>Teknik Pemesinan (TP)</span>
-            <span>›</span>
-            <span>Wawasan Bidang Teknik Mesin</span>
-        </div>
-        <h1>⚙️ Wawasan Bidang Teknik Mesin</h1>
-        <p>Dokumentasi hasil kerja nyata peserta didik selama proses pembelajaran berlangsung</p>
-    </div>
+    <!-- Header Section -->
+    <header style="background: white; padding: 4rem 2rem 2rem; border-bottom: 1px solid var(--border-color); text-align: center; margin-bottom: 2rem;">
+        <span style="font-size: 4rem; display: block; margin-bottom: 1rem;">📝</span>
+        <h1 style="color: var(--kemendikbud-blue); margin-bottom: 0.5rem;">Wawasan Bidang Teknik Mesin</h1>
+        <p style="color: var(--text-light); max-width: 600px; margin: 0 auto;">Galeri hasil kerja dan dokumentasi praktik siswa terkait materi pembelajaran.</p>
+    </header>
 
-    <div style="background: #f8faff; padding: 2rem 1rem;">
-        <div class="analysis-box">
-            <div class="analysis-box-header">📝 Analisis Artefak Hasil Kerja Siswa</div>
-            <div class="analysis-grid">
-                <div class="analysis-item">
-                    <strong>🎯 Konteks</strong>
-                    <p>Karya siswa berupa peta konsep, ringkasan, dan laporan eksplorasi wawasan dunia kerja di bidang teknik mesin.</p>
-                </div>
-                <div class="analysis-item">
-                    <strong>💡 Tujuan</strong>
-                    <p>Menilai sejauh mana siswa memahami ruang lingkup profesi dan peluang kerja di industri manufaktur.</p>
-                </div>
-                <div class="analysis-item">
-                    <strong>✅ Kelebihan</strong>
-                    <p>Melatih kemampuan literasi dan riset mandiri; siswa belajar mensintesis informasi dari berbagai sumber.</p>
-                </div>
-                <div class="analysis-item">
-                    <strong>⚠️ Kekurangan</strong>
-                    <p>Kedalaman analisis siswa sangat bervariasi tergantung kemampuan literasi awal masing-masing individu.</p>
+    <!-- Split Layout: Photo (Left) & Analysis (Right) -->
+    <section style="max-width: 1200px; margin: 0 auto; padding: 0 1rem 4rem;">
+        <div class="split-layout align-start" style="gap: 3rem;">
+            
+            <!-- Left Side: Full Photo Gallery -->
+            <div class="split-left" style="flex: 1.5;">
+                <div style="background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); border: 1px solid var(--border-color);">
+                    <h3 style="color: var(--kemendikbud-blue); margin-bottom: 1rem; border-bottom: 1px solid #eee; padding-bottom: 0.5rem;">📸 Bukti Fisik / Dokumentasi</h3>
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        
+            <div style="text-align: center; padding: 4rem 2rem; background: #f8faff; border-radius: 8px; border: 1px dashed #ccc;">
+                <span style="font-size: 3rem; opacity: 0.5;">📸</span>
+                <p style="margin-top: 1rem; color: #666;">Belum ada foto dokumentasi di folder <strong>assets/hasil-kerja/wawasan/</strong></p>
+            </div>
+            
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <div style="background: #f8faff; padding-bottom: 1rem;">
-        <div class="gallery-container">
-            <h2 class="gallery-title">🖼️ Galeri Foto Hasil Kerja</h2>
-            <p class="gallery-subtitle">
-                Folder foto: <code>assets/hasil-kerja/wawasan/</code> &nbsp;·&nbsp; Klik foto untuk memperbesar
-            </p>
-
-            <!-- ============================================================
-                 CARA MENAMBAH FOTO:
-                 1. Simpan foto ke folder: assets/hasil-kerja/wawasan/
-                 2. Duplikat blok <div class="photo-card"> di bawah ini
-                 3. Ganti "NAMA-FILE.jpg" dan keterangannya
-                 ============================================================ -->
-
-            <div class="photo-grid" id="photoGrid">
-
-                <!-- CONTOH FORMAT (hapus tanda komentar dan isi nama file):
-                <div class="photo-card" onclick="openLightbox(this)">
-                    <img src="assets/hasil-kerja/wawasan/NAMA-FILE.jpg" alt="Keterangan foto">
-                    <div class="photo-label">Keterangan singkat foto</div>
+            <!-- Right Side: Full Analysis (Sama dengan card yang lain) -->
+            <div class="split-right" style="flex: 1; position: sticky; top: 100px;">
+                <div class="doc-card-content" style="background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); border: 1px solid var(--border-color); padding: 1.5rem;">
+                    <h4 style="margin-bottom: 1rem;">Analisis Hasil Kerja Siswa</h4>
+                    <p style="margin-bottom: 1rem;">Detail analisis kontekstual terkait pembelajaran Wawasan Bidang Teknik Mesin.</p>
+                    
+                    <details style="margin: 1rem 0; font-size: 0.9rem; text-align: left; background: var(--bg-white); border: 1px solid var(--border-color); padding: 0.8rem; border-radius: 8px;" open>
+                        <summary style="cursor: pointer; font-weight: 600; color: var(--kemendikbud-blue); outline: none;">📝 Analisis Artefak</summary>
+                        <div style="padding-top: 0.8rem; display: flex; flex-direction: column; gap: 0.5rem; color: var(--text-dark);">
+                            <div><strong>Konteks:</strong> <br><span style="color: var(--text-light);">Karya siswa berupa peta konsep, ringkasan, dan laporan eksplorasi wawasan dunia kerja di bidang teknik mesin.</span></div>
+                            <div><strong>Tujuan:</strong> <br><span style="color: var(--text-light);">Menilai sejauh mana siswa memahami ruang lingkup profesi dan peluang kerja di industri manufaktur.</span></div>
+                            <div><strong>Kelebihan:</strong> <br><span style="color: var(--text-light);">Melatih kemampuan literasi dan riset mandiri; siswa belajar mensintesis informasi dari berbagai sumber.</span></div>
+                            <div><strong>Kekurangan:</strong> <br><span style="color: var(--text-light);">Kedalaman analisis siswa sangat bervariasi tergantung kemampuan literasi awal masing-masing individu.</span></div>
+                        </div>
+                    </details>
                 </div>
-                -->
-
             </div>
 
-            <div class="empty-state" id="emptyState">
-                <div class="icon">📂</div>
-                <h3>Belum ada foto</h3>
-                <p>
-                    Simpan foto ke folder <code>assets/hasil-kerja/wawasan/</code><br>
-                    lalu tambahkan blok foto di dalam <code>#photoGrid</code> sesuai<br>
-                    petunjuk komentar di HTML.
-                </p>
-            </div>
         </div>
-    </div>
-
-    <div class="back-area">
-        <a href="hasil-kerja.html" class="btn-primary">← Kembali ke Menu</a>
-    </div>
-
+    </section>
+    
     <footer>
         <p>&copy; 2026 Bimoro Kusumo. E-Portfolio PPG Universitas Sarjanawiyata Tamansiswa (UST).</p>
     </footer>
-
-    <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox(event)">
-        <div class="lightbox-content">
-            <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
-            <img id="lightboxImg" src="" alt="">
-            <div class="lightbox-caption" id="lightboxCaption"></div>
-        </div>
-    </div>
-
-    <script>
-        const grid = document.getElementById('photoGrid');
-        const emptyState = document.getElementById('emptyState');
-        const cards = grid.querySelectorAll('.photo-card');
-        emptyState.style.display = cards.length === 0 ? 'block' : 'none';
-
-        function openLightbox(card) {
-            const img = card.querySelector('img');
-            const label = card.querySelector('.photo-label');
-            document.getElementById('lightboxImg').src = img.src;
-            document.getElementById('lightboxImg').alt = img.alt;
-            document.getElementById('lightboxCaption').textContent = label ? label.textContent : '';
-            document.getElementById('lightbox').classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-        function closeLightbox(e) {
-            if (!e || e.target === document.getElementById('lightbox') || e.target.classList.contains('lightbox-close')) {
-                document.getElementById('lightbox').classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        }
-        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
-    </script>
 </body>
 </html>
