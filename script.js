@@ -371,3 +371,67 @@ window.switchTab = function(tabId) {
     document.getElementById(tabId).classList.add('active');
     document.querySelector(`.tab-btn[onclick="switchTab('${tabId}')"]`).classList.add('active');
 };
+
+// EP2 Refleksi Akhir Modal Logic
+const ep2RefleksiData = {
+    'refleksi1': {
+        title: 'Apa yang Telah Dipelajari?',
+        icon: '📚',
+        text: 'Selama pelaksanaan PPL Terbimbing, saya belajar banyak hal tentang dinamika kelas dan karakter peserta didik yang beragam di sekolah vokasi. Saya menyadari bahwa persiapan mengajar teori Dasar-Dasar Keahlian (DDK) untuk jurusan Teknik Pemesinan (TP) dan Teknik Fabrikasi Logam dan Manufaktur (TFLM) tidak sekadar menyusun perangkat administratif, melainkan bagaimana merancang alur pedagogis yang adaptif. Saya belajar menerapkan pendekatan berdiferensiasi dalam menyampaikan konsep-konsep teknik yang abstrak, serta mengintegrasikan aspek Keselamatan dan Kesehatan Kerja (K3) secara konseptual ke dalam setiap sesi pembelajaran teori, memastikan peserta didik memahami fondasi keilmuan dan memiliki kesadaran profesional yang tinggi sejak dari ruang kelas.'
+    },
+    'refleksi2': {
+        title: 'Pengalaman Menantang & Solusi',
+        icon: '🧗‍♂️',
+        text: 'Tantangan terbesar yang saya hadapi adalah menjembatani kesenjangan pemahaman konseptual awal antar siswa serta menganalogikan materi teknik yang abstrak menjadi mudah dipahami. Banyak siswa yang belum memiliki gambaran tentang konsep dasar permesinan dan manufaktur, sehingga diperlukan strategi penyederhanaan yang tepat. Solusi yang saya terapkan adalah dengan mengoptimalkan penggunaan media visual, studi kasus industri, dan pendekatan Inquiry Learning. Pendekatan ini sangat krusial bagi siswa Kelas X (Fase E), di mana mereka sangat membutuhkan stimulan awal—seperti pengamatan fenomena atau pertanyaan pemantik—agar mengetahui gambaran besarnya terlebih dahulu sebelum mampu merancang dan memproses konsep-konsep tersebut secara utuh di dalam pikiran mereka. Saya juga memberikan scaffolding (bimbingan bertahap) yang lebih intensif kepada siswa yang tertinggal, serta menerapkan tutor sebaya.'
+    },
+    'refleksi3': {
+        title: 'Umpan Balik & Saran Konstruktif',
+        icon: '💡',
+        text: 'Dalam diskusi refleksi akhir, Guru Pamong dan Dosen Pembimbing Lapangan (DPL) memberikan masukan yang sangat berharga. Saya disarankan untuk lebih memperkuat keterampilan manajemen kelas, terutama dalam menjaga fokus dan antusiasme siswa selama sesi teori yang panjang. Selain itu, saya juga mendapat masukan untuk terus mengembangkan apersepsi yang lebih kontekstual—mengaitkan materi DDK secara langsung dengan studi kasus nyata di dunia industri manufaktur—sebagai perbaikan krusial untuk menghadapi PPL Mandiri ke depannya.'
+    }
+};
+
+window.openEp2Modal = function(id) {
+    const data = ep2RefleksiData[id];
+    if (!data) return;
+
+    document.getElementById('ep2ModalTitle').innerText = data.title;
+    document.getElementById('ep2ModalIcon').innerText = data.icon;
+    document.getElementById('ep2ModalText').innerText = data.text;
+
+    const overlay = document.getElementById('ep2ModalOverlay');
+    const content = document.getElementById('ep2ModalContent');
+    
+    if (overlay && content) {
+        overlay.style.visibility = 'visible';
+        overlay.style.opacity = '1';
+        content.style.transform = 'translateY(0)';
+        document.body.style.overflow = 'hidden';
+    }
+};
+
+window.closeEp2Modal = function() {
+    const overlay = document.getElementById('ep2ModalOverlay');
+    const content = document.getElementById('ep2ModalContent');
+    
+    if (overlay && content) {
+        overlay.style.opacity = '0';
+        content.style.transform = 'translateY(30px)';
+        
+        setTimeout(() => {
+            overlay.style.visibility = 'hidden';
+            document.body.style.overflow = '';
+        }, 300);
+    }
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+    const ep2Overlay = document.getElementById('ep2ModalOverlay');
+    if(ep2Overlay) {
+        ep2Overlay.addEventListener('click', function(e) {
+            if (e.target === this) {
+                window.closeEp2Modal();
+            }
+        });
+    }
+});
