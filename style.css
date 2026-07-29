@@ -178,13 +178,13 @@ section {
 
 /* Hero Section */
 #home {
-  margin-top: 110px; /* offset for bertigkat nav */
+  margin-top: 0;
   background-color: var(--kemendikbud-blue-dark);
   background-image: linear-gradient(135deg, rgba(0, 45, 98, 0.95), rgba(15, 86, 166, 0.85)), url('bg-hero.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 6rem 2rem;
+  padding: calc(6rem + 110px) 2rem 6rem 2rem;
   text-align: center;
   color: var(--bg-white);
   max-width: 100%;
@@ -200,7 +200,7 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 3rem;
   margin-bottom: 2rem;
 }
 
@@ -223,10 +223,10 @@ section {
 }
 
 .hero-title {
-  font-size: 2.6rem;
+  font-size: 3rem;
   color: var(--bg-white);
   margin-bottom: 0;
-  font-weight: 700;
+  font-weight: 800;
   position: relative;
   text-align: left;
 }
@@ -234,13 +234,12 @@ section {
 .hero-title::after {
   content: '';
   position: absolute;
-  bottom: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90px;
-  height: 4px;
+  bottom: -15px;
+  left: 0;
+  width: 120px;
+  height: 5px;
   background-color: #f39c12; /* Gold Kemendikbud Underline */
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
 /* Mock Search Bar */
@@ -379,42 +378,49 @@ section {
 
 /* Portfolio Chooser Overlay */
 #portfolioChooser {
-  position: fixed;
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
-  height: 100vh;
-  background: var(--bg-light-gray);
-  z-index: 9999;
+  background: linear-gradient(180deg, var(--bg-white) 0%, #f1f5f9 100%);
+  z-index: 10;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  text-align: justify;
   transition: opacity 0.5s ease;
+  padding: 5rem 2rem 6rem;
+  border-top: 1px solid var(--border-color);
 }
 
 .chooser-content {
-  max-width: 800px;
-  padding: 2rem;
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
 }
 
 .chooser-logo {
   display: flex;
   justify-content: center;
-  gap: 15px;
-  margin-bottom: 2rem;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 2.5rem;
 }
 
 .chooser-logo img {
-  height: 60px;
+  height: 65px;
   width: auto;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.05));
+  transition: transform 0.3s ease;
+}
+
+.chooser-logo img:hover {
+  transform: scale(1.05);
 }
 
 .chooser-title {
   font-size: 2.5rem;
-  color: var(--kemendikbud-blue);
+  color: var(--kemendikbud-blue-dark);
   margin-bottom: 0.5rem;
+  font-weight: 800;
 }
 
 .chooser-subtitle {
@@ -425,32 +431,51 @@ section {
 
 .chooser-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
+  margin-bottom: 3rem;
 }
 
 .chooser-card {
   background: var(--bg-white);
-  border: 2px solid var(--border-color);
-  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
   padding: 2.5rem;
   cursor: pointer;
-  transition: var(--transition);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
   overflow: hidden;
   text-align: left;
+  box-shadow: 0 10px 30px -5px rgba(0,0,0,0.05);
 }
 
 .chooser-card:hover {
   border-color: var(--kemendikbud-cyan);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-  transform: translateY(-5px);
+  box-shadow: 0 20px 40px -10px rgba(0, 168, 204, 0.2);
+  transform: translateY(-8px);
+}
+
+.chooser-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--kemendikbud-cyan);
+  transform: scaleY(0);
+  transition: transform 0.4s ease;
+  transform-origin: bottom;
+}
+
+.chooser-card:hover::before {
+  transform: scaleY(1);
 }
 
 .chooser-card-badge {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 1.5rem;
+  right: 1.5rem;
   background: var(--kemendikbud-blue);
   color: var(--bg-white);
   padding: 0.3rem 0.8rem;
@@ -716,6 +741,13 @@ footer {
     font-size: 1.75rem;
     text-align: center;
     width: 100%;
+  }
+  .hero-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    bottom: -10px;
   }
   .hero-img {
     width: 120px;

@@ -3,19 +3,29 @@ window.selectPortfolio = function(id) {
     document.getElementById('portfolioChooser').style.opacity = '0';
     setTimeout(() => {
         document.getElementById('portfolioChooser').style.display = 'none';
-        document.getElementById('mainNav').classList.remove('hidden-section');
         
-        if (id === 1) {
-            document.getElementById('portfolio1').classList.remove('hidden-section');
-            document.getElementById('portfolio2').classList.add('hidden-section');
-            document.getElementById('nav-ep1').classList.remove('hidden-section');
-            document.getElementById('nav-ep2').classList.add('hidden-section');
-        } else {
-            document.getElementById('portfolio1').classList.add('hidden-section');
-            document.getElementById('portfolio2').classList.remove('hidden-section');
-            document.getElementById('nav-ep1').classList.add('hidden-section');
-            document.getElementById('nav-ep2').classList.remove('hidden-section');
+        // Hide landing sections (Beranda - Keahlian)
+        const landingSections = document.getElementById('landing-sections');
+        if (landingSections) landingSections.classList.add('hidden-section');
+
+        // Hide default landing nav
+        const mainNavLinks = document.getElementById('nav-main');
+        if (mainNavLinks) mainNavLinks.classList.add('hidden-section');
+        
+        // Hide all portfolios and navs
+        for (let i = 1; i <= 5; i++) {
+            const p = document.getElementById('portfolio' + i);
+            if (p) p.classList.add('hidden-section');
+            const n = document.getElementById('nav-ep' + i);
+            if (n) n.classList.add('hidden-section');
         }
+
+        // Show the selected one
+        const targetP = document.getElementById('portfolio' + id);
+        if (targetP) targetP.classList.remove('hidden-section');
+        const targetN = document.getElementById('nav-ep' + id);
+        if (targetN) targetN.classList.remove('hidden-section');
+        
     }, 500);
 };
 
@@ -25,9 +35,20 @@ window.showChooser = function() {
         document.getElementById('portfolioChooser').style.opacity = '1';
     }, 10);
     
-    document.getElementById('mainNav').classList.add('hidden-section');
-    document.getElementById('portfolio1').classList.add('hidden-section');
-    document.getElementById('portfolio2').classList.add('hidden-section');
+    // Show landing sections (Beranda - Keahlian)
+    const landingSections = document.getElementById('landing-sections');
+    if (landingSections) landingSections.classList.remove('hidden-section');
+
+    // Show default landing nav
+    const mainNavLinks = document.getElementById('nav-main');
+    if (mainNavLinks) mainNavLinks.classList.remove('hidden-section');
+
+    for (let i = 1; i <= 5; i++) {
+        const p = document.getElementById('portfolio' + i);
+        if (p) p.classList.add('hidden-section');
+        const n = document.getElementById('nav-ep' + i);
+        if (n) n.classList.add('hidden-section');
+    }
     window.scrollTo(0,0);
 };
 
@@ -431,6 +452,85 @@ document.addEventListener('DOMContentLoaded', () => {
         ep2Overlay.addEventListener('click', function(e) {
             if (e.target === this) {
                 window.closeEp2Modal();
+            }
+        });
+    }
+});
+
+// EP5 Modal Pop-up Logic
+const ep5RefleksiData = {
+    'subjek1': {
+        title: 'Refleksi Filosofi Pendidikan Nasional',
+        icon: '📘',
+        text: 'Melalui mata kuliah Filosofi Pendidikan dan Nilai, saya menyadari pentingnya pemahaman mendalam tentang nilai-nilai luhur budaya bangsa sebagai landasan filosofis pendidikan. Pendidikan bukan sekadar transfer ilmu, melainkan proses \'menuntun\' kodrat anak sesuai ajaran Ki Hajar Dewantara. Tantangan utamanya adalah menginternalisasi nilai-nilai ini di tengah arus modernisasi. Sebagai calon guru, saya belajar untuk menciptakan ekosistem belajar yang berpihak pada peserta didik, mengutamakan pembentukan karakter budi pekerti, serta menyelaraskan pendidikan dengan konteks sosiokultural daerah.'
+    },
+    'subjek2': {
+        title: 'Refleksi Penerapan Growth Mindset',
+        icon: '🌱',
+        text: 'Mata kuliah Growth Mindset membuka wawasan saya tentang betapa krusialnya pola pikir berkembang bagi seorang pendidik dan peserta didik. Saya menyadari bahwa kemampuan intelektual dan bakat dapat terus dikembangkan melalui dedikasi dan kerja keras. Dalam refleksi ini, saya belajar mengidentifikasi \'fixed mindset\' yang sering tidak disadari, serta strategi untuk mengubahnya. Ke depannya, saya akan lebih berfokus pada penghargaan terhadap proses belajar dan usaha siswa (process praise) dibandingkan sekadar memuji hasil akhir atau kecerdasan bawaan, demi membangun ketangguhan mental mereka.'
+    },
+    'subjek3': {
+        title: 'Refleksi Pemahaman Karakteristik Peserta Didik',
+        icon: '🧑‍🤝‍🧑',
+        text: 'Memahami peserta didik adalah fondasi dari pembelajaran berdiferensiasi. Dalam mata kuliah ini, saya mempelajari berbagai teori perkembangan kognitif, sosial, emosional, dan moral siswa. Saya menyadari bahwa setiap anak unik dan membawa latar belakang sosiokultural yang berbeda ke dalam kelas. Refleksi ini membantu saya menyusun strategi observasi (profiling peserta didik) yang lebih komprehensif, sehingga nantinya rancangan pembelajaran yang saya buat dapat lebih relevan, bermakna, dan mampu memfasilitasi kebutuhan belajar mereka yang beragam secara optimal.'
+    },
+    'subjek4': {
+        title: 'Refleksi Perancangan Pembelajaran dan Asesmen',
+        icon: '📝',
+        text: 'Pembelajaran mendalam (deep learning) membutuhkan desain instruksional yang terstruktur dan asesmen yang tepat sasaran. Melalui mata kuliah ini, saya belajar memformulasikan tujuan pembelajaran yang selaras dengan asesmen (alignment). Saya juga berlatih menyusun asesmen formatif yang tidak hanya menilai, tetapi juga membimbing proses belajar siswa (assessment for learning dan as learning). Kendala yang sering saya hadapi adalah merancang rubrik penilaian yang objektif untuk tugas unjuk kerja (performance task), namun melalui pendampingan dan refleksi ini, saya kini lebih siap menyusun perangkat asesmen yang valid dan reliabel.'
+    },
+    'subjek5': {
+        title: 'Refleksi Praktik Pengalaman Lapangan Terbimbing',
+        icon: '🏫',
+        text: 'PPL Terbimbing di SMK Negeri 2 Depok memberikan pengalaman nyata yang sangat berharga. Saya berkesempatan menerapkan teori pedagogis langsung di kelas riil, menghadapi dinamika siswa kejuruan, dan mempraktikkan keterampilan mengajar. Refleksi terbesar saya adalah pentingnya manajemen kelas (classroom management) dan fleksibilitas dalam mengajar. Ketika rencana awal tidak berjalan mulus karena kendala teknis atau daya tangkap siswa, saya harus sigap melakukan penyesuaian. Umpan balik dari Guru Pamong dan Dosen Pembimbing sangat membantu saya dalam mengevaluasi efektivitas metode pengajaran dan membangun komunikasi yang lebih asertif dengan peserta didik.'
+    },
+    'subjek6': {
+        title: 'Refleksi Inovasi Pembelajaran Berbasis Tamansiswa',
+        icon: '🌱',
+        text: 'Mata kuliah Inovasi Pembelajaran Berbasis Tamansiswa mengajarkan pentingnya mengintegrasikan nilai-nilai luhur ajaran Ki Hadjar Dewantara, seperti Sistem Among (Ing Ngarso Sung Tulodo, Ing Madyo Mangun Karso, Tut Wuri Handayani) dalam merancang pembelajaran modern. Saya menyadari bahwa inovasi teknologi dan metode pengajaran terkini harus selaras dengan karakter budaya bangsa. Melalui refleksi ini, saya belajar untuk menciptakan ekosistem belajar yang tidak hanya canggih secara teknologi, namun juga humanis, memerdekakan siswa, dan berpusat pada kodrat alam serta kodrat zaman peserta didik.'
+    }
+};
+
+window.openEp5Modal = function(id) {
+    const data = ep5RefleksiData[id];
+    if (!data) return;
+
+    document.getElementById('ep5ModalTitle').innerText = data.title;
+    document.getElementById('ep5ModalIcon').innerText = data.icon;
+    document.getElementById('ep5ModalText').innerText = data.text;
+
+    const overlay = document.getElementById('ep5ModalOverlay');
+    const content = document.getElementById('ep5ModalContent');
+    
+    if (overlay && content) {
+        overlay.style.visibility = 'visible';
+        overlay.style.opacity = '1';
+        content.style.transform = 'translateY(0)';
+        document.body.style.overflow = 'hidden';
+    }
+};
+
+window.closeEp5Modal = function() {
+    const overlay = document.getElementById('ep5ModalOverlay');
+    const content = document.getElementById('ep5ModalContent');
+    
+    if (overlay && content) {
+        overlay.style.opacity = '0';
+        content.style.transform = 'translateY(30px)';
+        
+        setTimeout(() => {
+            overlay.style.visibility = 'hidden';
+            document.body.style.overflow = '';
+        }, 300);
+    }
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+    const ep5Overlay = document.getElementById('ep5ModalOverlay');
+    if(ep5Overlay) {
+        ep5Overlay.addEventListener('click', function(e) {
+            if (e.target === this) {
+                window.closeEp5Modal();
             }
         });
     }
