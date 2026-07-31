@@ -397,17 +397,17 @@ window.switchTab = function(tabId) {
 const ep2RefleksiData = {
     'refleksi1': {
         title: 'Apa yang Telah Dipelajari?',
-        icon: '📚',
+        icon: '',
         text: 'Selama pelaksanaan PPL Terbimbing, saya belajar banyak hal tentang dinamika kelas dan karakter peserta didik yang beragam di sekolah vokasi. Saya menyadari bahwa persiapan mengajar teori Dasar-Dasar Keahlian (DDK) untuk jurusan Teknik Pemesinan (TP) dan Teknik Fabrikasi Logam dan Manufaktur (TFLM) tidak sekadar menyusun perangkat administratif, melainkan bagaimana merancang alur pedagogis yang adaptif. Saya belajar menerapkan pendekatan berdiferensiasi dalam menyampaikan konsep-konsep teknik yang abstrak, serta mengintegrasikan aspek Keselamatan dan Kesehatan Kerja (K3) secara konseptual ke dalam setiap sesi pembelajaran teori, memastikan peserta didik memahami fondasi keilmuan dan memiliki kesadaran profesional yang tinggi sejak dari ruang kelas.'
     },
     'refleksi2': {
         title: 'Pengalaman Menantang & Solusi',
-        icon: '🧗‍♂️',
+        icon: '',
         text: 'Tantangan terbesar yang saya hadapi adalah menjembatani kesenjangan pemahaman konseptual awal antar siswa serta menganalogikan materi teknik yang abstrak menjadi mudah dipahami. Banyak siswa yang belum memiliki gambaran tentang konsep dasar permesinan dan manufaktur, sehingga diperlukan strategi penyederhanaan yang tepat. Solusi yang saya terapkan adalah dengan mengoptimalkan penggunaan media visual, studi kasus industri, dan pendekatan Inquiry Learning. Pendekatan ini sangat krusial bagi siswa Kelas X (Fase E), di mana mereka sangat membutuhkan stimulan awal—seperti pengamatan fenomena atau pertanyaan pemantik—agar mengetahui gambaran besarnya terlebih dahulu sebelum mampu merancang dan memproses konsep-konsep tersebut secara utuh di dalam pikiran mereka. Saya juga memberikan scaffolding (bimbingan bertahap) yang lebih intensif kepada siswa yang tertinggal, serta menerapkan tutor sebaya.'
     },
     'refleksi3': {
         title: 'Umpan Balik & Saran Konstruktif',
-        icon: '💡',
+        icon: '',
         text: 'Dalam diskusi refleksi akhir, Guru Pamong dan Dosen Pembimbing Lapangan (DPL) memberikan masukan yang sangat berharga. Saya disarankan untuk lebih memperkuat keterampilan manajemen kelas, terutama dalam menjaga fokus dan antusiasme siswa selama sesi teori yang panjang. Selain itu, saya juga mendapat masukan untuk terus mengembangkan apersepsi yang lebih kontekstual—mengaitkan materi DDK secara langsung dengan studi kasus nyata di dunia industri manufaktur—sebagai perbaikan krusial untuk menghadapi PPL Mandiri ke depannya.'
     }
 };
@@ -461,32 +461,32 @@ document.addEventListener('DOMContentLoaded', () => {
 const ep5RefleksiData = {
     'subjek1': {
         title: 'Refleksi Filosofi Pendidikan Nasional',
-        icon: '📘',
+        icon: '',
         text: 'Melalui mata kuliah Filosofi Pendidikan dan Nilai, saya menyadari pentingnya pemahaman mendalam tentang nilai-nilai luhur budaya bangsa sebagai landasan filosofis pendidikan. Pendidikan bukan sekadar transfer ilmu, melainkan proses \'menuntun\' kodrat anak sesuai ajaran Ki Hajar Dewantara. Tantangan utamanya adalah menginternalisasi nilai-nilai ini di tengah arus modernisasi. Sebagai calon guru, saya belajar untuk menciptakan ekosistem belajar yang berpihak pada peserta didik, mengutamakan pembentukan karakter budi pekerti, serta menyelaraskan pendidikan dengan konteks sosiokultural daerah.'
     },
     'subjek2': {
         title: 'Refleksi Penerapan Growth Mindset',
-        icon: '🌱',
+        icon: '',
         text: 'Mata kuliah Growth Mindset membuka wawasan saya tentang betapa krusialnya pola pikir berkembang bagi seorang pendidik dan peserta didik. Saya menyadari bahwa kemampuan intelektual dan bakat dapat terus dikembangkan melalui dedikasi dan kerja keras. Dalam refleksi ini, saya belajar mengidentifikasi \'fixed mindset\' yang sering tidak disadari, serta strategi untuk mengubahnya. Ke depannya, saya akan lebih berfokus pada penghargaan terhadap proses belajar dan usaha siswa (process praise) dibandingkan sekadar memuji hasil akhir atau kecerdasan bawaan, demi membangun ketangguhan mental mereka.'
     },
     'subjek3': {
         title: 'Refleksi Pemahaman Karakteristik Peserta Didik',
-        icon: '🧑‍🤝‍🧑',
+        icon: '',
         text: 'Memahami peserta didik adalah fondasi dari pembelajaran berdiferensiasi. Dalam mata kuliah ini, saya mempelajari berbagai teori perkembangan kognitif, sosial, emosional, dan moral siswa. Saya menyadari bahwa setiap anak unik dan membawa latar belakang sosiokultural yang berbeda ke dalam kelas. Refleksi ini membantu saya menyusun strategi observasi (profiling peserta didik) yang lebih komprehensif, sehingga nantinya rancangan pembelajaran yang saya buat dapat lebih relevan, bermakna, dan mampu memfasilitasi kebutuhan belajar mereka yang beragam secara optimal.'
     },
     'subjek4': {
         title: 'Refleksi Perancangan Pembelajaran dan Asesmen',
-        icon: '📝',
+        icon: '',
         text: 'Pembelajaran mendalam (deep learning) membutuhkan desain instruksional yang terstruktur dan asesmen yang tepat sasaran. Melalui mata kuliah ini, saya belajar memformulasikan tujuan pembelajaran yang selaras dengan asesmen (alignment). Saya juga berlatih menyusun asesmen formatif yang tidak hanya menilai, tetapi juga membimbing proses belajar siswa (assessment for learning dan as learning). Kendala yang sering saya hadapi adalah merancang rubrik penilaian yang objektif untuk tugas unjuk kerja (performance task), namun melalui pendampingan dan refleksi ini, saya kini lebih siap menyusun perangkat asesmen yang valid dan reliabel.'
     },
     'subjek5': {
         title: 'Refleksi Praktik Pengalaman Lapangan Terbimbing',
-        icon: '🏫',
+        icon: '',
         text: 'PPL Terbimbing di SMK Negeri 2 Depok memberikan pengalaman nyata yang sangat berharga. Saya berkesempatan menerapkan teori pedagogis langsung di kelas riil, menghadapi dinamika siswa kejuruan, dan mempraktikkan keterampilan mengajar. Refleksi terbesar saya adalah pentingnya manajemen kelas (classroom management) dan fleksibilitas dalam mengajar. Ketika rencana awal tidak berjalan mulus karena kendala teknis atau daya tangkap siswa, saya harus sigap melakukan penyesuaian. Umpan balik dari Guru Pamong dan Dosen Pembimbing sangat membantu saya dalam mengevaluasi efektivitas metode pengajaran dan membangun komunikasi yang lebih asertif dengan peserta didik.'
     },
     'subjek6': {
         title: 'Refleksi Inovasi Pembelajaran Berbasis Tamansiswa',
-        icon: '🌱',
+        icon: '',
         text: 'Mata kuliah Inovasi Pembelajaran Berbasis Tamansiswa mengajarkan pentingnya mengintegrasikan nilai-nilai luhur ajaran Ki Hadjar Dewantara, seperti Sistem Among (Ing Ngarso Sung Tulodo, Ing Madyo Mangun Karso, Tut Wuri Handayani) dalam merancang pembelajaran modern. Saya menyadari bahwa inovasi teknologi dan metode pengajaran terkini harus selaras dengan karakter budaya bangsa. Melalui refleksi ini, saya belajar untuk menciptakan ekosistem belajar yang tidak hanya canggih secara teknologi, namun juga humanis, memerdekakan siswa, dan berpusat pada kodrat alam serta kodrat zaman peserta didik.'
     }
 };
