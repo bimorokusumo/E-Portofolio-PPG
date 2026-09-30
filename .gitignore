@@ -1,0 +1,6 @@
+assets_backup/
+.DS_Store
+*.pyc
+__pycache__/
+*.bak*
+*.backup
