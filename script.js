@@ -438,15 +438,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Tab Switching Logic
 window.switchTab = function(tabId) {
-    document.querySelectorAll('.tab-content').forEach(content => {
-        content.classList.remove('active');
+    const target = document.getElementById(tabId);
+    if (!target) return;
+
+    if (tabId.startsWith('ep5-')) {
+        const ep5Container = document.getElementById('ep5-refleksi');
+        if (ep5Container) {
+            ep5Container.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            ep5Container.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        }
+    } else {
+        ['siklus-1', 'siklus-2', 'siklus-3'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.classList.remove('active');
+            const btn = document.querySelector(`.tab-btn[onclick="switchTab('${id}')"]`);
+            if (btn) btn.classList.remove('active');
+        });
+    }
+
+    target.classList.add('active');
+    const activeBtn = document.querySelector(`.tab-btn[onclick="switchTab('${tabId}')"]`);
+    if (activeBtn) activeBtn.classList.add('active');
+
+    // Instantly load any lazy iframes inside the activated tab
+    target.querySelectorAll('iframe[data-src]').forEach(iframe => {
+        if (iframe.dataset.src) {
+            iframe.src = iframe.dataset.src;
+            iframe.removeAttribute('data-src');
+        }
     });
-    document.querySelectorAll('.tab-btn').forEach(btn => {
-        btn.classList.remove('active');
-    });
-    
-    document.getElementById(tabId).classList.add('active');
-    document.querySelector(`.tab-btn[onclick="switchTab('${tabId}')"]`).classList.add('active');
 };
 
 // EP2 Refleksi Akhir Modal Logic
@@ -544,6 +564,31 @@ const ep5RefleksiData = {
         title: 'Refleksi Inovasi Pembelajaran Berbasis Tamansiswa',
         icon: '🌿',
         text: 'Mata kuliah Inovasi Pembelajaran Berbasis Tamansiswa mengajarkan pentingnya mengintegrasikan nilai-nilai luhur ajaran Ki Hadjar Dewantara, seperti Sistem Among (Ing Ngarso Sung Tulodo, Ing Madyo Mangun Karso, Tut Wuri Handayani) dalam merancang pembelajaran modern. Saya menyadari bahwa inovasi teknologi dan metode pengajaran terkini harus selaras dengan karakter budaya bangsa. Melalui refleksi ini, saya belajar untuk menciptakan ekosistem belajar yang tidak hanya canggih secara teknologi, namun juga humanis, memerdekakan siswa, dan berpusat pada kodrat alam serta kodrat zaman peserta didik.'
+    },
+    'sem2_pse': {
+        title: 'Refleksi Pembelajaran Sosial Emosional (PSE)',
+        icon: '💙',
+        text: 'Mata kuliah Pembelajaran Sosial Emosional (PSE) memberikan pemahaman mendalam bahwa keberhasilan proses pembelajaran kejuruan tidak hanya ditentukan oleh kecakapan teknis (hard skills), melainkan sangat dipengaruhi oleh kematangan emosional dan sosial (soft skills). Melalui kerangka kerja CASEL, saya mendalami lima kompetensi utama: kesadaran diri (self-awareness), manajemen diri (self-management), kesadaran sosial (social awareness), keterampilan berelasi (relationship skills), dan pengambilan keputusan yang bertanggung jawab (responsible decision-making). Dalam konteks pendidikan vokasi di SMK, peserta didik kerap menghadapi dinamika kerja bengkel dan tuntutan presisi yang tinggi. Refleksi ini mengajarkan saya untuk mengintegrasikan teknik mindfulness (seperti teknik STOP), menciptakan iklim kelas yang aman secara psikologis, serta membimbing siswa mengelola stres dan kolaborasi kerja secara konstruktif demi mewujudkan profil Pelajar Pancasila yang tangguh dan berkarakter mulia.'
+    },
+    'sem2_pmal': {
+        title: 'Refleksi Pembelajaran dan Asesmen Lanjutan (PMAL)',
+        icon: '🎯',
+        text: 'Mata kuliah Pembelajaran dan Asesmen Lanjutan (PMAL) memperdalam kapasitas saya dalam merancang siklus pembelajaran yang berpusat pada peserta didik melalui diferensiasi lanjutan dan asesmen autentik. Saya mempelajari integrasi pendekatan Teaching at the Right Level (TaRL) dan Culturally Responsive Teaching (CRT) guna merespons keberagaman kesiapan belajar, minat, dan profil belajar siswa kejuruan. Refleksi mendalam pada mata kuliah ini berfokus pada transisi menuju asesmen autentik berbasis unjuk kerja industri. Saya belajar merumuskan asesmen diagnostik awal secara terukur, menyusun rubrik analitik berbasis kriteria capaian standar kompetensi kerja, serta memanfaatkan data asesmen formatif sebagai dasar penyesuaian instruksional (scaffolding) secara real-time guna memastikan setiap peserta didik mencapai kompetensi optimal.'
+    },
+    'sem2_seminar': {
+        title: 'Refleksi Seminar Pendidikan Profesi Guru',
+        icon: '🎓',
+        text: 'Seminar Pendidikan Profesi Guru merupakan ruang dialektika dan sintesis kritis terhadap seluruh pengalaman belajar pedagogis, akademik, dan praktik lapangan yang telah dijalani selama program PPG. Melalui mata kuliah ini, saya belajar melakukan refleksi kritis berbasis artefak portofolio digital dengan menerapkan model refleksi yang terstruktur (seperti kerangka Gibbs dan ALACT). Proses presentasi artefak, diskusi kolegial, serta umpan balik dari dosen pembimbing dan rekan sejawat melatih kemampuan berpikir metakognitif saya sebagai calon guru profesional. Saya menyadari bahwa guru adalah pembelajar sepanjang hayat (lifelong learner) yang secara terus-menerus mengevaluasi efektivitas tindakannya di ruang kelas demi kemajuan pendidikan vokasi.'
+    },
+    'sem2_inovasi': {
+        title: 'Refleksi Inovasi Pembelajaran Kejuruan',
+        icon: '💡',
+        text: 'Mata kuliah Inovasi Pembelajaran Kejuruan membekali saya dengan kompetensi untuk menghadirkan terobosan metodologis dan teknologi yang kontekstual dengan perkembangan industri manufaktur modern (Era Industri 4.0). Saya mengeksplorasi perancangan modul ajar berbasis Project-Based Learning (PjBL) yang terintegrasi dengan Teaching Factory (TeFa), serta pemanfaatan media digital interaktif dan virtual simulator manufaktur. Refleksi terbesar saya adalah pentingnya menjembatani kesenjangan (link and match) antara kurikulum sekolah vokasi dan standar kompetensi industri terkini. Melalui perancangan inovasi seperti media simulator alat ukur presisi dan sistem evaluasi digital real-time, saya belajar bahwa teknologi mampu memperkuat pemahaman konseptual dan memitigasi risiko kesalahan fatal saat praktik langsung.'
+    },
+    'sem2_kepemimpinan': {
+        title: 'Refleksi Projek Kepemimpinan',
+        icon: '🤝',
+        text: 'Mata kuliah Projek Kepemimpinan mengembangkan jiwa kepemimpinan transformasional, kepekaan sosial, serta keterampilan manajerial dalam merancang dan mengeksekusi inisiatif perubahan nyata di lingkungan komunitas dan sekolah. Pada tahap lanjutan ini, saya bersama tim mempraktikkan siklus manajemen proyek secara menyeluruh, mulai dari analisis pemangku kepentingan (stakeholder analysis), perumusan target SMART, manajemen risiko, hingga eksekusi aksi lapangan. Refleksi esensial yang saya peroleh adalah hakikat kepemimpinan pendidikan yang melayani (servant leadership). Menghadapi dinamika koordinasi tim dan keterbatasan sumber daya melatih resiliensi, komunikasi asertif, serta kepemimpinan adaptif saya demi keberlanjutan dampak positif (sustainable impact) bagi kemajuan komunitas belajar.'
     }
 };
 
