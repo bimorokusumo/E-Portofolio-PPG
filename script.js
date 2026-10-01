@@ -88,11 +88,51 @@ window.selectPortfolio = function(id) {
             floatName.innerText = nameMap[id];
         }
 
+        // Update floating dock active pill
+        document.querySelectorAll('.floating-pill-btn').forEach(btn => {
+            if (btn.dataset.p == id) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+
+        const floatBar = document.getElementById('floatingActionBar');
+        if (floatBar) floatBar.classList.add('visible');
+
         window.scrollTo({ top: 0, behavior: 'smooth' });
         if (window.showToast && nameMap[id]) {
             window.showToast('Membuka ' + nameMap[id]);
         }
     }, 500);
+};
+
+// Portfolio Chooser Filter Logic
+window.filterChooser = function(category, btn) {
+    document.querySelectorAll('.chooser-filter-btn').forEach(b => b.classList.remove('active'));
+    if (btn) btn.classList.add('active');
+
+    const sem1Heading = document.getElementById('chooser-heading-sem1');
+    const sem2Heading = document.getElementById('chooser-heading-sem2');
+    const sem1Cards = document.getElementById('chooser-cards-sem1');
+    const sem2Cards = document.getElementById('chooser-cards-sem2');
+
+    if (category === 'sem1') {
+        if (sem1Heading) sem1Heading.style.display = 'block';
+        if (sem1Cards) sem1Cards.style.display = 'grid';
+        if (sem2Heading) sem2Heading.style.display = 'none';
+        if (sem2Cards) sem2Cards.style.display = 'none';
+    } else if (category === 'sem2') {
+        if (sem1Heading) sem1Heading.style.display = 'none';
+        if (sem1Cards) sem1Cards.style.display = 'none';
+        if (sem2Heading) sem2Heading.style.display = 'block';
+        if (sem2Cards) sem2Cards.style.display = 'grid';
+    } else {
+        if (sem1Heading) sem1Heading.style.display = 'block';
+        if (sem1Cards) sem1Cards.style.display = 'grid';
+        if (sem2Heading) sem2Heading.style.display = 'block';
+        if (sem2Cards) sem2Cards.style.display = 'grid';
+    }
 };
 
 window.showChooser = function() {
