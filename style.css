@@ -3074,5 +3074,282 @@ nav.nav-scrolled {
     }
 }
 
+/* ========================================================================= */
+/* KEMENDIKDASMEN PORTFOLIO INTERIOR ENHANCEMENTS (SEMESTER 1 & 2)           */
+/* ========================================================================= */
+
+/* 1. Official Portfolio Hero Banner */
+.ep-hero-banner {
+    padding: 6.5rem 2rem 4rem 2rem;
+    background: linear-gradient(135deg, #023967 0%, #055A9E 65%, #0A7ED9 100%);
+    color: #FFFFFF;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.ep-hero-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+.ep-hero-title {
+    font-size: 2.3rem;
+    font-weight: 800;
+    line-height: 1.25;
+    margin: 0 0 1rem 0;
+    color: #FFFFFF;
+}
+.ep-hero-desc {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.92);
+    max-width: 760px;
+    margin: 0 auto 2rem auto;
+}
+.ep-hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.btn-kem-gold {
+    background: #F2A900;
+    color: #023967 !important;
+    font-weight: 800;
+    padding: 0.75rem 1.6rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.92rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #F2A900;
+    box-shadow: 0 4px 14px rgba(242, 169, 0, 0.35);
+    transition: all 0.22s ease;
+}
+.btn-kem-gold:hover {
+    background: #E09B00;
+    transform: translateY(-2px);
+}
+.btn-kem-outline {
+    background: transparent;
+    color: #FFFFFF !important;
+    font-weight: 600;
+    padding: 0.75rem 1.4rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.92rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1.5px solid rgba(255, 255, 255, 0.6);
+    transition: all 0.22s ease;
+}
+.btn-kem-outline:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #FFFFFF;
+}
+
+/* 2. Verified Certificates Grid */
+.sertifikat-container-layout {
+    display: grid;
+    grid-template-columns: 1.3fr 0.9fr;
+    gap: 2rem;
+    max-width: 1160px;
+    margin: 0 auto;
+}
+@media (max-width: 900px) {
+    .sertifikat-container-layout {
+        grid-template-columns: 1fr;
+    }
+}
+.sertifikat-scroll-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-height: 580px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+.sertifikat-scroll-list::-webkit-scrollbar {
+    width: 5px;
+}
+.sertifikat-scroll-list::-webkit-scrollbar-thumb {
+    background: #ABC8FE;
+    border-radius: 10px;
+}
+.sertifikat-item-card {
+    background: #FFFFFF;
+    border: 1px solid #E3E8EF;
+    border-radius: 12px;
+    padding: 0.9rem 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.22s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+.sertifikat-item-card:hover {
+    border-color: #055A9E;
+    background: #F8FAFC;
+    transform: translateX(4px);
+    box-shadow: 0 4px 12px rgba(5, 90, 158, 0.08);
+}
+.sertifikat-item-num {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: #EFF8FF;
+    color: #055A9E;
+    font-weight: 800;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid #ABC8FE;
+}
+.sertifikat-item-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+.sertifikat-item-title {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #131313;
+    line-height: 1.4;
+}
+.sertifikat-item-org {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #055A9E;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+.sertifikat-verified-badge {
+    color: #10B981;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.sertifikat-archive-card {
+    background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+    border: 1.5px solid #ABC8FE;
+    border-radius: 18px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(5, 90, 158, 0.06);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+}
+
+/* 3. Refined Tab Bar */
+.tab-nav {
+    display: flex;
+    justify-content: center;
+    gap: 0.6rem;
+    margin: 2rem auto;
+    max-width: 900px;
+    flex-wrap: wrap;
+    background: #F0F4F8;
+    padding: 6px;
+    border-radius: 50px;
+    border: 1px solid #E3E8EF;
+}
+.tab-btn {
+    padding: 0.65rem 1.6rem;
+    font-size: 0.92rem;
+    font-weight: 700;
+    border: none;
+    background: transparent;
+    color: #475569;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: all 0.22s ease;
+}
+.tab-btn:hover {
+    color: #023967;
+    background: rgba(255, 255, 255, 0.7);
+}
+.tab-btn.active {
+    background: #023967;
+    color: #FFFFFF;
+    box-shadow: 0 4px 12px rgba(2, 57, 103, 0.25);
+}
+
+/* 4. Enhanced Doc Cards */
+.doc-card {
+    background: #FFFFFF !important;
+    border: 1px solid #E3E8EF !important;
+    border-radius: 14px !important;
+    overflow: hidden;
+    transition: all 0.25s ease !important;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03) !important;
+}
+.doc-card:hover {
+    transform: translateY(-5px) !important;
+    border-color: #055A9E !important;
+    box-shadow: 0 12px 28px rgba(5, 90, 158, 0.1) !important;
+}
+.doc-card-thumb {
+    height: 165px;
+    background: #F1F5F9;
+    position: relative;
+    overflow: hidden;
+}
+.doc-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #023967 !important;
+    color: #FFFFFF !important;
+    font-size: 0.72rem !important;
+    font-weight: 800 !important;
+    padding: 0.25rem 0.65rem !important;
+    border-radius: 6px !important;
+    letter-spacing: 0.4px;
+    z-index: 2;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+.doc-card-content {
+    padding: 1.3rem;
+}
+.doc-card-content h4 {
+    color: #023967 !important;
+    font-size: 1.05rem !important;
+    font-weight: 800 !important;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.4;
+}
+.doc-card-content p {
+    color: #525354 !important;
+    font-size: 0.86rem !important;
+    line-height: 1.55;
+    margin-bottom: 0.9rem;
+}
+.doc-btn {
+    background: #055A9E !important;
+    color: #FFFFFF !important;
+    font-size: 0.85rem !important;
+    font-weight: 700 !important;
+    padding: 0.6rem 1rem !important;
+    border-radius: 8px !important;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    transition: all 0.2s ease;
+}
+.doc-btn:hover {
+    background: #023967 !important;
+}
+
+
 
 
