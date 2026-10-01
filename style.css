@@ -1,20 +1,28 @@
 :root {
-  --kemendikbud-cyan: #00a8cc;
-  --kemendikbud-blue: #0f56a6;
-  --kemendikbud-blue-hover: #002d62;
-  --kemendikbud-blue-dark: #002d62; /* Navy blue khas kementerian */
+  /* Official Kemendikdasmen Design Tokens */
+  --primary-1: #023967; /* Deep Government Navy */
+  --primary-2: #055A9E; /* Official Kemendikdasmen Royal Blue */
+  --primary-3: #0A7ED9; /* Vibrant Accent Blue */
+  --primary-4: #5AA3FE; /* Soft Sky Blue */
+  --primary-5: #ABC8FE; /* Ice Tint Blue */
+  --primary-6: #EFF8FF; /* Light Ice-Blue Background */
+  --kem-gold: #F2A900;  /* Official Gold Accent */
+  --kemendikbud-blue: #055A9E;
+  --kemendikbud-blue-hover: #023967;
+  --kemendikbud-blue-dark: #023967;
+  --kemendikbud-cyan: #0A7ED9;
   --kemendikbud-green: #10b981;
   --kemendikbud-green-hover: #059669;
-  --text-dark: #334155;
-  --text-black: #0f172a;
-  --text-light: #64748b;
+  --text-dark: #131313;
+  --text-black: #131313;
+  --text-light: #525354;
   --bg-white: #FFFFFF;
-  --bg-light-gray: #f8fafc;
-  --border-color: #e2e8f0;
-  --radius-md: 8px; /* Sudut lebih tegas, bersih, dan formal */
-  --radius-lg: 12px;
-  --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --transition: all 0.25s ease-in-out;
+  --bg-light-gray: #F8FAFC;
+  --border-color: #E3E8EF;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --transition: all 0.22s ease-in-out;
 }
 
 * {
@@ -2318,37 +2326,6 @@ nav.nav-scrolled {
         text-align: center !important;
     }
 }
-
-/* 2. Floating Hero Tech Badges */
-.floating-hero-pill {
-    position: absolute;
-    background: rgba(15, 23, 42, 0.88);
-    border: 1px solid rgba(255, 255, 255, 0.22);
-    color: #f8fafc;
-    padding: 0.5rem 1rem;
-    border-radius: 50px;
-    font-size: 0.82rem;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
-    z-index: 5;
-    pointer-events: none;
-    white-space: nowrap;
-}
-
-@keyframes floatSlow {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-8px); }
-}
-
-@media (max-width: 640px) {
-    .floating-hero-pill {
-        display: none !important;
-    }
-}
-
 /* 3. Floating Quick-Switch Portfolio Dock */
 .floating-pill-btn {
     background: transparent;
@@ -2420,4 +2397,232 @@ nav.nav-scrolled {
 .filosofi-portrait-card:hover {
     transform: translateY(-4px) scale(1.03);
 }
+
+/* ========================================================
+   KEMENDIKDASMEN OFFICIAL PORTAL DESIGN SYSTEM
+   Reference: https://www.kemendikdasmen.go.id
+   ======================================================== */
+
+.kem-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    color: #ABC8FE;
+    padding: 0.45rem 1.1rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+}
+.kem-kicker-dot {
+    width: 8px;
+    height: 8px;
+    background: #F2A900;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #F2A900;
+}
+
+.hero-profile-box {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 1.4rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 16px;
+    padding: 0.9rem 1.2rem;
+}
+.hero-profile-photo {
+    width: 82px;
+    height: 82px;
+    border-radius: 50%;
+    border: 3px solid #F2A900;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    object-fit: cover;
+    object-position: center 10%;
+    flex-shrink: 0;
+}
+.hero-profile-name {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #FFFFFF;
+    line-height: 1.2;
+}
+.hero-profile-meta {
+    font-size: 0.85rem;
+    color: #ABC8FE;
+    font-weight: 600;
+    margin-top: 3px;
+}
+.hero-profile-org {
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 2px;
+}
+
+/* Kemendikdasmen Right Column: Layanan Portofolio Cards Stack */
+.hero-portal-card-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    padding: 1.1rem;
+    border-radius: 18px;
+}
+.hero-portal-card-stack-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    margin-bottom: 0.2rem;
+}
+.hero-portal-card-stack-title {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #ABC8FE;
+    font-weight: 700;
+    margin: 0;
+}
+.hero-portal-card {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    background: #FFFFFF;
+    border: 1px solid #E3E8EF;
+    border-radius: 12px;
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    transition: all 0.22s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    text-decoration: none !important;
+}
+.hero-portal-card:hover {
+    transform: translateX(6px);
+    border-color: #055A9E;
+    box-shadow: 0 8px 20px rgba(2, 57, 103, 0.18);
+}
+.hero-portal-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.hero-portal-text {
+    flex: 1;
+    min-width: 0;
+}
+.hero-portal-badge {
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: #055A9E;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    margin-bottom: 1px;
+}
+.hero-portal-card h4 {
+    margin: 0;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #131313;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.hero-portal-card p {
+    margin: 0;
+    font-size: 0.76rem;
+    color: #525354;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.hero-portal-arrow {
+    color: #055A9E;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: transform 0.2s ease;
+}
+.hero-portal-card:hover .hero-portal-arrow {
+    transform: translateX(3px);
+}
+
+/* Data Agregat Strip (Ala Kemendikdasmen) */
+.data-agregat-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
+    margin-top: 2.2rem;
+    width: 100%;
+}
+.data-agregat-card {
+    background: #FFFFFF;
+    border: 1px solid #E3E8EF;
+    border-radius: 14px;
+    padding: 1.1rem 1rem;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: all 0.22s ease;
+}
+.data-agregat-card:hover {
+    border-color: #055A9E;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(5, 90, 158, 0.08);
+}
+.data-agregat-number {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #055A9E;
+    line-height: 1.1;
+    margin-bottom: 0.25rem;
+}
+.data-agregat-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #131313;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+.data-agregat-sub {
+    font-size: 0.72rem;
+    color: #525354;
+    margin-top: 2px;
+}
+
+/* Kemendikdasmen Section Header Standard */
+.kem-section-eyebrow {
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: #055A9E;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+}
+
+@media (max-width: 960px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .data-agregat-strip {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 540px) {
+    .data-agregat-strip {
+        grid-template-columns: 1fr;
+    }
+}
+
 
