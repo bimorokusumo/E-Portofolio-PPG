@@ -2625,4 +2625,454 @@ nav.nav-scrolled {
     }
 }
 
+/* ========================================================
+   ENHANCED LANDING SECTIONS (PROFIL, PENGALAMAN, PENDIDIKAN, KEAHLIAN)
+   ======================================================== */
+
+/* 1. Bento Grid for Profil */
+.kem-bento-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 1.5rem;
+    max-width: 1160px;
+    margin: 0 auto;
+}
+
+.kem-bento-card {
+    background: #FFFFFF;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2.2rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+.kem-bento-card:hover {
+    border-color: #055A9E;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(5, 90, 158, 0.09);
+}
+
+.kem-bento-card.bento-highlight {
+    background: linear-gradient(145deg, #FFFFFF 0%, #F0F7FF 100%);
+    border-left: 5px solid #055A9E;
+}
+
+.kem-bento-card.bento-navy {
+    background: linear-gradient(145deg, #023967 0%, #055A9E 100%);
+    border: 1px solid #0A7ED9;
+    color: #FFFFFF;
+    box-shadow: 0 10px 30px rgba(2, 57, 103, 0.25);
+}
+.kem-bento-card.bento-navy h3, 
+.kem-bento-card.bento-navy h4 {
+    color: #FFFFFF;
+}
+.kem-bento-card.bento-navy p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.bento-icon-badge {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+    font-size: 1.3rem;
+}
+
+.bento-chip-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 1.4rem;
+}
+.bento-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #EFF8FF;
+    color: #055A9E;
+    padding: 0.35rem 0.85rem;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    border: 1px solid #ABC8FE;
+}
+
+.bento-quote-card {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, #FFFFFF 0%, #F8FAFC 100%);
+    border-left: 6px solid #F2A900;
+    padding: 2rem 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* 2. Enhanced Pengalaman Section */
+.exp-interactive-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+@media (min-width: 820px) {
+    .exp-interactive-container {
+        flex-direction: row;
+        align-items: stretch;
+    }
+}
+
+.exp-list-nav {
+    flex: 1.1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    max-height: 520px;
+    overflow-y: auto;
+    padding-right: 8px;
+}
+.exp-list-nav::-webkit-scrollbar {
+    width: 5px;
+}
+.exp-list-nav::-webkit-scrollbar-thumb {
+    background-color: #ABC8FE;
+    border-radius: 10px;
+}
+
+.exp-btn-item {
+    text-align: left;
+    padding: 1rem 1.2rem;
+    background: #FFFFFF;
+    border: 1px solid #E3E8EF;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.22s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+.exp-btn-item:hover {
+    border-color: #055A9E;
+    background: #F0F7FF;
+    transform: translateX(4px);
+}
+.exp-btn-item.active {
+    background: #FFFFFF;
+    border-color: #055A9E;
+    border-left: 5px solid #055A9E;
+    box-shadow: 0 4px 16px rgba(5, 90, 158, 0.12);
+    transform: translateX(4px);
+}
+.exp-btn-item.active .exp-role-name {
+    color: #055A9E;
+}
+
+.exp-btn-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.exp-category-pill {
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 0.15rem 0.55rem;
+    border-radius: 12px;
+    background: #EFF8FF;
+    color: #055A9E;
+    text-transform: uppercase;
+}
+.exp-date {
+    font-size: 0.78rem;
+    color: #64748B;
+    font-weight: 600;
+}
+.exp-role-name {
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: #131313;
+}
+.exp-company-name {
+    font-size: 0.82rem;
+    color: #525354;
+    font-weight: 600;
+}
+
+.exp-details-pane {
+    flex: 1.4;
+    background: #FFFFFF;
+    border: 1px solid #E3E8EF;
+    border-radius: 16px;
+    padding: 2.2rem;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.03);
+    min-height: 480px;
+    display: flex;
+    flex-direction: column;
+}
+.exp-detail-content {
+    display: none;
+    flex-direction: column;
+    height: 100%;
+    animation: fadeIn 0.25s ease;
+}
+.exp-detail-content.active {
+    display: flex;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.exp-detail-header {
+    border-bottom: 1px solid #E3E8EF;
+    padding-bottom: 1.2rem;
+    margin-bottom: 1.2rem;
+}
+.exp-detail-header h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: #023967;
+    font-weight: 800;
+}
+.exp-detail-header h4 {
+    margin: 0.3rem 0 0 0;
+    font-size: 1rem;
+    color: #055A9E;
+    font-weight: 600;
+}
+
+.exp-deliverable-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+.exp-deliverable-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: #334155;
+}
+.exp-deliverable-item svg {
+    flex-shrink: 0;
+    margin-top: 3px;
+    color: #055A9E;
+}
+
+/* 3. Enhanced Pendidikan Section */
+.pendidikan-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 1160px;
+    margin: 0 auto;
+}
+@media (max-width: 900px) {
+    .pendidikan-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.pendidikan-card {
+    background: #FFFFFF;
+    border: 1px solid #E3E8EF;
+    border-radius: 16px;
+    padding: 2rem 1.6rem;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+    transition: all 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+.pendidikan-card:hover {
+    transform: translateY(-5px);
+    border-color: #055A9E;
+    box-shadow: 0 12px 28px rgba(5, 90, 158, 0.1);
+}
+.pendidikan-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #055A9E;
+}
+.pendidikan-card.featured::before {
+    background: #F2A900;
+}
+.pendidikan-card.featured {
+    border-color: #ABC8FE;
+    background: linear-gradient(180deg, #FFFFFF 0%, #F0F7FF 100%);
+}
+
+.pendidikan-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1rem;
+}
+.pendidikan-logo {
+    height: 46px;
+    width: auto;
+    object-fit: contain;
+}
+.pendidikan-badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 800;
+    padding: 0.25rem 0.65rem;
+    border-radius: 20px;
+    background: #EFF8FF;
+    color: #055A9E;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+    border: 1px solid #ABC8FE;
+}
+.pendidikan-badge.gold {
+    background: #FFFBEB;
+    color: #B45309;
+    border-color: #FDE68A;
+}
+
+/* 4. Enhanced Keahlian Section */
+.skills-container-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 1160px;
+    margin: 0 auto;
+}
+@media (max-width: 860px) {
+    .skills-container-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+.skills-column {
+    background: #FFFFFF;
+    border: 1px solid #E3E8EF;
+    border-radius: 18px;
+    padding: 2rem 1.8rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+}
+
+.skills-column-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid #E3E8EF;
+    margin-bottom: 1.5rem;
+}
+.skills-column-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: #EFF8FF;
+    color: #055A9E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+}
+.skills-column-title {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #023967;
+}
+
+.skills-cards-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.skill-row-card {
+    background: #F8FAFC;
+    border: 1px solid #E3E8EF;
+    border-radius: 12px;
+    padding: 1.1rem 1.2rem;
+    transition: all 0.22s ease;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+.skill-row-card:hover {
+    background: #FFFFFF;
+    border-color: #055A9E;
+    transform: translateX(4px);
+    box-shadow: 0 4px 14px rgba(5, 90, 158, 0.08);
+}
+
+.skill-row-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: #FFFFFF;
+    border: 1px solid #E3E8EF;
+    color: #055A9E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+.skill-row-card:hover .skill-row-icon {
+    background: #055A9E;
+    color: #FFFFFF;
+    border-color: #055A9E;
+}
+
+.skill-row-body {
+    flex: 1;
+}
+.skill-row-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.3rem;
+}
+.skill-row-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #131313;
+    margin: 0;
+}
+.skill-row-tag {
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 0.15rem 0.55rem;
+    border-radius: 10px;
+    background: #EFF8FF;
+    color: #055A9E;
+    border: 1px solid #ABC8FE;
+}
+.skill-row-desc {
+    font-size: 0.82rem;
+    color: #525354;
+    line-height: 1.5;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .kem-bento-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
 

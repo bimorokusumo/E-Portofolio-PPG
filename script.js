@@ -165,6 +165,19 @@ window.showChooser = function() {
     if (window.showToast) window.showToast('Kembali ke Pusat Portofolio');
 };
 
+// Global Experience Detail Switcher
+window.showExpDetail = function(id, btnElement) {
+    if (!btnElement) return;
+    const container = btnElement.closest('.exp-interactive-container');
+    if (!container) return;
+    container.querySelectorAll('.exp-detail-content').forEach(el => el.classList.remove('active'));
+    container.querySelectorAll('.exp-btn-item').forEach(el => el.classList.remove('active'));
+    
+    const target = container.querySelector('#' + id);
+    if (target) target.classList.add('active');
+    btnElement.classList.add('active');
+};
+
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Smooth Scrolling for Navigation Links
     const navLinks = document.querySelectorAll('.nav-links a');
