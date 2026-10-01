@@ -4818,106 +4818,170 @@ function showExpDetail(id, btnElement) {
 
 
 
+<!-- Background Music (BGM) YouTube Floating Player Widget -->
+<div id="bgm-player-widget" class="bgm-widget-container">
+    <div class="bgm-widget-pill" onclick="toggleBGM(event)" title="Klik untuk Putar / Jeda Musik">
+        <div class="bgm-equalizer" id="bgm-equalizer">
+            <span class="bar bar-1"></span>
+            <span class="bar bar-2"></span>
+            <span class="bar bar-3"></span>
+            <span class="bar bar-4"></span>
+        </div>
+        <div class="bgm-track-info">
+            <span class="bgm-kicker-label" id="bgm-kicker">MUSIK PENGIRING</span>
+            <span class="bgm-track-title" id="bgm-track-title">Memuat Musik...</span>
+        </div>
+        <div class="bgm-controls-group">
+            <button type="button" class="bgm-btn-ctrl" id="bgm-btn-prev" onclick="prevBGM(event)" title="Lagu Sebelumnya">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+            </button>
+            <button type="button" class="bgm-btn-play" id="bgm-btn-play" onclick="toggleBGM(event)" title="Putar / Jeda">
+                <svg id="bgm-icon-play" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                <svg id="bgm-icon-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="display: none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+            </button>
+            <button type="button" class="bgm-btn-ctrl" id="bgm-btn-next" onclick="nextBGM(event)" title="Lagu Selanjutnya">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Hidden YouTube Audio Player -->
+<div style="position: fixed; top: -9999px; left: -9999px; width: 1px; height: 1px; opacity: 0; pointer-events: none; overflow: hidden;" aria-hidden="true">
+    <div id="yt-player"></div>
+</div>
+
+<!-- YouTube IFrame Player API -->
+<script src="https://www.youtube.com/iframe_api"></script>
+
 <script>
-    var bgmPlayer;
-    var bgmState = 'loading'; // loading, playing, paused
-    
+    // Playlist Full-Length Hits (Durasi Lengkap 3 - 5 Menit / Tidak terpotong preview)
+    const bgmPlaylist = [
+        { id: 'kPa7bsKwL-c', title: 'Die With A Smile - Bruno Mars & Lady Gaga' },
+        { id: 'rtOvBOTyX00', title: 'A Thousand Years - Christina Perri' },
+        { id: '2Vv-BfVoq4g', title: 'Perfect - Ed Sheeran' },
+        { id: '450p7goxZqg', title: 'All of Me - John Legend' },
+        { id: 'PEM0Vs8jf1w', title: 'Golden Hour - JVKE' }
+    ];
+
+    let currentBgmIndex = 0;
+    let bgmPlayer = null;
+    let bgmPlayerReady = false;
+    let isBgmPlaying = false;
+
     function onYouTubeIframeAPIReady() {
         bgmPlayer = new YT.Player('yt-player', {
-            height: '0',
-            width: '0',
-            videoId: 'kPa7bsKwL-c', // Die With A Smile (Bruno Mars, Lady Gaga) - Hits Barat
+            height: '1',
+            width: '1',
+            videoId: bgmPlaylist[currentBgmIndex].id,
             playerVars: {
-                'autoplay': 0, // We will trigger play manually on interaction
-                'loop': 1,
-                'playlist': 'kPa7bsKwL-c',
+                'autoplay': 0,
                 'controls': 0,
-                'disablekb': 1
+                'disablekb': 1,
+                'fs': 0,
+                'rel': 0,
+                'modestbranding': 1,
+                'playsinline': 1
             },
             events: {
-                'onReady': onPlayerReady,
-                'onStateChange': onPlayerStateChange
+                'onReady': onBgmPlayerReady,
+                'onStateChange': onBgmPlayerStateChange,
+                'onError': onBgmPlayerError
             }
         });
     }
 
-    function onPlayerReady(event) {
-        document.getElementById('bgm-text').innerText = "BGM: Klik untuk Putar";
-        document.getElementById('bgm-icon').style.animation = "none";
-        bgmState = 'paused';
-        
-        // Autoplay on first click anywhere on the document
-        const startAudio = function() {
-            if(bgmState === 'paused') {
-                bgmPlayer.playVideo();
-                document.removeEventListener('click', startAudio);
-            }
-        };
-        document.addEventListener('click', startAudio);
-    }
-    
-    function onPlayerStateChange(event) {
-        if (event.data == YT.PlayerState.PLAYING) {
-            bgmState = 'playing';
-            document.getElementById('bgm-text').innerText = "BGM: ON (Die With A Smile)";
-            document.getElementById('bgm-icon').style.animation = "pulse-glow 2s infinite";
-        } else if (event.data == YT.PlayerState.PAUSED || event.data == YT.PlayerState.ENDED) {
-            bgmState = 'paused';
-            document.getElementById('bgm-text').innerText = "BGM: OFF";
-            document.getElementById('bgm-icon').style.animation = "none";
+    function updateBgmUI(playing) {
+        const kicker = document.getElementById('bgm-kicker');
+        const title = document.getElementById('bgm-track-title');
+        const eq = document.getElementById('bgm-equalizer');
+        const playIcon = document.getElementById('bgm-icon-play');
+        const pauseIcon = document.getElementById('bgm-icon-pause');
+
+        if (title) title.innerText = bgmPlaylist[currentBgmIndex].title;
+
+        if (playing) {
+            if (kicker) kicker.innerText = 'MEMUTAR MUSIK';
+            if (eq) eq.classList.add('playing');
+            if (playIcon) playIcon.style.display = 'none';
+            if (pauseIcon) pauseIcon.style.display = 'block';
+        } else {
+            if (kicker) kicker.innerText = 'MUSIK PENGIRING (JEDA)';
+            if (eq) eq.classList.remove('playing');
+            if (playIcon) playIcon.style.display = 'block';
+            if (pauseIcon) pauseIcon.style.display = 'none';
         }
     }
 
-    function toggleBGM() {
-        if (bgmState === 'playing') {
+    function onBgmPlayerReady(event) {
+        bgmPlayerReady = true;
+        const title = document.getElementById('bgm-track-title');
+        if (title) title.innerText = bgmPlaylist[currentBgmIndex].title;
+        const kicker = document.getElementById('bgm-kicker');
+        if (kicker) kicker.innerText = 'KLIK UNTUK PUTAR';
+
+        // Autoplay upon user's first interaction anywhere on page (browser policy compliance)
+        const unlockAudio = function() {
+            if (bgmPlayerReady && !isBgmPlaying) {
+                try {
+                    bgmPlayer.playVideo();
+                } catch(e) {}
+            }
+            document.removeEventListener('click', unlockAudio);
+            document.removeEventListener('keydown', unlockAudio);
+        };
+        document.addEventListener('click', unlockAudio, { once: true });
+        document.addEventListener('keydown', unlockAudio, { once: true });
+    }
+
+    function onBgmPlayerStateChange(event) {
+        if (event.data === YT.PlayerState.PLAYING) {
+            isBgmPlaying = true;
+            updateBgmUI(true);
+        } else if (event.data === YT.PlayerState.PAUSED) {
+            isBgmPlaying = false;
+            updateBgmUI(false);
+        } else if (event.data === YT.PlayerState.ENDED) {
+            // Putar lagu berikutnya secara otomatis setelah selesai durasi penuh (3-5 menit)
+            nextBGM();
+        }
+    }
+
+    function onBgmPlayerError(event) {
+        console.warn('BGM error, skipping to next track...', event.data);
+        nextBGM();
+    }
+
+    function toggleBGM(e) {
+        if (e) e.stopPropagation();
+        if (!bgmPlayerReady || !bgmPlayer) return;
+
+        if (isBgmPlaying) {
             bgmPlayer.pauseVideo();
-        } else if (bgmState === 'paused') {
+        } else {
             bgmPlayer.playVideo();
         }
     }
-</script>
 
-
-<!-- Floating Spotify Player for BGM -->
-<div id="spotify-bgm" style="position: fixed; bottom: 30px; right: 30px; z-index: 9999; width: 320px; box-shadow: 0 15px 35px rgba(0,0,0,0.2); border-radius: 14px; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); transform: translateY(0);">
-    
-    <!-- Header/Toggle Bar -->
-    <div style="background: #1db954; color: white; padding: 8px 15px; border-radius: 14px 14px 0 0; font-size: 0.85rem; font-weight: bold; display: flex; justify-content: space-between; align-items: center; cursor: pointer;" onclick="toggleSpotify()">
-        <span> Musik Pengiring (Hits Barat)</span>
-        <span id="spotify-toggle-icon">▲</span>
-    </div>
-    
-    <!-- Iframe Container -->
-    <div id="spotify-iframe-container" style="background: #282828; border-radius: 0 0 14px 14px; padding-top: 5px; height: 0px; overflow: hidden; transition: height 0.3s ease;">
-        <iframe style="border-radius: 0 0 12px 12px;" src="about:blank" data-src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-    </div>
-</div>
-
-<script>
-    function toggleSpotify() {
-        const container = document.getElementById('spotify-iframe-container');
-        const icon = document.getElementById('spotify-toggle-icon');
-        const iframe = container.querySelector('iframe');
-        if (iframe && iframe.dataset.src) {
-            iframe.src = iframe.dataset.src;
-            iframe.removeAttribute('data-src');
+    function nextBGM(e) {
+        if (e) e.stopPropagation();
+        currentBgmIndex = (currentBgmIndex + 1) % bgmPlaylist.length;
+        if (bgmPlayerReady && bgmPlayer) {
+            bgmPlayer.loadVideoById(bgmPlaylist[currentBgmIndex].id);
+            bgmPlayer.playVideo();
         }
-        if (container.style.height === '0px' || container.style.height === '0') {
-            container.style.height = '152px';
-            icon.innerText = '▼';
-        } else {
-            container.style.height = '0px';
-            icon.innerText = '▲';
-        }
+        updateBgmUI(true);
     }
-    
-    // Automatically minimize after 10 seconds to not block view, but user can open it
-    setTimeout(() => {
-        const container = document.getElementById('spotify-iframe-container');
-        if(container && container.style.height !== '0px') {
-            toggleSpotify();
+
+    function prevBGM(e) {
+        if (e) e.stopPropagation();
+        currentBgmIndex = (currentBgmIndex - 1 + bgmPlaylist.length) % bgmPlaylist.length;
+        if (bgmPlayerReady && bgmPlayer) {
+            bgmPlayer.loadVideoById(bgmPlaylist[currentBgmIndex].id);
+            bgmPlayer.playVideo();
         }
-    }, 10000);
+        updateBgmUI(true);
+    }
 </script>
 
 <!-- Floating Breadcrumb & Portfolio Quick Switcher -->
