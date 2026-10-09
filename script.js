@@ -628,6 +628,11 @@ const ep5RefleksiData = {
         icon: '🎯',
         text: 'Mata kuliah Pembelajaran dan Asesmen Lanjutan (PMAL) memperdalam kapasitas saya dalam merancang siklus pembelajaran yang berpusat pada peserta didik melalui diferensiasi lanjutan dan asesmen autentik. Saya mempelajari integrasi pendekatan Teaching at the Right Level (TaRL) dan Culturally Responsive Teaching (CRT) guna merespons keberagaman kesiapan belajar, minat, dan profil belajar siswa kejuruan. Refleksi mendalam pada mata kuliah ini berfokus pada transisi menuju asesmen autentik berbasis unjuk kerja industri. Saya belajar merumuskan asesmen diagnostik awal secara terukur, menyusun rubrik analitik berbasis kriteria capaian standar kompetensi kerja, serta memanfaatkan data asesmen formatif sebagai dasar penyesuaian instruksional (scaffolding) secara real-time guna memastikan setiap peserta didik mencapai kompetensi optimal.'
     },
+    'sem2_ppl': {
+        title: 'Refleksi Praktik Pengalaman Lapangan (PPL II Mandiri)',
+        icon: '🏫',
+        text: 'Praktik Pengalaman Lapangan II (PPL Mandiri) di SMK Negeri 2 Depok Sleman merupakan puncak pembuktian kemandirian profesionalisme keguruan saya di ruang kelas nyata dan bengkel pemesinan. Melalui pelaksanaan 5 Siklus Pembelajaran (K3LH, Metrologi Alat Ukur, Teknik Pemesinan Bubut & Las, serta Pengetahuan Bahan Teknik), saya mengintegrasikan model Teaching Factory (TeFa), pembelajaran berdiferensiasi TaRL dan CRT, serta manajemen keselamatan kerja bengkel berstandar 5R. Selain kegiatan mengajar intrakurikuler, saya turut mengemban peran nonmengajar sebagai Pembina Pramuka dan Pendamping LKS Kejuruan. Refleksi ini menegaskan komitmen saya untuk terus menumbuhkan etos kerja industri, kematangan pedagogik, serta keteladanan karakter budi pekerti luhur bagi peserta didik vokasi.'
+    },
     'sem2_seminar': {
         title: 'Refleksi Seminar Pendidikan Profesi Guru',
         icon: '🎓',
