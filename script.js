@@ -204,6 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
     // 2. Off-Thread Active Nav Link Tracking with IntersectionObserver (Zero Layout Thrashing)
     if ('IntersectionObserver' in window && navLinks.length) {
+        const sections = document.querySelectorAll('section[id]');
         const sectionObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -215,7 +216,9 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }, { rootMargin: '-70px 0px -55% 0px', threshold: 0 });
 
-        sections.forEach(sec => sectionObserver.observe(sec));
+        if (sections.length) {
+            sections.forEach(sec => sectionObserver.observe(sec));
+        }
     }
   
     // 3. Scroll Animation (Intersection Observer)
@@ -249,6 +252,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeModal = document.getElementById('closeModal');
 
     const openModal = (targetUrl, title) => {
+        if (window.openDocPreviewModal) {
+            window.openDocPreviewModal(targetUrl, title);
+            return;
+        }
         if (!modalOverlay) return;
         modalIframe.src = targetUrl;
         modalTitle.textContent = title;
@@ -265,15 +272,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         const closePopup = () => {
-            modalOverlay.classList.remove('active');
-            document.body.style.overflow = '';
-            // Delay clearing iframe src to allow animation to finish
-            setTimeout(() => {
-                modalIframe.src = '';
-            }, 300);
+            if (window.closeDocPreviewModal) {
+                window.closeDocPreviewModal();
+            } else {
+                modalOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+                setTimeout(() => {
+                    modalIframe.src = '';
+                }, 300);
+            }
         };
 
-        closeModal.addEventListener('click', closePopup);
+        if (closeModal) {
+            closeModal.addEventListener('click', closePopup);
+        }
 
         // Close when clicking outside content
         modalOverlay.addEventListener('click', function(e) {
@@ -1177,6 +1189,20 @@ window.openDocPreviewModal = function(url, title) {
     if (modalTitle) modalTitle.textContent = title || 'Preview Dokumen';
     modalOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
+};
+
+window.closeDocPreviewModal = function() {
+    const modalOverlay = document.getElementById('artefakModal');
+    const modalIframe = document.getElementById('modalIframe');
+    if (modalOverlay) {
+        modalOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+        if (modalIframe) {
+            setTimeout(() => {
+                modalIframe.src = '';
+            }, 300);
+        }
+    }
 };
 
 window.switchUasModul = function(tabName, btn) {

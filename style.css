@@ -845,17 +845,30 @@ footer {
 }
 
 .modal-close {
-  background: none;
-  border: none;
-  font-size: 2rem;
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 1.6rem;
+  font-weight: 700;
   cursor: pointer;
   color: var(--text-dark);
   line-height: 1;
   padding: 0;
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  position: relative;
+  z-index: 10;
 }
 
 .modal-close:hover {
-  color: var(--kemendikbud-blue);
+  color: #ffffff;
+  background: #dc2626;
+  border-color: #dc2626;
+  transform: scale(1.08);
 }
 
 .modal-body {

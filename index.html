@@ -4817,11 +4817,11 @@ function showExpDetail(id, btnElement) {
 </div>
 </footer>
 <!-- Modal Popup for Artefak -->
-<div class="modal-overlay" id="artefakModal">
+<div class="modal-overlay" id="artefakModal" onclick="if(event.target === this) closeDocPreviewModal()">
 <div class="modal-content">
 <div class="modal-header">
 <h3 class="modal-title" id="modalTitle">Artefak</h3>
-<button class="modal-close" id="closeModal">×</button>
+<button type="button" class="modal-close" id="closeModal" onclick="closeDocPreviewModal()" aria-label="Tutup Preview">&times;</button>
 </div>
 <div class="modal-body">
 <iframe class="modal-iframe" id="modalIframe" src="" title="Artefak Content"></iframe>
