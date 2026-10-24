@@ -686,9 +686,50 @@ const ep5RefleksiData = {
         text: 'Praktik Pengalaman Lapangan II (PPL Mandiri) di SMK Negeri 2 Depok Sleman merupakan puncak pembuktian kemandirian profesionalisme keguruan saya di ruang kelas nyata dan bengkel pemesinan. Melalui pelaksanaan 5 Siklus Pembelajaran (K3LH, Metrologi Alat Ukur, Teknik Pemesinan Bubut & Las, serta Pengetahuan Bahan Teknik), saya mengintegrasikan model Teaching Factory (TeFa), pembelajaran berdiferensiasi TaRL dan CRT, serta manajemen keselamatan kerja bengkel berstandar 5R. Selain kegiatan mengajar intrakurikuler, saya turut mengemban peran nonmengajar sebagai Pembina Pramuka dan Pendamping LKS Kejuruan. Refleksi ini menegaskan komitmen saya untuk terus menumbuhkan etos kerja industri, kematangan pedagogik, serta keteladanan karakter budi pekerti luhur bagi peserta didik vokasi.'
     },
     'sem2_seminar': {
-        title: 'Refleksi Seminar Pendidikan Profesi Guru',
+        title: 'Refleksi Seminar Pendidikan Profesi Guru (LK 3)',
         icon: '🎓',
-        text: 'Seminar Pendidikan Profesi Guru merupakan ruang dialektika dan sintesis kritis terhadap seluruh pengalaman belajar pedagogis, akademik, dan praktik lapangan yang telah dijalani selama program PPG. Melalui mata kuliah ini, saya belajar melakukan refleksi kritis berbasis artefak portofolio digital dengan menerapkan model refleksi yang terstruktur (seperti kerangka Gibbs dan ALACT). Proses presentasi artefak, diskusi kolegial, serta umpan balik dari dosen pembimbing dan rekan sejawat melatih kemampuan berpikir metakognitif saya sebagai calon guru profesional. Saya menyadari bahwa guru adalah pembelajar sepanjang hayat (lifelong learner) yang secara terus-menerus mengevaluasi efektivitas tindakannya di ruang kelas demi kemajuan pendidikan vokasi.'
+        text: 'Seminar Pendidikan Profesi Guru merupakan ruang dialektika dan sintesis kritis terhadap seluruh pengalaman belajar pedagogis, akademik, dan praktik lapangan yang telah dijalani selama program PPG.',
+        html: `
+            <div style="display: flex; flex-direction: column; gap: 1.5rem; text-align: left;">
+                
+                <!-- Pertanyaan 1 -->
+                <div style="background: #F0F9FF; border-radius: 14px; padding: 1.2rem; border-left: 4px solid #0284C7;">
+                    <h4 style="color: #023967; margin: 0 0 0.5rem 0; font-size: 1.05rem; font-weight: 800; line-height: 1.4;">
+                        1. Pandangan Mengenai Bagaimana Seharusnya Pendidikan di Indonesia
+                    </h4>
+                    <p style="color: #475569; font-size: 0.92rem; line-height: 1.7; margin: 0; text-align: justify;">
+                        Setelah mengikuti rangkaian perkuliahan dan praktik dalam PPG Prajabatan, saya semakin memahami bahwa pendidikan di Indonesia seharusnya <strong>tidak hanya berorientasi pada nilai kelulusan atau hafalan materi</strong>. Pendidikan perlu membantu setiap murid mengenali potensinya, membangun karakter, mengembangkan keterampilan, dan menggunakan pengetahuan menghadapi persoalan nyata. Berakar pada filosofi Ki Hadjar Dewantara dan Tamansiswa (<em>Sistem Among</em>), guru berperan menuntun kodrat alam dan zaman murid sebagai subjek pembelajaran yang merdeka, aman, inklusif (berdiferensiasi TaRL/CRT/UDL), serta memperhatikan kematangan sosial-emosional (PSE). Khusus di SMK, pembelajaran kejuruan wajib mengintegrasikan standar mutu industri manufaktur, budaya 5R, dan keselamatan kerja (K3LH).
+                    </p>
+                </div>
+
+                <!-- Pertanyaan 2 -->
+                <div style="background: #ECFDF5; border-radius: 14px; padding: 1.2rem; border-left: 4px solid #10B981;">
+                    <h4 style="color: #064E3B; margin: 0 0 0.5rem 0; font-size: 1.05rem; font-weight: 800; line-height: 1.4;">
+                        2. Upaya &amp; Langkah Konkret untuk Menjadi Guru Profesional
+                    </h4>
+                    <div style="color: #475569; font-size: 0.92rem; line-height: 1.65; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <div><strong>• Pembelajar Sepanjang Hayat:</strong> Terus memperbarui kompetensi keilmuan Teknik Pemesinan, teknologi simulator manufaktur, serta wawasan pedagogik terkini.</div>
+                        <div><strong>• Desain Pembelajaran Berpusat pada Murid:</strong> Mengembangkan modul ajar PjBL, Teaching Factory (TeFa), variasi jobsheet industri, dan scaffolding adaptif.</div>
+                        <div><strong>• Optimalisasi Asesmen Autentik:</strong> Menyelaraskan asesmen diagnostik, observasi formatif proses unjuk kerja di bengkel, dan asesmen sumatif terukur.</div>
+                        <div><strong>• Iklim Kelas Positif &amp; PSE:</strong> Menghadirkan lingkungan bengkel yang aman tanpa intimidasi, integrasi CASEL, dan teknik STOP demi ketelitian siswa.</div>
+                        <div><strong>• Etika, Integritas &amp; Kemitraan DUDI:</strong> Menjadi teladan disiplin K3LH, refleksi berkala pasca-mengajar, serta berkolaborasi dengan guru pamong dan industri.</div>
+                    </div>
+                </div>
+
+                <!-- Pertanyaan 3 -->
+                <div style="background: #FFFBEB; border-radius: 14px; padding: 1.2rem; border-left: 4px solid #F59E0B;">
+                    <h4 style="color: #78350F; margin: 0 0 0.5rem 0; font-size: 1.05rem; font-weight: 800; line-height: 1.4;">
+                        3. Rencana Tindak Lanjut (Tiga Hal Penting Memulai Karier Guru)
+                    </h4>
+                    <div style="color: #475569; font-size: 0.92rem; line-height: 1.65; display: flex; flex-direction: column; gap: 0.6rem;">
+                        <div><strong>1. Merencanakan Pembelajaran Relevan &amp; Akomodatif:</strong> Menelaah CP/TP, memetakan kesiapan awal murid, menyusun modul ajar kontekstual, dan menyiapkan ragam media (komponen fisik, jobsheet, video, simulator).</div>
+                        <div><strong>2. Membangun Budaya Bengkel Aman &amp; Berkarakter:</strong> Menyepakati keyakinan kelas, membudayakan kepatuhan K3LH &amp; APD 100%, pembiasaan 5R, serta menerapkan pendampingan teman sebaya (<em>Buddy System</em>).</div>
+                        <div><strong>3. Asesmen, Refleksi Harian &amp; Pengembangan Berkelanjutan:</strong> Mengumpulkan data belajar autentik, mengevaluasi proses secara mandiri pasca-mengajar, aktif di MGMP, dan menjaga jejaring industri DUDI.</div>
+                    </div>
+                </div>
+
+            </div>
+        `
     },
     'sem2_inovasi': {
         title: 'Refleksi Inovasi Pembelajaran Kejuruan',
@@ -708,7 +749,12 @@ window.openEp5Modal = function(id) {
 
     document.getElementById('ep5ModalTitle').innerText = data.title;
     document.getElementById('ep5ModalIcon').innerText = data.icon;
-    document.getElementById('ep5ModalText').innerText = data.text;
+    const textEl = document.getElementById('ep5ModalText');
+    if (data.html) {
+        textEl.innerHTML = data.html;
+    } else {
+        textEl.innerText = data.text;
+    }
 
     const overlay = document.getElementById('ep5ModalOverlay');
     const content = document.getElementById('ep5ModalContent');
