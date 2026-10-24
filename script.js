@@ -709,7 +709,7 @@ const ep5RefleksiData = {
                     </h4>
                     <div style="color: #475569; font-size: 0.92rem; line-height: 1.65; display: flex; flex-direction: column; gap: 0.5rem;">
                         <div><strong>• Pembelajar Sepanjang Hayat:</strong> Terus memperbarui kompetensi keilmuan Teknik Pemesinan, teknologi simulator manufaktur, serta wawasan pedagogik terkini.</div>
-                        <div><strong>• Desain Pembelajaran Berpusat pada Murid:</strong> Mengembangkan modul ajar PjBL, Teaching Factory (TeFa), variasi jobsheet industri, dan scaffolding adaptif.</div>
+                        <div><strong>• Merencanakan Pembelajaran Terarah:</strong> Menyusun pembelajaran berdasarkan Capaian Pembelajaran (CP), karakteristik murid, dan konteks sekolah; menerapkan pembelajaran mendalam (memahami, mengaplikasikan, merefleksi); serta menyediakan pilihan representasi kontekstual (komponen mesin, gambar kerja, jobsheet, simulasi, dan praktik bengkel).</div>
                         <div><strong>• Optimalisasi Asesmen Autentik:</strong> Menyelaraskan asesmen diagnostik, observasi formatif proses unjuk kerja di bengkel, dan asesmen sumatif terukur.</div>
                         <div><strong>• Iklim Kelas Positif &amp; PSE:</strong> Menghadirkan lingkungan bengkel yang aman tanpa intimidasi, integrasi CASEL, dan teknik STOP demi ketelitian siswa.</div>
                         <div><strong>• Etika, Integritas &amp; Kemitraan DUDI:</strong> Menjadi teladan disiplin K3LH, refleksi berkala pasca-mengajar, serta berkolaborasi dengan guru pamong dan industri.</div>
