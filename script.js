@@ -100,6 +100,13 @@ window.selectPortfolio = function(id) {
         const floatBar = document.getElementById('floatingActionBar');
         if (floatBar) floatBar.classList.add('visible');
 
+        try { 
+            localStorage.setItem('activePortfolio', id); 
+            if (history.replaceState) {
+                history.replaceState(null, null, '#portfolio' + id);
+            }
+        } catch(e) {}
+
         window.scrollTo({ top: 0, behavior: 'smooth' });
         if (window.showToast && nameMap[id]) {
             window.showToast('Membuka ' + nameMap[id]);
@@ -360,6 +367,38 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
+
+    // 6. Deep Linking & Persistent Portfolio State
+    try {
+        const hash = window.location.hash || '';
+        let targetEp = null;
+        if (hash.includes('ep5') || hash.includes('portfolio5') || hash.includes('seminar')) {
+            targetEp = 5;
+        } else if (hash.includes('portfolio4') || hash.includes('ep4')) {
+            targetEp = 4;
+        } else if (hash.includes('portfolio3') || hash.includes('ep3')) {
+            targetEp = 3;
+        } else if (hash.includes('portfolio2') || hash.includes('ep2')) {
+            targetEp = 2;
+        } else if (hash.includes('portfolio1') || hash.includes('ep1')) {
+            targetEp = 1;
+        } else {
+            const saved = localStorage.getItem('activePortfolio');
+            if (saved) targetEp = parseInt(saved, 10);
+        }
+
+        if (targetEp) {
+            window.selectPortfolio(targetEp);
+            if (targetEp === 5) {
+                const savedTab = localStorage.getItem('ep5Tab');
+                if (savedTab === 'ep5-sem2' || hash.includes('sem2')) {
+                    setTimeout(() => {
+                        if (window.switchTab) window.switchTab('ep5-sem2');
+                    }, 650);
+                }
+            }
+        }
+    } catch(e) {}
 });
 
 // Carousel Auto Slide
@@ -507,6 +546,7 @@ window.switchTab = function(tabId) {
     if (!target) return;
 
     if (tabId.startsWith('ep5-')) {
+        try { localStorage.setItem('ep5Tab', tabId); } catch(e) {}
         const ep5Container = document.getElementById('ep5-refleksi');
         if (ep5Container) {
             ep5Container.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
