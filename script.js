@@ -1317,12 +1317,12 @@ window.switchUasModul = function(tabName, btn) {
             };
         }
     } else if (tabName === 'bahan') {
-        const url = 'https://drive.google.com/file/d/1E5vGh3PegvlUHAFJzhNCb4vbTBvDrxSP/preview';
+        const url = 'https://drive.google.com/file/d/15__0aGxHFq4vajuoEjow6Gl8-Wi0unH_/preview';
         if (iframe) iframe.src = url;
-        if (title) title.innerHTML = '🔬 <strong>Modul Ajar Siklus 4 & 5:</strong> Pengetahuan Bahan Teknik (Sifat Fisik, Kimia, Listrik & Mekanik)';
+        if (title) title.innerHTML = '🔬 <strong>Modul Ajar Siklus 4 & 5 (UAS):</strong> Pengetahuan Bahan Teknik (Sifat Fisik, Kimia, Listrik & Mekanik)';
         if (fullscreenBtn) {
             fullscreenBtn.onclick = function() {
-                window.openDocPreviewModal(url, 'Modul Ajar Siklus 4 & 5: Pengetahuan Bahan Teknik');
+                window.openDocPreviewModal(url, 'Modul Ajar Siklus 4 & 5 (UAS): Pengetahuan Bahan Teknik');
             };
         }
     } else if (tabName === 'produksi') {
@@ -1401,12 +1401,59 @@ const rppDatabase = {
         relation: 'Menjadi fondasi mutlak keselamatan kerja dan disiplin APD yang tampak diterapkan secara konsisten dalam rekaman video praktik mengajar di bengkel mesin.'
     },
     bahan: {
-        title: 'Pengetahuan Bahan Teknik (Siklus 4 & 5)',
+        title: 'Pengetahuan Bahan Teknik (Siklus 4 & 5 - UAS)',
         badge: '🔬 RPP Siklus 4 & 5',
-        url: 'https://drive.google.com/file/d/1E5vGh3PegvlUHAFJzhNCb4vbTBvDrxSP/preview',
-        fullTitle: 'RPP Siklus 4 & 5: Pengetahuan Bahan Teknik (Sifat Fisik, Kimia, Listrik & Mekanik)',
+        url: 'https://drive.google.com/file/d/15__0aGxHFq4vajuoEjow6Gl8-Wi0unH_/preview',
+        fullTitle: 'RPP Siklus 4 & 5 (UAS): Pengetahuan Bahan Teknik (Sifat Fisik, Kimia, Listrik & Mekanik)',
         desc: 'Klasifikasi logam ferro/non-ferro, pengujian sifat fisik, ketahanan korosi kimia, konduktivitas listrik, sifat mekanik (kekerasan, keuletan), serta pemilihan material mesin.',
-        relation: 'Menghubungkan karakteristik material yang dibubut dan diukur dalam video dengan analisis sifat mampu mesin (machinability) dan toleransi material teknik.'
+        relation: 'Dokumen RPP Pengetahuan Bahan ini memuat sintaks pembelajaran saintifik berbasis kontekstual, ATP, dan lembar kerja siswa yang dipraktikkan langsung dalam video pembelajaran UAS.'
+    }
+};
+
+// Toggle Stage UTS vs UAS in EP4 Video & RPP Section
+window.switchEp4StageTab = function(mode, btn) {
+    const utsPanel = document.getElementById('ep4-stage-uts');
+    const uasPanel = document.getElementById('ep4-stage-uas');
+    const buttons = document.querySelectorAll('.ep4-stage-tab');
+
+    buttons.forEach(b => {
+        b.style.background = '#f8fafc';
+        b.style.color = '#475569';
+        b.style.borderColor = '#cbd5e1';
+        b.style.boxShadow = 'none';
+        b.classList.remove('active');
+    });
+
+    const targetBtn = btn || document.getElementById(`tabEp4Btn-${mode}`);
+    if (targetBtn) {
+        targetBtn.classList.add('active');
+        if (mode === 'uts') {
+            targetBtn.style.background = 'linear-gradient(135deg, #023967 0%, #055a9e 100%)';
+            targetBtn.style.color = '#ffffff';
+            targetBtn.style.borderColor = '#023967';
+            targetBtn.style.boxShadow = '0 6px 18px rgba(2, 57, 103, 0.25)';
+        } else if (mode === 'uas') {
+            targetBtn.style.background = 'linear-gradient(135deg, #6d28d9 0%, #4c1d95 100%)';
+            targetBtn.style.color = '#ffffff';
+            targetBtn.style.borderColor = '#6d28d9';
+            targetBtn.style.boxShadow = '0 6px 18px rgba(109, 40, 217, 0.25)';
+        } else {
+            targetBtn.style.background = '#0f172a';
+            targetBtn.style.color = '#ffffff';
+            targetBtn.style.borderColor = '#0f172a';
+            targetBtn.style.boxShadow = '0 6px 18px rgba(15, 23, 42, 0.25)';
+        }
+    }
+
+    if (mode === 'uts') {
+        if (utsPanel) utsPanel.style.display = 'block';
+        if (uasPanel) uasPanel.style.display = 'none';
+    } else if (mode === 'uas') {
+        if (utsPanel) utsPanel.style.display = 'none';
+        if (uasPanel) uasPanel.style.display = 'block';
+    } else { // 'all'
+        if (utsPanel) utsPanel.style.display = 'block';
+        if (uasPanel) uasPanel.style.display = 'block';
     }
 };
 
@@ -1461,17 +1508,32 @@ window.selectRppBesideVideo = function(rppKey, btn) {
 };
 
 window.scrollAndSelectRpp = function(rppKey) {
-    const stage = document.getElementById('ep4-video-rpp');
-    if (stage) {
-        stage.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-    window.selectRppBesideVideo(rppKey);
-    if (window.showToast) {
-        const names = {
-            produksi: 'RPP Teknik Dasar Produksi (Siklus 2 & 3) Dipilih di Samping Video',
-            k3lh: 'RPP K3LH & 5R (Siklus 1) Dipilih di Samping Video',
-            bahan: 'RPP Pengetahuan Bahan (Siklus 4 & 5) Dipilih di Samping Video'
-        };
-        window.showToast(names[rppKey] || 'RPP Dipilih');
+    if (rppKey === 'bahan') {
+        if (window.switchEp4StageTab) {
+            window.switchEp4StageTab('uas');
+        }
+        const stage = document.getElementById('ep4-stage-uas') || document.getElementById('ep4-video-rpp');
+        if (stage) {
+            stage.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        if (window.showToast) {
+            window.showToast('Menampilkan Video & RPP UAS: Pengetahuan Bahan Teknik');
+        }
+    } else {
+        if (window.switchEp4StageTab) {
+            window.switchEp4StageTab('uts');
+        }
+        const stage = document.getElementById('ep4-stage-uts') || document.getElementById('ep4-video-rpp');
+        if (stage) {
+            stage.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        window.selectRppBesideVideo(rppKey);
+        if (window.showToast) {
+            const names = {
+                produksi: 'RPP Teknik Dasar Produksi (Siklus 2 & 3) Dipilih di Samping Video UTS',
+                k3lh: 'RPP K3LH & 5R (Siklus 1) Dipilih di Samping Video UTS'
+            };
+            window.showToast(names[rppKey] || 'RPP Dipilih di Samping Video UTS');
+        }
     }
 };
