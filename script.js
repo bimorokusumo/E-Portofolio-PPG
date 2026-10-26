@@ -1336,12 +1336,12 @@ window.switchUasModul = function(tabName, btn) {
             };
         }
     } else if (tabName === 'produksi') {
-        const url = 'https://drive.google.com/file/d/1ulngK_Fq_GWslrw87j8aES4ksfZbMMNV/preview';
+        const url = 'https://drive.google.com/file/d/1egR_L0tEcA5-uJjBFbGL5BQXuGAtUruj/preview';
         if (iframe) iframe.src = url;
-        if (title) title.innerHTML = '⚙️ <strong>Modul Ajar Siklus 3:</strong> Teknik Dasar Produksi (Mesin Bubut & Las)';
+        if (title) title.innerHTML = '⚙️ <strong>Modul Ajar Siklus 2 (UTS):</strong> Teknik Dasar Produksi (Alat Ukur Presisi)';
         if (fullscreenBtn) {
             fullscreenBtn.onclick = function() {
-                window.openDocPreviewModal(url, 'Modul Ajar Siklus 3: Teknik Dasar Produksi Manufaktur');
+                window.openDocPreviewModal(url, 'Modul Ajar Siklus 2 (UTS): Teknik Dasar Produksi Manufaktur');
             };
         }
     }
@@ -1397,7 +1397,7 @@ const rppDatabase = {
     produksi: {
         title: 'Teknik Dasar Produksi Manufaktur (Siklus 2 - UTS)',
         badge: '⚙️ RPP Siklus 2',
-        url: 'https://drive.google.com/file/d/1ulngK_Fq_GWslrw87j8aES4ksfZbMMNV/preview',
+        url: 'https://drive.google.com/file/d/1egR_L0tEcA5-uJjBFbGL5BQXuGAtUruj/preview',
         fullTitle: 'RPP Siklus 2 (UTS): Teknik Dasar Produksi Manufaktur (Alat Ukur Presisi)',
         desc: 'Operasi mesin bubut standar, mesin bor bangku, pengelasan busur manual SMAW, kalkulasi parameter potong (Cutting Speed & RPM), serta aplikasi pengukuran presisi metrologi.',
         relation: 'Keterampilan pengukuran alat ukur presisi pada video di samping merupakan prasyarat teknis langsung (prerequisite) yang diintegrasikan dalam RPP ini untuk memastikan toleransi dimensi benda kerja saat pembubutan.'
