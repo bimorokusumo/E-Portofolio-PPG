@@ -101,7 +101,6 @@ window.selectPortfolio = function(id) {
         if (floatBar) floatBar.classList.add('visible');
 
         try { 
-            localStorage.setItem('activePortfolio', id); 
             if (history.replaceState) {
                 history.replaceState(null, null, '#portfolio' + id);
             }
@@ -143,6 +142,13 @@ window.filterChooser = function(category, btn) {
 };
 
 window.showChooser = function() {
+    try { 
+        localStorage.removeItem('activePortfolio'); 
+        if (history.replaceState) {
+            history.replaceState(null, null, window.location.pathname + window.location.search);
+        }
+    } catch(e) {}
+
     document.getElementById('portfolioChooser').style.display = 'flex';
     setTimeout(() => {
         document.getElementById('portfolioChooser').style.opacity = '1';
@@ -368,11 +374,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 6. Deep Linking & Persistent Portfolio State
+    // 6. Deep Linking Logic (HANYA aktif jika URL memiliki hash spesifik portofolio)
     try {
-        const hash = window.location.hash || '';
+        // Hapus sisa activePortfolio agar saat membuka link utama SELALU ke landing page / dashboard
+        try { localStorage.removeItem('activePortfolio'); } catch(e) {}
+
+        const hash = (window.location.hash || '').toLowerCase();
         let targetEp = null;
-        if (hash.includes('ep5') || hash.includes('portfolio5') || hash.includes('seminar')) {
+
+        // Hanya alihkan jika hash secara eksplisit menunjukkan portofolio
+        if (hash.includes('portfolio5') || hash.includes('seminar') || hash.includes('ep5')) {
             targetEp = 5;
         } else if (hash.includes('portfolio4') || hash.includes('ep4')) {
             targetEp = 4;
@@ -382,20 +393,19 @@ document.addEventListener('DOMContentLoaded', () => {
             targetEp = 2;
         } else if (hash.includes('portfolio1') || hash.includes('ep1')) {
             targetEp = 1;
-        } else {
-            const saved = localStorage.getItem('activePortfolio');
-            if (saved) targetEp = parseInt(saved, 10);
         }
 
         if (targetEp) {
             window.selectPortfolio(targetEp);
-            if (targetEp === 5) {
-                const savedTab = localStorage.getItem('ep5Tab');
-                if (savedTab === 'ep5-sem2' || hash.includes('sem2')) {
-                    setTimeout(() => {
-                        if (window.switchTab) window.switchTab('ep5-sem2');
-                    }, 650);
-                }
+            if (targetEp === 5 && hash.includes('sem2')) {
+                setTimeout(() => {
+                    if (window.switchTab) window.switchTab('ep5-sem2');
+                }, 650);
+            }
+        } else {
+            // Standar: Pastikan tampilan selalu berada di landing page / dashboard utama
+            if (window.showChooser) {
+                window.showChooser();
             }
         }
     } catch(e) {}
@@ -1319,10 +1329,10 @@ window.switchUasModul = function(tabName, btn) {
     } else if (tabName === 'bahan') {
         const url = 'https://drive.google.com/file/d/15__0aGxHFq4vajuoEjow6Gl8-Wi0unH_/preview';
         if (iframe) iframe.src = url;
-        if (title) title.innerHTML = '🔬 <strong>Modul Ajar Siklus 4 & 5 (UAS):</strong> Pengetahuan Bahan Teknik (Sifat Fisik, Kimia, Listrik & Mekanik)';
+        if (title) title.innerHTML = '🔬 <strong>Modul Ajar Siklus 3 (UAS):</strong> Pengetahuan Bahan Teknik (Sifat Fisik, Kimia, Listrik & Mekanik)';
         if (fullscreenBtn) {
             fullscreenBtn.onclick = function() {
-                window.openDocPreviewModal(url, 'Modul Ajar Siklus 4 & 5 (UAS): Pengetahuan Bahan Teknik');
+                window.openDocPreviewModal(url, 'Modul Ajar Siklus 3 (UAS): Pengetahuan Bahan Teknik');
             };
         }
     } else if (tabName === 'produksi') {
@@ -1385,10 +1395,10 @@ window.switchUasEvaluasi = function(tabName, btn) {
 // -------------------------------------------------------------
 const rppDatabase = {
     produksi: {
-        title: 'Teknik Dasar Produksi Manufaktur (Siklus 2 & 3)',
-        badge: '⚙️ RPP Siklus 2 & 3',
+        title: 'Teknik Dasar Produksi Manufaktur (Siklus 2 - UTS)',
+        badge: '⚙️ RPP Siklus 2',
         url: 'https://drive.google.com/file/d/1ulngK_Fq_GWslrw87j8aES4ksfZbMMNV/preview',
-        fullTitle: 'RPP Siklus 2 & 3: Teknik Dasar Produksi Manufaktur (Mesin Bubut Standar, Mesin Bor, & Las SMAW)',
+        fullTitle: 'RPP Siklus 2 (UTS): Teknik Dasar Produksi Manufaktur (Alat Ukur Presisi)',
         desc: 'Operasi mesin bubut standar, mesin bor bangku, pengelasan busur manual SMAW, kalkulasi parameter potong (Cutting Speed & RPM), serta aplikasi pengukuran presisi metrologi.',
         relation: 'Keterampilan pengukuran alat ukur presisi pada video di samping merupakan prasyarat teknis langsung (prerequisite) yang diintegrasikan dalam RPP ini untuk memastikan toleransi dimensi benda kerja saat pembubutan.'
     },
@@ -1401,10 +1411,10 @@ const rppDatabase = {
         relation: 'Menjadi fondasi mutlak keselamatan kerja dan disiplin APD yang tampak diterapkan secara konsisten dalam rekaman video praktik mengajar di bengkel mesin.'
     },
     bahan: {
-        title: 'Pengetahuan Bahan Teknik (Siklus 4 & 5 - UAS)',
-        badge: '🔬 RPP Siklus 4 & 5',
+        title: 'Pengetahuan Bahan Teknik (Siklus 3 - UAS)',
+        badge: '🔬 RPP Siklus 3',
         url: 'https://drive.google.com/file/d/15__0aGxHFq4vajuoEjow6Gl8-Wi0unH_/preview',
-        fullTitle: 'RPP Siklus 4 & 5 (UAS): Pengetahuan Bahan Teknik (Sifat Fisik, Kimia, Listrik & Mekanik)',
+        fullTitle: 'RPP Siklus 3 (UAS): Pengetahuan Bahan Teknik (Sifat Fisik, Kimia, Listrik & Mekanik)',
         desc: 'Klasifikasi logam ferro/non-ferro, pengujian sifat fisik, ketahanan korosi kimia, konduktivitas listrik, sifat mekanik (kekerasan, keuletan), serta pemilihan material mesin.',
         relation: 'Dokumen RPP Pengetahuan Bahan ini memuat sintaks pembelajaran saintifik berbasis kontekstual, ATP, dan lembar kerja siswa yang dipraktikkan langsung dalam video pembelajaran UAS.'
     }
@@ -1517,7 +1527,7 @@ window.scrollAndSelectRpp = function(rppKey) {
             stage.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
         if (window.showToast) {
-            window.showToast('Menampilkan Video & RPP UAS: Pengetahuan Bahan Teknik');
+            window.showToast('Menampilkan Video & RPP UAS: Pengetahuan Bahan Teknik (Siklus 3)');
         }
     } else {
         if (window.switchEp4StageTab) {
@@ -1530,7 +1540,7 @@ window.scrollAndSelectRpp = function(rppKey) {
         window.selectRppBesideVideo(rppKey);
         if (window.showToast) {
             const names = {
-                produksi: 'RPP Teknik Dasar Produksi (Siklus 2 & 3) Dipilih di Samping Video UTS',
+                produksi: 'RPP Teknik Dasar Produksi (Siklus 2) Dipilih di Samping Video UTS',
                 k3lh: 'RPP K3LH & 5R (Siklus 1) Dipilih di Samping Video UTS'
             };
             window.showToast(names[rppKey] || 'RPP Dipilih di Samping Video UTS');
