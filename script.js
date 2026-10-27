@@ -562,6 +562,12 @@ window.switchTab = function(tabId) {
             ep5Container.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
             ep5Container.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
         }
+    } else if (tabId.startsWith('ep3-')) {
+        const ep3Container = document.getElementById('ep3-artefak');
+        if (ep3Container) {
+            ep3Container.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            ep3Container.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        }
     } else {
         ['siklus-1', 'siklus-2', 'siklus-3'].forEach(id => {
             const el = document.getElementById(id);
@@ -572,7 +578,7 @@ window.switchTab = function(tabId) {
     }
 
     target.classList.add('active');
-    const activeBtn = document.querySelector(`.tab-btn[onclick="switchTab('${tabId}')"]`);
+    const activeBtn = document.querySelector(`.tab-btn[onclick*="${tabId}"]`);
     if (activeBtn) activeBtn.classList.add('active');
 
     // Instantly load any lazy iframes inside the activated tab
@@ -582,6 +588,17 @@ window.switchTab = function(tabId) {
             iframe.removeAttribute('data-src');
         }
     });
+};
+
+window.switchEp3Tab = function(tabId, btn) {
+    window.switchTab(tabId);
+    if (btn) {
+        const container = document.getElementById('ep3-artefak');
+        if (container) {
+            container.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        }
+        btn.classList.add('active');
+    }
 };
 
 // EP2 Refleksi Akhir Modal Logic
@@ -1318,7 +1335,7 @@ window.switchUasModul = function(tabName, btn) {
     }
 
     if (tabName === 'k3lh') {
-        const url = 'https://drive.google.com/file/d/1Z03qLXSKLj4QveKXVh8s85Tp8hrhOSDg/preview';
+        const url = 'https://drive.google.com/file/d/1bh4AWHJt7o_Im008pbkktvATNVXBb97a/preview';
         if (iframe) iframe.src = url;
         if (title) title.innerHTML = '🛡️ <strong>Modul Ajar Siklus 1:</strong> Penerapan K3LH & Budaya Kerja 5R Bengkel Mesin';
         if (fullscreenBtn) {
@@ -1405,7 +1422,7 @@ const rppDatabase = {
     k3lh: {
         title: 'Penerapan K3LH & Budaya Kerja 5R (Siklus 1)',
         badge: '🛡️ RPP Siklus 1',
-        url: 'https://drive.google.com/file/d/1Z03qLXSKLj4QveKXVh8s85Tp8hrhOSDg/preview',
+        url: 'https://drive.google.com/file/d/1bh4AWHJt7o_Im008pbkktvATNVXBb97a/preview',
         fullTitle: 'RPP Siklus 1: Penerapan K3LH, Bahaya Bengkel, & Budaya Kerja 5R',
         desc: 'Identifikasi bahaya mekanik bengkel mesin, standar APD industri 100%, penanganan darurat APAR, Job Safety Analysis (JSA), dan pembiasaan budaya kerja 5R.',
         relation: 'Menjadi fondasi mutlak keselamatan kerja dan disiplin APD yang tampak diterapkan secara konsisten dalam rekaman video praktik mengajar di bengkel mesin.'

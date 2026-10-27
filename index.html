@@ -13,7 +13,7 @@
 <link rel="dns-prefetch" href="https://docs.google.com"/>
 <link rel="dns-prefetch" href="https://open.spotify.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="style.css?v=20261026_1610" rel="stylesheet"/>
+<link href="style.css?v=20261027_1345" rel="stylesheet"/>
 </head>
 <body>
 <!-- Global Scroll Progress Bar & Toast Notification -->
@@ -1044,6 +1044,7 @@ function showExpDetail(id, btnElement) {
 <!-- Nav Links for Semester 2: E-Portofolio (Analisis Mandiri) -->
 <ul class="nav-links hidden-section" id="nav-ep3">
 <li><a class="active" href="#ep3-home">Beranda</a></li>
+<li><a href="#ep3-artefak">Artefak Perangkat</a></li>
 <li><a href="#ep3-analisis-rancangan">Rancangan</a></li>
 <li><a href="#ep3-analisis-materi">Materi</a></li>
 <li><a href="#ep3-analisis-media">Media</a></li>
@@ -2519,12 +2520,521 @@ function showExpDetail(id, btnElement) {
                 Dokumentasi analisis komprehensif atas pelaksanaan Praktik Pengalaman Lapangan (PPL II) di SMK Negeri 2 Depok Sleman. Memuat telaah kritis terhadap rancangan pembelajaran CTL, materi ajar, media, video pelaksanaan mandiri, kegiatan nonmengajar, serta instrumen asesmen pembelajaran.
             </p>
             <div class="ep-hero-actions">
-                <a class="btn-kem-gold" href="#ep3-analisis-rancangan">1. Rancangan</a>
+                <a class="btn-kem-gold" href="#ep3-artefak">📑 Artefak Pembelajaran</a>
+                <a class="btn-kem-outline" href="#ep3-analisis-rancangan">1. Rancangan</a>
                 <a class="btn-kem-outline" href="#ep3-analisis-materi">2. Materi</a>
                 <a class="btn-kem-outline" href="#ep3-analisis-media">3. Media</a>
                 <a class="btn-kem-outline" href="#ep3-analisis-video">4. Video Mengajar</a>
                 <a class="btn-kem-outline" href="#ep3-nonmengajar">5. Nonmengajar</a>
                 <a class="btn-kem-outline" href="#ep3-penilaian">6. Penilaian</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 0. Telaah Kurikulum & Artefak Pembelajaran (Siklus 1 sampai 3 Praktik Mandiri) -->
+    <section id="ep3-artefak" style="padding: 5rem 2rem 3rem 2rem; background: #FFFFFF; border-bottom: 1px solid #edf2f7;">
+        <div style="max-width: 1160px; margin: 0 auto; text-align: center; margin-bottom: 2.5rem;">
+            <span class="kem-section-eyebrow">TELAAH KURIKULUM &amp; PERANGKAT &bull; SIKLUS 1 SAMPAI 3</span>
+            <h2 style="color: #023967; font-size: 2.3rem; margin-bottom: 0.6rem; font-weight: 800;">Artefak Pembelajaran &amp; Analisis Kritis</h2>
+            <p style="color: #525354; font-size: 1.05rem; max-width: 820px; margin: 0 auto; line-height: 1.6;">Dokumentasi RPP, Bahan Ajar, Media Presentasi, LKM, Instrumen Asesmen, dan Hasil Karya Siswa yang ditelaah menggunakan kerangka analisis mendalam.</p>
+        </div>
+
+        <!-- Tab Navigation -->
+        <div class="tab-nav">
+            <button type="button" class="tab-btn active" onclick="switchEp3Tab('ep3-siklus-1', this)">Siklus 1: K3LH &amp; Budaya 5R</button>
+            <button type="button" class="tab-btn" onclick="switchEp3Tab('ep3-siklus-2', this)">Siklus 2: Teknik Dasar Produksi</button>
+            <button type="button" class="tab-btn" onclick="switchEp3Tab('ep3-siklus-3', this)">Siklus 3: Pengetahuan Bahan</button>
+        </div>
+
+        <!-- TAB CONTENT SIKLUS 1: K3LH & 5R -->
+        <div class="tab-content active" id="ep3-siklus-1">
+            <div class="gallery-section">
+                <h3 style="color: var(--kemendikbud-blue); text-align: center; margin-bottom: 2rem; font-size: 1.8rem;">🛡️ K3LH, Bahaya Bengkel, &amp; Budaya Kerja 5R</h3>
+                <div class="search-container" style="margin: 0 auto 2rem auto; max-width: 800px; position: relative;">
+                    <input class="search-input search-input-gallery" placeholder="Cari dokumen, RPP, Media, LKM K3LH..." style="width: 100%; padding: 1rem 1.5rem; border-radius: 50px; border: 2px solid var(--border-color); font-size: 1rem; outline: none; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: border-color 0.3s;" type="text"/>
+                    <div class="search-icon search-btn" style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); cursor: pointer; display: flex; align-items: center; justify-content: center;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </div>
+                </div>
+                <div class="filter-container">
+                    <button type="button" class="filter-btn active" data-filter="all">Semua</button>
+                    <button type="button" class="filter-btn" data-filter="rpp">RPP</button>
+                    <button type="button" class="filter-btn" data-filter="bahan-ajar">Bahan Ajar</button>
+                    <button type="button" class="filter-btn" data-filter="media">Media</button>
+                    <button type="button" class="filter-btn" data-filter="lks">LKM &amp; Asesmen</button>
+                    <button type="button" class="filter-btn" data-filter="hasil-kerja">Hasil Kerja Siswa</button>
+                    <button type="button" class="filter-btn" data-filter="video">Video Mengajar</button>
+                </div>
+                <div class="doc-grid gallery-grid">
+                    <!-- RPP 1 (K3LH) Card -->
+                    <div class="doc-card gallery-card-item" data-category="rpp">
+                        <div class="doc-card-thumb">
+                            <span class="doc-badge">RPP Siklus 1</span>
+                            <img alt="RPP K3LH" class="doc-thumb-img" src="https://drive.google.com/thumbnail?id=1bh4AWHJt7o_Im008pbkktvATNVXBb97a&amp;sz=w600" loading="lazy" decoding="async"/>
+                            <a class="doc-overlay-btn" href="javascript:void(0)" onclick="openDocPreviewModal('https://drive.google.com/file/d/1bh4AWHJt7o_Im008pbkktvATNVXBb97a/preview', 'RPP Kecakapan Kerja Dasar K3LH &amp; Budaya Kerja 5R')">Buka di Layar Penuh ↗</a>
+                        </div>
+                        <div class="doc-card-content">
+                            <h4>RPP Kecakapan Kerja Dasar K3LH &amp; Budaya 5R</h4>
+                            <p>Modul ajar resmi penerapan K3LH, identifikasi bahaya bengkel mesin, standar APD 100%, penanganan APAR, dan audit budaya kerja 5R.</p>
+                            <details style="margin: 1rem 0; font-size: 0.9rem; text-align: left; background: var(--bg-white); border: 1px solid var(--border-color); padding: 0.8rem; border-radius: 8px;">
+                                <summary style="cursor: pointer; font-weight: 600; color: var(--kemendikbud-blue); outline: none;">🔍 Analisis Artefak</summary>
+                                <div style="padding-top: 0.8rem; display: flex; flex-direction: column; gap: 0.5rem; color: var(--text-dark);">
+                                    <div><strong>Konteks:</strong> <br/><span style="color: var(--text-light);">Disusun pada tahap awal praktik mandiri untuk menanamkan fondasi keselamatan mutlak (zero accident) dan etika kerja 5R sebelum siswa memegang mesin perkakas.</span></div>
+                                    <div><strong>Tujuan:</strong> <br/><span style="color: var(--text-light);">Membentuk habitus kedisiplinan APD standar industri 100% dan melatih nalar pencegahan bahaya mekanis, termal, maupun elektrik di bengkel.</span></div>
+                                    <div><strong>Kelebihan:</strong> <br/><span style="color: var(--text-light);">Sintaks Contextual Teaching &amp; Learning (CTL) diperkuat lembar checklist audit 5R dan instrumen observasi perilaku keselamatan kerja riil.</span></div>
+                                    <div><strong>Kekurangan:</strong> <br/><span style="color: var(--text-light);">Memerlukan penegakan konsisten dari guru pendamping agar kebiasaan 5R terus dipatuhi hingga sesi pembersihan bengkel selesai.</span></div>
+                                </div>
+                            </details>
+                            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: auto;">
+                                <button type="button" class="doc-btn" onclick="openDocPreviewModal('https://drive.google.com/file/d/1bh4AWHJt7o_Im008pbkktvATNVXBb97a/preview', 'RPP Kecakapan Kerja Dasar K3LH &amp; Budaya Kerja 5R')" style="flex: 1; cursor: pointer; border: none; text-align: center;">Lihat Dokumen ↗</button>
+                                <a class="doc-btn" href="https://drive.google.com/file/d/1bh4AWHJt7o_Im008pbkktvATNVXBb97a/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="background: transparent !important; color: #0284c7 !important; border: 1px solid #0284c7 !important; text-decoration: none; padding: 0.5rem 0.8rem;">Drive ↗</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bahan Ajar K3LH Card -->
+                    <div class="doc-card gallery-card-item" data-category="bahan-ajar">
+                        <div class="doc-card-thumb">
+                            <span class="doc-badge" style="background: #0284c7 !important;">Bahan Ajar K3LH</span>
+                            <img alt="Bahan Ajar K3LH" class="doc-thumb-img" src="https://drive.google.com/thumbnail?id=1RHQDRDQJ_HLgC03OnWsnFpUYJXYxdH9R&amp;sz=w600" loading="lazy" decoding="async"/>
+                            <a class="doc-overlay-btn" href="javascript:void(0)" onclick="openDocPreviewModal('https://drive.google.com/file/d/1RHQDRDQJ_HLgC03OnWsnFpUYJXYxdH9R/preview', 'Handout SOP K3LH &amp; Budaya 5R')">Buka di Layar Penuh ↗</a>
+                        </div>
+                        <div class="doc-card-content">
+                            <h4>Handout Panduan SOP K3LH &amp; Pengendalian Bahaya</h4>
+                            <p>Materi ringkas ergonomi kerja bengkel, rambu bahaya internasional ISO 7010, prosedur evakuasi tanggap darurat, dan SOP perawatan APD mesin.</p>
+                            <details style="margin: 1rem 0; font-size: 0.9rem; text-align: left; background: var(--bg-white); border: 1px solid var(--border-color); padding: 0.8rem; border-radius: 8px;">
+                                <summary style="cursor: pointer; font-weight: 600; color: var(--kemendikbud-blue); outline: none;">🔍 Analisis Artefak</summary>
+                                <div style="padding-top: 0.8rem; display: flex; flex-direction: column; gap: 0.5rem; color: var(--text-dark);">
+                                    <div><strong>Konteks:</strong> <br/><span style="color: var(--text-light);">Bahan bacaan mandiri siswa sebelum masuk area bengkel mesin perkakas untuk memperkuat pemahaman K3 secara kognitif.</span></div>
+                                    <div><strong>Tujuan:</strong> <br/><span style="color: var(--text-light);">Menyajikan rujukan praktis identifikasi bahaya dan pemakaian alat pelindung diri yang tepat sesuai zona kerja bengkel.</span></div>
+                                    <div><strong>Kelebihan:</strong> <br/><span style="color: var(--text-light);">Ilustrasi visual infografis berwarna mempermudah pengenalan simbol rambu dan bahaya mekanis mesin.</span></div>
+                                    <div><strong>Kekurangan:</strong> <br/><span style="color: var(--text-light);">Perlu pembaruan studi kasus berkala mengenai potensi bahaya teknologi mesin portabel terbaru.</span></div>
+                                </div>
+                            </details>
+                            <button type="button" class="doc-btn" onclick="openDocPreviewModal('https://drive.google.com/file/d/1RHQDRDQJ_HLgC03OnWsnFpUYJXYxdH9R/preview', 'Handout SOP K3LH &amp; Budaya 5R')" style="cursor: pointer; border: none; text-align: center; width: 100%;">Lihat Dokumen ↗</button>
+                        </div>
+                    </div>
+
+                    <!-- Media Pembelajaran K3LH Card -->
+                    <div class="doc-card gallery-card-item" data-category="media">
+                        <div class="doc-card-thumb">
+                            <span class="doc-badge" style="background: #059669 !important;">Media Interaktif</span>
+                            <img alt="Media K3LH" class="doc-thumb-img" src="https://drive.google.com/thumbnail?id=16ueTxAEYZQu87Nn5Rstz3-mME_5TP_oy&amp;sz=w600" loading="lazy" decoding="async"/>
+                            <a class="doc-overlay-btn" href="javascript:void(0)" onclick="openDocPreviewModal('https://bimorokusumo.github.io/bimo-manfacturing-labs/', 'Web Labs BIMO - Modul K3LH Interaktif')">Buka Simulator Labs ↗</a>
+                        </div>
+                        <div class="doc-card-content">
+                            <h4>Media Presentasi &amp; Audio Visual Keselamatan Bengkel</h4>
+                            <p>Tayangan multimedia animasi keselamatan kerja, video studi kasus bahaya tatal logam, dan simulator APD interaktif di Web Labs BIMO.</p>
+                            <details style="margin: 1rem 0; font-size: 0.9rem; text-align: left; background: var(--bg-white); border: 1px solid var(--border-color); padding: 0.8rem; border-radius: 8px;">
+                                <summary style="cursor: pointer; font-weight: 600; color: var(--kemendikbud-blue); outline: none;">🔍 Analisis Artefak</summary>
+                                <div style="padding-top: 0.8rem; display: flex; flex-direction: column; gap: 0.5rem; color: var(--text-dark);">
+                                    <div><strong>Konteks:</strong> <br/><span style="color: var(--text-light);">Ditayangkan pada sesi apersepsi awal untuk memberikan visualisasi bahaya tanpa risiko kecelakaan fisik.</span></div>
+                                    <div><strong>Tujuan:</strong> <br/><span style="color: var(--text-light);">Menggugah kesadaran afektif siswa terhadap konsekuensi kelalaian APD di bengkel manufaktur.</span></div>
+                                    <div><strong>Kelebihan:</strong> <br/><span style="color: var(--text-light);">Efektif memusatkan perhatian siswa melalui animasi pergerakan tatal panas dan bahaya putaran spindel.</span></div>
+                                    <div><strong>Kekurangan:</strong> <br/><span style="color: var(--text-light);">Perlu dipadukan dengan sesi tanya jawab interaktif agar siswa tidak sekadar pasif menonton slide.</span></div>
+                                </div>
+                            </details>
+                            <button type="button" class="doc-btn" onclick="openDocPreviewModal('https://bimorokusumo.github.io/bimo-manfacturing-labs/', 'Web Labs BIMO - Modul K3LH Interaktif')" style="background: #059669 !important; cursor: pointer; border: none; text-align: center; width: 100%;">Buka Media &amp; Labs ↗</button>
+                        </div>
+                    </div>
+
+                    <!-- LKM & Asesmen K3LH Card -->
+                    <div class="doc-card gallery-card-item" data-category="lks">
+                        <div class="doc-card-thumb">
+                            <span class="doc-badge" style="background: #d97706 !important;">LKM &amp; Asesmen</span>
+                            <img alt="LKM K3LH" class="doc-thumb-img" src="https://drive.google.com/thumbnail?id=1MeRsisVVM8mUxkjYdEi9vMrv7vuEqKPn&amp;sz=w600" loading="lazy" decoding="async"/>
+                            <a class="doc-overlay-btn" href="javascript:void(0)" onclick="openDocPreviewModal('https://docs.google.com/spreadsheets/d/1-YH8PCzHIUv1B8I1dCj_XmcQ2c-jyAavPQfWGHYCUT4/edit?hl=id&amp;gid=1196549737#gid=1196549737', 'Data Rekapitulasi Asesmen K3LH Siswa')">Buka Nilai Spreadsheet ↗</a>
+                        </div>
+                        <div class="doc-card-content">
+                            <h4>LKM Identifikasi Bahaya Bengkel &amp; Form Audit 5R</h4>
+                            <p>Lembar kerja siswa berbasis Job Safety Analysis (JSA) bengkel mesin dan rubrik checklist penilaian kepatuhan budaya kerja 5R terintegrasi spreadsheet.</p>
+                            <details style="margin: 1rem 0; font-size: 0.9rem; text-align: left; background: var(--bg-white); border: 1px solid var(--border-color); padding: 0.8rem; border-radius: 8px;">
+                                <summary style="cursor: pointer; font-weight: 600; color: var(--kemendikbud-blue); outline: none;">🔍 Analisis Artefak</summary>
+                                <div style="padding-top: 0.8rem; display: flex; flex-direction: column; gap: 0.5rem; color: var(--text-dark);">
+                                    <div><strong>Konteks:</strong> <br/><span style="color: var(--text-light);">Digunakan saat observasi langsung keliling bengkel pemesinan Fase E SMK Negeri 2 Depok Sleman.</span></div>
+                                    <div><strong>Tujuan:</strong> <br/><span style="color: var(--text-light);">Melatih kemampuan observasi analitis siswa dalam mengenali titik bahaya mesin dan potensi slip/trip.</span></div>
+                                    <div><strong>Kelebihan:</strong> <br/><span style="color: var(--text-light);">Format tabel terstruktur memudahkan siswa mendokumentasikan temuan audit 5R secara objektif.</span></div>
+                                    <div><strong>Kekurangan:</strong> <br/><span style="color: var(--text-light);">Menuntut pendampingan guru agar kriteria bahaya dinilai secara tepat sesuai bobot risiko.</span></div>
+                                </div>
+                            </details>
+                            <button type="button" class="doc-btn" onclick="openDocPreviewModal('https://docs.google.com/spreadsheets/d/1-YH8PCzHIUv1B8I1dCj_XmcQ2c-jyAavPQfWGHYCUT4/edit?hl=id&amp;gid=1196549737#gid=1196549737', 'Data Rekapitulasi Asesmen K3LH Siswa')" style="cursor: pointer; border: none; text-align: center; width: 100%;">Lihat Asesmen Nilai ↗</button>
+                        </div>
+                    </div>
+
+                    <!-- Hasil Kerja Siswa K3LH Card -->
+                    <div class="doc-card gallery-card-item" data-category="hasil-kerja">
+                        <div class="doc-card-thumb">
+                            <span class="doc-badge" style="background: #7c3aed !important;">Karya Siswa</span>
+                            <img alt="Hasil Kerja Siswa K3LH" class="doc-thumb-img" src="assets/hasil-kerja/siklus-1/IMG_9657.jpg" loading="lazy" decoding="async"/>
+                            <a class="doc-overlay-btn" href="javascript:void(0)" onclick="openDocPreviewModal('assets/hasil-kerja/siklus-1/IMG_9657.jpg', 'Dokumentasi Hasil Penerapan 5R Siswa')">Perbesar Foto ↗</a>
+                        </div>
+                        <div class="doc-card-content">
+                            <h4>Dokumentasi Lembar JSA &amp; Penerapan 5R Siswa</h4>
+                            <p>Portofolio hasil kerja autentik siswa: form identifikasi bahaya terisi lengkap serta dokumentasi penataan alat sesuai prinsip Ringkas, Rapi, Resik.</p>
+                            <details style="margin: 1rem 0; font-size: 0.9rem; text-align: left; background: var(--bg-white); border: 1px solid var(--border-color); padding: 0.8rem; border-radius: 8px;">
+                                <summary style="cursor: pointer; font-weight: 600; color: var(--kemendikbud-blue); outline: none;">🔍 Analisis Artefak</summary>
+                                <div style="padding-top: 0.8rem; display: flex; flex-direction: column; gap: 0.5rem; color: var(--text-dark);">
+                                    <div><strong>Konteks:</strong> <br/><span style="color: var(--text-light);">Bukti fisik hasil ketercapaian tujuan pembelajaran modul K3LH oleh 35 siswa Fase E di bengkel.</span></div>
+                                    <div><strong>Tujuan:</strong> <br/><span style="color: var(--text-light);">Mengukur pemahaman konseptual dan implementasi nyata budaya industri di ruang praktik mesin.</span></div>
+                                    <div><strong>Kelebihan:</strong> <br/><span style="color: var(--text-light);">Menggambarkan transformasi sikap kerja siswa yang tertib dan bertanggung jawab terhadap alat kerja.</span></div>
+                                    <div><strong>Kekurangan:</strong> <br/><span style="color: var(--text-light);">Konsistensi pemeliharaan 5R membutuhkan pembiasaan berkelanjutan di luar jam pelajaran.</span></div>
+                                </div>
+                            </details>
+                            <button type="button" class="doc-btn" onclick="openDocPreviewModal('assets/hasil-kerja/siklus-1/IMG_9657.jpg', 'Dokumentasi Hasil Penerapan 5R Siswa')" style="cursor: pointer; border: none; text-align: center; width: 100%;">Lihat Karya Siswa ↗</button>
+                        </div>
+                    </div>
+
+                    <!-- Video Mengajar K3LH Card -->
+                    <div class="doc-card gallery-card-item" data-category="video">
+                        <div class="doc-card-thumb">
+                            <span class="doc-badge" style="background: #ef4444 !important;">Video Praktik 1</span>
+                            <img alt="Video K3LH" class="doc-thumb-img" src="https://img.youtube.com/vi/5FiIphNAvwI/hqdefault.jpg" loading="lazy" decoding="async"/>
+                            <a class="doc-overlay-btn" href="javascript:void(0)" onclick="openDocPreviewModal('https://www.youtube.com/embed/5FiIphNAvwI?autoplay=1', 'Video Pembelajaran K3LH &amp; Budaya Industri')">Putar Video Layar Penuh ↗</a>
+                        </div>
+                        <div class="doc-card-content">
+                            <h4>Video Pembiasaan SOP K3LH &amp; Apersepsi Budaya</h4>
+                            <p>Rekaman praktik mengajar menampilkan apersepsi keselamatan, briefing APD lengkap, dan evaluasi kepatuhan 5R di bengkel pemesinan.</p>
+                            <details style="margin: 1rem 0; font-size: 0.9rem; text-align: left; background: var(--bg-white); border: 1px solid var(--border-color); padding: 0.8rem; border-radius: 8px;">
+                                <summary style="cursor: pointer; font-weight: 600; color: var(--kemendikbud-blue); outline: none;">🔍 Analisis Artefak</summary>
+                                <div style="padding-top: 0.8rem; display: flex; flex-direction: column; gap: 0.5rem; color: var(--text-dark);">
+                                    <div><strong>Konteks:</strong> <br/><span style="color: var(--text-light);">Dokumentasi video pembelajaran autentik di Bengkel Mesin SMK Negeri 2 Depok Sleman.</span></div>
+                                    <div><strong>Tujuan:</strong> <br/><span style="color: var(--text-light);">Bukti kinerja guru dalam memimpin safety briefing dan mengelola kedisiplinan peserta didik.</span></div>
+                                    <div><strong>Kelebihan:</strong> <br/><span style="color: var(--text-light);">Menampilkan interaksi aktif guru-siswa dengan artikulasi tegas dan pemodelan sikap aman.</span></div>
+                                    <div><strong>Kekurangan:</strong> <br/><span style="color: var(--text-light);">Alokasi waktu safety briefing perlu dijaga agar tidak mengurangi porsi praktik inti siswa.</span></div>
+                                </div>
+                            </details>
+                            <button type="button" class="doc-btn" onclick="openDocPreviewModal('https://www.youtube.com/embed/5FiIphNAvwI?autoplay=1', 'Video Pembelajaran K3LH &amp; Budaya Industri')" style="background: #ef4444 !important; cursor: pointer; border: none; text-align: center; width: 100%;">▶ Putar Video ↗</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB CONTENT SIKLUS 2: TEKNIK DASAR PRODUKSI -->
+        <div class="tab-content" id="ep3-siklus-2">
+            <div class="gallery-section">
+                <h3 style="color: var(--kemendikbud-blue); text-align: center; margin-bottom: 2rem; font-size: 1.8rem;">⚙️ Teknik Dasar Proses Produksi Manufaktur</h3>
+                <div class="search-container" style="margin: 0 auto 2rem auto; max-width: 800px; position: relative;">
+                    <input class="search-input search-input-gallery" placeholder="Cari dokumen, RPP, Media, LKM Teknik Produksi..." style="width: 100%; padding: 1rem 1.5rem; border-radius: 50px; border: 2px solid var(--border-color); font-size: 1rem; outline: none; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: border-color 0.3s;" type="text"/>
+                    <div class="search-icon search-btn" style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); cursor: pointer; display: flex; align-items: center; justify-content: center;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </div>
+                </div>
+                <div class="filter-container">
+                    <button type="button" class="filter-btn active" data-filter="all">Semua</button>
+                    <button type="button" class="filter-btn" data-filter="rpp">RPP</button>
+                    <button type="button" class="filter-btn" data-filter="bahan-ajar">Bahan Ajar</button>
+                    <button type="button" class="filter-btn" data-filter="media">Media</button>
+                    <button type="button" class="filter-btn" data-filter="lks">LKM &amp; Asesmen</button>
+                    <button type="button" class="filter-btn" data-filter="hasil-kerja">Hasil Kerja Siswa</button>
+                    <button type="button" class="filter-btn" data-filter="video">Video Mengajar</button>
+                </div>
+                <div class="doc-grid gallery-grid">
+                    <!-- RPP 2 (Teknik Dasar Produksi) Card -->
+                    <div class="doc-card gallery-card-item" data-category="rpp">
+                        <div class="doc-card-thumb">
+                            <span class="doc-badge" style="background: #10b981 !important;">RPP Siklus 2 (UTS)</span>
+                            <img alt="RPP Teknik Dasar Produksi" class="doc-thumb-img" src="https://drive.google.com/thumbnail?id=1egR_L0tEcA5-uJjBFbGL5BQXuGAtUruj&amp;sz=w600" loading="lazy" decoding="async"/>
+                            <a class="doc-overlay-btn" href="javascript:void(0)" onclick="openDocPreviewModal('https://drive.google.com/file/d/1egR_L0tEcA5-uJjBFbGL5BQXuGAtUruj/preview', 'RPP Teknik Dasar Proses Produksi Manufaktur')">Buka di Layar Penuh ↗</a>
+                        </div>
+                        <div class="doc-card-content">
+                            <h4>RPP Teknik Dasar Proses Produksi Manufaktur</h4>
+                            <p>Modul ajar resmi revisi lengkap teknik dasar proses produksi: metrologi jangka sorong, mikrometer sekrup, kalkulasi cutting speed &amp; RPM mesin bubut, serta jobsheet toleransi ISO.</p>
+                            <details style="margin: 1rem 0; font-size: 0.9rem; text-align: left; background: var(--bg-white); border: 1px solid var(--border-color); padding: 0.8rem; border-radius: 8px;">
+                                <summary style="cursor: pointer; font-weight: 600; color: var(--kemendikbud-blue); outline: none;">🔍 Analisis Artefak</summary>
+                                <div style="padding-top: 0.8rem; display: flex; flex-direction: column; gap: 0.5rem; color: var(--text-dark);">
+                                    <div><strong>Konteks:</strong> <br/><span style="color: var(--text-light);">Modul ajar inti praktik mandiri UTS yang menghubungkan kompetensi metrologi industri dengan pemesinan bubut standar.</span></div>
+                                    <div><strong>Tujuan:</strong> <br/><span style="color: var(--text-light);">Menjadi panduan komprehensif bagi guru dan siswa dalam mencapai presisi pembacaan nonius 0.05 mm dan 0.01 mm tanpa kesalahan paralaks.</span></div>
+                                    <div><strong>Kelebihan:</strong> <br/><span style="color: var(--text-light);">Sintaks saintifik-kontekstual terintegrasi dengan pemodelan demonstrasi, scaffolding pembacaan nonius, dan jobsheet berstandar industri.</span></div>
+                                    <div><strong>Kekurangan:</strong> <br/><span style="color: var(--text-light);">Waktu pembacaan mikrometer pada awalnya menyita alokasi cukup besar bagi siswa pemula sebelum terbiasa memutar ratchet.</span></div>
+                                </div>
+                            </details>
+                            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: auto;">
+                                <button type="button" class="doc-btn" onclick="openDocPreviewModal('https://drive.google.com/file/d/1egR_L0tEcA5-uJjBFbGL5BQXuGAtUruj/preview', 'RPP Teknik Dasar Proses Produksi Manufaktur')" style="flex: 1; cursor: pointer; border: none; text-align: center;">Lihat Dokumen ↗</button>
+                                <a class="doc-btn" href="https://drive.google.com/file/d/1egR_L0tEcA5-uJjBFbGL5BQXuGAtUruj/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="background: transparent !important; color: #0284c7 !important; border: 1px solid #0284c7 !important; text-decoration: none; padding: 0.5rem 0.8rem;">Drive ↗</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bahan Ajar & Jobsheet Produksi Card -->
+                    <div class="doc-card gallery-card-item" data-category="bahan-ajar">
+                        <div class="doc-card-thumb">
+                            <span class="doc-badge" style="background: #0284c7 !important;">Jobsheet &amp; Handout</span>
+                            <img alt="Bahan Ajar Produksi" class="doc-thumb-img" src="https://drive.google.com/thumbnail?id=1RHQDRDQJ_HLgC03OnWsnFpUYJXYxdH9R&amp;sz=w600" loading="lazy" decoding="async"/>
+                            <a class="doc-overlay-btn" href="javascript:void(0)" onclick="openDocPreviewModal('https://drive.google.com/file/d/1RHQDRDQJ_HLgC03OnWsnFpUYJXYxdH9R/preview', 'Jobsheet Pembubutan Presisi ISO')">Buka di Layar Penuh ↗</a>
+                        </div>
+                        <div class="doc-card-content">
+                            <h4>Buku Bahan Ajar &amp; Jobsheet Pembubutan Silindris</h4>
+                            <p>Perangkat modul cetak berstandar gambar teknik ISO, rumus cutting speed, tabel parameter potong bubut, dan lembar kendali mutu ukuran mandiri.</p>
+                            <details style="margin: 1rem 0; font-size: 0.9rem; text-align: left; background: var(--bg-white); border: 1px solid var(--border-color); padding: 0.8rem; border-radius: 8px;">
+                                <summary style="cursor: pointer; font-weight: 600; color: var(--kemendikbud-blue); outline: none;">🔍 Analisis Artefak</summary>
+                                <div style="padding-top: 0.8rem; display: flex; flex-direction: column; gap: 0.5rem; color: var(--text-dark);">
+                                    <div><strong>Konteks:</strong> <br/><span style="color: var(--text-light);">Panduan operasional mesin bubut standar dan kerja bangku yang digunakan langsung di meja kerja bengkel.</span></div>
+                                    <div><strong>Tujuan:</strong> <br/><span style="color: var(--text-light);">Membimbing siswa secara mandiri mengeksekusi tahapan facing, turning silindris bertingkat, dan chamfering.</span></div>
+                                    <div><strong>Kelebihan:</strong> <br/><span style="color: var(--text-light);">Dilengkapi lembar kendali ukuran mandiri (self-inspection sheet) yang melatih kejujuran pengukuran siswa.</span></div>
+                                    <div><strong>Kekurangan:</strong> <br/><span style="color: var(--text-light);">Tabel kecepatan potong membutuhkan kalkulasi adaptif jika spesimen material memiliki variasi kekerasan lokal.</span></div>
+                                </div>
+                            </details>
+                            <button type="button" class="doc-btn" onclick="openDocPreviewModal('https://drive.google.com/file/d/1RHQDRDQJ_HLgC03OnWsnFpUYJXYxdH9R/preview', 'Jobsheet Pembubutan Presisi ISO')" style="cursor: pointer; border: none; text-align: center; width: 100%;">Lihat Dokumen ↗</button>
+                        </div>
+                    </div>
+
+                    <!-- Media Web Labs BIMO Card -->
+                    <div class="doc-card gallery-card-item" data-category="media">
+                        <div class="doc-card-thumb">
+                            <span class="doc-badge" style="background: #059669 !important;">Web Labs BIMO</span>
+                            <img alt="Media BIMO Labs" class="doc-thumb-img" src="https://drive.google.com/thumbnail?id=1zQcw4WScZBqzawRlxK8o4ICnRT6XkaBM&amp;sz=w600" loading="lazy" decoding="async"/>
+                            <a class="doc-overlay-btn" href="javascript:void(0)" onclick="openDocPreviewModal('https://bimorokusumo.github.io/bimo-manfacturing-labs/', 'Web Labs BIMO Manufacturing - Simulator Permesinan')">Buka Simulator Labs ↗</a>
+                        </div>
+                        <div class="doc-card-content">
+                            <h4>Web Labs BIMO: Simulator Permesinan &amp; Pengukuran</h4>
+                            <p>Laboratorium virtual interaktif mandiri: simulator penyetelan tuas transmisi mesin bubut, kalkulator RPM, dan simulasi jangka sorong virtual.</p>
+                            <details style="margin: 1rem 0; font-size: 0.9rem; text-align: left; background: var(--bg-white); border: 1px solid var(--border-color); padding: 0.8rem; border-radius: 8px;">
+                                <summary style="cursor: pointer; font-weight: 600; color: var(--kemendikbud-blue); outline: none;">🔍 Analisis Artefak</summary>
+                                <div style="padding-top: 0.8rem; display: flex; flex-direction: column; gap: 0.5rem; color: var(--text-dark);">
+                                    <div><strong>Konteks:</strong> <br/><span style="color: var(--text-light);">Media digital inovatif yang dikembangkan khusus untuk mengatasi keterbatasan rasio mesin dan alat ukur presisi di sekolah.</span></div>
+                                    <div><strong>Tujuan:</strong> <br/><span style="color: var(--text-light);">Memberikan sarana uji coba virtual parameter pemotongan sebelum siswa mengoperasikan mesin fisik di bengkel.</span></div>
+                                    <div><strong>Kelebihan:</strong> <br/><span style="color: var(--text-light);">Dapat diakses mandiri 24/7 di gawai siswa, responsif, dan memberikan umpan balik koreksi seketika tanpa risiko alat rusak.</span></div>
+                                    <div><strong>Kekurangan:</strong> <br/><span style="color: var(--text-light);">Memerlukan koneksi internet stabil untuk pertama kali memuat aset visual 3D simulator.</span></div>
+                                </div>
+                            </details>
+                            <button type="button" class="doc-btn" onclick="openDocPreviewModal('https://bimorokusumo.github.io/bimo-manfacturing-labs/', 'Web Labs BIMO Manufacturing - Simulator Permesinan')" style="background: #059669 !important; cursor: pointer; border: none; text-align: center; width: 100%;">Buka Media &amp; Labs ↗</button>
+                        </div>
+                    </div>
+
+                    <!-- LKM Metrologi Card -->
+                    <div class="doc-card gallery-card-item" data-category="lks">
+                        <div class="doc-card-thumb">
+                            <span class="doc-badge" style="background: #d97706 !important;">LKM Metrologi</span>
+                            <img alt="LKM Metrologi" class="doc-thumb-img" src="https://drive.google.com/thumbnail?id=1MYlooWJYg1XRj__1RhW0rCY6xiNFqLrJ&amp;sz=w600" loading="lazy" decoding="async"/>
+                            <a class="doc-overlay-btn" href="javascript:void(0)" onclick="openDocPreviewModal('https://docs.google.com/spreadsheets/d/1-YH8PCzHIUv1B8I1dCj_XmcQ2c-jyAavPQfWGHYCUT4/edit?hl=id&amp;gid=1196549737#gid=1196549737', 'Data Rekapitulasi Nilai Unjuk Kerja Produksi')">Buka Nilai Spreadsheet ↗</a>
+                        </div>
+                        <div class="doc-card-content">
+                            <h4>LKM Pengukuran Presisi &amp; Rubrik Kinerja Bubut</h4>
+                            <p>Lembar kerja pembacaan nonius mikrometer, perhitungan parameter bubut, dan rubrik penilaian unjuk kerja berstandar KKTP.</p>
+                            <details style="margin: 1rem 0; font-size: 0.9rem; text-align: left; background: var(--bg-white); border: 1px solid var(--border-color); padding: 0.8rem; border-radius: 8px;">
+                                <summary style="cursor: pointer; font-weight: 600; color: var(--kemendikbud-blue); outline: none;">🔍 Analisis Artefak</summary>
+                                <div style="padding-top: 0.8rem; display: flex; flex-direction: column; gap: 0.5rem; color: var(--text-dark);">
+                                    <div><strong>Konteks:</strong> <br/><span style="color: var(--text-light);">Instrumen asesmen formatif unjuk kerja pengukuran spesimen logam dan kehalusan permukaan hasil bubut.</span></div>
+                                    <div><strong>Tujuan:</strong> <br/><span style="color: var(--text-light);">Menilai ketepatan prosedur pengukuran, ketelitian pembacaan angka, dan kemampuan kalkulasi teknis siswa.</span></div>
+                                    <div><strong>Kelebihan:</strong> <br/><span style="color: var(--text-light);">Memisahkan skor proses (sikap kerja, SOP kalibrasi) dan skor produk (toleransi dimensi akhir benda kerja).</span></div>
+                                    <div><strong>Kekurangan:</strong> <br/><span style="color: var(--text-light);">Menuntut ketelitian tinggi guru dalam memverifikasi hasil pengukuran siswa satu per satu.</span></div>
+                                </div>
+                            </details>
+                            <button type="button" class="doc-btn" onclick="openDocPreviewModal('https://docs.google.com/spreadsheets/d/1-YH8PCzHIUv1B8I1dCj_XmcQ2c-jyAavPQfWGHYCUT4/edit?hl=id&amp;gid=1196549737#gid=1196549737', 'Data Rekapitulasi Nilai Unjuk Kerja Produksi')" style="cursor: pointer; border: none; text-align: center; width: 100%;">Lihat Asesmen Nilai ↗</button>
+                        </div>
+                    </div>
+
+                    <!-- Hasil Kerja Siswa Poros Bertingkat Card -->
+                    <div class="doc-card gallery-card-item" data-category="hasil-kerja">
+                        <div class="doc-card-thumb">
+                            <span class="doc-badge" style="background: #7c3aed !important;">Benda Kerja ISO</span>
+                            <img alt="Benda Kerja Siswa" class="doc-thumb-img" src="assets/hasil-kerja/siklus-2/IMG_9287.jpg" loading="lazy" decoding="async"/>
+                            <a class="doc-overlay-btn" href="javascript:void(0)" onclick="openDocPreviewModal('assets/hasil-kerja/siklus-2/IMG_9287.jpg', 'Dokumentasi Benda Kerja Poros Bertingkat')">Perbesar Foto ↗</a>
+                        </div>
+                        <div class="doc-card-content">
+                            <h4>Benda Kerja Poros Bertingkat Presisi (Hasil Siswa)</h4>
+                            <p>Dokumentasi produk nyata benda kerja silindris bertingkat hasil pembubutan siswa dengan verifikasi toleransi ISO ±0.05 mm.</p>
+                            <details style="margin: 1rem 0; font-size: 0.9rem; text-align: left; background: var(--bg-white); border: 1px solid var(--border-color); padding: 0.8rem; border-radius: 8px;">
+                                <summary style="cursor: pointer; font-weight: 600; color: var(--kemendikbud-blue); outline: none;">🔍 Analisis Artefak</summary>
+                                <div style="padding-top: 0.8rem; display: flex; flex-direction: column; gap: 0.5rem; color: var(--text-dark);">
+                                    <div><strong>Konteks:</strong> <br/><span style="color: var(--text-light);">Artefak hasil unjuk kerja autentik praktik permesinan bubut siswa Fase E SMK Negeri 2 Depok Sleman.</span></div>
+                                    <div><strong>Tujuan:</strong> <br/><span style="color: var(--text-light);">Membuktikan capaian kompetensi psikomotorik siswa dalam memproduksi komponen mekanik presisi sesuai gambar kerja.</span></div>
+                                    <div><strong>Kelebihan:</strong> <br/><span style="color: var(--text-light);">Memperlihatkan hasil chamfering halus, toleransi diameter tercapai 89.2%, dan kepatuhan terhadap standar industri.</span></div>
+                                    <div><strong>Kekurangan:</strong> <br/><span style="color: var(--text-light);">Beberapa benda kerja masih memerlukan penyempurnaan kehalusan permukaan (Ra) akibat pemilihan feeding manual yang belum stabil.</span></div>
+                                </div>
+                            </details>
+                            <button type="button" class="doc-btn" onclick="openDocPreviewModal('assets/hasil-kerja/siklus-2/IMG_9287.jpg', 'Dokumentasi Benda Kerja Poros Bertingkat')" style="cursor: pointer; border: none; text-align: center; width: 100%;">Lihat Benda Kerja ↗</button>
+                        </div>
+                    </div>
+
+                    <!-- Video Mengajar Produksi (UTS) Card -->
+                    <div class="doc-card gallery-card-item" data-category="video">
+                        <div class="doc-card-thumb">
+                            <span class="doc-badge" style="background: #ef4444 !important;">Video UTS (Siklus 2)</span>
+                            <img alt="Video Praktik Mengajar UTS" class="doc-thumb-img" src="https://img.youtube.com/vi/5FiIphNAvwI/hqdefault.jpg" loading="lazy" decoding="async"/>
+                            <a class="doc-overlay-btn" href="javascript:void(0)" onclick="openDocPreviewModal('https://www.youtube.com/embed/5FiIphNAvwI?autoplay=1', 'Video Praktik Mengajar Alat Ukur Presisi (UTS)')">Putar Video Layar Penuh ↗</a>
+                        </div>
+                        <div class="doc-card-content">
+                            <h4>Video Praktik Mengajar: Alat Ukur Presisi (UTS)</h4>
+                            <p>Rekaman autentik praktik mengajar mandiri di bengkel mesin: apersepsi toleransi ISO, demonstrasi jangka sorong &amp; mikrometer, dan bimbingan nonius.</p>
+                            <details style="margin: 1rem 0; font-size: 0.9rem; text-align: left; background: var(--bg-white); border: 1px solid var(--border-color); padding: 0.8rem; border-radius: 8px;">
+                                <summary style="cursor: pointer; font-weight: 600; color: var(--kemendikbud-blue); outline: none;">🔍 Analisis Artefak</summary>
+                                <div style="padding-top: 0.8rem; display: flex; flex-direction: column; gap: 0.5rem; color: var(--text-dark);">
+                                    <div><strong>Konteks:</strong> <br/><span style="color: var(--text-light);">Karya video terbaik praktik mengajar mandiri yang dievaluasi sebagai produk UTS semester 2.</span></div>
+                                    <div><strong>Tujuan:</strong> <br/><span style="color: var(--text-light);">Merekam penguasaan pedagogik guru dalam pemodelan demonstrasi instrumen presisi dan bimbingan scaffolding siswa.</span></div>
+                                    <div><strong>Kelebihan:</strong> <br/><span style="color: var(--text-light);">Menampilkan close-up teknik pengukuran tanpa paralaks, interaksi kelas dinamis, dan suasana bengkel yang tertib.</span></div>
+                                    <div><strong>Kekurangan:</strong> <br/><span style="color: var(--text-light);">Pengambilan audio bengkel sempat mengalami noise mesin sekitar yang diatasi dengan mikrofon lavalier terarah.</span></div>
+                                </div>
+                            </details>
+                            <button type="button" class="doc-btn" onclick="openDocPreviewModal('https://www.youtube.com/embed/5FiIphNAvwI?autoplay=1', 'Video Praktik Mengajar Alat Ukur Presisi (UTS)')" style="background: #ef4444 !important; cursor: pointer; border: none; text-align: center; width: 100%;">▶ Putar Video ↗</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB CONTENT SIKLUS 3: PENGETAHUAN BAHAN -->
+        <div class="tab-content" id="ep3-siklus-3">
+            <div class="gallery-section">
+                <h3 style="color: var(--kemendikbud-blue); text-align: center; margin-bottom: 2rem; font-size: 1.8rem;">🔬 Pengetahuan Bahan Teknik Manufaktur</h3>
+                <div class="search-container" style="margin: 0 auto 2rem auto; max-width: 800px; position: relative;">
+                    <input class="search-input search-input-gallery" placeholder="Cari dokumen, RPP, Media, LKM Bahan Teknik..." style="width: 100%; padding: 1rem 1.5rem; border-radius: 50px; border: 2px solid var(--border-color); font-size: 1rem; outline: none; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: border-color 0.3s;" type="text"/>
+                    <div class="search-icon search-btn" style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); cursor: pointer; display: flex; align-items: center; justify-content: center;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </div>
+                </div>
+                <div class="filter-container">
+                    <button type="button" class="filter-btn active" data-filter="all">Semua</button>
+                    <button type="button" class="filter-btn" data-filter="rpp">RPP</button>
+                    <button type="button" class="filter-btn" data-filter="bahan-ajar">Bahan Ajar</button>
+                    <button type="button" class="filter-btn" data-filter="media">Media</button>
+                    <button type="button" class="filter-btn" data-filter="lks">LKM &amp; Asesmen</button>
+                    <button type="button" class="filter-btn" data-filter="hasil-kerja">Hasil Kerja Siswa</button>
+                    <button type="button" class="filter-btn" data-filter="video">Video Mengajar</button>
+                </div>
+                <div class="doc-grid gallery-grid">
+                    <!-- RPP 3 (Pengetahuan Bahan) Card -->
+                    <div class="doc-card gallery-card-item" data-category="rpp">
+                        <div class="doc-card-thumb">
+                            <span class="doc-badge" style="background: #6d28d9 !important;">RPP Siklus 3 (UAS)</span>
+                            <img alt="RPP Pengetahuan Bahan" class="doc-thumb-img" src="https://drive.google.com/thumbnail?id=15__0aGxHFq4vajuoEjow6Gl8-Wi0unH_&amp;sz=w600" loading="lazy" decoding="async"/>
+                            <a class="doc-overlay-btn" href="javascript:void(0)" onclick="openDocPreviewModal('https://drive.google.com/file/d/15__0aGxHFq4vajuoEjow6Gl8-Wi0unH_/preview', 'RPP Pengetahuan Bahan Teknik Manufaktur')">Buka di Layar Penuh ↗</a>
+                        </div>
+                        <div class="doc-card-content">
+                            <h4>RPP Pengetahuan Bahan Teknik Manufaktur</h4>
+                            <p>Modul ajar resmi Pengetahuan Bahan Teknik: klasifikasi logam ferro &amp; non-ferro, sifat fisik, ketahanan korosi, sifat mampu listrik, serta analisis sifat mekanik bahan manufaktur.</p>
+                            <details style="margin: 1rem 0; font-size: 0.9rem; text-align: left; background: var(--bg-white); border: 1px solid var(--border-color); padding: 0.8rem; border-radius: 8px;">
+                                <summary style="cursor: pointer; font-weight: 600; color: var(--kemendikbud-blue); outline: none;">🔍 Analisis Artefak</summary>
+                                <div style="padding-top: 0.8rem; display: flex; flex-direction: column; gap: 0.5rem; color: var(--text-dark);">
+                                    <div><strong>Konteks:</strong> <br/><span style="color: var(--text-light);">Modul ajar evaluasi akhir UAS yang menekankan integrasi konsep sains material dengan aplikasi praktis pemilihan komponen mesin industri.</span></div>
+                                    <div><strong>Tujuan:</strong> <br/><span style="color: var(--text-light);">Menuntun peserta didik agar mampu menganalisis karakteristik bahan dan menentukan spesifikasi material poros mesin yang tepat.</span></div>
+                                    <div><strong>Kelebihan:</strong> <br/><span style="color: var(--text-light);">Sintaks Contextual Teaching and Learning (CTL) berpadu dengan diskusi studi kasus DUDI dan pengujian sifat mekanik interaktif.</span></div>
+                                    <div><strong>Kekurangan:</strong> <br/><span style="color: var(--text-light);">Materi memiliki cakupan teori yang padat sehingga membutuhkan analogi kontekstual agar siswa tidak terbebani hafalan rumus.</span></div>
+                                </div>
+                            </details>
+                            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: auto;">
+                                <button type="button" class="doc-btn" onclick="openDocPreviewModal('https://drive.google.com/file/d/15__0aGxHFq4vajuoEjow6Gl8-Wi0unH_/preview', 'RPP Pengetahuan Bahan Teknik Manufaktur')" style="flex: 1; cursor: pointer; border: none; text-align: center;">Lihat Dokumen ↗</button>
+                                <a class="doc-btn" href="https://drive.google.com/file/d/15__0aGxHFq4vajuoEjow6Gl8-Wi0unH_/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="background: transparent !important; color: #0284c7 !important; border: 1px solid #0284c7 !important; text-decoration: none; padding: 0.5rem 0.8rem;">Drive ↗</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bahan Ajar Pengetahuan Bahan Card -->
+                    <div class="doc-card gallery-card-item" data-category="bahan-ajar">
+                        <div class="doc-card-thumb">
+                            <span class="doc-badge" style="background: #0284c7 !important;">Handout Material</span>
+                            <img alt="Bahan Ajar Material" class="doc-thumb-img" src="https://drive.google.com/thumbnail?id=1RHQDRDQJ_HLgC03OnWsnFpUYJXYxdH9R&amp;sz=w600" loading="lazy" decoding="async"/>
+                            <a class="doc-overlay-btn" href="javascript:void(0)" onclick="openDocPreviewModal('https://drive.google.com/file/d/15__0aGxHFq4vajuoEjow6Gl8-Wi0unH_/preview', 'Handout Karakteristik Material Teknik')">Buka di Layar Penuh ↗</a>
+                        </div>
+                        <div class="doc-card-content">
+                            <h4>Handout Karakteristik &amp; Sifat Bahan Teknik Mesin</h4>
+                            <p>Ringkasan materi klasifikasi baja karbon (rendah, sedang, tinggi), paduan aluminium, sifat mekanik (kekuatan, kekerasan, keuletan), dan pengujian destruktif.</p>
+                            <details style="margin: 1rem 0; font-size: 0.9rem; text-align: left; background: var(--bg-white); border: 1px solid var(--border-color); padding: 0.8rem; border-radius: 8px;">
+                                <summary style="cursor: pointer; font-weight: 600; color: var(--kemendikbud-blue); outline: none;">🔍 Analisis Artefak</summary>
+                                <div style="padding-top: 0.8rem; display: flex; flex-direction: column; gap: 0.5rem; color: var(--text-dark);">
+                                    <div><strong>Konteks:</strong> <br/><span style="color: var(--text-light);">Handout ajar yang mendampingi sesi pembelajaran teori dan diskusi kelompok di kelas.</span></div>
+                                    <div><strong>Tujuan:</strong> <br/><span style="color: var(--text-light);">Menyediakan tabel referensi spesifikasi baja standar AISI/SAE, JIS, dan DIN yang siap pakai untuk analisis siswa.</span></div>
+                                    <div><strong>Kelebihan:</strong> <br/><span style="color: var(--text-light);">Sistematika tabel dan diagram alur pemilihan material sangat ringkas, aplikatif, dan mudah dipahami siswa vokasi.</span></div>
+                                    <div><strong>Kekurangan:</strong> <br/><span style="color: var(--text-light);">Perlu penambahan spesimen fisik sampel logam di meja kelompok untuk pengamatan sensorik langsung.</span></div>
+                                </div>
+                            </details>
+                            <button type="button" class="doc-btn" onclick="openDocPreviewModal('https://drive.google.com/file/d/15__0aGxHFq4vajuoEjow6Gl8-Wi0unH_/preview', 'Handout Karakteristik Material Teknik')" style="cursor: pointer; border: none; text-align: center; width: 100%;">Lihat Dokumen ↗</button>
+                        </div>
+                    </div>
+
+                    <!-- Media Interaktif Pengetahuan Bahan Card -->
+                    <div class="doc-card gallery-card-item" data-category="media">
+                        <div class="doc-card-thumb">
+                            <span class="doc-badge" style="background: #059669 !important;">Media Interaktif</span>
+                            <img alt="Media Pengetahuan Bahan" class="doc-thumb-img" src="https://drive.google.com/thumbnail?id=16ueTxAEYZQu87Nn5Rstz3-mME_5TP_oy&amp;sz=w600" loading="lazy" decoding="async"/>
+                            <a class="doc-overlay-btn" href="javascript:void(0)" onclick="openDocPreviewModal('https://bimorokusumo.github.io/bimo-manfacturing-labs/', 'Simulasi Pengujian Bahan Web Labs BIMO')">Buka Simulator Labs ↗</a>
+                        </div>
+                        <div class="doc-card-content">
+                            <h4>Media Presentasi Interaktif &amp; Virtual Material Testing</h4>
+                            <p>Media visual klasifikasi logam ferro vs non-ferro, animasi pengujian kekerasan Brinell/Rockwell, dan simulasi pemilihan material di Web Labs BIMO.</p>
+                            <details style="margin: 1rem 0; font-size: 0.9rem; text-align: left; background: var(--bg-white); border: 1px solid var(--border-color); padding: 0.8rem; border-radius: 8px;">
+                                <summary style="cursor: pointer; font-weight: 600; color: var(--kemendikbud-blue); outline: none;">🔍 Analisis Artefak</summary>
+                                <div style="padding-top: 0.8rem; display: flex; flex-direction: column; gap: 0.5rem; color: var(--text-dark);">
+                                    <div><strong>Konteks:</strong> <br/><span style="color: var(--text-light);">Media presentasi multimedia dan kuis interaktif yang mengilustrasikan struktur mikro logam dan fenomena deformasi plastis.</span></div>
+                                    <div><strong>Tujuan:</strong> <br/><span style="color: var(--text-light);">Membantu visualisasi konsep abstrak mengenai ikatan atom logam, pengaruh perlakuan panas, dan titik luluh bahan.</span></div>
+                                    <div><strong>Kelebihan:</strong> <br/><span style="color: var(--text-light);">Menarik minat siswa melalui infografis komparatif perbandingan kekuatan tarik antar-jenis logam manufaktur.</span></div>
+                                    <div><strong>Kekurangan:</strong> <br/><span style="color: var(--text-light);">Memerlukan proyektor dengan kontras tinggi agar detail diagram fasa besi-karbon dapat terbaca jelas.</span></div>
+                                </div>
+                            </details>
+                            <button type="button" class="doc-btn" onclick="openDocPreviewModal('https://bimorokusumo.github.io/bimo-manfacturing-labs/', 'Simulasi Pengujian Bahan Web Labs BIMO')" style="background: #059669 !important; cursor: pointer; border: none; text-align: center; width: 100%;">Buka Media &amp; Labs ↗</button>
+                        </div>
+                    </div>
+
+                    <!-- LKM Pengetahuan Bahan Card -->
+                    <div class="doc-card gallery-card-item" data-category="lks">
+                        <div class="doc-card-thumb">
+                            <span class="doc-badge" style="background: #d97706 !important;">LKM Studi Kasus</span>
+                            <img alt="LKM Pengetahuan Bahan" class="doc-thumb-img" src="https://drive.google.com/thumbnail?id=1MeRsisVVM8mUxkjYdEi9vMrv7vuEqKPn&amp;sz=w600" loading="lazy" decoding="async"/>
+                            <a class="doc-overlay-btn" href="javascript:void(0)" onclick="openDocPreviewModal('https://docs.google.com/spreadsheets/d/1-YH8PCzHIUv1B8I1dCj_XmcQ2c-jyAavPQfWGHYCUT4/edit?hl=id&amp;gid=1196549737#gid=1196549737', 'Data Rekapitulasi Evaluasi Pengetahuan Bahan')">Buka Nilai Spreadsheet ↗</a>
+                        </div>
+                        <div class="doc-card-content">
+                            <h4>LKM Analisis Pemilihan Material Poros Mesin Industri</h4>
+                            <p>Lembar kerja kelompok yang menyajikan problem ketahanan aus dan beban puntir poros mesin, memandu siswa memilih spesifikasi material terbaik.</p>
+                            <details style="margin: 1rem 0; font-size: 0.9rem; text-align: left; background: var(--bg-white); border: 1px solid var(--border-color); padding: 0.8rem; border-radius: 8px;">
+                                <summary style="cursor: pointer; font-weight: 600; color: var(--kemendikbud-blue); outline: none;">🔍 Analisis Artefak</summary>
+                                <div style="padding-top: 0.8rem; display: flex; flex-direction: column; gap: 0.5rem; color: var(--text-dark);">
+                                    <div><strong>Konteks:</strong> <br/><span style="color: var(--text-light);">Instrumen lembar kerja utama pada praktik mengajar mandiri UAS Fase E SMK Negeri 2 Depok Sleman.</span></div>
+                                    <div><strong>Tujuan:</strong> <br/><span style="color: var(--text-light);">Mengembangkan kemampuan berpikir kritis (HOTS) siswa dalam menimbang faktor teknis, ketersediaan, dan biaya material.</span></div>
+                                    <div><strong>Kelebihan:</strong> <br/><span style="color: var(--text-light);">Memicu perdebatan ilmiah antar-kelompok dalam mempertahankan opsi material baja paduan Cr-Mo versus baja karbon sedang.</span></div>
+                                    <div><strong>Kekurangan:</strong> <br/><span style="color: var(--text-light);">Memerlukan rubrik penilaian diskusi kelompok yang terperinci agar kontribusi tiap anggota terukur adil.</span></div>
+                                </div>
+                            </details>
+                            <button type="button" class="doc-btn" onclick="openDocPreviewModal('https://docs.google.com/spreadsheets/d/1-YH8PCzHIUv1B8I1dCj_XmcQ2c-jyAavPQfWGHYCUT4/edit?hl=id&amp;gid=1196549737#gid=1196549737', 'Data Rekapitulasi Evaluasi Pengetahuan Bahan')" style="cursor: pointer; border: none; text-align: center; width: 100%;">Lihat Asesmen Nilai ↗</button>
+                        </div>
+                    </div>
+
+                    <!-- Hasil Karya Siswa Matriks Material Card -->
+                    <div class="doc-card gallery-card-item" data-category="hasil-kerja">
+                        <div class="doc-card-thumb">
+                            <span class="doc-badge" style="background: #7c3aed !important;">Karya Siswa</span>
+                            <img alt="Hasil Karya Matriks Material" class="doc-thumb-img" src="assets/hasil-kerja/siklus-3/IMG_9521.jpg" loading="lazy" decoding="async"/>
+                            <a class="doc-overlay-btn" href="javascript:void(0)" onclick="openDocPreviewModal('assets/hasil-kerja/siklus-3/IMG_9521.jpg', 'Dokumentasi Portofolio Matriks Analisis Siswa')">Perbesar Foto ↗</a>
+                        </div>
+                        <div class="doc-card-content">
+                            <h4>Portofolio Matriks Karakteristik Bahan (Karya Siswa)</h4>
+                            <p>Dokumentasi lembar kerja siswa yang memuat matriks perbandingan sifat mekanik spesimen logam dan justifikasi pemilihan material poros.</p>
+                            <details style="margin: 1rem 0; font-size: 0.9rem; text-align: left; background: var(--bg-white); border: 1px solid var(--border-color); padding: 0.8rem; border-radius: 8px;">
+                                <summary style="cursor: pointer; font-weight: 600; color: var(--kemendikbud-blue); outline: none;">🔍 Analisis Artefak</summary>
+                                <div style="padding-top: 0.8rem; display: flex; flex-direction: column; gap: 0.5rem; color: var(--text-dark);">
+                                    <div><strong>Konteks:</strong> <br/><span style="color: var(--text-light);">Hasil penugasan kelompok yang dipresentasikan di depan kelas dan diverifikasi oleh guru saat UAS.</span></div>
+                                    <div><strong>Tujuan:</strong> <br/><span style="color: var(--text-light);">Bukti otentik penalaran analitis siswa dalam mengkorelasikan sifat bahan dengan fungsi kerja komponen mesin.</span></div>
+                                    <div><strong>Kelebihan:</strong> <br/><span style="color: var(--text-light);">Argumen pemilihan material siswa didasari data tabel kekuatan tarik dan ketahanan korosi yang tepat.</span></div>
+                                    <div><strong>Kekurangan:</strong> <br/><span style="color: var(--text-light);">Beberapa kelompok masih memerlukan bimbingan dalam menghitung faktor keamanan (safety factor) material.</span></div>
+                                </div>
+                            </details>
+                            <button type="button" class="doc-btn" onclick="openDocPreviewModal('assets/hasil-kerja/siklus-3/IMG_9521.jpg', 'Dokumentasi Portofolio Matriks Analisis Siswa')" style="cursor: pointer; border: none; text-align: center; width: 100%;">Lihat Karya Siswa ↗</button>
+                        </div>
+                    </div>
+
+                    <!-- Video Mengajar Pengetahuan Bahan (UAS) Card -->
+                    <div class="doc-card gallery-card-item" data-category="video">
+                        <div class="doc-card-thumb">
+                            <span class="doc-badge" style="background: #ef4444 !important;">Video UAS (Siklus 3)</span>
+                            <img alt="Video Praktik Mengajar UAS" class="doc-thumb-img" src="https://img.youtube.com/vi/TfhDBRNks_Q/hqdefault.jpg" loading="lazy" decoding="async"/>
+                            <a class="doc-overlay-btn" href="javascript:void(0)" onclick="openDocPreviewModal('https://www.youtube.com/embed/TfhDBRNks_Q?autoplay=1', 'Video Praktik Mengajar Pengetahuan Bahan Teknik (UAS)')">Putar Video Layar Penuh ↗</a>
+                        </div>
+                        <div class="doc-card-content">
+                            <h4>Video Praktik Mengajar: Pengetahuan Bahan (UAS)</h4>
+                            <p>Rekaman autentik praktik mengajar mandiri UAS: apersepsi industri material, pemodelan klasifikasi logam, diskusi terarah, dan asesmen formatif.</p>
+                            <details style="margin: 1rem 0; font-size: 0.9rem; text-align: left; background: var(--bg-white); border: 1px solid var(--border-color); padding: 0.8rem; border-radius: 8px;">
+                                <summary style="cursor: pointer; font-weight: 600; color: var(--kemendikbud-blue); outline: none;">🔍 Analisis Artefak</summary>
+                                <div style="padding-top: 0.8rem; display: flex; flex-direction: column; gap: 0.5rem; color: var(--text-dark);">
+                                    <div><strong>Konteks:</strong> <br/><span style="color: var(--text-light);">Produk unggulan rekaman mengajar mandiri UAS yang mendemonstrasikan sintaks kontekstual terarah pada materi bahan teknik.</span></div>
+                                    <div><strong>Tujuan:</strong> <br/><span style="color: var(--text-light);">Membuktikan kematangan pedagogik guru dalam memfasilitasi diskusi kritis, apersepsi aplikatif, dan manajemen kelas aktif.</span></div>
+                                    <div><strong>Kelebihan:</strong> <br/><span style="color: var(--text-light);">Interaksi siswa sangat hidup, guru memfasilitasi debat kelompok dengan scaffolding cerdas, dan refleksi akhir terstruktur rapi.</span></div>
+                                    <div><strong>Kekurangan:</strong> <br/><span style="color: var(--text-light);">Durasi presentasi kelompok perlu diatur dengan timer visual agar waktu refleksi sintesis tidak terburu-buru.</span></div>
+                                </div>
+                            </details>
+                            <button type="button" class="doc-btn" onclick="openDocPreviewModal('https://www.youtube.com/embed/TfhDBRNks_Q?autoplay=1', 'Video Praktik Mengajar Pengetahuan Bahan Teknik (UAS)')" style="background: #ef4444 !important; cursor: pointer; border: none; text-align: center; width: 100%;">▶ Putar Video ↗</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -2606,6 +3116,11 @@ function showExpDetail(id, btnElement) {
                     <p class="card-text">
                         Rancangan menyatukan tiga fondasi teknik secara terpadu: penerapan budaya keselamatan <strong>K3LH</strong>, pemahaman alur <strong>Teknik Dasar Produksi</strong> manufaktur, dan analisis karakteristik <strong>Pengetahuan Bahan</strong> sebelum eksekusi mesin.
                     </p>
+                    <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-top: 0.8rem; margin-bottom: 0.8rem;">
+                        <button type="button" onclick="openDocPreviewModal('https://drive.google.com/file/d/1bh4AWHJt7o_Im008pbkktvATNVXBb97a/preview', 'RPP Siklus 1: K3LH & Budaya 5R')" style="background: #fef3c7; color: #b45309; border: 1px solid #fde68a; font-size: 0.72rem; font-weight: 700; padding: 0.35rem 0.65rem; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.2s;" onmouseover="this.style.background='#fde68a'" onmouseout="this.style.background='#fef3c7'">🛡️ RPP K3LH ↗</button>
+                        <button type="button" onclick="openDocPreviewModal('https://drive.google.com/file/d/1egR_L0tEcA5-uJjBFbGL5BQXuGAtUruj/preview', 'RPP Siklus 2 (UTS): Teknik Dasar Produksi')" style="background: #d1fae5; color: #047857; border: 1px solid #a7f3d0; font-size: 0.72rem; font-weight: 700; padding: 0.35rem 0.65rem; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.2s;" onmouseover="this.style.background='#a7f3d0'" onmouseout="this.style.background='#d1fae5'">⚙️ RPP Produksi ↗</button>
+                        <button type="button" onclick="openDocPreviewModal('https://drive.google.com/file/d/15__0aGxHFq4vajuoEjow6Gl8-Wi0unH_/preview', 'RPP Siklus 3 (UAS): Pengetahuan Bahan')" style="background: #ede9fe; color: #6d28d9; border: 1px solid #ddd6fe; font-size: 0.72rem; font-weight: 700; padding: 0.35rem 0.65rem; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.2s;" onmouseover="this.style.background='#ddd6fe'" onmouseout="this.style.background='#ede9fe'">🔬 RPP Bahan ↗</button>
+                    </div>
                     <button class="btn-buka-analisis" onclick="openEp3Modal('rancangan_3materi')">BUKA ANALISIS &gt;</button>
                 </div>
             </div>
@@ -3500,13 +4015,13 @@ function showExpDetail(id, btnElement) {
                         <div id="previewBox-k3lh" style="position: relative; height: 260px; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.06); border: 1px solid #cbd5e1; margin-bottom: 1.2rem; background: #f8fafc; display: flex; flex-direction: column; justify-content: space-between;">
                             <div style="background: linear-gradient(135deg, #d97706, #b45309); color: white; padding: 0.45rem 0.8rem; font-size: 0.78rem; font-weight: 600; display: flex; justify-content: space-between; align-items: center;">
                                 <span>📄 Preview RPP K3LH & 5R</span>
-                                <button type="button" onclick="openDocPreviewModal('https://drive.google.com/file/d/1Z03qLXSKLj4QveKXVh8s85Tp8hrhOSDg/preview', 'RPP Siklus 1: Penerapan K3LH & Budaya 5R')" style="background: rgba(255,255,255,0.25); border: none; color: white; padding: 0.2rem 0.5rem; border-radius: 6px; cursor: pointer; font-size: 0.72rem; font-weight: 700;">⛶ Penuh</button>
+                                <button type="button" onclick="openDocPreviewModal('https://drive.google.com/file/d/1bh4AWHJt7o_Im008pbkktvATNVXBb97a/preview', 'RPP Siklus 1: Penerapan K3LH & Budaya 5R')" style="background: rgba(255,255,255,0.25); border: none; color: white; padding: 0.2rem 0.5rem; border-radius: 6px; cursor: pointer; font-size: 0.72rem; font-weight: 700;">⛶ Penuh</button>
                             </div>
                             <div style="padding: 1rem; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; flex: 1;">
                                 <div style="width: 48px; height: 48px; background: #fef3c7; color: #b45309; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 0.5rem;">🛡️</div>
                                 <div style="font-size: 0.88rem; font-weight: 700; color: #0f172a; margin-bottom: 0.2rem;">RPP Penerapan K3LH & 5R</div>
                                 <div style="font-size: 0.78rem; color: #64748b; margin-bottom: 0.8rem;">Dokumen Kurikulum Merdeka • PDF Resmi</div>
-                                <button type="button" onclick="loadCardIframe('previewBox-k3lh', 'https://drive.google.com/file/d/1Z03qLXSKLj4QveKXVh8s85Tp8hrhOSDg/preview', 'RPP K3LH & 5R')" style="background: #ffffff; color: #b45309; border: 1px solid #d97706; padding: 0.45rem 0.9rem; border-radius: 8px; font-size: 0.78rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); transition: all 0.2s;">
+                                <button type="button" onclick="loadCardIframe('previewBox-k3lh', 'https://drive.google.com/file/d/1bh4AWHJt7o_Im008pbkktvATNVXBb97a/preview', 'RPP K3LH & 5R')" style="background: #ffffff; color: #b45309; border: 1px solid #d97706; padding: 0.45rem 0.9rem; border-radius: 8px; font-size: 0.78rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); transition: all 0.2s;">
                                     <span>👁️ Muat Pratinjau Dokumen di Sini</span>
                                 </button>
                             </div>
@@ -3524,7 +4039,7 @@ function showExpDetail(id, btnElement) {
                     </div>
 
                     <div style="display: flex; flex-direction: column; gap: 0.6rem;">
-                        <button type="button" class="btn-primary" onclick="openDocPreviewModal('https://drive.google.com/file/d/1Z03qLXSKLj4QveKXVh8s85Tp8hrhOSDg/preview', 'RPP Siklus 1: Penerapan K3LH & Budaya 5R')" style="background: #f59e0b; border: none; font-weight: 600; padding: 0.75rem 1rem; border-radius: 12px; font-size: 0.86rem; text-align: center; color: white; display: inline-flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer; box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);">
+                        <button type="button" class="btn-primary" onclick="openDocPreviewModal('https://drive.google.com/file/d/1bh4AWHJt7o_Im008pbkktvATNVXBb97a/preview', 'RPP Siklus 1: Penerapan K3LH & Budaya 5R')" style="background: #f59e0b; border: none; font-weight: 600; padding: 0.75rem 1rem; border-radius: 12px; font-size: 0.86rem; text-align: center; color: white; display: inline-flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer; box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);">
                             <span>👁️ Preview Penuh RPP K3LH (Modal) ↗</span>
                         </button>
                         <button type="button" onclick="scrollAndSelectRpp('k3lh')" style="background: #fffbeb; color: #b45309; border: 1px solid #fde68a; font-weight: 600; padding: 0.7rem 1rem; border-radius: 12px; font-size: 0.84rem; text-align: center; display: inline-flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.background='#fef3c7'" onmouseout="this.style.background='#fffbeb'">
@@ -4078,7 +4593,7 @@ function showExpDetail(id, btnElement) {
                             <div style="margin-top: 0.3rem;"><strong>Fokus Evaluasi:</strong> Fondasi Keselamatan Kerja &amp; Budaya Industri</div>
                         </div>
                     </div>
-                    <button type="button" class="btn-primary" onclick="openDocPreviewModal('https://drive.google.com/file/d/1Z03qLXSKLj4QveKXVh8s85Tp8hrhOSDg/preview', 'RPP Siklus 1: Penerapan K3LH & Budaya 5R')" style="background: #f59e0b; border: none; font-weight: 600; padding: 0.7rem 1rem; border-radius: 10px; font-size: 0.88rem; text-align: center; color: white; display: inline-flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer; width: 100%;">
+                    <button type="button" class="btn-primary" onclick="openDocPreviewModal('https://drive.google.com/file/d/1bh4AWHJt7o_Im008pbkktvATNVXBb97a/preview', 'RPP Siklus 1: Penerapan K3LH & Budaya 5R')" style="background: #f59e0b; border: none; font-weight: 600; padding: 0.7rem 1rem; border-radius: 10px; font-size: 0.88rem; text-align: center; color: white; display: inline-flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer; width: 100%;">
                         <span>👁️ Preview Langsung RPP K3LH ↗</span>
                     </button>
                 </div>
@@ -5137,7 +5652,7 @@ function showExpDetail(id, btnElement) {
 </div>
 </div>
 </div>
-<script src="script.js?v=20261026_1610"></script>
+<script src="script.js?v=20261027_1345"></script>
 
 
 
