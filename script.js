@@ -590,14 +590,70 @@ window.switchTab = function(tabId) {
     });
 };
 
-window.switchEp3Tab = function(tabId, btn) {
-    window.switchTab(tabId);
-    if (btn) {
-        const container = document.getElementById('ep3-artefak');
-        if (container) {
-            container.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-        }
-        btn.classList.add('active');
+// EP3 RPP Preview Switcher (Purely RPP focused)
+const ep3RppPreviewData = {
+    k3lh: {
+        title: '🛡️ <strong>Modul Ajar Siklus 1:</strong> Penerapan K3LH &amp; Budaya Kerja 5R Bengkel Mesin',
+        url: 'https://drive.google.com/file/d/1bh4AWHJt7o_Im008pbkktvATNVXBb97a/preview',
+        driveUrl: 'https://drive.google.com/file/d/1bh4AWHJt7o_Im008pbkktvATNVXBb97a/view?usp=sharing',
+        fullTitle: 'RPP Siklus 1: Penerapan K3LH, Bahaya Bengkel, & Budaya Kerja 5R'
+    },
+    produksi: {
+        title: '⚙️ <strong>Modul Ajar Siklus 2 (UTS):</strong> Teknik Dasar Proses Produksi Manufaktur',
+        url: 'https://drive.google.com/file/d/1egR_L0tEcA5-uJjBFbGL5BQXuGAtUruj/preview',
+        driveUrl: 'https://drive.google.com/file/d/1egR_L0tEcA5-uJjBFbGL5BQXuGAtUruj/view?usp=sharing',
+        fullTitle: 'RPP Siklus 2 (UTS): Teknik Dasar Proses Produksi Manufaktur (Alat Ukur Presisi)'
+    },
+    bahan: {
+        title: '🔬 <strong>Modul Ajar Siklus 3 (UAS):</strong> Pengetahuan Bahan Teknik Manufaktur',
+        url: 'https://drive.google.com/file/d/15__0aGxHFq4vajuoEjow6Gl8-Wi0unH_/preview',
+        driveUrl: 'https://drive.google.com/file/d/15__0aGxHFq4vajuoEjow6Gl8-Wi0unH_/view?usp=sharing',
+        fullTitle: 'RPP Siklus 3 (UAS): Pengetahuan Bahan Teknik (Sifat Fisik, Kimia, & Mekanik)'
+    }
+};
+
+window.switchEp3RppPreview = function(key, btn) {
+    const data = ep3RppPreviewData[key];
+    if (!data) return;
+    const iframe = document.getElementById('ep3RppIframe');
+    const title = document.getElementById('ep3RppIframeTitle');
+    const fsBtn = document.getElementById('ep3RppFullscreenBtn');
+    const driveLink = document.getElementById('ep3RppDriveLink');
+
+    if (iframe) {
+        iframe.src = data.url;
+        iframe.removeAttribute('data-src');
+    }
+    if (title) title.innerHTML = data.title;
+    if (fsBtn) {
+        fsBtn.onclick = function() {
+            window.openDocPreviewModal(data.url, data.fullTitle);
+        };
+    }
+    if (driveLink) {
+        driveLink.href = data.driveUrl;
+    }
+
+    document.querySelectorAll('.ep3-rpp-tab-btn').forEach(b => {
+        b.style.background = '#f1f5f9';
+        b.style.color = '#475569';
+        b.style.borderColor = '#cbd5e1';
+        b.style.fontWeight = '600';
+    });
+    const targetBtn = btn || document.querySelector(`.ep3-rpp-tab-btn[data-key="${key}"]`);
+    if (targetBtn) {
+        targetBtn.style.background = '#023967';
+        targetBtn.style.color = '#ffffff';
+        targetBtn.style.borderColor = '#023967';
+        targetBtn.style.fontWeight = '700';
+    }
+};
+
+window.scrollAndPreviewEp3Rpp = function(key) {
+    window.switchEp3RppPreview(key);
+    const viewer = document.getElementById('ep3-rpp-viewer');
+    if (viewer) {
+        viewer.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 };
 
