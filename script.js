@@ -1022,33 +1022,33 @@ const ep3ModalData = {
         implikasi: 'Peserta didik berisiko salah menentukan parameter pemotongan akibat ketidaktahuan atas kekerasan material (Pengetahuan Bahan), yang dapat merusak pahat/mesin (Teknik Produksi) atau bahkan memicu kecelakaan kerja di bengkel (K3LH).',
         solusi: 'Menyusun rancangan modul ajar terpadu: diawali pemahaman sifat mekanik material (Pengetahuan Bahan), dihubungkan dengan penentuan jenis mesin konvensional dan kalkulasi kecepatan potong (Teknik Dasar Produksi), serta dipagari secara ketat dengan SOP keselamatan, APD standar, dan budaya 5R (K3LH).'
     },
-    'materi_struktur': {
-        title: 'Struktur & Gradasi Kedalaman Materi Ajar',
-        badge: 'MATERI PEMBELAJARAN',
-        diagnosis: 'Materi teknik pemesinan memiliki konsep fisik dan kalkulasi matematis yang cukup abstrak apabila disajikan langsung secara teoretis murni tanpa jembatan visual.',
-        implikasi: 'Peserta didik mengalami cognitive overload saat menghubungkan rumus kecepatan potong dengan penyetelan tuas gearbox mesin bubut/frais di bengkel.',
-        solusi: 'Menyusun materi bergradasi: dimulai dari pengamatan fenomena pemotongan logam, analogi visual pergerakan pahat, tabel kalkulasi cepat, hingga pendalaman rumus teknis analitis.'
+    'materi_k3lh_5r': {
+        title: 'Kedalaman Materi K3LH Bengkel & Habituasi Budaya Kerja 5R (Siklus 1)',
+        badge: 'KEDALAMAN MATERI • SIKLUS 1',
+        diagnosis: 'Peserta didik awal di bengkel pemesinan cenderung menganggap aturan keselamatan kerja dan kebersihan bengkel sekadar formalitas pengantar, tanpa menyadari risiko fatal dari mesin perkakas berputar dan serpihan tatal panas.',
+        implikasi: 'Timbul potensi insiden kecelakaan kerja bengkel (lengan baju/rambut terlilit cekam mesin bubut, mata terkena lontaran tatal, terpeleset ceceran oli/coolant), serta lingkungan bengkel menjadi kumuh dan membahayakan efisiensi kerja.',
+        solusi: 'Materi ajar diperdalam secara kontekstual: (1) Identifikasi bahaya mekanis mesin perkakas (pinch point, rotasi spindle, tatal terbang); (2) Standar kepatuhan APD 100% (kacamata pelindung, wearpack rapi tanpa ujung menjuntai, sepatu safety); (3) Prosedur tanggap darurat penanganan kebakaran bengkel menggunakan APAR (metode PASS: Pull, Aim, Squeeze, Sweep); (4) Penyusunan Job Safety Analysis (JSA); serta (5) Penerapan habituasi budaya industri 5R (Ringkas, Rapi, Resik, Rawat, Rajin) sebelum, saat, dan sesudah aktivitas praktik permesinan.'
     },
-    'materi_industri': {
-        title: 'Kontekstualisasi Standar Industri Manufaktur (DUDI)',
-        badge: 'RELEVANSI INDUSTRI',
-        diagnosis: 'Standar kerja di dunia industri manufaktur modern menuntut tingkat kepresisian toleransi dimensi ISO dan mutu rigi las yang sangat ketat.',
-        implikasi: 'Peserta didik perlu dibiasakan dengan standar industri sejak di sekolah agar tidak mengalami culture shock saat terjun dalam Praktik Kerja Lapangan (PKL) maupun dunia kerja.',
-        solusi: 'Mengadopsi gambar kerja teknik nyata dan kriteria inspeksi kendali mutu (quality control) berstandar industri rekanan SMK Negeri 2 Depok Sleman ke dalam bahan ajar modular.'
+    'materi_produksi_bubut': {
+        title: 'Kedalaman Materi Teknik Dasar Produksi & Metrologi Presisi (Siklus 2 - UTS)',
+        badge: 'KEDALAMAN MATERI • SIKLUS 2 (UTS)',
+        diagnosis: 'Siswa kerap menghafal rumus putaran mesin secara mekanis tanpa memahami korelasi fisik antara diameter benda kerja dan kecepatan potong (Cutting Speed / Cs), serta mengalami kesulitan membaca skala nonius alat ukur presisi.',
+        implikasi: 'Siswa memilih putaran RPM yang keliru (terlalu tinggi menyebabkan pahat cepat aus/terbakar, terlalu rendah menyebabkan permukaan kasar), serta menghasilkan benda kerja yang gagal mencapai batas toleransi ISO akibat kesalahan metrologi.',
+        solusi: 'Materi diperkaya secara terstruktur melalui modul ajar dan jobsheet berstandar industri: (1) Penjelasan bagian utama dan mekanisme keselamatan mesin bubut konvensional; (2) Alur kalkulasi parameter potong RPM = (1000 · Cs) / (π · d) dengan tabel rujukan Cs material; (3) Langkah kerja pemesinan bergradasi (facing, senter bor, bubut silindris bertingkat, chamfering); (4) Penguasaan metrologi presisi: jangka sorong ketelitian 0.05 mm & 0.02 mm, mikrometer sekrup ketelitian 0.01 mm, kalibrasi titik nol, dan teknik eliminasi kesalahan paralaks; serta (5) Integrasi media Web Labs simulator untuk latihan mandiri.'
     },
-    'materi_handout': {
-        title: 'Handout Bergambar & Information Sheet Praktis',
-        badge: 'BAHAN AJAR',
-        diagnosis: 'Buku teks kejuruan sering kali tebal dan kurang efisien untuk dibaca langsung di lingkungan bengkel yang menuntut aksi fisik cepat dan tangkas.',
-        implikasi: 'Peserta didik enggan membuka referensi teori saat menghadapi keraguan operasional di meja kerja mesin.',
-        solusi: 'Menyusun lembar informasi ringkas (information sheet) 1-2 halaman yang diperkaya dengan ilustrasi teknis berwarna dan diagram alur yang mudah diletakkan di dekat mesin.'
+    'materi_pengetahuan_bahan': {
+        title: 'Kedalaman Materi Pengetahuan Bahan Teknik & Rekayasa Material (Siklus 3 - UAS)',
+        badge: 'KEDALAMAN MATERI • SIKLUS 3 (UAS)',
+        diagnosis: 'Materi ilmu logam sering disajikan terlalu teoretis dan abstrak, sehingga siswa kesulitan membedakan aplikasi nyata antara baja karbon rendah (St 37), baja karbon sedang, besi tuang, aluminium paduan, maupun kuningan dalam dunia permesinan.',
+        implikasi: 'Siswa tidak mampu menentukan jenis material yang tepat untuk komponen mesin presisi dan tidak memahami mengapa perlakuan pemotongan pada logam ferro dan non-ferro memerlukan parameter serta sudut pahat yang berbeda.',
+        solusi: 'Bahan ajar dirancang berbasis penyelidikan konkret (PBL) dan spesimen riil bengkel: (1) Klasifikasi komprehensif logam ferro dan non-ferro; (2) Telaah komparatif sifat mekanik (kekerasan, keuletan, ketangguhan, keausan), sifat fisik, dan ketahanan korosi; (3) Prinsip pengujian material (uji tarik kurva stress-strain dan uji kekerasan); (4) Studi kasus rekayasa pemilihan material komponen permesinan (poros penggerak, roda gigi, pasak, rangka dudukan); serta (5) Analisis dampak pemilihan material terhadap kemudahan proses pemesinan (machinability) dan efisiensi biaya produksi.'
     },
-    'materi_miskonsepsi': {
-        title: 'Identifikasi & Mitigasi Miskonsepsi Siswa',
-        badge: 'PENGUATAN KONSEP',
-        diagnosis: 'Siswa kerap beranggapan bahwa semakin tinggi putaran mesin (rpm), maka proses kerja akan semakin cepat selesai tanpa memperhatikan jenis bahan dan diameter benda kerja.',
-        implikasi: 'Pahat potong cepat aus atau patah, kualitas kehalusan permukaan benda kerja menurun, dan motor penggerak mesin mengalami beban berlebih.',
-        solusi: 'Menghadirkan demonstrasi komparasi keausan pahat pada berbagai putaran spindel serta menyusun tabel cepat pemilihan putaran mesin berdasarkan diameter dan material.'
+    'materi_integrasi_miskonsepsi': {
+        title: 'Integrasi Tri-Materi & Mitigasi Miskonsepsi Permesinan Manufaktur',
+        badge: 'INTEGRASI MATERI & MITIGASI MISKONSEPSI',
+        diagnosis: 'Adanya fragmentasi pemahaman siswa di mana K3LH, proses permesinan bubut, dan ilmu bahan dipandang sebagai materi terpisah yang tidak saling berkaitan satu sama lain.',
+        implikasi: 'Siswa mengabaikan karakteristik kekerasan material saat menyetel tuas RPM mesin bubut, menimbulkan getaran pahat berlebih (chatter marks), merusak pahat/mesin, dan berpotensi mencederai operator.',
+        solusi: 'Menghubungkan tri-materi dalam alur sistemik terintegrasi: pemilihan material (Pengetahuan Bahan) mendasari penentuan kecepatan potong dan gaya pemakanan (Teknik Produksi), yang wajib dieksekusi dengan protokol perlindungan diri dan disiplin bengkel (K3LH). Dilengkapi mitigasi miskonsepsi terarah: demonstrasi komparasi keausan pahat pada berbagai putaran RPM, teknik pembacaan alat ukur presisi bebas bias penglihatan, serta rubrik verifikasi pemahaman berkala.'
     },
     'media_animasi': {
         title: 'Animasi 3D & Slide Presentasi Visual Interaktif',
@@ -1058,11 +1058,11 @@ const ep3ModalData = {
         solusi: 'Mengembangkan media slide interaktif dan animasi 3D pergerakan pahat serta transmisi daya mesin yang memvisualisasikan fenomena internal mesin secara aman dan jelas.'
     },
     'media_sampel': {
-        title: 'Pemanfaatan Benda Kerja Sampel & Reject',
+        title: 'Pemanfaatan Benda Kerja Sampel & Reject Pemesinan',
         badge: 'ALAT PERAGA',
-        diagnosis: 'Peserta didik sering kali baru menyadari kesalahan teknik pembubutan atau pengelasan setelah benda kerja selesai dan dievaluasi guru.',
+        diagnosis: 'Peserta didik sering kali baru menyadari kesalahan teknik pembubutan setelah benda kerja selesai dan dievaluasi guru.',
         implikasi: 'Siswa tidak memiliki kepekaan sensoris (feeling teknik) untuk mendeteksi potensi cacat kerja selama proses pemesinan sedang berlangsung.',
-        solusi: 'Menyediakan spesimen benda kerja standar dan sampel cacat (chatter marks, taper, undercut las) sebagai media stimulasi agar siswa dapat mendeteksi kegagalan kerja sedini mungkin.'
+        solusi: 'Menyediakan spesimen benda kerja standar dan sampel cacat permesinan bubut (chatter marks, taper/ketirusan tak dikehendaki, permukaan kasar karena feed berlebih) sebagai media stimulasi agar siswa dapat mendeteksi kegagalan kerja sedini mungkin.'
     },
     'media_retensi': {
         title: 'Peningkatan Keterlibatan & Retensi Pemahaman Siswa',
@@ -1107,6 +1107,12 @@ const ep3ModalData = {
         solusi: 'Video menunjukkan manajemen waktu yang tertib: 20 menit sebelum usai, mesin dimatikan serentak untuk evaluasi dimensi hasil kerja bersama dan penerapan budaya 5R industri.'
     }
 };
+
+// Aliases for EP3 Materi Modal Compatibility
+ep3ModalData['materi_struktur'] = ep3ModalData['materi_k3lh_5r'];
+ep3ModalData['materi_industri'] = ep3ModalData['materi_produksi_bubut'];
+ep3ModalData['materi_handout'] = ep3ModalData['materi_pengetahuan_bahan'];
+ep3ModalData['materi_miskonsepsi'] = ep3ModalData['materi_integrasi_miskonsepsi'];
 
 window.openEp3Modal = function(id) {
     const data = ep3ModalData[id];
