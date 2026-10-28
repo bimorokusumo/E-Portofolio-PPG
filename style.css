@@ -3501,6 +3501,109 @@ nav.nav-scrolled {
     }
 }
 
+/* ============================================================
+   BIMO MANUFACTURING LABS: ADVANCED UI/UX (INNOVATION & SWOT)
+   ============================================================ */
+.kpi-stat-card {
+    background: #FFFFFF;
+    border-radius: 16px;
+    border: 1px solid #E2E8F0;
+    padding: 1.25rem 1.4rem;
+    box-shadow: 0 4px 15px rgba(2, 57, 103, 0.03);
+    transition: all 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.kpi-stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(2, 57, 103, 0.08);
+    border-color: #CBD5E1;
+}
+
+.problem-solution-card {
+    background: #FFFFFF;
+    border-radius: 18px;
+    border: 1px solid #E2E8F0;
+    padding: 1.6rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.problem-solution-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(2, 57, 103, 0.08);
+    border-color: #94A3B8;
+}
+
+.target-persona-card {
+    background: #FFFFFF;
+    border-radius: 18px;
+    border: 1px solid #E2E8F0;
+    padding: 1.6rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.target-persona-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(2, 57, 103, 0.09);
+    border-color: #0284C7;
+}
+
+.swot-quad-card {
+    background: #FFFFFF;
+    border-radius: 20px;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+}
+.swot-quad-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 38px rgba(2, 57, 103, 0.1);
+}
+
+.swot-item-box {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 1rem 1.2rem;
+    margin-bottom: 0.9rem;
+    transition: all 0.22s ease;
+}
+.swot-item-box:hover {
+    background: #FFFFFF;
+    border-color: #CBD5E1;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.swot-filter-tab, .persona-filter-tab {
+    padding: 0.55rem 1.15rem;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid #CBD5E1;
+    background: #FFFFFF;
+    color: #475569;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+.swot-filter-tab:hover, .persona-filter-tab:hover {
+    background: #F1F5F9;
+    color: #023967;
+    border-color: #94A3B8;
+}
+
+
 
 
 

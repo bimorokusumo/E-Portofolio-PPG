@@ -1626,3 +1626,78 @@ window.scrollAndSelectRpp = function(rppKey) {
         }
     }
 };
+
+// -------------------------------------------------------------
+// Web Labs Inovasi & SWOT Interactive Filters
+// -------------------------------------------------------------
+window.filterSwotQuad = function(quadrant, btn) {
+    const tabs = document.querySelectorAll('.swot-filter-tab');
+    tabs.forEach(t => {
+        t.style.background = '#FFFFFF';
+        t.style.color = '#475569';
+        t.style.borderColor = '#CBD5E1';
+        t.style.boxShadow = 'none';
+    });
+    if (btn) {
+        btn.style.background = '#023967';
+        btn.style.color = '#FFFFFF';
+        btn.style.borderColor = '#023967';
+        btn.style.boxShadow = '0 4px 14px rgba(2, 57, 103, 0.25)';
+    }
+
+    const cards = document.querySelectorAll('.swot-quad-card');
+    const container = document.getElementById('swotCardsGrid');
+    
+    if (quadrant === 'all') {
+        if (container) {
+            container.style.gridTemplateColumns = 'repeat(auto-fit, minmax(280px, 1fr))';
+        }
+        cards.forEach(card => {
+            card.style.display = 'flex';
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+        });
+    } else {
+        if (container) {
+            container.style.gridTemplateColumns = '1fr';
+        }
+        cards.forEach(card => {
+            const type = card.getAttribute('data-quad');
+            if (type === quadrant) {
+                card.style.display = 'flex';
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+};
+
+window.filterTargetPersona = function(personaKey, btn) {
+    const tabs = document.querySelectorAll('.persona-filter-tab');
+    tabs.forEach(t => {
+        t.style.background = '#FFFFFF';
+        t.style.color = '#475569';
+        t.style.borderColor = '#CBD5E1';
+        t.style.boxShadow = 'none';
+    });
+    if (btn) {
+        btn.style.background = '#023967';
+        btn.style.color = '#FFFFFF';
+        btn.style.borderColor = '#023967';
+        btn.style.boxShadow = '0 4px 14px rgba(2, 57, 103, 0.25)';
+    }
+
+    const cards = document.querySelectorAll('.target-persona-card');
+    cards.forEach(card => {
+        const key = card.getAttribute('data-persona');
+        if (personaKey === 'all' || key === personaKey) {
+            card.style.display = 'flex';
+            card.style.opacity = '1';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+};
+
