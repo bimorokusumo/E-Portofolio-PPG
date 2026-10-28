@@ -1701,3 +1701,46 @@ window.filterTargetPersona = function(personaKey, btn) {
     });
 };
 
+window.switchWebLabsPanel = function(panelKey, btn) {
+    const tabs = document.querySelectorAll('.weblabs-panel-tab');
+    tabs.forEach(t => {
+        t.classList.remove('active');
+        t.style.background = '#FFFFFF';
+        t.style.color = '#475569';
+        t.style.borderColor = '#CBD5E1';
+        t.style.boxShadow = 'none';
+    });
+    
+    const targetBtn = btn || document.querySelector(`.weblabs-panel-tab[data-panel="${panelKey}"]`);
+    if (targetBtn) {
+        targetBtn.classList.add('active');
+        targetBtn.style.background = '#023967';
+        targetBtn.style.color = '#FFFFFF';
+        targetBtn.style.borderColor = '#023967';
+        targetBtn.style.boxShadow = '0 4px 14px rgba(2, 57, 103, 0.25)';
+    }
+
+    const panels = ['preview', 'urgensi', 'target', 'swot'];
+    panels.forEach(p => {
+        const el = document.getElementById(`weblabs-panel-${p}`);
+        if (el) {
+            if (p === panelKey) {
+                el.style.display = 'block';
+                el.style.opacity = '1';
+                el.style.animation = 'fadeIn 0.25s ease';
+            } else {
+                el.style.display = 'none';
+            }
+        }
+    });
+
+    const section = document.getElementById('ep5-inovasi');
+    if (section) {
+        const topOffset = section.getBoundingClientRect().top + window.pageYOffset - 60;
+        if (window.pageYOffset > topOffset + 80 || window.pageYOffset < topOffset - 80) {
+            window.scrollTo({ top: topOffset, behavior: 'smooth' });
+        }
+    }
+};
+
+

@@ -13,7 +13,7 @@
 <link rel="dns-prefetch" href="https://docs.google.com"/>
 <link rel="dns-prefetch" href="https://open.spotify.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="style.css?v=20261028_0940" rel="stylesheet"/>
+<link href="style.css?v=20261028_0948" rel="stylesheet"/>
 </head>
 <body>
 <!-- Global Scroll Progress Bar & Toast Notification -->
@@ -5197,676 +5197,577 @@ function showExpDetail(id, btnElement) {
     </div>
 </section>
 
-<!-- Inovasi Terbaru: Web Labs BIMO Manufacturing -->
-<section id="ep5-inovasi" style="padding: 5rem 2rem; background: #F8FAFC;">
-    <div style="max-width: 1200px; margin: 0 auto;">
+<!-- Inovasi Terbaru: Web Labs BIMO Manufacturing (One-Screen Tabbed Experience) -->
+<section class="one-screen" id="ep5-inovasi" style="padding: 2.8rem 1.5rem 2rem 1.5rem; background: #F8FAFC; min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-start;">
+    <div style="max-width: 1240px; width: 100%; margin: 0 auto;">
         
-        <!-- Section Header -->
-        <div style="text-align: center; margin-bottom: 3.5rem;">
-            <div style="display: inline-flex; align-items: center; gap: 8px; background: #EFF8FF; border: 1px solid #BFDBFE; color: #023967; font-size: 0.82rem; font-weight: 700; padding: 0.4rem 1.2rem; border-radius: 30px; margin-bottom: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px;">
+        <!-- Section Header (Compact & Centered) -->
+        <div style="text-align: center; margin-bottom: 1.2rem;">
+            <div style="display: inline-flex; align-items: center; gap: 8px; background: #EFF8FF; border: 1px solid #BFDBFE; color: #023967; font-size: 0.78rem; font-weight: 700; padding: 0.3rem 1.1rem; border-radius: 30px; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.5px;">
                 <span>🧪 KARYA INOVATIF PEMBELAJARAN VOKASI</span>
             </div>
-            <h2 style="color: #023967; font-size: 2.35rem; margin-top: 0.2rem; font-weight: 800; letter-spacing: -0.5px;">
+            <h2 style="color: #023967; font-size: 1.95rem; margin: 0.1rem 0 0.35rem 0; font-weight: 800; letter-spacing: -0.5px;">
                 Laboratorium Virtual: Web Labs BIMO Manufacturing
             </h2>
-            <p style="color: #475569; font-size: 1.05rem; max-width: 860px; margin: 0.8rem auto 0; line-height: 1.65;">
-                Inovasi media pembelajaran digital berbasis web interaktif yang dikembangkan sebagai solusi keterbatasan sarana bengkel fisik, mengintegrasikan simulator metrologi presisi, kalkulator parameter pemesinan, dan modul asesmen mandiri secara <em>zero risk</em> bagi peserta didik vokasi.
+            <p style="color: #525354; font-size: 0.95rem; max-width: 860px; margin: 0 auto; line-height: 1.5;">
+                Media simulasi metrologi presisi, kalkulator parameter pemesinan, dan evaluasi mandiri <em>zero risk</em> yang dirancang khusus untuk peserta didik vokasi.
             </p>
             
-            <!-- Quick Feature Badges -->
-            <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem;">
-                <span style="background: #E0F2FE; color: #0369A1; font-weight: 700; font-size: 0.82rem; padding: 0.4rem 0.9rem; border-radius: 8px; border: 1px solid #BAE6FD;">🌐 Web-Based 24/7 (Multi-Device)</span>
-                <span style="background: #DCFCE7; color: #15803D; font-weight: 700; font-size: 0.82rem; padding: 0.4rem 0.9rem; border-radius: 8px; border: 1px solid #BBF7D0;">⚙️ Teknik Pemesinan Bubut &amp; Frais</span>
-                <span style="background: #FEF3C7; color: #B45309; font-weight: 700; font-size: 0.82rem; padding: 0.4rem 0.9rem; border-radius: 8px; border: 1px solid #FDE68A;">📐 Fabrikasi Logam &amp; Metrologi Presisi</span>
-                <span style="background: #F3E8FF; color: #6B21A8; font-weight: 700; font-size: 0.82rem; padding: 0.4rem 0.9rem; border-radius: 8px; border: 1px solid #E9D5FF;">🛡️ Zero Risk &amp; Umpan Balik Real-Time</span>
+            <!-- 4 Tab Navigation Bar (Sub-Section Switcher) -->
+            <div style="display: flex; justify-content: center; align-items: center; gap: 0.6rem; flex-wrap: wrap; margin-top: 1.1rem;">
+                <button type="button" class="weblabs-panel-tab active" data-panel="preview" onclick="switchWebLabsPanel('preview', this)">
+                    <span>🖥️ Live Simulator</span>
+                </button>
+                <button type="button" class="weblabs-panel-tab" data-panel="urgensi" onclick="switchWebLabsPanel('urgensi', this)">
+                    <span>⚖️ 1. Mengapa Dibuat?</span>
+                </button>
+                <button type="button" class="weblabs-panel-tab" data-panel="target" onclick="switchWebLabsPanel('target', this)">
+                    <span>🎯 2. Target Pengguna</span>
+                </button>
+                <button type="button" class="weblabs-panel-tab" data-panel="swot" onclick="switchWebLabsPanel('swot', this)">
+                    <span>📊 3. Analisis SWOT</span>
+                </button>
             </div>
         </div>
 
-        <!-- 1. LIVE PREVIEW LABS INTERAKTIF -->
-        <div style="background: white; border-radius: 20px; border: 1px solid #CBD5E1; box-shadow: 0 15px 35px rgba(2,57,103,0.08); overflow: hidden; margin-bottom: 3.5rem;">
-            
-            <!-- Browser Mockup Window Bar -->
-            <div style="background: #0F172A; padding: 0.85rem 1.4rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid #334155;">
-                <div style="display: flex; align-items: center; gap: 0.8rem;">
-                    <!-- Traffic Lights -->
-                    <div style="display: flex; gap: 6px;">
-                        <span style="width: 12px; height: 12px; border-radius: 50%; background: #EF4444; display: inline-block;"></span>
-                        <span style="width: 12px; height: 12px; border-radius: 50%; background: #F59E0B; display: inline-block;"></span>
-                        <span style="width: 12px; height: 12px; border-radius: 50%; background: #10B981; display: inline-block;"></span>
+        <!-- ========================================================= -->
+        <!-- PANEL 1: LIVE SIMULATOR PREVIEW (SELAYAR)                 -->
+        <!-- ========================================================= -->
+        <div id="weblabs-panel-preview" style="display: block; animation: fadeIn 0.25s ease;">
+            <div style="background: white; border-radius: 18px; border: 1px solid #CBD5E1; box-shadow: 0 12px 30px rgba(2,57,103,0.07); overflow: hidden;">
+                
+                <!-- Browser Window Bar -->
+                <div style="background: #0F172A; padding: 0.75rem 1.2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.8rem; border-bottom: 1px solid #334155;">
+                    <div style="display: flex; align-items: center; gap: 0.8rem;">
+                        <!-- Mac-style Dots -->
+                        <div style="display: flex; gap: 6px;">
+                            <span style="width: 11px; height: 11px; border-radius: 50%; background: #EF4444; display: inline-block;"></span>
+                            <span style="width: 11px; height: 11px; border-radius: 50%; background: #F59E0B; display: inline-block;"></span>
+                            <span style="width: 11px; height: 11px; border-radius: 50%; background: #10B981; display: inline-block;"></span>
+                        </div>
+                        <!-- URL Bar -->
+                        <div style="background: #1E293B; border: 1px solid #475569; border-radius: 8px; padding: 0.3rem 0.9rem; display: flex; align-items: center; gap: 8px; color: #94A3B8; font-family: monospace; font-size: 0.82rem; max-width: 440px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                            <span style="color: #10B981;">🔒</span>
+                            <span style="color: #E2E8F0;">https://bimorokusumo.github.io/bimo-manfacturing-labs/</span>
+                        </div>
                     </div>
-                    <!-- Address Bar -->
-                    <div style="background: #1E293B; border: 1px solid #475569; border-radius: 8px; padding: 0.35rem 1rem; display: flex; align-items: center; gap: 8px; color: #94A3B8; font-family: monospace; font-size: 0.85rem; max-width: 420px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
-                        <span style="color: #10B981;">🔒</span>
-                        <span style="color: #E2E8F0;">https://bimorokusumo.github.io/bimo-manfacturing-labs/</span>
+
+                    <!-- Simulator Actions -->
+                    <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+                        <span style="background: rgba(16, 185, 129, 0.2); color: #34D399; border: 1px solid rgba(16, 185, 129, 0.4); font-size: 0.74rem; font-weight: 700; padding: 0.3rem 0.7rem; border-radius: 6px; display: inline-flex; align-items: center; gap: 5px;">
+                            <span style="width: 7px; height: 7px; border-radius: 50%; background: #10B981; display: inline-block; animation: pulse-dot 2s infinite ease-in-out;"></span>
+                            Live Active
+                        </span>
+                        <button type="button" onclick="openDocPreviewModal('https://bimorokusumo.github.io/bimo-manfacturing-labs/', 'Simulasi Web Labs BIMO Manufacturing - Bimoro Kusumo, S.Pd.')" style="background: #F2A900; color: #023967; border: none; padding: 0.4rem 0.9rem; border-radius: 6px; font-weight: 700; font-size: 0.78rem; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; transition: all 0.2s ease;">
+                            <span>⛶ Layar Penuh</span>
+                        </button>
+                        <a href="https://bimorokusumo.github.io/bimo-manfacturing-labs/" target="_blank" rel="noopener noreferrer" style="background: #2563EB; color: white; text-decoration: none; padding: 0.4rem 0.9rem; border-radius: 6px; font-weight: 700; font-size: 0.78rem; display: inline-flex; align-items: center; gap: 5px; transition: all 0.2s ease;">
+                            <span>↗ Buka Tab Baru</span>
+                        </a>
                     </div>
                 </div>
 
-                <!-- Action Controls -->
-                <div style="display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap;">
-                    <span style="background: rgba(16, 185, 129, 0.2); color: #34D399; border: 1px solid rgba(16, 185, 129, 0.4); font-size: 0.75rem; font-weight: 700; padding: 0.35rem 0.75rem; border-radius: 6px; display: inline-flex; align-items: center; gap: 6px;">
-                        <span style="width: 8px; height: 8px; border-radius: 50%; background: #10B981; display: inline-block; animation: pulse-dot 2s infinite ease-in-out;"></span>
-                        Live Interactive Simulator
-                    </span>
-                    <button type="button" onclick="openDocPreviewModal('https://bimorokusumo.github.io/bimo-manfacturing-labs/', 'Simulasi Web Labs BIMO Manufacturing - Bimoro Kusumo, S.Pd.')" style="background: #F2A900; color: #023967; border: none; padding: 0.45rem 0.95rem; border-radius: 6px; font-weight: 700; font-size: 0.8rem; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s ease;">
-                        <span>⛶ Layar Penuh</span>
-                    </button>
-                    <a href="https://bimorokusumo.github.io/bimo-manfacturing-labs/" target="_blank" rel="noopener noreferrer" style="background: #2563EB; color: white; text-decoration: none; padding: 0.45rem 0.95rem; border-radius: 6px; font-weight: 700; font-size: 0.8rem; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s ease;">
-                        <span>↗ Tab Baru</span>
-                    </a>
+                <!-- Embedded Iframe -->
+                <div style="position: relative; width: 100%; height: 500px; background: #FFFFFF;">
+                    <iframe src="https://bimorokusumo.github.io/bimo-manfacturing-labs/" title="Web Labs BIMO Manufacturing Live Preview" style="width: 100%; height: 100%; border: none; display: block;" loading="lazy" allow="fullscreen"></iframe>
                 </div>
-            </div>
 
-            <!-- Iframe Sandbox Embed -->
-            <div style="position: relative; width: 100%; height: 640px; background: #FFFFFF;">
-                <iframe src="https://bimorokusumo.github.io/bimo-manfacturing-labs/" title="Web Labs BIMO Manufacturing Live Preview" style="width: 100%; height: 100%; border: none; display: block;" loading="lazy" allow="fullscreen"></iframe>
-            </div>
-
-            <!-- Bottom Sub-bar highlighting Simulator Modules -->
-            <div style="background: #F1F5F9; border-top: 1px solid #E2E8F0; padding: 1rem 1.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
-                <div style="display: flex; align-items: center; gap: 0.5rem; color: #023967; font-weight: 700; font-size: 0.88rem;">
-                    <span>🧰 Modul Unggulan Simulator:</span>
-                </div>
-                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-                    <span style="background: white; border: 1px solid #CBD5E1; color: #334155; padding: 0.3rem 0.75rem; border-radius: 6px; font-size: 0.8rem; font-weight: 600;">📏 Jangka Sorong (0.05 &amp; 0.02 mm)</span>
-                    <span style="background: white; border: 1px solid #CBD5E1; color: #334155; padding: 0.3rem 0.75rem; border-radius: 6px; font-size: 0.8rem; font-weight: 600;">🔬 Mikrometer Luar (0.01 mm)</span>
-                    <span style="background: white; border: 1px solid #CBD5E1; color: #334155; padding: 0.3rem 0.75rem; border-radius: 6px; font-size: 0.8rem; font-weight: 600;">⚡ Kalkulator Parameter Bubut &amp; RPM</span>
-                    <span style="background: white; border: 1px solid #CBD5E1; color: #334155; padding: 0.3rem 0.75rem; border-radius: 6px; font-size: 0.8rem; font-weight: 600;">🎯 Bank Soal Evaluasi Mandiri</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- 1. MENGAPA LABS DIBUAT? (LATAR BELAKANG & URGENSI) -->
-        <div style="margin-bottom: 4rem;">
-            <!-- Header Section 1 -->
-            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.8rem;">
-                <div style="display: flex; align-items: center; gap: 0.9rem;">
-                    <div style="width: 40px; height: 40px; border-radius: 12px; background: #023967; color: #F2A900; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: 800; box-shadow: 0 4px 12px rgba(2,57,103,0.25);">1</div>
+                <!-- Bottom Module Bar & Next Step Navigator -->
+                <div style="background: #F8FAFC; border-top: 1px solid #E2E8F0; padding: 0.8rem 1.2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.8rem;">
+                    <div style="display: flex; align-items: center; gap: 0.45rem; flex-wrap: wrap;">
+                        <span style="color: #023967; font-weight: 800; font-size: 0.82rem; margin-right: 0.3rem;">🧰 Modul Simulator:</span>
+                        <span style="background: white; border: 1px solid #CBD5E1; color: #334155; padding: 0.25rem 0.65rem; border-radius: 6px; font-size: 0.76rem; font-weight: 600;">📏 Jangka Sorong (0.05 &amp; 0.02 mm)</span>
+                        <span style="background: white; border: 1px solid #CBD5E1; color: #334155; padding: 0.25rem 0.65rem; border-radius: 6px; font-size: 0.76rem; font-weight: 600;">🔬 Mikrometer Luar (0.01 mm)</span>
+                        <span style="background: white; border: 1px solid #CBD5E1; color: #334155; padding: 0.25rem 0.65rem; border-radius: 6px; font-size: 0.76rem; font-weight: 600;">⚡ Parameter Potong &amp; RPM</span>
+                        <span style="background: white; border: 1px solid #CBD5E1; color: #334155; padding: 0.25rem 0.65rem; border-radius: 6px; font-size: 0.76rem; font-weight: 600;">🎯 Bank Soal Mandiri</span>
+                    </div>
                     <div>
-                        <h3 style="color: #023967; font-size: 1.55rem; font-weight: 800; margin: 0; letter-spacing: -0.3px;">Mengapa Web Labs Ini Dibuat?</h3>
-                        <p style="color: #64748B; font-size: 0.92rem; margin: 0.2rem 0 0 0;">Transformasi nyata dari kendala fasilitas bengkel fisik menuju kemandirian belajar vokasi digital</p>
+                        <button type="button" onclick="switchWebLabsPanel('urgensi')" style="background: #023967; color: white; border: none; padding: 0.45rem 1.1rem; border-radius: 8px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 4px 12px rgba(2,57,103,0.18);">
+                            <span>Lanjut ke No. 1: Mengapa Dibuat? ➔</span>
+                        </button>
                     </div>
                 </div>
-                <span style="background: #EFF8FF; color: #0284C7; font-weight: 700; font-size: 0.8rem; padding: 0.35rem 0.85rem; border-radius: 20px; border: 1px solid #BAE6FD;">
+
+            </div>
+        </div>
+
+        <!-- ========================================================= -->
+        <!-- PANEL 2: NO. 1 MENGAPA LABS DIBUAT? (SELAYAR)              -->
+        <!-- ========================================================= -->
+        <div id="weblabs-panel-urgensi" style="display: none; animation: fadeIn 0.25s ease;">
+            
+            <!-- Section Header Strip -->
+            <div style="background: white; border-radius: 14px; border: 1px solid #E2E8F0; padding: 0.9rem 1.4rem; margin-bottom: 1rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.8rem; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
+                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <span style="background: #023967; color: #F2A900; font-weight: 800; font-size: 1rem; width: 34px; height: 34px; border-radius: 10px; display: inline-flex; align-items: center; justify-content: center;">1</span>
+                    <div>
+                        <h3 style="color: #023967; font-size: 1.25rem; font-weight: 800; margin: 0;">Mengapa Web Labs Ini Dibuat? (Latar Belakang &amp; Urgensi)</h3>
+                        <p style="color: #64748B; font-size: 0.82rem; margin: 0.15rem 0 0 0;">Transformasi nyata dari kendala fasilitas bengkel fisik menuju kemandirian belajar vokasi digital</p>
+                    </div>
+                </div>
+                <span style="background: #EFF8FF; color: #0284C7; font-weight: 700; font-size: 0.76rem; padding: 0.3rem 0.8rem; border-radius: 20px; border: 1px solid #BAE6FD;">
                     ⚡ 4 Pilar Urgensi Pedagogis
                 </span>
             </div>
 
-            <!-- KPI Metric Impact Dashboard -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
-                <!-- Metric 1 -->
-                <div class="kpi-stat-card" style="border-top: 4px solid #0284C7;">
-                    <div>
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                            <span style="font-size: 0.78rem; font-weight: 700; color: #64748B; text-transform: uppercase;">⏱️ Rasio Siswa vs Mesin</span>
-                            <span style="background: #E0F2FE; color: #0369A1; font-size: 0.72rem; font-weight: 800; padding: 0.2rem 0.5rem; border-radius: 12px;">Solusi Antrean</span>
-                        </div>
-                        <div style="font-size: 1.7rem; font-weight: 800; color: #023967; margin-bottom: 0.2rem;">1 : 1 Siswa</div>
-                        <p style="font-size: 0.82rem; color: #475569; margin: 0; line-height: 1.5;">Praktik serentak tanpa antrean (vs 1:5 di bengkel konvensional).</p>
+            <!-- KPI Metric Impact Row -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.8rem; margin-bottom: 1.1rem;">
+                <div class="kpi-stat-card" style="padding: 0.85rem 1.1rem; border-top: 3px solid #0284C7;">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-size: 0.72rem; font-weight: 700; color: #64748B;">⏱️ RASIO SISWA</span>
+                        <span style="background: #E0F2FE; color: #0369A1; font-size: 0.68rem; font-weight: 800; padding: 0.15rem 0.45rem; border-radius: 6px;">Solusi Antrean</span>
                     </div>
+                    <div style="font-size: 1.45rem; font-weight: 800; color: #023967; margin: 0.2rem 0 0.1rem 0;">1 : 1 Siswa</div>
+                    <p style="font-size: 0.76rem; color: #475569; margin: 0;">Praktik serentak tanpa antrean (vs 1:5 di bengkel).</p>
                 </div>
 
-                <!-- Metric 2 -->
-                <div class="kpi-stat-card" style="border-top: 4px solid #059669;">
-                    <div>
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                            <span style="font-size: 0.78rem; font-weight: 700; color: #64748B; text-transform: uppercase;">🛡️ Tingkat Risiko Kerusakan</span>
-                            <span style="background: #DCFCE7; color: #15803D; font-size: 0.72rem; font-weight: 800; padding: 0.2rem 0.5rem; border-radius: 12px;">Safety First</span>
-                        </div>
-                        <div style="font-size: 1.7rem; font-weight: 800; color: #059669; margin-bottom: 0.2rem;">0% Risiko</div>
-                        <p style="font-size: 0.82rem; color: #475569; margin: 0; line-height: 1.5;">Zero accident &amp; perlindungan total alat ukur presisi mahal.</p>
+                <div class="kpi-stat-card" style="padding: 0.85rem 1.1rem; border-top: 3px solid #059669;">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-size: 0.72rem; font-weight: 700; color: #64748B;">🛡️ RISIKO KERUSAKAN</span>
+                        <span style="background: #DCFCE7; color: #15803D; font-size: 0.68rem; font-weight: 800; padding: 0.15rem 0.45rem; border-radius: 6px;">Safety First</span>
                     </div>
+                    <div style="font-size: 1.45rem; font-weight: 800; color: #059669; margin: 0.2rem 0 0.1rem 0;">0% Risiko</div>
+                    <p style="font-size: 0.76rem; color: #475569; margin: 0;">Zero accident &amp; perlindungan total alat ukur presisi.</p>
                 </div>
 
-                <!-- Metric 3 -->
-                <div class="kpi-stat-card" style="border-top: 4px solid #F59E0B;">
-                    <div>
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                            <span style="font-size: 0.78rem; font-weight: 700; color: #64748B; text-transform: uppercase;">🔄 Akses Mandiri Flipped</span>
-                            <span style="background: #FEF3C7; color: #B45309; font-size: 0.72rem; font-weight: 800; padding: 0.2rem 0.5rem; border-radius: 12px;">Kapan Saja</span>
-                        </div>
-                        <div style="font-size: 1.7rem; font-weight: 800; color: #D97706; margin-bottom: 0.2rem;">24/7 Akses</div>
-                        <p style="font-size: 0.82rem; color: #475569; margin: 0; line-height: 1.5;">Teori tuntas di rumah; 100% jam bengkel untuk keterampilan fisik.</p>
+                <div class="kpi-stat-card" style="padding: 0.85rem 1.1rem; border-top: 3px solid #F59E0B;">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-size: 0.72rem; font-weight: 700; color: #64748B;">🔄 FLIPPED CLASSROOM</span>
+                        <span style="background: #FEF3C7; color: #B45309; font-size: 0.68rem; font-weight: 800; padding: 0.15rem 0.45rem; border-radius: 6px;">Kapan Saja</span>
                     </div>
+                    <div style="font-size: 1.45rem; font-weight: 800; color: #D97706; margin: 0.2rem 0 0.1rem 0;">24/7 Akses</div>
+                    <p style="font-size: 0.76rem; color: #475569; margin: 0;">Teori tuntas di rumah; 100% jam bengkel untuk fisik.</p>
                 </div>
 
-                <!-- Metric 4 -->
-                <div class="kpi-stat-card" style="border-top: 4px solid #6366F1;">
-                    <div>
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                            <span style="font-size: 0.78rem; font-weight: 700; color: #64748B; text-transform: uppercase;">🎯 Eliminasi Paralaks</span>
-                            <span style="background: #EEF2FF; color: #4F46E5; font-size: 0.72rem; font-weight: 800; padding: 0.2rem 0.5rem; border-radius: 12px;">Presisi Tinggi</span>
-                        </div>
-                        <div style="font-size: 1.7rem; font-weight: 800; color: #4F46E5; margin-bottom: 0.2rem;">100% Presisi</div>
-                        <p style="font-size: 0.82rem; color: #475569; margin: 0; line-height: 1.5;">Visualisasi skala nonius makro digital ketelitian 0.05 &amp; 0.02 mm.</p>
+                <div class="kpi-stat-card" style="padding: 0.85rem 1.1rem; border-top: 3px solid #6366F1;">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-size: 0.72rem; font-weight: 700; color: #64748B;">🎯 AKURASI NONIUS</span>
+                        <span style="background: #EEF2FF; color: #4F46E5; font-size: 0.68rem; font-weight: 800; padding: 0.15rem 0.45rem; border-radius: 6px;">Presisi Tinggi</span>
                     </div>
+                    <div style="font-size: 1.45rem; font-weight: 800; color: #4F46E5; margin: 0.2rem 0 0.1rem 0;">100% Presisi</div>
+                    <p style="font-size: 0.76rem; color: #475569; margin: 0;">Visual makro digital skala nonius 0.05 &amp; 0.02 mm.</p>
                 </div>
             </div>
 
-            <!-- 4 Problem vs Solution Dual-Tone Cards -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1.4rem;">
+            <!-- 4 Problem vs Solution Cards (Compact Grid) -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin-bottom: 1.2rem;">
                 
                 <!-- Pilar 1 -->
-                <div class="problem-solution-card">
+                <div class="problem-solution-card" style="padding: 1.1rem; border-radius: 14px;">
                     <div>
-                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 1rem;">
-                            <span style="background: #E0F2FE; color: #0284C7; font-weight: 800; font-size: 0.85rem; width: 28px; height: 28px; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center;">01</span>
-                            <h4 style="color: #023967; font-size: 1.08rem; font-weight: 800; margin: 0;">Keterbatasan Rasio Mesin</h4>
+                        <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 0.7rem;">
+                            <span style="background: #E0F2FE; color: #0284C7; font-weight: 800; font-size: 0.75rem; width: 24px; height: 24px; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center;">01</span>
+                            <h4 style="color: #023967; font-size: 0.95rem; font-weight: 800; margin: 0;">Keterbatasan Rasio Mesin</h4>
                         </div>
-                        
-                        <!-- Problem Box -->
-                        <div style="background: #FFF1F2; border: 1px solid #FECDD3; border-radius: 10px; padding: 0.9rem; margin-bottom: 0.7rem;">
-                            <span style="color: #BE123C; font-weight: 800; font-size: 0.76rem; text-transform: uppercase; display: flex; align-items: center; gap: 5px; margin-bottom: 0.35rem;">
-                                ❌ Kendala Bengkel Fisik
-                            </span>
-                            <p style="color: #475569; font-size: 0.84rem; line-height: 1.55; margin: 0; text-align: justify;">
-                                1 mesin bubut digunakan bergantian oleh 4–6 siswa. Lebih dari 60% waktu praktik terbuang untuk mengantre (<em>idle time</em>).
-                            </p>
+                        <div style="background: #FFF1F2; border: 1px solid #FECDD3; border-radius: 8px; padding: 0.7rem; margin-bottom: 0.45rem;">
+                            <span style="color: #BE123C; font-weight: 800; font-size: 0.72rem; text-transform: uppercase; display: block; margin-bottom: 0.2rem;">❌ Kendala Bengkel Fisik:</span>
+                            <p style="color: #475569; font-size: 0.78rem; line-height: 1.45; margin: 0; text-align: justify;">1 mesin bubut digunakan 4–6 siswa bergantian. Lebih dari 60% waktu habis menunggu antrean.</p>
                         </div>
-
-                        <!-- Arrow Transition -->
-                        <div style="text-align: center; color: #0284C7; font-size: 0.95rem; font-weight: 700; margin: 0.4rem 0;">
-                            ⬇ Terobosan Solusi Inovasi
-                        </div>
-
-                        <!-- Solution Box -->
-                        <div style="background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 10px; padding: 0.9rem; margin-bottom: 1rem;">
-                            <span style="color: #15803D; font-weight: 800; font-size: 0.76rem; text-transform: uppercase; display: flex; align-items: center; gap: 5px; margin-bottom: 0.35rem;">
-                                ✅ Solusi Web Labs Virtual
-                            </span>
-                            <p style="color: #166534; font-size: 0.84rem; line-height: 1.55; margin: 0; text-align: justify;">
-                                Seluruh siswa dapat berlatih secara simultan melalui gawai masing-masing tanpa batasan giliran fisik.
-                            </p>
+                        <div style="text-align: center; color: #0284C7; font-size: 0.8rem; font-weight: 700; margin: 0.2rem 0;">⬇ Solusi Inovasi Web Labs:</div>
+                        <div style="background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 8px; padding: 0.7rem; margin-bottom: 0.7rem;">
+                            <span style="color: #15803D; font-weight: 800; font-size: 0.72rem; text-transform: uppercase; display: block; margin-bottom: 0.2rem;">✅ Terobosan Web Labs:</span>
+                            <p style="color: #166534; font-size: 0.78rem; line-height: 1.45; margin: 0; text-align: justify;">Semua siswa praktik serentak melalui smartphone/laptop mandiri tanpa batasan giliran fisik.</p>
                         </div>
                     </div>
-
-                    <div style="border-top: 1px dashed #CBD5E1; padding-top: 0.8rem; display: flex; justify-content: space-between; align-items: center;">
-                        <span style="color: #64748B; font-size: 0.75rem; font-weight: 600;">Dampak Efisiensi:</span>
-                        <span style="background: #E0F2FE; color: #0284C7; font-weight: 700; font-size: 0.75rem; padding: 0.2rem 0.55rem; border-radius: 6px;">Jam Praktik Aktif Naik 300%</span>
+                    <div style="border-top: 1px dashed #CBD5E1; padding-top: 0.55rem; display: flex; justify-content: space-between; align-items: center;">
+                        <span style="color: #64748B; font-size: 0.7rem; font-weight: 600;">Dampak:</span>
+                        <span style="background: #E0F2FE; color: #0284C7; font-weight: 700; font-size: 0.7rem; padding: 0.15rem 0.45rem; border-radius: 4px;">Jam Praktik Naik 300%</span>
                     </div>
                 </div>
 
                 <!-- Pilar 2 -->
-                <div class="problem-solution-card">
+                <div class="problem-solution-card" style="padding: 1.1rem; border-radius: 14px;">
                     <div>
-                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 1rem;">
-                            <span style="background: #DCFCE7; color: #16A34A; font-weight: 800; font-size: 0.85rem; width: 28px; height: 28px; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center;">02</span>
-                            <h4 style="color: #023967; font-size: 1.08rem; font-weight: 800; margin: 0;">Mitigasi Risiko &amp; Zero Risk</h4>
+                        <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 0.7rem;">
+                            <span style="background: #DCFCE7; color: #16A34A; font-weight: 800; font-size: 0.75rem; width: 24px; height: 24px; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center;">02</span>
+                            <h4 style="color: #023967; font-size: 0.95rem; font-weight: 800; margin: 0;">Mitigasi Risiko &amp; Zero Risk</h4>
                         </div>
-                        
-                        <!-- Problem Box -->
-                        <div style="background: #FFF1F2; border: 1px solid #FECDD3; border-radius: 10px; padding: 0.9rem; margin-bottom: 0.7rem;">
-                            <span style="color: #BE123C; font-weight: 800; font-size: 0.76rem; text-transform: uppercase; display: flex; align-items: center; gap: 5px; margin-bottom: 0.35rem;">
-                                ❌ Kendala Bengkel Fisik
-                            </span>
-                            <p style="color: #475569; font-size: 0.84rem; line-height: 1.55; margin: 0; text-align: justify;">
-                                Siswa pemula rentan merusak spindle mikrometer akibat putaran paksa atau tabrakan pahat bubut karena salah parameter putaran.
-                            </p>
+                        <div style="background: #FFF1F2; border: 1px solid #FECDD3; border-radius: 8px; padding: 0.7rem; margin-bottom: 0.45rem;">
+                            <span style="color: #BE123C; font-weight: 800; font-size: 0.72rem; text-transform: uppercase; display: block; margin-bottom: 0.2rem;">❌ Kendala Bengkel Fisik:</span>
+                            <p style="color: #475569; font-size: 0.78rem; line-height: 1.45; margin: 0; text-align: justify;">Siswa pemula rentan merusak spindle mikrometer mahal atau insiden benturan pahat mesin bubut.</p>
                         </div>
-
-                        <!-- Arrow Transition -->
-                        <div style="text-align: center; color: #16A34A; font-size: 0.95rem; font-weight: 700; margin: 0.4rem 0;">
-                            ⬇ Terobosan Solusi Inovasi
-                        </div>
-
-                        <!-- Solution Box -->
-                        <div style="background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 10px; padding: 0.9rem; margin-bottom: 1rem;">
-                            <span style="color: #15803D; font-weight: 800; font-size: 0.76rem; text-transform: uppercase; display: flex; align-items: center; gap: 5px; margin-bottom: 0.35rem;">
-                                ✅ Solusi Web Labs Virtual
-                            </span>
-                            <p style="color: #166534; font-size: 0.84rem; line-height: 1.55; margin: 0; text-align: justify;">
-                                Lingkungan <em>sandbox</em> bebas risiko: siswa leluasa mencoba, gagal, dan mengulang tanpa resiko cidera maupun ganti rugi alat.
-                            </p>
+                        <div style="text-align: center; color: #16A34A; font-size: 0.8rem; font-weight: 700; margin: 0.2rem 0;">⬇ Solusi Inovasi Web Labs:</div>
+                        <div style="background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 8px; padding: 0.7rem; margin-bottom: 0.7rem;">
+                            <span style="color: #15803D; font-weight: 800; font-size: 0.72rem; text-transform: uppercase; display: block; margin-bottom: 0.2rem;">✅ Terobosan Web Labs:</span>
+                            <p style="color: #166534; font-size: 0.78rem; line-height: 1.45; margin: 0; text-align: justify;">Ruang eksplorasi <em>sandbox</em> aman: bebas mencoba dan mengulang tanpa risiko cidera/rugi aset.</p>
                         </div>
                     </div>
-
-                    <div style="border-top: 1px dashed #CBD5E1; padding-top: 0.8rem; display: flex; justify-content: space-between; align-items: center;">
-                        <span style="color: #64748B; font-size: 0.75rem; font-weight: 600;">Dampak Keamanan:</span>
-                        <span style="background: #DCFCE7; color: #15803D; font-weight: 700; font-size: 0.75rem; padding: 0.2rem 0.55rem; border-radius: 6px;">Zero Accident &amp; Kerusakan</span>
+                    <div style="border-top: 1px dashed #CBD5E1; padding-top: 0.55rem; display: flex; justify-content: space-between; align-items: center;">
+                        <span style="color: #64748B; font-size: 0.7rem; font-weight: 600;">Dampak:</span>
+                        <span style="background: #DCFCE7; color: #15803D; font-weight: 700; font-size: 0.7rem; padding: 0.15rem 0.45rem; border-radius: 4px;">Zero Accident &amp; Perlindungan</span>
                     </div>
                 </div>
 
                 <!-- Pilar 3 -->
-                <div class="problem-solution-card">
+                <div class="problem-solution-card" style="padding: 1.1rem; border-radius: 14px;">
                     <div>
-                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 1rem;">
-                            <span style="background: #FEF3C7; color: #D97706; font-weight: 800; font-size: 0.85rem; width: 28px; height: 28px; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center;">03</span>
-                            <h4 style="color: #023967; font-size: 1.08rem; font-weight: 800; margin: 0;">Flipped Classroom 24/7</h4>
+                        <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 0.7rem;">
+                            <span style="background: #FEF3C7; color: #D97706; font-weight: 800; font-size: 0.75rem; width: 24px; height: 24px; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center;">03</span>
+                            <h4 style="color: #023967; font-size: 0.95rem; font-weight: 800; margin: 0;">Flipped Classroom 24/7</h4>
                         </div>
-                        
-                        <!-- Problem Box -->
-                        <div style="background: #FFF1F2; border: 1px solid #FECDD3; border-radius: 10px; padding: 0.9rem; margin-bottom: 0.7rem;">
-                            <span style="color: #BE123C; font-weight: 800; font-size: 0.76rem; text-transform: uppercase; display: flex; align-items: center; gap: 5px; margin-bottom: 0.35rem;">
-                                ❌ Kendala Bengkel Fisik
-                            </span>
-                            <p style="color: #475569; font-size: 0.84rem; line-height: 1.55; margin: 0; text-align: justify;">
-                                Jam bengkel yang mahal habis terpotong mendengarkan guru menjelaskan teori pembacaan skala dan rumus RPM berkali-kali.
-                            </p>
+                        <div style="background: #FFF1F2; border: 1px solid #FECDD3; border-radius: 8px; padding: 0.7rem; margin-bottom: 0.45rem;">
+                            <span style="color: #BE123C; font-weight: 800; font-size: 0.72rem; text-transform: uppercase; display: block; margin-bottom: 0.2rem;">❌ Kendala Bengkel Fisik:</span>
+                            <p style="color: #475569; font-size: 0.78rem; line-height: 1.45; margin: 0; text-align: justify;">Jam bengkel yang mahal habis terpotong hanya untuk mendengarkan guru mengulang teori di mesin.</p>
                         </div>
-
-                        <!-- Arrow Transition -->
-                        <div style="text-align: center; color: #D97706; font-size: 0.95rem; font-weight: 700; margin: 0.4rem 0;">
-                            ⬇ Terobosan Solusi Inovasi
-                        </div>
-
-                        <!-- Solution Box -->
-                        <div style="background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 10px; padding: 0.9rem; margin-bottom: 1rem;">
-                            <span style="color: #15803D; font-weight: 800; font-size: 0.76rem; text-transform: uppercase; display: flex; align-items: center; gap: 5px; margin-bottom: 0.35rem;">
-                                ✅ Solusi Web Labs Virtual
-                            </span>
-                            <p style="color: #166534; font-size: 0.84rem; line-height: 1.55; margin: 0; text-align: justify;">
-                                Teori dan simulasi tuntas dipelajari mandiri di rumah (24/7); saat masuk bengkel, 100% waktu untuk praktik fisik kinestetik.
-                            </p>
+                        <div style="text-align: center; color: #D97706; font-size: 0.8rem; font-weight: 700; margin: 0.2rem 0;">⬇ Solusi Inovasi Web Labs:</div>
+                        <div style="background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 8px; padding: 0.7rem; margin-bottom: 0.7rem;">
+                            <span style="color: #15803D; font-weight: 800; font-size: 0.72rem; text-transform: uppercase; display: block; margin-bottom: 0.2rem;">✅ Terobosan Web Labs:</span>
+                            <p style="color: #166534; font-size: 0.78rem; line-height: 1.45; margin: 0; text-align: justify;">Teori dan latihan nonius tuntas di rumah; saat di bengkel, 100% jam untuk gerak kinestetik riil.</p>
                         </div>
                     </div>
-
-                    <div style="border-top: 1px dashed #CBD5E1; padding-top: 0.8rem; display: flex; justify-content: space-between; align-items: center;">
-                        <span style="color: #64748B; font-size: 0.75rem; font-weight: 600;">Dampak Pedagogis:</span>
-                        <span style="background: #FEF3C7; color: #B45309; font-weight: 700; font-size: 0.75rem; padding: 0.2rem 0.55rem; border-radius: 6px;">Flipped Learning Terpadu</span>
+                    <div style="border-top: 1px dashed #CBD5E1; padding-top: 0.55rem; display: flex; justify-content: space-between; align-items: center;">
+                        <span style="color: #64748B; font-size: 0.7rem; font-weight: 600;">Dampak:</span>
+                        <span style="background: #FEF3C7; color: #B45309; font-weight: 700; font-size: 0.7rem; padding: 0.15rem 0.45rem; border-radius: 4px;">Flipped Learning Terpadu</span>
                     </div>
                 </div>
 
                 <!-- Pilar 4 -->
-                <div class="problem-solution-card">
+                <div class="problem-solution-card" style="padding: 1.1rem; border-radius: 14px;">
                     <div>
-                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 1rem;">
-                            <span style="background: #EEF2FF; color: #4F46E5; font-weight: 800; font-size: 0.85rem; width: 28px; height: 28px; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center;">04</span>
-                            <h4 style="color: #023967; font-size: 1.08rem; font-weight: 800; margin: 0;">Penuntasan Miskonsepsi</h4>
+                        <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 0.7rem;">
+                            <span style="background: #EEF2FF; color: #4F46E5; font-weight: 800; font-size: 0.75rem; width: 24px; height: 24px; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center;">04</span>
+                            <h4 style="color: #023967; font-size: 0.95rem; font-weight: 800; margin: 0;">Penuntasan Miskonsepsi</h4>
                         </div>
-                        
-                        <!-- Problem Box -->
-                        <div style="background: #FFF1F2; border: 1px solid #FECDD3; border-radius: 10px; padding: 0.9rem; margin-bottom: 0.7rem;">
-                            <span style="color: #BE123C; font-weight: 800; font-size: 0.76rem; text-transform: uppercase; display: flex; align-items: center; gap: 5px; margin-bottom: 0.35rem;">
-                                ❌ Kendala Bengkel Fisik
-                            </span>
-                            <p style="color: #475569; font-size: 0.84rem; line-height: 1.55; margin: 0; text-align: justify;">
-                                Garis skala vernier sangat kecil dan mudah distorsi sudut mata (paralaks), serta siswa bingung kalkulasi kecepatan potong material.
-                            </p>
+                        <div style="background: #FFF1F2; border: 1px solid #FECDD3; border-radius: 8px; padding: 0.7rem; margin-bottom: 0.45rem;">
+                            <span style="color: #BE123C; font-weight: 800; font-size: 0.72rem; text-transform: uppercase; display: block; margin-bottom: 0.2rem;">❌ Kendala Bengkel Fisik:</span>
+                            <p style="color: #475569; font-size: 0.78rem; line-height: 1.45; margin: 0; text-align: justify;">Skala nonius sangat kecil, memicu paralaks mata dan keraguan kalkulasi kecepatan potong RPM.</p>
                         </div>
-
-                        <!-- Arrow Transition -->
-                        <div style="text-align: center; color: #4F46E5; font-size: 0.95rem; font-weight: 700; margin: 0.4rem 0;">
-                            ⬇ Terobosan Solusi Inovasi
-                        </div>
-
-                        <!-- Solution Box -->
-                        <div style="background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 10px; padding: 0.9rem; margin-bottom: 1rem;">
-                            <span style="color: #15803D; font-weight: 800; font-size: 0.76rem; text-transform: uppercase; display: flex; align-items: center; gap: 5px; margin-bottom: 0.35rem;">
-                                ✅ Solusi Web Labs Virtual
-                            </span>
-                            <p style="color: #166534; font-size: 0.84rem; line-height: 1.55; margin: 0; text-align: justify;">
-                                Tampilan makro resolusi tinggi dengan perbesaran digital dan kalkulator parameter instan yang memperjelas pembuktian rumus.
-                            </p>
+                        <div style="text-align: center; color: #4F46E5; font-size: 0.8rem; font-weight: 700; margin: 0.2rem 0;">⬇ Solusi Inovasi Web Labs:</div>
+                        <div style="background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 8px; padding: 0.7rem; margin-bottom: 0.7rem;">
+                            <span style="color: #15803D; font-weight: 800; font-size: 0.72rem; text-transform: uppercase; display: block; margin-bottom: 0.2rem;">✅ Terobosan Web Labs:</span>
+                            <p style="color: #166534; font-size: 0.78rem; line-height: 1.45; margin: 0; text-align: justify;">Pembesaran makro visual digital beresolusi tinggi dan kalkulator rumus otomatis seketika.</p>
                         </div>
                     </div>
-
-                    <div style="border-top: 1px dashed #CBD5E1; padding-top: 0.8rem; display: flex; justify-content: space-between; align-items: center;">
-                        <span style="color: #64748B; font-size: 0.75rem; font-weight: 600;">Dampak Pemahaman:</span>
-                        <span style="background: #EEF2FF; color: #4F46E5; font-weight: 700; font-size: 0.75rem; padding: 0.2rem 0.55rem; border-radius: 6px;">Bebas Kesalahan Paralaks</span>
+                    <div style="border-top: 1px dashed #CBD5E1; padding-top: 0.55rem; display: flex; justify-content: space-between; align-items: center;">
+                        <span style="color: #64748B; font-size: 0.7rem; font-weight: 600;">Dampak:</span>
+                        <span style="background: #EEF2FF; color: #4F46E5; font-weight: 700; font-size: 0.7rem; padding: 0.15rem 0.45rem; border-radius: 4px;">Bebas Paralaks &amp; Presisi</span>
                     </div>
                 </div>
 
             </div>
+
+            <!-- Panel 2 Navigation Strip -->
+            <div style="background: white; border-radius: 12px; border: 1px solid #E2E8F0; padding: 0.75rem 1.2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.8rem;">
+                <button type="button" onclick="switchWebLabsPanel('preview')" style="background: #F1F5F9; color: #475569; border: 1px solid #CBD5E1; padding: 0.45rem 1rem; border-radius: 8px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
+                    <span>← Kembali ke Live Simulator</span>
+                </button>
+                <button type="button" onclick="switchWebLabsPanel('target')" style="background: #023967; color: white; border: none; padding: 0.45rem 1.1rem; border-radius: 8px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 4px 12px rgba(2,57,103,0.18);">
+                    <span>Lanjut ke No. 2: Target Pengguna ➔</span>
+                </button>
+            </div>
+
         </div>
 
-        <!-- 2. TARGET PENGGUNA WEB LABS (INTERACTIVE PERSONA SHOWCASE) -->
-        <div style="margin-bottom: 4rem;">
-            <!-- Header Section 2 -->
-            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
-                <div style="display: flex; align-items: center; gap: 0.9rem;">
-                    <div style="width: 40px; height: 40px; border-radius: 12px; background: #023967; color: #F2A900; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: 800; box-shadow: 0 4px 12px rgba(2,57,103,0.25);">2</div>
+        <!-- ========================================================= -->
+        <!-- PANEL 3: NO. 2 TARGET PENGGUNA (SELAYAR)                   -->
+        <!-- ========================================================= -->
+        <div id="weblabs-panel-target" style="display: none; animation: fadeIn 0.25s ease;">
+            
+            <!-- Section Header Strip with Persona Filter -->
+            <div style="background: white; border-radius: 14px; border: 1px solid #E2E8F0; padding: 0.9rem 1.4rem; margin-bottom: 1rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.8rem; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
+                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <span style="background: #023967; color: #F2A900; font-weight: 800; font-size: 1rem; width: 34px; height: 34px; border-radius: 10px; display: inline-flex; align-items: center; justify-content: center;">2</span>
                     <div>
-                        <h3 style="color: #023967; font-size: 1.55rem; font-weight: 800; margin: 0; letter-spacing: -0.3px;">Target &amp; Sasaran Pengguna</h3>
-                        <p style="color: #64748B; font-size: 0.92rem; margin: 0.2rem 0 0 0;">Peta adopsi pembelajaran berbasis kebutuhan nyata industri manufaktur, fabrikasi, dan sertifikasi vokasi</p>
+                        <h3 style="color: #023967; font-size: 1.25rem; font-weight: 800; margin: 0;">Target &amp; Sasaran Pengguna Web Labs</h3>
+                        <p style="color: #64748B; font-size: 0.82rem; margin: 0.15rem 0 0 0;">Peta adopsi pembelajaran berbasis kebutuhan nyata industri manufaktur, fabrikasi, dan sertifikasi vokasi</p>
                     </div>
+                </div>
+
+                <!-- Persona Filter Tabs -->
+                <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
+                    <button type="button" class="persona-filter-tab" onclick="filterTargetPersona('all', this)" style="background: #023967; color: white; border-color: #023967; padding: 0.35rem 0.8rem; font-size: 0.78rem;">
+                        ✨ Semua
+                    </button>
+                    <button type="button" class="persona-filter-tab" onclick="filterTargetPersona('mesin', this)" style="padding: 0.35rem 0.8rem; font-size: 0.78rem;">
+                        ⚙️ Pemesinan
+                    </button>
+                    <button type="button" class="persona-filter-tab" onclick="filterTargetPersona('fabrikasi', this)" style="padding: 0.35rem 0.8rem; font-size: 0.78rem;">
+                        📐 Fabrikasi
+                    </button>
+                    <button type="button" class="persona-filter-tab" onclick="filterTargetPersona('teknisi', this)" style="padding: 0.35rem 0.8rem; font-size: 0.78rem;">
+                        🏭 Teknisi (UKK)
+                    </button>
+                    <button type="button" class="persona-filter-tab" onclick="filterTargetPersona('guru', this)" style="padding: 0.35rem 0.8rem; font-size: 0.78rem;">
+                        👨‍🏫 Instruktur
+                    </button>
                 </div>
             </div>
 
-            <!-- Interactive Filter Tabs -->
-            <div style="display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 1.8rem;">
-                <button type="button" class="persona-filter-tab" onclick="filterTargetPersona('all', this)" style="background: #023967; color: white; border-color: #023967; box-shadow: 0 4px 14px rgba(2,57,103,0.25);">
-                    ✨ Semua Sasaran (4 Segmen)
-                </button>
-                <button type="button" class="persona-filter-tab" onclick="filterTargetPersona('mesin', this)">
-                    ⚙️ Teknik Pemesinan
-                </button>
-                <button type="button" class="persona-filter-tab" onclick="filterTargetPersona('fabrikasi', this)">
-                    📐 Fabrikasi Logam
-                </button>
-                <button type="button" class="persona-filter-tab" onclick="filterTargetPersona('teknisi', this)">
-                    🏭 Calon Teknisi (UKK &amp; PKL)
-                </button>
-                <button type="button" class="persona-filter-tab" onclick="filterTargetPersona('guru', this)">
-                    👨‍🏫 Guru &amp; Instruktur
-                </button>
-            </div>
-
-            <!-- Persona Cards Grid -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1.4rem;">
+            <!-- Persona Cards Grid (Compact 4 Columns) -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin-bottom: 1.2rem;">
                 
                 <!-- Persona 1: Teknik Pemesinan -->
-                <div class="target-persona-card" data-persona="mesin" style="border-top: 4px solid #0284C7;">
+                <div class="target-persona-card" data-persona="mesin" style="padding: 1.15rem; border-radius: 14px; border-top: 3px solid #0284C7;">
                     <div>
-                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.8rem;">
-                            <div style="background: #EFF8FF; width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: #0284C7;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.6rem;">
+                            <div style="background: #EFF8FF; width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: #0284C7;">
                                 ⚙️
                             </div>
-                            <span style="background: #E0F2FE; color: #0369A1; font-size: 0.74rem; font-weight: 700; padding: 0.25rem 0.65rem; border-radius: 12px;">
-                                Fase E &amp; F • Kelas X - XII
+                            <span style="background: #E0F2FE; color: #0369A1; font-size: 0.7rem; font-weight: 700; padding: 0.2rem 0.55rem; border-radius: 10px;">
+                                Fase E &amp; F • Kelas X-XII
                             </span>
                         </div>
-                        <h4 style="color: #023967; font-size: 1.15rem; font-weight: 800; margin: 0 0 0.6rem 0;">Siswa Teknik Pemesinan</h4>
+                        <h4 style="color: #023967; font-size: 1.02rem; font-weight: 800; margin: 0 0 0.5rem 0;">Siswa Teknik Pemesinan</h4>
                         
-                        <!-- Pain Point -->
-                        <div style="background: #FFFBEB; border-left: 3px solid #F59E0B; padding: 0.6rem 0.8rem; border-radius: 0 8px 8px 0; margin-bottom: 0.8rem;">
-                            <span style="color: #92400E; font-weight: 700; font-size: 0.75rem; display: block; margin-bottom: 0.15rem;">📌 Kebutuhan &amp; Pain Point:</span>
-                            <p style="color: #78350F; font-size: 0.82rem; line-height: 1.5; margin: 0;">
-                                Ragu membaca skala nonius 0.02 mm saat membubut diameter bertingkat serta salah menentukan tuas RPM mesin bubut.
-                            </p>
+                        <div style="background: #FFFBEB; border-left: 3px solid #F59E0B; padding: 0.55rem 0.7rem; border-radius: 0 6px 6px 0; margin-bottom: 0.6rem;">
+                            <span style="color: #92400E; font-weight: 700; font-size: 0.72rem; display: block; margin-bottom: 0.1rem;">📌 Kebutuhan &amp; Pain Point:</span>
+                            <p style="color: #78350F; font-size: 0.78rem; line-height: 1.4; margin: 0;">Ragu membaca skala 0.02 mm saat membubut diameter bertingkat serta salah atur tuas RPM.</p>
                         </div>
 
-                        <!-- Modul Terkait -->
-                        <div style="margin-bottom: 1rem;">
-                            <span style="color: #64748B; font-weight: 700; font-size: 0.74rem; text-transform: uppercase; display: block; margin-bottom: 0.4rem;">🧰 Modul Simulator yang Dipakai:</span>
-                            <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;">
-                                <span style="background: #F1F5F9; color: #334155; font-size: 0.73rem; font-weight: 600; padding: 0.2rem 0.5rem; border-radius: 6px;">📏 Jangka Sorong 0.02 mm</span>
-                                <span style="background: #F1F5F9; color: #334155; font-size: 0.73rem; font-weight: 600; padding: 0.2rem 0.5rem; border-radius: 6px;">🔬 Mikrometer Luar 0.01 mm</span>
-                                <span style="background: #F1F5F9; color: #334155; font-size: 0.73rem; font-weight: 600; padding: 0.2rem 0.5rem; border-radius: 6px;">⚡ Parameter RPM Bubut</span>
+                        <div style="margin-bottom: 0.75rem;">
+                            <span style="color: #64748B; font-weight: 700; font-size: 0.7rem; text-transform: uppercase; display: block; margin-bottom: 0.3rem;">🧰 Modul yang Dipakai:</span>
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.3rem;">
+                                <span style="background: #F1F5F9; color: #334155; font-size: 0.7rem; font-weight: 600; padding: 0.15rem 0.45rem; border-radius: 4px;">📏 Vernier 0.02 mm</span>
+                                <span style="background: #F1F5F9; color: #334155; font-size: 0.7rem; font-weight: 600; padding: 0.15rem 0.45rem; border-radius: 4px;">🔬 Mikrometer 0.01 mm</span>
+                                <span style="background: #F1F5F9; color: #334155; font-size: 0.7rem; font-weight: 600; padding: 0.15rem 0.45rem; border-radius: 4px;">⚡ Parameter RPM</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Outcome Box -->
-                    <div style="background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 10px; padding: 0.75rem 0.9rem;">
-                        <span style="color: #15803D; font-weight: 800; font-size: 0.75rem; display: flex; align-items: center; gap: 4px; margin-bottom: 0.2rem;">
-                            🎯 Capaian Terukur:
-                        </span>
-                        <p style="color: #166534; font-size: 0.8rem; line-height: 1.45; margin: 0;">
-                            Presisi dimensi benda kerja bubut sesuai standar toleransi ISO tanpa cemas salah ukuran.
-                        </p>
+                    <div style="background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 8px; padding: 0.6rem 0.75rem;">
+                        <span style="color: #15803D; font-weight: 800; font-size: 0.72rem; display: block; margin-bottom: 0.15rem;">🎯 Capaian Terukur:</span>
+                        <p style="color: #166534; font-size: 0.76rem; line-height: 1.4; margin: 0;">Presisi dimensi bubut sesuai standar ISO tanpa cemas salah ukuran.</p>
                     </div>
                 </div>
 
                 <!-- Persona 2: Fabrikasi Logam -->
-                <div class="target-persona-card" data-persona="fabrikasi" style="border-top: 4px solid #D97706;">
+                <div class="target-persona-card" data-persona="fabrikasi" style="padding: 1.15rem; border-radius: 14px; border-top: 3px solid #D97706;">
                     <div>
-                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.8rem;">
-                            <div style="background: #FEF3C7; width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: #D97706;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.6rem;">
+                            <div style="background: #FEF3C7; width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: #D97706;">
                                 📐
                             </div>
-                            <span style="background: #FEF3C7; color: #B45309; font-size: 0.74rem; font-weight: 700; padding: 0.25rem 0.65rem; border-radius: 12px;">
+                            <span style="background: #FEF3C7; color: #B45309; font-size: 0.7rem; font-weight: 700; padding: 0.2rem 0.55rem; border-radius: 10px;">
                                 Fabrikasi &amp; Pengelasan
                             </span>
                         </div>
-                        <h4 style="color: #023967; font-size: 1.15rem; font-weight: 800; margin: 0 0 0.6rem 0;">Siswa Fabrikasi Logam</h4>
+                        <h4 style="color: #023967; font-size: 1.02rem; font-weight: 800; margin: 0 0 0.5rem 0;">Siswa Fabrikasi Logam</h4>
                         
-                        <!-- Pain Point -->
-                        <div style="background: #FFFBEB; border-left: 3px solid #F59E0B; padding: 0.6rem 0.8rem; border-radius: 0 8px 8px 0; margin-bottom: 0.8rem;">
-                            <span style="color: #92400E; font-weight: 700; font-size: 0.75rem; display: block; margin-bottom: 0.15rem;">📌 Kebutuhan &amp; Pain Point:</span>
-                            <p style="color: #78350F; font-size: 0.82rem; line-height: 1.5; margin: 0;">
-                                Butuh akurasi tinggi pada penandaan pelat (<em>layout marking</em>) dan verifikasi ketebalan pelat sebelum dipotong dan dilas.
-                            </p>
+                        <div style="background: #FFFBEB; border-left: 3px solid #F59E0B; padding: 0.55rem 0.7rem; border-radius: 0 6px 6px 0; margin-bottom: 0.6rem;">
+                            <span style="color: #92400E; font-weight: 700; font-size: 0.72rem; display: block; margin-bottom: 0.1rem;">📌 Kebutuhan &amp; Pain Point:</span>
+                            <p style="color: #78350F; font-size: 0.78rem; line-height: 1.4; margin: 0;">Butuh akurasi penandaan pelat (<em>layout marking</em>) dan verifikasi tebal pelat potong.</p>
                         </div>
 
-                        <!-- Modul Terkait -->
-                        <div style="margin-bottom: 1rem;">
-                            <span style="color: #64748B; font-weight: 700; font-size: 0.74rem; text-transform: uppercase; display: block; margin-bottom: 0.4rem;">🧰 Modul Simulator yang Dipakai:</span>
-                            <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;">
-                                <span style="background: #F1F5F9; color: #334155; font-size: 0.73rem; font-weight: 600; padding: 0.2rem 0.5rem; border-radius: 6px;">📏 Jangka Sorong Kedalaman</span>
-                                <span style="background: #F1F5F9; color: #334155; font-size: 0.73rem; font-weight: 600; padding: 0.2rem 0.5rem; border-radius: 6px;">🔬 Ukur Tebal Pelat Baja</span>
-                                <span style="background: #F1F5F9; color: #334155; font-size: 0.73rem; font-weight: 600; padding: 0.2rem 0.5rem; border-radius: 6px;">📋 Checklist K3LH 5R</span>
+                        <div style="margin-bottom: 0.75rem;">
+                            <span style="color: #64748B; font-weight: 700; font-size: 0.7rem; text-transform: uppercase; display: block; margin-bottom: 0.3rem;">🧰 Modul yang Dipakai:</span>
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.3rem;">
+                                <span style="background: #F1F5F9; color: #334155; font-size: 0.7rem; font-weight: 600; padding: 0.15rem 0.45rem; border-radius: 4px;">📏 Ukur Kedalaman</span>
+                                <span style="background: #F1F5F9; color: #334155; font-size: 0.7rem; font-weight: 600; padding: 0.15rem 0.45rem; border-radius: 4px;">🔬 Tebal Pelat Baja</span>
+                                <span style="background: #F1F5F9; color: #334155; font-size: 0.7rem; font-weight: 600; padding: 0.15rem 0.45rem; border-radius: 4px;">📋 Standar 5R Bengkel</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Outcome Box -->
-                    <div style="background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 10px; padding: 0.75rem 0.9rem;">
-                        <span style="color: #15803D; font-weight: 800; font-size: 0.75rem; display: flex; align-items: center; gap: 4px; margin-bottom: 0.2rem;">
-                            🎯 Capaian Terukur:
-                        </span>
-                        <p style="color: #166534; font-size: 0.8rem; line-height: 1.45; margin: 0;">
-                            Pengendalian mutu geometri pengelasan presisi dan meminimalkan cacat perakitan konstruksi.
-                        </p>
+                    <div style="background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 8px; padding: 0.6rem 0.75rem;">
+                        <span style="color: #15803D; font-weight: 800; font-size: 0.72rem; display: block; margin-bottom: 0.15rem;">🎯 Capaian Terukur:</span>
+                        <p style="color: #166534; font-size: 0.76rem; line-height: 1.4; margin: 0;">Pengendalian dimensi pengelasan dan meminimalkan cacat perakitan.</p>
                     </div>
                 </div>
 
                 <!-- Persona 3: Calon Teknisi -->
-                <div class="target-persona-card" data-persona="teknisi" style="border-top: 4px solid #16A34A;">
+                <div class="target-persona-card" data-persona="teknisi" style="padding: 1.15rem; border-radius: 14px; border-top: 3px solid #16A34A;">
                     <div>
-                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.8rem;">
-                            <div style="background: #DCFCE7; width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: #16A34A;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.6rem;">
+                            <div style="background: #DCFCE7; width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: #16A34A;">
                                 🏭
                             </div>
-                            <span style="background: #DCFCE7; color: #15803D; font-size: 0.74rem; font-weight: 700; padding: 0.25rem 0.65rem; border-radius: 12px;">
-                                Persiapan PKL &amp; UKK
+                            <span style="background: #DCFCE7; color: #15803D; font-size: 0.7rem; font-weight: 700; padding: 0.2rem 0.55rem; border-radius: 10px;">
+                                Sertifikasi BNSP &amp; PKL
                             </span>
                         </div>
-                        <h4 style="color: #023967; font-size: 1.15rem; font-weight: 800; margin: 0 0 0.6rem 0;">Calon Teknisi Industri</h4>
+                        <h4 style="color: #023967; font-size: 1.02rem; font-weight: 800; margin: 0 0 0.5rem 0;">Calon Teknisi Industri</h4>
                         
-                        <!-- Pain Point -->
-                        <div style="background: #FFFBEB; border-left: 3px solid #F59E0B; padding: 0.6rem 0.8rem; border-radius: 0 8px 8px 0; margin-bottom: 0.8rem;">
-                            <span style="color: #92400E; font-weight: 700; font-size: 0.75rem; display: block; margin-bottom: 0.15rem;">📌 Kebutuhan &amp; Pain Point:</span>
-                            <p style="color: #78350F; font-size: 0.82rem; line-height: 1.5; margin: 0;">
-                                Tuntutan kecepatan dan ketepatan ukur tinggi di bawah batasan waktu saat Uji Kompetensi Keahlian (UKK) BNSP.
-                            </p>
+                        <div style="background: #FFFBEB; border-left: 3px solid #F59E0B; padding: 0.55rem 0.7rem; border-radius: 0 6px 6px 0; margin-bottom: 0.6rem;">
+                            <span style="color: #92400E; font-weight: 700; font-size: 0.72rem; display: block; margin-bottom: 0.1rem;">📌 Kebutuhan &amp; Pain Point:</span>
+                            <p style="color: #78350F; font-size: 0.78rem; line-height: 1.4; margin: 0;">Tuntutan kecepatan dan ketepatan ukur tinggi di bawah batasan waktu saat UKK.</p>
                         </div>
 
-                        <!-- Modul Terkait -->
-                        <div style="margin-bottom: 1rem;">
-                            <span style="color: #64748B; font-weight: 700; font-size: 0.74rem; text-transform: uppercase; display: block; margin-bottom: 0.4rem;">🧰 Modul Simulator yang Dipakai:</span>
-                            <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;">
-                                <span style="background: #F1F5F9; color: #334155; font-size: 0.73rem; font-weight: 600; padding: 0.2rem 0.5rem; border-radius: 6px;">🎯 Bank Soal Acak Real-Time</span>
-                                <span style="background: #F1F5F9; color: #334155; font-size: 0.73rem; font-weight: 600; padding: 0.2rem 0.5rem; border-radius: 6px;">⏱️ Uji Cepat Metrologi</span>
-                                <span style="background: #F1F5F9; color: #334155; font-size: 0.73rem; font-weight: 600; padding: 0.2rem 0.5rem; border-radius: 6px;">📊 Rekap Nilai Mandiri</span>
+                        <div style="margin-bottom: 0.75rem;">
+                            <span style="color: #64748B; font-weight: 700; font-size: 0.7rem; text-transform: uppercase; display: block; margin-bottom: 0.3rem;">🧰 Modul yang Dipakai:</span>
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.3rem;">
+                                <span style="background: #F1F5F9; color: #334155; font-size: 0.7rem; font-weight: 600; padding: 0.15rem 0.45rem; border-radius: 4px;">🎯 Bank Soal Acak</span>
+                                <span style="background: #F1F5F9; color: #334155; font-size: 0.7rem; font-weight: 600; padding: 0.15rem 0.45rem; border-radius: 4px;">⏱️ Uji Cepat Metrologi</span>
+                                <span style="background: #F1F5F9; color: #334155; font-size: 0.7rem; font-weight: 600; padding: 0.15rem 0.45rem; border-radius: 4px;">📊 Rekap Nilai Mandiri</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Outcome Box -->
-                    <div style="background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 10px; padding: 0.75rem 0.9rem;">
-                        <span style="color: #15803D; font-weight: 800; font-size: 0.75rem; display: flex; align-items: center; gap: 4px; margin-bottom: 0.2rem;">
-                            🎯 Capaian Terukur:
-                        </span>
-                        <p style="color: #166534; font-size: 0.8rem; line-height: 1.45; margin: 0;">
-                            Lulus UKK bersertifikasi BNSP dengan predikat amat kompeten serta kesiapan mental magang industri.
-                        </p>
+                    <div style="background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 8px; padding: 0.6rem 0.75rem;">
+                        <span style="color: #15803D; font-weight: 800; font-size: 0.72rem; display: block; margin-bottom: 0.15rem;">🎯 Capaian Terukur:</span>
+                        <p style="color: #166534; font-size: 0.76rem; line-height: 1.4; margin: 0;">Lulus UKK predikat sangat kompeten dan kesiapan mental magang industri.</p>
                     </div>
                 </div>
 
                 <!-- Persona 4: Guru & Instruktur -->
-                <div class="target-persona-card" data-persona="guru" style="border-top: 4px solid #8B5CF6;">
+                <div class="target-persona-card" data-persona="guru" style="padding: 1.15rem; border-radius: 14px; border-top: 3px solid #8B5CF6;">
                     <div>
-                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.8rem;">
-                            <div style="background: #F3E8FF; width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: #8B5CF6;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.6rem;">
+                            <div style="background: #F3E8FF; width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: #8B5CF6;">
                                 👨‍🏫
                             </div>
-                            <span style="background: #F3E8FF; color: #7C3AED; font-size: 0.74rem; font-weight: 700; padding: 0.25rem 0.65rem; border-radius: 12px;">
+                            <span style="background: #F3E8FF; color: #7C3AED; font-size: 0.7rem; font-weight: 700; padding: 0.2rem 0.55rem; border-radius: 10px;">
                                 Guru &amp; Instruktur Vokasi
                             </span>
                         </div>
-                        <h4 style="color: #023967; font-size: 1.15rem; font-weight: 800; margin: 0 0 0.6rem 0;">Guru Kejuruan Manufaktur</h4>
+                        <h4 style="color: #023967; font-size: 1.02rem; font-weight: 800; margin: 0 0 0.5rem 0;">Guru Kejuruan Manufaktur</h4>
                         
-                        <!-- Pain Point -->
-                        <div style="background: #FFFBEB; border-left: 3px solid #F59E0B; padding: 0.6rem 0.8rem; border-radius: 0 8px 8px 0; margin-bottom: 0.8rem;">
-                            <span style="color: #92400E; font-weight: 700; font-size: 0.75rem; display: block; margin-bottom: 0.15rem;">📌 Kebutuhan &amp; Pain Point:</span>
-                            <p style="color: #78350F; font-size: 0.82rem; line-height: 1.5; margin: 0;">
-                                Kesulitan mendemonstrasikan alat ukur mikro di depan 36 siswa secara serentak tanpa alat peraga interaktif digital.
-                            </p>
+                        <div style="background: #FFFBEB; border-left: 3px solid #F59E0B; padding: 0.55rem 0.7rem; border-radius: 0 6px 6px 0; margin-bottom: 0.6rem;">
+                            <span style="color: #92400E; font-weight: 700; font-size: 0.72rem; display: block; margin-bottom: 0.1rem;">📌 Kebutuhan &amp; Pain Point:</span>
+                            <p style="color: #78350F; font-size: 0.78rem; line-height: 1.4; margin: 0;">Sulit demonstrasi alat ukur kecil ke 36 siswa sekaligus tanpa proyektor interaktif.</p>
                         </div>
 
-                        <!-- Modul Terkait -->
-                        <div style="margin-bottom: 1rem;">
-                            <span style="color: #64748B; font-weight: 700; font-size: 0.74rem; text-transform: uppercase; display: block; margin-bottom: 0.4rem;">🧰 Modul Simulator yang Dipakai:</span>
-                            <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;">
-                                <span style="background: #F1F5F9; color: #334155; font-size: 0.73rem; font-weight: 600; padding: 0.2rem 0.5rem; border-radius: 6px;">🖥️ Mode Demonstrasi Proyektor</span>
-                                <span style="background: #F1F5F9; color: #334155; font-size: 0.73rem; font-weight: 600; padding: 0.2rem 0.5rem; border-radius: 6px;">🔍 Asesmen Diagnostik Awal</span>
-                                <span style="background: #F1F5F9; color: #334155; font-size: 0.73rem; font-weight: 600; padding: 0.2rem 0.5rem; border-radius: 6px;">📖 Bahan Apersepsi Kelas</span>
+                        <div style="margin-bottom: 0.75rem;">
+                            <span style="color: #64748B; font-weight: 700; font-size: 0.7rem; text-transform: uppercase; display: block; margin-bottom: 0.3rem;">🧰 Modul yang Dipakai:</span>
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.3rem;">
+                                <span style="background: #F1F5F9; color: #334155; font-size: 0.7rem; font-weight: 600; padding: 0.15rem 0.45rem; border-radius: 4px;">🖥️ Mode Proyektor Layar</span>
+                                <span style="background: #F1F5F9; color: #334155; font-size: 0.7rem; font-weight: 600; padding: 0.15rem 0.45rem; border-radius: 4px;">🔍 Asesmen Diagnostik</span>
+                                <span style="background: #F1F5F9; color: #334155; font-size: 0.7rem; font-weight: 600; padding: 0.15rem 0.45rem; border-radius: 4px;">📖 Apersepsi Bengkel</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Outcome Box -->
-                    <div style="background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 10px; padding: 0.75rem 0.9rem;">
-                        <span style="color: #15803D; font-weight: 800; font-size: 0.75rem; display: flex; align-items: center; gap: 4px; margin-bottom: 0.2rem;">
-                            🎯 Capaian Terukur:
-                        </span>
-                        <p style="color: #166534; font-size: 0.8rem; line-height: 1.45; margin: 0;">
-                            Apersepsi kelas memukau, demonstrasi terlihat jernih di layar besar, dan kesiapan siswa terpetakan lebih dini.
-                        </p>
+                    <div style="background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 8px; padding: 0.6rem 0.75rem;">
+                        <span style="color: #15803D; font-weight: 800; font-size: 0.72rem; display: block; margin-bottom: 0.15rem;">🎯 Capaian Terukur:</span>
+                        <p style="color: #166534; font-size: 0.76rem; line-height: 1.4; margin: 0;">Apersepsi kelas memukau dan kesiapan siswa terpetakan sebelum masuk bengkel.</p>
                     </div>
                 </div>
 
             </div>
+
+            <!-- Panel 3 Navigation Strip -->
+            <div style="background: white; border-radius: 12px; border: 1px solid #E2E8F0; padding: 0.75rem 1.2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.8rem;">
+                <button type="button" onclick="switchWebLabsPanel('urgensi')" style="background: #F1F5F9; color: #475569; border: 1px solid #CBD5E1; padding: 0.45rem 1rem; border-radius: 8px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
+                    <span>← Kembali ke 1. Mengapa Dibuat?</span>
+                </button>
+                <button type="button" onclick="switchWebLabsPanel('swot')" style="background: #023967; color: white; border: none; padding: 0.45rem 1.1rem; border-radius: 8px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 4px 12px rgba(2,57,103,0.18);">
+                    <span>Lanjut ke No. 3: Analisis SWOT ➔</span>
+                </button>
+            </div>
+
         </div>
 
-        <!-- 3. ANALISIS SWOT LENGKAP DENGAN UI/UX INTERAKTIF -->
-        <div style="margin-bottom: 4rem;">
-            <!-- Header Section 3 -->
-            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
-                <div style="display: flex; align-items: center; gap: 0.9rem;">
-                    <div style="width: 40px; height: 40px; border-radius: 12px; background: #023967; color: #F2A900; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; font-weight: 800; box-shadow: 0 4px 12px rgba(2,57,103,0.25);">3</div>
+        <!-- ========================================================= -->
+        <!-- PANEL 4: NO. 3 ANALISIS SWOT LENGKAP (SELAYAR)             -->
+        <!-- ========================================================= -->
+        <div id="weblabs-panel-swot" style="display: none; animation: fadeIn 0.25s ease;">
+            
+            <!-- Section Header Strip with SWOT Filter -->
+            <div style="background: white; border-radius: 14px; border: 1px solid #E2E8F0; padding: 0.9rem 1.4rem; margin-bottom: 1rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.8rem; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
+                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <span style="background: #023967; color: #F2A900; font-weight: 800; font-size: 1rem; width: 34px; height: 34px; border-radius: 10px; display: inline-flex; align-items: center; justify-content: center;">3</span>
                     <div>
-                        <h3 style="color: #023967; font-size: 1.55rem; font-weight: 800; margin: 0; letter-spacing: -0.3px;">Analisis SWOT: Kelebihan &amp; Keterbatasan</h3>
-                        <p style="color: #64748B; font-size: 0.92rem; margin: 0.2rem 0 0 0;">Evaluasi komprehensif kekuatan internal, keterbatasan terapan, peluang ekspansi, dan strategi mitigasi pedagogis</p>
+                        <h3 style="color: #023967; font-size: 1.25rem; font-weight: 800; margin: 0;">Analisis SWOT: Kelebihan &amp; Keterbatasan</h3>
+                        <p style="color: #64748B; font-size: 0.82rem; margin: 0.15rem 0 0 0;">Evaluasi kekuatan internal, keterbatasan terapan, peluang ekspansi, dan mitigasi pedagogis</p>
                     </div>
+                </div>
+
+                <!-- SWOT Quadrant Filter Tabs -->
+                <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
+                    <button type="button" class="swot-filter-tab" onclick="filterSwotQuad('all', this)" style="background: #023967; color: white; border-color: #023967; padding: 0.35rem 0.8rem; font-size: 0.78rem;">
+                        🎛️ Matriks Lengkap
+                    </button>
+                    <button type="button" class="swot-filter-tab" onclick="filterSwotQuad('strengths', this)" style="padding: 0.35rem 0.8rem; font-size: 0.78rem;">
+                        🟢 Strengths
+                    </button>
+                    <button type="button" class="swot-filter-tab" onclick="filterSwotQuad('weaknesses', this)" style="padding: 0.35rem 0.8rem; font-size: 0.78rem;">
+                        🟠 Weaknesses
+                    </button>
+                    <button type="button" class="swot-filter-tab" onclick="filterSwotQuad('opportunities', this)" style="padding: 0.35rem 0.8rem; font-size: 0.78rem;">
+                        🔵 Opportunities
+                    </button>
+                    <button type="button" class="swot-filter-tab" onclick="filterSwotQuad('threats', this)" style="padding: 0.35rem 0.8rem; font-size: 0.78rem;">
+                        🔴 Threats
+                    </button>
                 </div>
             </div>
 
-            <!-- Interactive Quadrant Filter Tabs -->
-            <div style="display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 1.8rem;">
-                <button type="button" class="swot-filter-tab" onclick="filterSwotQuad('all', this)" style="background: #023967; color: white; border-color: #023967; box-shadow: 0 4px 14px rgba(2,57,103,0.25);">
-                    🎛️ Matriks Lengkap (4 Kuadran)
-                </button>
-                <button type="button" class="swot-filter-tab" onclick="filterSwotQuad('strengths', this)">
-                    🟢 Strengths (Kelebihan)
-                </button>
-                <button type="button" class="swot-filter-tab" onclick="filterSwotQuad('weaknesses', this)">
-                    🟠 Weaknesses (Keterbatasan &amp; Solusi)
-                </button>
-                <button type="button" class="swot-filter-tab" onclick="filterSwotQuad('opportunities', this)">
-                    🔵 Opportunities (Peluang Ekspansi)
-                </button>
-                <button type="button" class="swot-filter-tab" onclick="filterSwotQuad('threats', this)">
-                    🔴 Threats (Tantangan &amp; Mitigasi)
-                </button>
-            </div>
-
-            <!-- SWOT Cards Grid -->
-            <div id="swotCardsGrid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+            <!-- SWOT Cards Grid (Compact 4 Columns) -->
+            <div id="swotCardsGrid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin-bottom: 1.1rem;">
                 
                 <!-- STRENGTHS -->
-                <div class="swot-quad-card" data-quad="strengths" style="border: 1px solid #BBF7D0;">
-                    <div style="background: #F0FDF4; padding: 1.25rem 1.5rem; border-bottom: 1px solid #BBF7D0; display: flex; align-items: center; justify-content: space-between;">
-                        <div style="display: flex; align-items: center; gap: 10px;">
-                            <span style="background: #16A34A; color: white; font-weight: 800; font-size: 0.9rem; width: 32px; height: 32px; border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(22,163,74,0.3);">S</span>
+                <div class="swot-quad-card" data-quad="strengths" style="border: 1px solid #BBF7D0; border-radius: 14px;">
+                    <div style="background: #F0FDF4; padding: 0.85rem 1.1rem; border-bottom: 1px solid #BBF7D0; display: flex; align-items: center; justify-content: space-between;">
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <span style="background: #16A34A; color: white; font-weight: 800; font-size: 0.82rem; width: 26px; height: 26px; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center;">S</span>
                             <div>
-                                <h4 style="color: #166534; font-size: 1.1rem; font-weight: 800; margin: 0;">Strengths</h4>
-                                <span style="color: #15803D; font-size: 0.75rem; font-weight: 600;">Kekuatan &amp; Kelebihan Inovasi</span>
+                                <h4 style="color: #166534; font-size: 0.96rem; font-weight: 800; margin: 0;">Strengths</h4>
+                                <span style="color: #15803D; font-size: 0.7rem; font-weight: 600;">Kekuatan Inovasi</span>
                             </div>
                         </div>
-                        <span style="font-size: 0.74rem; font-weight: 800; color: #15803D; background: #DCFCE7; padding: 0.25rem 0.65rem; border-radius: 12px; border: 1px solid #BBF7D0;">4 Keunggulan Kunci</span>
+                        <span style="font-size: 0.68rem; font-weight: 700; color: #15803D; background: #DCFCE7; padding: 0.15rem 0.45rem; border-radius: 8px;">Unggul</span>
                     </div>
-                    <div style="padding: 1.4rem;">
+                    <div style="padding: 0.9rem;">
                         
-                        <!-- S1 -->
-                        <div class="swot-item-box">
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-                                <strong style="color: #023967; font-size: 0.92rem;">🛡️ Zero Risk &amp; Perlindungan Aset</strong>
-                                <span style="background: #DCFCE7; color: #15803D; font-size: 0.68rem; font-weight: 700; padding: 0.15rem 0.45rem; border-radius: 4px;">Zero Accident</span>
+                        <div class="swot-item-box" style="padding: 0.7rem 0.85rem; margin-bottom: 0.6rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.2rem;">
+                                <strong style="color: #023967; font-size: 0.82rem;">🛡️ Zero Risk &amp; Hemat Bahan</strong>
+                                <span style="background: #DCFCE7; color: #15803D; font-size: 0.65rem; font-weight: 700; padding: 0.1rem 0.35rem; border-radius: 4px;">Zero Accident</span>
                             </div>
-                            <p style="color: #475569; font-size: 0.84rem; line-height: 1.55; margin: 0; text-align: justify;">
-                                Menghilangkan 100% risiko kerusakan alat ukur mikrometer mahal dan mesin bubut akibat kesalahan pemula, sekaligus menghemat pemborosan bahan baku uji coba.
-                            </p>
+                            <p style="color: #475569; font-size: 0.76rem; line-height: 1.45; margin: 0; text-align: justify;">Bebas risiko kerusakan mikrometer mahal dan mesin bubut; menghemat pemborosan bahan uji.</p>
                         </div>
 
-                        <!-- S2 -->
-                        <div class="swot-item-box">
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-                                <strong style="color: #023967; font-size: 0.92rem;">🌐 Universal Access Multi-Device</strong>
-                                <span style="background: #E0F2FE; color: #0284C7; font-size: 0.68rem; font-weight: 700; padding: 0.15rem 0.45rem; border-radius: 4px;">Web Native</span>
+                        <div class="swot-item-box" style="padding: 0.7rem 0.85rem; margin-bottom: 0.6rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.2rem;">
+                                <strong style="color: #023967; font-size: 0.82rem;">🌐 Akses Multi-Device Ringan</strong>
+                                <span style="background: #E0F2FE; color: #0284C7; font-size: 0.65rem; font-weight: 700; padding: 0.1rem 0.35rem; border-radius: 4px;">Web Native</span>
                             </div>
-                            <p style="color: #475569; font-size: 0.84rem; line-height: 1.55; margin: 0; text-align: justify;">
-                                Dibangun dengan teknologi web murni (HTML5/CSS/JS) ultra-ringan (&lt;2 MB), dapat dibuka di semua smartphone Android/iOS, tablet, maupun laptop tanpa perlu instalasi aplikasi.
-                            </p>
+                            <p style="color: #475569; font-size: 0.76rem; line-height: 1.45; margin: 0; text-align: justify;">Teknologi web murni (&lt;2 MB), lancar di HP Android/iOS/Laptop tanpa instalasi aplikasi.</p>
                         </div>
 
-                        <!-- S3 -->
-                        <div class="swot-item-box">
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-                                <strong style="color: #023967; font-size: 0.92rem;">⚡ Skoring &amp; Koreksi Otomatis</strong>
-                                <span style="background: #FEF3C7; color: #B45309; font-size: 0.68rem; font-weight: 700; padding: 0.15rem 0.45rem; border-radius: 4px;">Real-Time</span>
+                        <div class="swot-item-box" style="padding: 0.7rem 0.85rem; margin-bottom: 0.6rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.2rem;">
+                                <strong style="color: #023967; font-size: 0.82rem;">⚡ Skoring Otomatis Instan</strong>
+                                <span style="background: #FEF3C7; color: #B45309; font-size: 0.65rem; font-weight: 700; padding: 0.1rem 0.35rem; border-radius: 4px;">Real-Time</span>
                             </div>
-                            <p style="color: #475569; font-size: 0.84rem; line-height: 1.55; margin: 0; text-align: justify;">
-                                Siswa langsung mengetahui keakuratan pembacaan skala jangka sorong dan mikrometer dalam hitungan detik, memicu proses evaluasi mandiri (<em>self-regulated learning</em>).
-                            </p>
+                            <p style="color: #475569; font-size: 0.76rem; line-height: 1.45; margin: 0; text-align: justify;">Siswa langsung tahu letak kekeliruan pembacaan skala dalam hitungan detik (<em>self-regulated</em>).</p>
                         </div>
 
-                        <!-- S4 -->
-                        <div class="swot-item-box" style="margin-bottom: 0;">
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-                                <strong style="color: #023967; font-size: 0.92rem;">⏱️ Efisiensi Waktu Mengajar Guru</strong>
-                                <span style="background: #F3E8FF; color: #7C3AED; font-size: 0.68rem; font-weight: 700; padding: 0.15rem 0.45rem; border-radius: 4px;">Optimasi Kelas</span>
+                        <div class="swot-item-box" style="padding: 0.7rem 0.85rem; margin-bottom: 0;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.2rem;">
+                                <strong style="color: #023967; font-size: 0.82rem;">⏱️ Efisiensi Waktu Guru 60%</strong>
+                                <span style="background: #F3E8FF; color: #7C3AED; font-size: 0.65rem; font-weight: 700; padding: 0.1rem 0.35rem; border-radius: 4px;">Optimasi</span>
                             </div>
-                            <p style="color: #475569; font-size: 0.84rem; line-height: 1.55; margin: 0; text-align: justify;">
-                                Memangkas waktu repetisi teori dasar di bengkel hingga 60%, memungkinkan guru fokus memberikan bimbingan individual bagi siswa yang membutuhkan (<em>scaffolding</em>).
-                            </p>
+                            <p style="color: #475569; font-size: 0.76rem; line-height: 1.45; margin: 0; text-align: justify;">Memangkas repetisi teori dasar di bengkel, memungkinkan guru fokus pada <em>scaffolding</em> individu.</p>
                         </div>
 
                     </div>
                 </div>
 
                 <!-- WEAKNESSES -->
-                <div class="swot-quad-card" data-quad="weaknesses" style="border: 1px solid #FED7AA;">
-                    <div style="background: #FFF7ED; padding: 1.25rem 1.5rem; border-bottom: 1px solid #FED7AA; display: flex; align-items: center; justify-content: space-between;">
-                        <div style="display: flex; align-items: center; gap: 10px;">
-                            <span style="background: #EA580C; color: white; font-weight: 800; font-size: 0.9rem; width: 32px; height: 32px; border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(234,88,12,0.3);">W</span>
+                <div class="swot-quad-card" data-quad="weaknesses" style="border: 1px solid #FED7AA; border-radius: 14px;">
+                    <div style="background: #FFF7ED; padding: 0.85rem 1.1rem; border-bottom: 1px solid #FED7AA; display: flex; align-items: center; justify-content: space-between;">
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <span style="background: #EA580C; color: white; font-weight: 800; font-size: 0.82rem; width: 26px; height: 26px; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center;">W</span>
                             <div>
-                                <h4 style="color: #9A3412; font-size: 1.1rem; font-weight: 800; margin: 0;">Weaknesses</h4>
-                                <span style="color: #C2410C; font-size: 0.75rem; font-weight: 600;">Keterbatasan &amp; Solusi Terapan</span>
+                                <h4 style="color: #9A3412; font-size: 0.96rem; font-weight: 800; margin: 0;">Weaknesses</h4>
+                                <span style="color: #C2410C; font-size: 0.7rem; font-weight: 600;">Keterbatasan &amp; Solusi</span>
                             </div>
                         </div>
-                        <span style="font-size: 0.74rem; font-weight: 800; color: #C2410C; background: #FFEDD5; padding: 0.25rem 0.65rem; border-radius: 12px; border: 1px solid #FED7AA;">Disertai Solusi Terapan</span>
+                        <span style="font-size: 0.68rem; font-weight: 700; color: #C2410C; background: #FFEDD5; padding: 0.15rem 0.45rem; border-radius: 8px;">Ada Solusi</span>
                     </div>
-                    <div style="padding: 1.4rem;">
+                    <div style="padding: 0.9rem;">
                         
-                        <!-- W1 -->
-                        <div class="swot-item-box">
-                            <strong style="color: #9A3412; font-size: 0.92rem; display: block; margin-bottom: 0.35rem;">
-                                ⚠️ Ketiadaan Umpan Balik Taktil (Haptic)
-                            </strong>
-                            <p style="color: #475569; font-size: 0.84rem; line-height: 1.55; margin: 0 0 0.5rem 0; text-align: justify;">
-                                Simulator tidak dapat menghadirkan getaran tatal pemotongan pahat bubut atau bunyi klik fisik <em>ratchet stopper</em> mikrometer riil.
-                            </p>
-                            <!-- Pedagogical Solution -->
-                            <div style="background: #FEF3C7; border: 1px solid #FDE68A; border-radius: 8px; padding: 0.55rem 0.75rem; font-size: 0.79rem; color: #92400E; line-height: 1.45;">
-                                <strong>💡 Solusi Guru:</strong> Web Labs difungsikan murni sebagai jembatan pra-praktik (<em>bridging</em>); setelah lulus simulator, siswa wajib menguji sensasi fisik di bengkel riil.
+                        <div class="swot-item-box" style="padding: 0.7rem 0.85rem; margin-bottom: 0.6rem;">
+                            <strong style="color: #9A3412; font-size: 0.82rem; display: block; margin-bottom: 0.2rem;">⚠️ Tanpa Umpan Balik Taktil (Haptic)</strong>
+                            <p style="color: #475569; font-size: 0.76rem; line-height: 1.4; margin: 0 0 0.35rem 0; text-align: justify;">Tidak menghadirkan getaran tatal mesin bubut atau klik ratchet mikrometer fisik.</p>
+                            <div style="background: #FEF3C7; border: 1px solid #FDE68A; border-radius: 6px; padding: 0.4rem 0.6rem; font-size: 0.74rem; color: #92400E; line-height: 1.35;">
+                                <strong>💡 Solusi Guru:</strong> Web Labs sebagai pra-praktik (<em>bridging</em>); setelah simulasi, wajib uji fisik di bengkel riil.
                             </div>
                         </div>
 
-                        <!-- W2 -->
-                        <div class="swot-item-box">
-                            <strong style="color: #9A3412; font-size: 0.92rem; display: block; margin-bottom: 0.35rem;">
-                                ⚠️ Ketergantungan Gawai &amp; Koneksi Awal
-                            </strong>
-                            <p style="color: #475569; font-size: 0.84rem; line-height: 1.55; margin: 0 0 0.5rem 0; text-align: justify;">
-                                Memerlukan gawai fungsional siswa dan akses internet saat awal memuat simulator Web Labs.
-                            </p>
-                            <!-- Pedagogical Solution -->
-                            <div style="background: #FEF3C7; border: 1px solid #FDE68A; border-radius: 8px; padding: 0.55rem 0.75rem; font-size: 0.79rem; color: #92400E; line-height: 1.45;">
-                                <strong>💡 Solusi Guru:</strong> Pemanfaatan Wi-Fi bengkel sekolah serta arsitektur kode web yang ultra-ringan sehingga hemat kuota data dan mudah disimpan dalam cache.
+                        <div class="swot-item-box" style="padding: 0.7rem 0.85rem; margin-bottom: 0.6rem;">
+                            <strong style="color: #9A3412; font-size: 0.82rem; display: block; margin-bottom: 0.2rem;">⚠️ Perlu Gawai &amp; Akses Awal</strong>
+                            <p style="color: #475569; font-size: 0.76rem; line-height: 1.4; margin: 0 0 0.35rem 0; text-align: justify;">Memerlukan gawai fungsional dan internet saat awal membuka simulasi.</p>
+                            <div style="background: #FEF3C7; border: 1px solid #FDE68A; border-radius: 6px; padding: 0.4rem 0.6rem; font-size: 0.74rem; color: #92400E; line-height: 1.35;">
+                                <strong>💡 Solusi Guru:</strong> Pemanfaatan Wi-Fi bengkel sekolah &amp; arsitektur kode web ultra-ringan hemat kuota.
                             </div>
                         </div>
 
-                        <!-- W3 -->
-                        <div class="swot-item-box" style="margin-bottom: 0;">
-                            <strong style="color: #9A3412; font-size: 0.92rem; display: block; margin-bottom: 0.35rem;">
-                                ⚠️ Cakupan Modul Masih Berkembang
-                            </strong>
-                            <p style="color: #475569; font-size: 0.84rem; line-height: 1.55; margin: 0 0 0.5rem 0; text-align: justify;">
-                                Saat ini fokus pada instrumen metrologi linier dasar dan kalkulasi bubut; belum mencakup pemesinan CNC 3D multi-axis.
-                            </p>
-                            <!-- Pedagogical Solution -->
-                            <div style="background: #FEF3C7; border: 1px solid #FDE68A; border-radius: 8px; padding: 0.55rem 0.75rem; font-size: 0.79rem; color: #92400E; line-height: 1.45;">
-                                <strong>💡 Solusi Guru:</strong> Roadmap pengembangan bertahap secara berkala mengikuti kalender semester dan fase kurikulum kejuruan.
+                        <div class="swot-item-box" style="padding: 0.7rem 0.85rem; margin-bottom: 0;">
+                            <strong style="color: #9A3412; font-size: 0.82rem; display: block; margin-bottom: 0.2rem;">⚠️ Cakupan Modul Masih Terbatas</strong>
+                            <p style="color: #475569; font-size: 0.76rem; line-height: 1.4; margin: 0 0 0.35rem 0; text-align: justify;">Fokus metrologi dasar &amp; bubut; belum mencakup CNC 3D multi-axis kompleks.</p>
+                            <div style="background: #FEF3C7; border: 1px solid #FDE68A; border-radius: 6px; padding: 0.4rem 0.6rem; font-size: 0.74rem; color: #92400E; line-height: 1.35;">
+                                <strong>💡 Solusi Guru:</strong> Roadmap ekspansi bertahap secara periodik mengikuti kalender vokasi.
                             </div>
                         </div>
 
@@ -5874,119 +5775,89 @@ function showExpDetail(id, btnElement) {
                 </div>
 
                 <!-- OPPORTUNITIES -->
-                <div class="swot-quad-card" data-quad="opportunities" style="border: 1px solid #BAE6FD;">
-                    <div style="background: #F0F9FF; padding: 1.25rem 1.5rem; border-bottom: 1px solid #BAE6FD; display: flex; align-items: center; justify-content: space-between;">
-                        <div style="display: flex; align-items: center; gap: 10px;">
-                            <span style="background: #0284C7; color: white; font-weight: 800; font-size: 0.9rem; width: 32px; height: 32px; border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(2,132,199,0.3);">O</span>
+                <div class="swot-quad-card" data-quad="opportunities" style="border: 1px solid #BAE6FD; border-radius: 14px;">
+                    <div style="background: #F0F9FF; padding: 0.85rem 1.1rem; border-bottom: 1px solid #BAE6FD; display: flex; align-items: center; justify-content: space-between;">
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <span style="background: #0284C7; color: white; font-weight: 800; font-size: 0.82rem; width: 26px; height: 26px; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center;">O</span>
                             <div>
-                                <h4 style="color: #075985; font-size: 1.1rem; font-weight: 800; margin: 0;">Opportunities</h4>
-                                <span style="color: #0284C7; font-size: 0.75rem; font-weight: 600;">Peluang Ekspansi Inovasi</span>
+                                <h4 style="color: #075985; font-size: 0.96rem; font-weight: 800; margin: 0;">Opportunities</h4>
+                                <span style="color: #0284C7; font-size: 0.7rem; font-weight: 600;">Peluang Ekspansi</span>
                             </div>
                         </div>
-                        <span style="font-size: 0.74rem; font-weight: 800; color: #0284C7; background: #E0F2FE; padding: 0.25rem 0.65rem; border-radius: 12px; border: 1px solid #BAE6FD;">4 Peluang Strategis</span>
+                        <span style="font-size: 0.68rem; font-weight: 700; color: #0284C7; background: #E0F2FE; padding: 0.15rem 0.45rem; border-radius: 8px;">Peluang</span>
                     </div>
-                    <div style="padding: 1.4rem;">
+                    <div style="padding: 0.9rem;">
                         
-                        <!-- O1 -->
-                        <div class="swot-item-box">
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-                                <strong style="color: #023967; font-size: 0.92rem;">📱 Integrasi Platform Digital (LMS &amp; PMM)</strong>
-                                <span style="background: #E0F2FE; color: #0369A1; font-size: 0.68rem; font-weight: 700; padding: 0.15rem 0.45rem; border-radius: 4px;">PMM Ready</span>
+                        <div class="swot-item-box" style="padding: 0.7rem 0.85rem; margin-bottom: 0.6rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.2rem;">
+                                <strong style="color: #023967; font-size: 0.82rem;">📱 Integrasi LMS &amp; PMM</strong>
+                                <span style="background: #E0F2FE; color: #0369A1; font-size: 0.65rem; font-weight: 700; padding: 0.1rem 0.35rem; border-radius: 4px;">PMM Ready</span>
                             </div>
-                            <p style="color: #475569; font-size: 0.84rem; line-height: 1.55; margin: 0; text-align: justify;">
-                                Peluang integrasi langsung ke Google Classroom sekolah dan pengajuan sebagai Bukti Karya Guru pada Platform Merdeka Mengajar (PMM) Kemendikdasmen.
-                            </p>
+                            <p style="color: #475569; font-size: 0.76rem; line-height: 1.45; margin: 0; text-align: justify;">Ditautkan ke Google Classroom sekolah dan Bukti Karya Guru pada Platform Merdeka Mengajar (PMM).</p>
                         </div>
 
-                        <!-- O2 -->
-                        <div class="swot-item-box">
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-                                <strong style="color: #023967; font-size: 0.92rem;">🔬 Ekspansi Modul Metrologi Lanjutan</strong>
-                                <span style="background: #DCFCE7; color: #15803D; font-size: 0.68rem; font-weight: 700; padding: 0.15rem 0.45rem; border-radius: 4px;">R&amp;D Lanjutan</span>
+                        <div class="swot-item-box" style="padding: 0.7rem 0.85rem; margin-bottom: 0.6rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.2rem;">
+                                <strong style="color: #023967; font-size: 0.82rem;">🔬 Modul Metrologi Lanjutan</strong>
+                                <span style="background: #DCFCE7; color: #15803D; font-size: 0.65rem; font-weight: 700; padding: 0.1rem 0.35rem; border-radius: 4px;">R&amp;D Lanjutan</span>
                             </div>
-                            <p style="color: #475569; font-size: 0.84rem; line-height: 1.55; margin: 0; text-align: justify;">
-                                Potensi penambahan simulator <em>Dial Indicator</em>, <em>Bevel Protractor</em>, <em>Surface Roughness</em>, hingga visualisasi pergerakan kode G CNC 2D interaktif.
-                            </p>
+                            <p style="color: #475569; font-size: 0.76rem; line-height: 1.45; margin: 0; text-align: justify;">Penambahan simulator Dial Indicator, Bevel Protractor, hingga simulasi kode G CNC 2D.</p>
                         </div>
 
-                        <!-- O3 -->
-                        <div class="swot-item-box">
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-                                <strong style="color: #023967; font-size: 0.92rem;">🌏 Pemerataan Mutu ke SMK Wilayah 3T</strong>
-                                <span style="background: #FEF3C7; color: #B45309; font-size: 0.68rem; font-weight: 700; padding: 0.15rem 0.45rem; border-radius: 4px;">Dampak Nasional</span>
+                        <div class="swot-item-box" style="padding: 0.7rem 0.85rem; margin-bottom: 0.6rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.2rem;">
+                                <strong style="color: #023967; font-size: 0.82rem;">🌏 Pemerataan Mutu ke SMK 3T</strong>
+                                <span style="background: #FEF3C7; color: #B45309; font-size: 0.65rem; font-weight: 700; padding: 0.1rem 0.35rem; border-radius: 4px;">Nasional</span>
                             </div>
-                            <p style="color: #475569; font-size: 0.84rem; line-height: 1.55; margin: 0; text-align: justify;">
-                                Menjadi solusi pemerataan mutu kejuruan bagi sekolah-sekolah vokasi di pelosok yang minim fasilitas mesin perkakas dan instrumen industri presisi.
-                            </p>
+                            <p style="color: #475569; font-size: 0.76rem; line-height: 1.45; margin: 0; text-align: justify;">Solusi kesenjangan mutu bagi SMK pelosok yang minim mesin dan fasilitas industri modern.</p>
                         </div>
 
-                        <!-- O4 -->
-                        <div class="swot-item-box" style="margin-bottom: 0;">
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-                                <strong style="color: #023967; font-size: 0.92rem;">⚡ Mode Offline PWA (Progressive App)</strong>
-                                <span style="background: #F3E8FF; color: #7C3AED; font-size: 0.68rem; font-weight: 700; padding: 0.15rem 0.45rem; border-radius: 4px;">Offline Mode</span>
+                        <div class="swot-item-box" style="padding: 0.7rem 0.85rem; margin-bottom: 0;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.2rem;">
+                                <strong style="color: #023967; font-size: 0.82rem;">⚡ Mode Offline PWA</strong>
+                                <span style="background: #F3E8FF; color: #7C3AED; font-size: 0.65rem; font-weight: 700; padding: 0.1rem 0.35rem; border-radius: 4px;">PWA Web</span>
                             </div>
-                            <p style="color: #475569; font-size: 0.84rem; line-height: 1.55; margin: 0; text-align: justify;">
-                                Potensi konversi menjadi PWA sehingga simulator dapat berjalan 100% tanpa internet setelah dibuka pertama kali oleh gawai siswa.
-                            </p>
+                            <p style="color: #475569; font-size: 0.76rem; line-height: 1.45; margin: 0; text-align: justify;">Konversi ke PWA agar simulator dapat berjalan 100% tanpa internet setelah kunjungan pertama.</p>
                         </div>
 
                     </div>
                 </div>
 
                 <!-- THREATS -->
-                <div class="swot-quad-card" data-quad="threats" style="border: 1px solid #FECDD3;">
-                    <div style="background: #FFF1F2; padding: 1.25rem 1.5rem; border-bottom: 1px solid #FECDD3; display: flex; align-items: center; justify-content: space-between;">
-                        <div style="display: flex; align-items: center; gap: 10px;">
-                            <span style="background: #E11D48; color: white; font-weight: 800; font-size: 0.9rem; width: 32px; height: 32px; border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(225,29,72,0.3);">T</span>
+                <div class="swot-quad-card" data-quad="threats" style="border: 1px solid #FECDD3; border-radius: 14px;">
+                    <div style="background: #FFF1F2; padding: 0.85rem 1.1rem; border-bottom: 1px solid #FECDD3; display: flex; align-items: center; justify-content: space-between;">
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <span style="background: #E11D48; color: white; font-weight: 800; font-size: 0.82rem; width: 26px; height: 26px; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center;">T</span>
                             <div>
-                                <h4 style="color: #9F1239; font-size: 1.1rem; font-weight: 800; margin: 0;">Threats</h4>
-                                <span style="color: #BE123C; font-size: 0.75rem; font-weight: 600;">Tantangan &amp; Langkah Mitigasi</span>
+                                <h4 style="color: #9F1239; font-size: 0.96rem; font-weight: 800; margin: 0;">Threats</h4>
+                                <span style="color: #BE123C; font-size: 0.7rem; font-weight: 600;">Tantangan &amp; Mitigasi</span>
                             </div>
                         </div>
-                        <span style="font-size: 0.74rem; font-weight: 800; color: #E11D48; background: #FFE4E6; padding: 0.25rem 0.65rem; border-radius: 12px; border: 1px solid #FECDD3;">Langkah Mitigasi</span>
+                        <span style="font-size: 0.68rem; font-weight: 700; color: #E11D48; background: #FFE4E6; padding: 0.15rem 0.45rem; border-radius: 8px;">Mitigasi</span>
                     </div>
-                    <div style="padding: 1.4rem;">
+                    <div style="padding: 0.9rem;">
                         
-                        <!-- T1 -->
-                        <div class="swot-item-box">
-                            <strong style="color: #9F1239; font-size: 0.92rem; display: block; margin-bottom: 0.35rem;">
-                                ⚡ Disparitas Spesifikasi Layar Ponsel
-                            </strong>
-                            <p style="color: #475569; font-size: 0.84rem; line-height: 1.55; margin: 0 0 0.5rem 0; text-align: justify;">
-                                Ragam ukuran resolusi layar ponsel pintar siswa dapat memengaruhi kemudahan menggeser skala mikro pada layar sentuh kecil.
-                            </p>
-                            <!-- Mitigation -->
-                            <div style="background: #FFE4E6; border: 1px solid #FECDD3; border-radius: 8px; padding: 0.55rem 0.75rem; font-size: 0.79rem; color: #9F1239; line-height: 1.45;">
-                                <strong>🛡️ Langkah Mitigasi:</strong> Penerapan antarmuka <em>fluid-responsive</em> dengan tombol navigasi sentuh presisi dan fitur zoom makro otomatis.
+                        <div class="swot-item-box" style="padding: 0.7rem 0.85rem; margin-bottom: 0.6rem;">
+                            <strong style="color: #9F1239; font-size: 0.82rem; display: block; margin-bottom: 0.2rem;">⚡ Disparitas Layar Ponsel Siswa</strong>
+                            <p style="color: #475569; font-size: 0.76rem; line-height: 1.4; margin: 0 0 0.35rem 0; text-align: justify;">Ukuran layar smartphone yang beragam memengaruhi kemudahan geser skala mikro.</p>
+                            <div style="background: #FFE4E6; border: 1px solid #FECDD3; border-radius: 6px; padding: 0.4rem 0.6rem; font-size: 0.74rem; color: #9F1239; line-height: 1.35;">
+                                <strong>🛡️ Langkah Mitigasi:</strong> UI <em>fluid-responsive</em> dengan tombol navigasi sentuh makro otomatis.
                             </div>
                         </div>
 
-                        <!-- T2 -->
-                        <div class="swot-item-box">
-                            <strong style="color: #9F1239; font-size: 0.92rem; display: block; margin-bottom: 0.35rem;">
-                                ⚡ Evolusi Browser Mobile Modern
-                            </strong>
-                            <p style="color: #475569; font-size: 0.84rem; line-height: 1.55; margin: 0 0 0.5rem 0; text-align: justify;">
-                                Pembaruan berkala engine browser (Safari, Chrome Mobile) menuntut penyesuaian kode secara periodik agar simulator tetap responsif.
-                            </p>
-                            <!-- Mitigation -->
-                            <div style="background: #FFE4E6; border: 1px solid #FECDD3; border-radius: 8px; padding: 0.55rem 0.75rem; font-size: 0.79rem; color: #9F1239; line-height: 1.45;">
-                                <strong>🛡️ Langkah Mitigasi:</strong> Penggunaan standar kode web universal murni tanpa library eksternal yang rentan usang, serta audit berkala pada GitHub.
+                        <div class="swot-item-box" style="padding: 0.7rem 0.85rem; margin-bottom: 0.6rem;">
+                            <strong style="color: #9F1239; font-size: 0.82rem; display: block; margin-bottom: 0.2rem;">⚡ Evolusi Browser Mobile</strong>
+                            <p style="color: #475569; font-size: 0.76rem; line-height: 1.4; margin: 0 0 0.35rem 0; text-align: justify;">Pembaruan engine browser menuntut audit kode rutin agar presisi tetap konsisten.</p>
+                            <div style="background: #FFE4E6; border: 1px solid #FECDD3; border-radius: 6px; padding: 0.4rem 0.6rem; font-size: 0.74rem; color: #9F1239; line-height: 1.35;">
+                                <strong>🛡️ Langkah Mitigasi:</strong> Standar kode web universal murni tanpa library pihak ketiga yang rentan usang.
                             </div>
                         </div>
 
-                        <!-- T3 -->
-                        <div class="swot-item-box" style="margin-bottom: 0;">
-                            <strong style="color: #9F1239; font-size: 0.92rem; display: block; margin-bottom: 0.35rem;">
-                                ⚡ Risiko Siswa Terlena pada Simulasi
-                            </strong>
-                            <p style="color: #475569; font-size: 0.84rem; line-height: 1.55; margin: 0 0 0.5rem 0; text-align: justify;">
-                                Siswa yang merasa sudah mahir di simulator virtual berisiko meremehkan SOP keselamatan K3LH saat mengoperasikan mesin nyata di bengkel.
-                            </p>
-                            <!-- Mitigation -->
-                            <div style="background: #FFE4E6; border: 1px solid #FECDD3; border-radius: 8px; padding: 0.55rem 0.75rem; font-size: 0.79rem; color: #9F1239; line-height: 1.45;">
-                                <strong>🛡️ Langkah Mitigasi:</strong> Penegakan *pre-flight checklist* K3LH di mana siswa wajib menandatangani SOP sebelum diizinkan menyalakan mesin bengkel.
+                        <div class="swot-item-box" style="padding: 0.7rem 0.85rem; margin-bottom: 0;">
+                            <strong style="color: #9F1239; font-size: 0.82rem; display: block; margin-bottom: 0.2rem;">⚡ Risiko Terlena Dunia Virtual</strong>
+                            <p style="color: #475569; font-size: 0.76rem; line-height: 1.4; margin: 0 0 0.35rem 0; text-align: justify;">Siswa merasa sudah mahir di simulator sehingga meremehkan SOP di bengkel nyata.</p>
+                            <div style="background: #FFE4E6; border: 1px solid #FECDD3; border-radius: 6px; padding: 0.4rem 0.6rem; font-size: 0.74rem; color: #9F1239; line-height: 1.35;">
+                                <strong>🛡️ Langkah Mitigasi:</strong> Penegakan *pre-flight checklist* K3LH wajib sebelum menyalakan mesin fisik.
                             </div>
                         </div>
 
@@ -5995,47 +5866,39 @@ function showExpDetail(id, btnElement) {
 
             </div>
 
-            <!-- Executive SWOT Takeaway Banner -->
-            <div style="background: linear-gradient(135deg, #EFF8FF 0%, #E0F2FE 100%); border: 1px solid #BAE6FD; border-left: 6px solid #0284C7; border-radius: 16px; padding: 1.5rem 1.8rem; margin-top: 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.2rem; box-shadow: 0 6px 20px rgba(2,132,199,0.06);">
-                <div style="max-width: 860px;">
-                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 0.4rem;">
-                        <span style="font-size: 1.2rem;">💡</span>
-                        <h4 style="color: #023967; font-size: 1.05rem; font-weight: 800; margin: 0;">Sintesis Strategis SWOT: Nilai Tambah bagi Vokasi</h4>
+            <!-- Executive SWOT Synthesis Banner -->
+            <div style="background: linear-gradient(135deg, #EFF8FF 0%, #E0F2FE 100%); border: 1px solid #BAE6FD; border-left: 5px solid #0284C7; border-radius: 12px; padding: 0.9rem 1.2rem; margin-bottom: 1rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.8rem;">
+                <div style="max-width: 880px;">
+                    <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 0.2rem;">
+                        <span style="font-size: 1.05rem;">💡</span>
+                        <strong style="color: #023967; font-size: 0.88rem;">Sintesis Strategis SWOT: Nilai Tambah bagi Vokasi</strong>
                     </div>
-                    <p style="color: #334155; font-size: 0.88rem; line-height: 1.65; margin: 0; text-align: justify;">
-                        Web Labs BIMO Manufacturing bertindak sebagai <strong>media penjembatan (bridging media)</strong> yang mentransformasi paradigma bengkel dari reaktif menjadi proaktif. Dengan meniadakan risiko kecelakaan kerja bagi siswa pemula (<em>zero risk</em>) dan memangkas waktu pengajaran teori hingga 60%, platform ini memaksimalkan efektivitas jam praktik fisik siswa vokasi di era industri modern.
+                    <p style="color: #334155; font-size: 0.8rem; line-height: 1.5; margin: 0; text-align: justify;">
+                        Web Labs BIMO Manufacturing bertindak sebagai <strong>media penjembatan (bridging media)</strong> yang mengubah pembelajaran bengkel dari reaktif menjadi proaktif. Dengan meniadakan risiko keselamatan bagi pemula (<em>zero risk</em>) dan memangkas waktu pengajaran teori hingga 60%, platform ini memaksimalkan efektivitas jam praktik fisik siswa vokasi di era industri modern.
                     </p>
                 </div>
                 <div>
-                    <span style="background: #FFFFFF; color: #0284C7; border: 1px solid #BAE6FD; font-size: 0.78rem; font-weight: 800; padding: 0.4rem 0.9rem; border-radius: 20px; display: inline-flex; align-items: center; gap: 5px; box-shadow: 0 2px 6px rgba(0,0,0,0.04);">
+                    <span style="background: #FFFFFF; color: #0284C7; border: 1px solid #BAE6FD; font-size: 0.74rem; font-weight: 800; padding: 0.3rem 0.75rem; border-radius: 16px; display: inline-flex; align-items: center; gap: 4px;">
                         ⭐ Solusi Unggulan Vokasi
                     </span>
                 </div>
             </div>
 
-        </div>
-
-        <!-- Call to Action Banner -->
-        <div style="background: linear-gradient(135deg, #023967 0%, #055A9E 100%); border-radius: 18px; padding: 2.2rem; color: white; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; box-shadow: 0 15px 30px rgba(2,57,103,0.18);">
-            <div style="max-width: 680px;">
-                <span style="background: rgba(242, 169, 0, 0.25); color: #F2A900; border: 1px solid rgba(242, 169, 0, 0.4); font-size: 0.78rem; font-weight: 700; padding: 0.25rem 0.7rem; border-radius: 20px; display: inline-block; margin-bottom: 0.6rem;">
-                    🚀 AKSES TERBUKA UNTUK DUNIA VOKASI
-                </span>
-                <h3 style="font-size: 1.4rem; font-weight: 800; margin: 0 0 0.5rem 0; color: white;">
-                    Eksplorasi Web Labs BIMO Manufacturing Secara Langsung
-                </h3>
-                <p style="font-size: 0.92rem; color: #E2E8F0; margin: 0; line-height: 1.6;">
-                    Gunakan platform ini sebagai media belajar mandiri, apersepsi pembelajaran bengkel, atau simulasi metrologi presisi kapan saja tanpa batas ruang dan waktu.
-                </p>
-            </div>
-            <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
-                <button type="button" onclick="openDocPreviewModal('https://bimorokusumo.github.io/bimo-manfacturing-labs/', 'Simulasi Web Labs BIMO Manufacturing - Bimoro Kusumo, S.Pd.')" style="background: #F2A900; color: #023967; border: none; padding: 0.8rem 1.4rem; border-radius: 8px; font-weight: 800; font-size: 0.9rem; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(242, 169, 0, 0.35); transition: all 0.2s ease;">
-                    <span>⛶ Buka Simulator Penuh</span>
+            <!-- Panel 4 Navigation Strip -->
+            <div style="background: white; border-radius: 12px; border: 1px solid #E2E8F0; padding: 0.75rem 1.2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.8rem;">
+                <button type="button" onclick="switchWebLabsPanel('target')" style="background: #F1F5F9; color: #475569; border: 1px solid #CBD5E1; padding: 0.45rem 1rem; border-radius: 8px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
+                    <span>← Kembali ke 2. Target Pengguna</span>
                 </button>
-                <a href="https://bimorokusumo.github.io/bimo-manfacturing-labs/" target="_blank" rel="noopener noreferrer" style="background: rgba(255, 255, 255, 0.15); color: white; text-decoration: none; padding: 0.8rem 1.4rem; border-radius: 8px; font-weight: 700; font-size: 0.9rem; border: 1.5px solid rgba(255, 255, 255, 0.4); display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s ease;">
-                    <span>↗ Kunjungi Web Labs</span>
-                </a>
+                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                    <button type="button" onclick="openDocPreviewModal('https://bimorokusumo.github.io/bimo-manfacturing-labs/', 'Simulasi Web Labs BIMO Manufacturing - Bimoro Kusumo, S.Pd.')" style="background: #F2A900; color: #023967; border: none; padding: 0.45rem 1rem; border-radius: 8px; font-size: 0.82rem; font-weight: 800; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
+                        <span>⛶ Buka Layar Penuh</span>
+                    </button>
+                    <a href="https://bimorokusumo.github.io/bimo-manfacturing-labs/" target="_blank" rel="noopener noreferrer" style="background: #023967; color: white; text-decoration: none; padding: 0.45rem 1rem; border-radius: 8px; font-size: 0.82rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+                        <span>↗ Kunjungi Web Labs</span>
+                    </a>
+                </div>
             </div>
+
         </div>
 
     </div>
@@ -6108,7 +5971,7 @@ function showExpDetail(id, btnElement) {
 </div>
 </div>
 </div>
-<script src="script.js?v=20261028_0940"></script>
+<script src="script.js?v=20261028_0948"></script>
 
 
 

@@ -3603,6 +3603,35 @@ nav.nav-scrolled {
     border-color: #94A3B8;
 }
 
+.weblabs-panel-tab {
+    padding: 0.62rem 1.25rem;
+    border-radius: 30px;
+    font-size: 0.86rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.22s ease;
+    border: 1.5px solid #CBD5E1;
+    background: #FFFFFF;
+    color: #475569;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+.weblabs-panel-tab:hover {
+    background: #EFF8FF;
+    color: #023967;
+    border-color: #93C5FD;
+    transform: translateY(-1px);
+}
+.weblabs-panel-tab.active {
+    background: #023967 !important;
+    color: #FFFFFF !important;
+    border-color: #023967 !important;
+    box-shadow: 0 4px 14px rgba(2, 57, 103, 0.25) !important;
+}
+
+
 
 
 
