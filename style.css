@@ -3631,6 +3631,24 @@ nav.nav-scrolled {
     box-shadow: 0 4px 14px rgba(2, 57, 103, 0.25) !important;
 }
 
+/* ============================================================
+   TIGA PILAR REFLEKSI (3 BERJEJER / 3 COLUMNS)
+   ============================================================ */
+.tiga-pilar-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1.25rem !important;
+    width: 100%;
+}
+
+@media (max-width: 992px) {
+    .tiga-pilar-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+}
+
+
 
 
 
