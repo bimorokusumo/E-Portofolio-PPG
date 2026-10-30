@@ -778,24 +778,29 @@ const ep5RefleksiData = {
                 <!-- Pertanyaan 1 -->
                 <div style="background: #F0F9FF; border-radius: 14px; padding: 1.2rem; border-left: 4px solid #0284C7;">
                     <h4 style="color: #023967; margin: 0 0 0.5rem 0; font-size: 1.05rem; font-weight: 800; line-height: 1.4;">
-                        1. Pandangan Mengenai Bagaimana Seharusnya Pendidikan di Indonesia
+                        1. Pandangan Mengenai Bagaimana Seharusnya Pendidikan di Indonesia (Visi Pendidikan)
                     </h4>
-                    <p style="color: #475569; font-size: 0.92rem; line-height: 1.7; margin: 0; text-align: justify;">
-                        Setelah mengikuti rangkaian perkuliahan dan praktik dalam PPG Prajabatan, saya semakin memahami bahwa pendidikan di Indonesia seharusnya <strong>tidak hanya berorientasi pada nilai kelulusan atau hafalan materi</strong>. Pendidikan perlu membantu setiap murid mengenali potensinya, membangun karakter, mengembangkan keterampilan, dan menggunakan pengetahuan menghadapi persoalan nyata. Berakar pada filosofi Ki Hadjar Dewantara dan Tamansiswa (<em>Sistem Among</em>), guru berperan menuntun kodrat alam dan zaman murid sebagai subjek pembelajaran yang merdeka, aman, inklusif (berdiferensiasi TaRL/CRT/UDL), serta memperhatikan kematangan sosial-emosional (PSE). Khusus di SMK, pembelajaran kejuruan wajib mengintegrasikan standar mutu industri manufaktur, budaya 5R, dan keselamatan kerja (K3LH).
+                    <p style="color: #0369A1; font-size: 0.92rem; line-height: 1.6; margin: 0 0 0.6rem 0; font-weight: 600; background: #E0F2FE; padding: 0.6rem 0.9rem; border-radius: 8px;">
+                        "Mewujudkan pendidikan yang bermakna, inklusif, dan adaptif terhadap teknologi, agar setiap murid mampu menghadapi kehidupan nyata DUDI."
+                    </p>
+                    <p style="color: #475569; font-size: 0.9rem; line-height: 1.7; margin: 0; text-align: justify;">
+                        Setelah mengikuti rangkaian perkuliahan dan praktik PPG Prajabatan, saya semakin memahami bahwa pendidikan di Indonesia seharusnya <strong>tidak sekadar berorientasi pada nilai kelulusan administratif</strong>. Pendidikan kejuruan sejati harus bermakna dan aplikatif, adaptif terhadap percepatan disrupsi teknologi industri modern (Industri 4.0), serta inklusif dalam merangkul keragaman gaya belajar siswa (TaRL/CRT). Berakar pada filosofi Ki Hadjar Dewantara (<em>Sistem Among</em>), guru menuntun kodrat anak agar memiliki kompetensi unggul, karakter luhur, dan kesiapan hidup nyata (<em>real-life readiness</em>) di Dunia Usaha dan Dunia Industri (DUDI).
                     </p>
                 </div>
 
                 <!-- Pertanyaan 2 -->
                 <div style="background: #ECFDF5; border-radius: 14px; padding: 1.2rem; border-left: 4px solid #10B981;">
                     <h4 style="color: #064E3B; margin: 0 0 0.5rem 0; font-size: 1.05rem; font-weight: 800; line-height: 1.4;">
-                        2. Upaya &amp; Langkah Konkret untuk Menjadi Guru Profesional
+                        2. Visi Pribadi Calon Guru &amp; Upaya Menjadi Pendidik Profesional
                     </h4>
-                    <div style="color: #475569; font-size: 0.92rem; line-height: 1.65; display: flex; flex-direction: column; gap: 0.5rem;">
-                        <div><strong>• Pembelajar Sepanjang Hayat:</strong> Terus memperbarui kompetensi keilmuan Teknik Pemesinan, teknologi simulator manufaktur, serta wawasan pedagogik terkini.</div>
-                        <div><strong>• Merencanakan Pembelajaran Terarah:</strong> Menyusun pembelajaran berdasarkan Capaian Pembelajaran (CP), karakteristik murid, dan konteks sekolah; menerapkan pembelajaran mendalam (memahami, mengaplikasikan, merefleksi); serta menyediakan pilihan representasi kontekstual (komponen mesin, gambar kerja, jobsheet, simulasi, dan praktik bengkel).</div>
-                        <div><strong>• Optimalisasi Asesmen Autentik:</strong> Menyelaraskan asesmen diagnostik, observasi formatif proses unjuk kerja di bengkel, dan asesmen sumatif terukur.</div>
-                        <div><strong>• Iklim Kelas Positif &amp; PSE:</strong> Menghadirkan lingkungan bengkel yang aman tanpa intimidasi, integrasi CASEL, dan teknik STOP demi ketelitian siswa.</div>
-                        <div><strong>• Etika, Integritas &amp; Kemitraan DUDI:</strong> Menjadi teladan disiplin K3LH, refleksi berkala pasca-mengajar, serta berkolaborasi dengan guru pamong dan industri.</div>
+                    <p style="color: #065F46; font-size: 0.92rem; line-height: 1.6; margin: 0 0 0.6rem 0; font-weight: 600; background: #D1FAE5; padding: 0.6rem 0.9rem; border-radius: 8px;">
+                        "Mewujudkan output siswa berkarakter, beretika, berkualitas, modern untuk menghadapi Dunia masyarakat dan kerja untuk menjadikan SDM Unggul."
+                    </p>
+                    <div style="color: #475569; font-size: 0.9rem; line-height: 1.65; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <div><strong>• Pelatih &amp; Pelayan Siswa:</strong> Hadir mendampingi murid secara humanis, tidak hanya mentransfer kognitif tetapi melatih mentalitas kerja, etika 5R/K3LH, dan integritas profesional.</div>
+                        <div><strong>• Pembelajar Sepanjang Hayat:</strong> Terus memperbarui kompetensi keilmuan Teknik Pemesinan, teknologi simulator manufaktur (Web Labs), serta wawasan pedagogik terkini.</div>
+                        <div><strong>• Merencanakan Pembelajaran Terarah:</strong> Menyusun pembelajaran berbasis CP, diferensiasi konten-proses-produk, serta representasi kontekstual terintegrasi Teaching Factory.</div>
+                        <div><strong>• Optimalisasi Asesmen Autentik &amp; Kemitraan DUDI:</strong> Menyelaraskan asesmen proses kerja presisi dengan standar industri manufaktur dan bersinergi aktif bersama DUDI.</div>
                     </div>
                 </div>
 

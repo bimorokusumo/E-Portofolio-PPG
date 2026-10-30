@@ -4,3 +4,4 @@ assets_backup/
 __pycache__/
 *.bak*
 *.backup
+*.pptx
